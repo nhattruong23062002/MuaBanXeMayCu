@@ -10,12 +10,22 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import LayoutUser from "../../layout/layoutUser";
+import { useNavigate } from 'react-router-dom';
 
 function DetailMoto() {
   const images = [
     "https://media.moitruongvadothi.vn/images/2023/10/25/9883-1698207232-9883-1695003555-gia-xe-honda-sh-2023-1.jpg",
     "https://xemayanhloc.com.vn/wp-content/uploads/2022/05/z3403832730322_3dc7bd30894c8821da2984ba662a860e.jpg",
   ];
+  const navigate = useNavigate();
+
+  const onClickChat = (event) => {
+    navigate("/chat");
+  }
+
+  const onClickPayment = (event) => {
+    navigate("/payment");
+  }
 
   const [activeImage, setActiveImage] = useState(images[0]);
   return (
@@ -36,9 +46,8 @@ function DetailMoto() {
                   src={image}
                   alt={`Thumbnail ${index + 1}`}
                   onClick={() => setActiveImage(image)}
-                  className={`w-32 h-24 object-cover rounded-md cursor-pointer hover:ring-2 ring-[#d59648] ${
-                    activeImage === image ? "ring-2 ring-[#d59648]" : ""
-                  }`}
+                  className={`w-32 h-24 object-cover rounded-md cursor-pointer hover:ring-2 ring-[#d59648] ${activeImage === image ? "ring-2 ring-[#d59648]" : ""
+                    }`}
                 />
               ))}
             </div>
@@ -79,10 +88,10 @@ function DetailMoto() {
             </div>
 
             <div className="mt-6 flex space-x-4">
-              <button className="bg-[#d59648] text-white px-6 py-2 rounded-md font-medium hover:bg-[#b27939]">
+              <button onClick={onClickPayment} className="bg-[#d59648] text-white px-6 py-2 rounded-md font-medium hover:bg-[#b27939]">
                 Mua hàng
               </button>
-              <button className="border border-gray-400 px-6 py-2 rounded-md font-medium text-gray-700 hover:bg-gray-100">
+              <button onClick={onClickChat} className="border border-gray-400 px-6 py-2 rounded-md font-medium text-gray-700 hover:bg-gray-100">
                 Liên hệ
               </button>
             </div>
@@ -168,7 +177,7 @@ function DetailMoto() {
                 <FaPhoneAlt className="text-[#d59648] mr-2" />
                 Hotline/Zalo: 0325 316 689
               </p>
-              </ul>
+            </ul>
 
             <p className="mt-6 font-bold text-center text-[#d59648]">
               ĐẶT LỊCH HẸN ĐỂ GIỮ XE VÀ ĐƯỢC PHỤC VỤ TỐT NHẤT!

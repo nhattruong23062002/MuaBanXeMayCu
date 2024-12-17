@@ -13,11 +13,19 @@ function Header() {
   const navigate = useNavigate();
 
   const handleShowHome = () => {
-    navigate(`/`); 
+    navigate(`/`);
+  }
+
+  const onClickToExpert = () => {
+    navigate(`/listexp`);
+  }
+
+  const onClickToUpload = () => {
+    navigate(`/upload`);
   }
 
   const handleShowAccount = () => {
-    navigate(`/account`); 
+    navigate(`/account`);
   }
   return (
     <div className="bg-[#0e0f2b] text-white py-2">
@@ -39,7 +47,7 @@ function Header() {
             </a>
           </div>
 
-          <div className="flex flex-col items-center group cursor-pointer">
+          <div className="flex flex-col items-center group cursor-pointer" onClick={onClickToExpert}>
             <FaUserDoctor className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
             <a
               href="#"
@@ -49,7 +57,7 @@ function Header() {
             </a>
           </div>
 
-          <div className="flex flex-col items-center group cursor-pointer">
+          <div className="flex flex-col items-center group cursor-pointer" onClick={onClickToUpload}>
             <MdAddBox className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
             <a
               href="#"
