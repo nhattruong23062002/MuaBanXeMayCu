@@ -2,15 +2,24 @@ import React, { useState, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 
 function AdBanner() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const hasSeenBanner = localStorage.getItem("hasSeenAdBanner");
+    if (!hasSeenBanner) {
+      setIsVisible(true); 
+    }
+  }, []);
 
   const handleClose = () => {
     setIsVisible(false);
+    localStorage.setItem("hasSeenAdBanner", "true");
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
+      localStorage.setItem("hasSeenAdBanner", "true");
     }, 10000); 
     return () => clearTimeout(timer);
   }, []);
@@ -27,7 +36,6 @@ function AdBanner() {
           alt="Banner Quảng Cáo"
           className="w-full rounded-md"
         />
-
         <button
           onClick={handleClose}
           className="absolute top-2 right-2 text-3xl text-gray-100 hover:text-gray-800"
