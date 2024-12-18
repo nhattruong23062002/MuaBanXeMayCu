@@ -1,6 +1,7 @@
-/* src/App.css */
-
-/* Đảm bảo không bị chồng lên nhau giữa Navbar, Sidebar và content */
+html,
+body {
+  background-color: #f5f5f5;
+}
 .App {
   display: flex;
   flex-direction: column;

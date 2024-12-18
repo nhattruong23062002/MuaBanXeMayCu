@@ -1,7 +1,7 @@
 // src/pages/Admin-Page/components/Sidebar.js
 import React from "react";
 import { Link } from "react-router-dom"; // Để sử dụng Link cho điều hướng
-import "./Sidebar.css"; // File CSS của Sidebar
+import "./../styles/Sidebar.css"; // File CSS của Sidebar
 import { FaAlignJustify } from "react-icons/fa";
 
 const Sidebar = () => {

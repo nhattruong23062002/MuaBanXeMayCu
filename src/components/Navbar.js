@@ -1,5 +1,5 @@
 import React from "react";
-import "./Navbar.css"; // File CSS để style cho navbar
+import "./../styles/Navbar.css";
 import {
   FaMotorcycle,
   FaHome,
