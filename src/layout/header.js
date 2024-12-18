@@ -27,6 +27,10 @@ function Header() {
   const handleShowAccount = () => {
     navigate(`/account`);
   }
+
+  const handleClickShowListStore = () => {
+    navigate(`/listStore`);
+  }
   return (
     <div className="bg-[#0e0f2b] text-white py-2">
       <div className="max-w-[800px] mx-auto flex justify-between items-center px-6">
@@ -67,7 +71,7 @@ function Header() {
             </a>
           </div>
 
-          <div className="flex flex-col items-center group cursor-pointer">
+          <div className="flex flex-col items-center group cursor-pointer" onClick={handleClickShowListStore}>
             <IoStorefrontSharp className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
             <a
               href="#"

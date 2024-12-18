@@ -105,7 +105,7 @@ function DetailMoto() {
             </div>
             <div>
               <p className="font-bold">Nhat moto</p>
-              <div className="flex">
+              <div className="flex items-center">
                 <p className="text-sm text-gray-500 mr-1">5</p>
                 <IoStar />
               </div>
@@ -164,19 +164,19 @@ function DetailMoto() {
                 Có chính sách hỗ trợ trả góp linh hoạt, chỉ cần giấy tờ chứng
                 minh thu nhập
               </li>
-              <p className="flex items-center">
+              <li className="flex items-center">
                 <FaMapMarkerAlt className="text-[#d59648] mr-2" />
                 Trạm Dịch Vụ Xe Máy Nhat Moto - Hải Châu (92 Nguyễn Văn Linh - Hải Châu -
                 Đà Nẵng)
-              </p>
-              <p className="flex items-center">
+              </li>
+              <li className="flex items-center">
                 <FaClock className="text-[#d59648] mr-2" />
                 Thời gian làm việc: từ 8h00 - 19h00, tất cả các ngày trong tuần
-              </p>
-              <p className="flex items-center">
+              </li>
+              <li className="flex items-center">
                 <FaPhoneAlt className="text-[#d59648] mr-2" />
                 Hotline/Zalo: 0325 316 689
-              </p>
+              </li>
             </ul>
 
             <p className="mt-6 font-bold text-center text-[#d59648]">

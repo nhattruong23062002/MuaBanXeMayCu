@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExpertCard = ({ avatar, fullname, dob, hometown, onContactClick }) => {
+const ExpertCard = ({ avatar, fullname, nameStore, dob, hometown, address, phone, onContactClick, onShowExpertDetail }) => {
     return (
         <div className="w-full max-w-sm bg-white rounded-lg shadow-md p-4 border-2">
             {/* Avatar và thông tin */}
@@ -16,9 +16,12 @@ const ExpertCard = ({ avatar, fullname, dob, hometown, onContactClick }) => {
 
                 {/* Thông tin cá nhân */}
                 <div className="flex-1">
-                    <p className="text-base font-semibold">Họ và tên: {fullname}</p>
-                    <p className="text-base">Ngày sinh: {dob}</p>
-                    <p className="text-base">Quê quán: {hometown}</p>
+                    {fullname && <p className="text-base font-semibold">Họ và tên: {fullname}</p>}
+                    {nameStore && <p className="text-base font-semibold">Tên cửa hàng: {nameStore}</p>}
+                    {dob && <p className="text-base">Ngày sinh: {dob}</p>}
+                    {address && <p className="text-base">Địa chỉ: {address}</p>}
+                    {phone && <p className="text-base">Số điện thoại: {phone}</p>}
+                    {hometown && <p className="text-base">Quê quán: {hometown}</p>}
                 </div>
             </div>
 
@@ -27,7 +30,7 @@ const ExpertCard = ({ avatar, fullname, dob, hometown, onContactClick }) => {
 
             {/* Nút chức năng */}
             <div className="flex justify-around">
-                <button className="px-4 py-2 bg-green-100 text-green-800 font-semibold rounded hover:bg-green-200">
+                <button onClick={onShowExpertDetail}  className="px-4 py-2 bg-green-100 text-green-800 font-semibold rounded hover:bg-green-200">
                     Chi tiết
                 </button>
                 <button onClick={onContactClick} className="px-4 py-2 bg-green-100 text-green-800 font-semibold rounded hover:bg-green-200">

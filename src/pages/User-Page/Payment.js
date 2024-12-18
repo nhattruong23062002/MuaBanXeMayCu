@@ -26,7 +26,7 @@ const PaymentForm = () => {
     };
 
     const onClickIdentification = (event) => {
-        navigate("/identification");
+        navigate(-1);
     }
 
     const handleSubmit = (e) => {

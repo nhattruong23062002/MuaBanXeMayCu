@@ -16,10 +16,10 @@ function MotoCard({ image, name, year, mileage, price }) {
       />
       <div className="p-4">
         <h3 className="text-lg font-bold mb-1">{name}</h3>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 m-0">
           {year} &nbsp;&nbsp; {mileage}
         </p>
-        <p className="text-[#d59648] font-bold mt-2">{price}</p>
+        <p className="text-[#d59648] font-bold text-lg mt-2 m-0">{price}</p>
       </div>
     </div>
   );

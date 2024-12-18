@@ -19,7 +19,7 @@ const ChatMessage = ({ onBack }) => {
     };
 
     const onClickBackToExpert = (event) => {
-        navigate("/");
+        navigate(-1)
     }
 
     const handleSendMessage = () => {

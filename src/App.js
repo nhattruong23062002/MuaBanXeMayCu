@@ -22,64 +22,28 @@ import UserIdentificationForm from "./pages/User-Page/Identification";
 import PaymentForm from "./pages/User-Page/Payment";
 import Upload from "./pages/User-Page/Upload";
 import ChatMessage from "./components/ChatMessage";
+import ExpertDetailPage from "./pages/User-Page/expertDetail";
+import ListStore from "./pages/User-Page/ListStore";
+import StoreDetailPage from "./pages/User-Page/storeDetail";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <HomePage />
-            </div>
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <div>
-              <LoginForm />
-            </div>
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <div>
-              <RegisterForm />
-            </div>
-          }
-        />
-        <Route
-          path="/detailMoto"
-          element={
-            <div>
-              <DetailMoto />
-            </div>
-          }
-        />
-        <Route
-          path="/account"
-          element={
-            <div>
-              <AccountPage />
-            </div>
-          }
-        />
-        <Route
-          path="/purchased"
-          element={
-            <div>
-              <PurchasedPage />
-            </div>
-          }
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/detailMoto" element={<DetailMoto />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/purchased" element={<PurchasedPage />} />
         <Route path="/listexp" element={<ListExpert />} />
+        <Route path="/listStore" element={<ListStore />} />
         <Route path="/chat" element={<ChatMessage />} />
         <Route path="/identification" element={<UserIdentificationForm />} />
         <Route path="/payment" element={<PaymentForm />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/expertDetail" element={<ExpertDetailPage />} />
+        <Route path="/storeDetail" element={<StoreDetailPage />} />
 
         <Route
           path="/admin/manage-cars"

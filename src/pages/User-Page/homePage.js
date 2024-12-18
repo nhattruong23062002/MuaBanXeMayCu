@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LayoutUser from "../../layout/layoutUser";
 import { FaSearch } from "react-icons/fa";
 import "swiper/css";
@@ -9,6 +9,8 @@ import FilterBar from "../../components/FilterBar";
 import MotoCard from "../../components/MotoCard";
 
 function HomePage() {
+  const [searchTerm, setSearchTerm] = useState(""); 
+
   const bikes = [
     {
       id: 1,
@@ -62,6 +64,11 @@ function HomePage() {
       image: "https://tayamotor.vn/wp-content/uploads/2017/12/negra_0.png",
     },
   ];
+
+  const filteredBikes = bikes.filter((bike) =>
+    bike.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <LayoutUser>
       <div className="max-w-[800px] mx-auto relative bg-white">
@@ -73,6 +80,8 @@ function HomePage() {
               <input
                 type="text"
                 placeholder="Tìm kiếm..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)} 
                 className="w-full py-3 pl-4 pr-12 text-gray-700 border rounded-full focus:outline-none focus:ring-2 focus:ring-[#0e0f2b]"
               />
               <button
@@ -85,20 +94,28 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div className="max-w-[800px] mx-auto px-4 py-14 bg-white rounded-md" style={{ marginTop: "4rem" }}>
+
+      <div
+        className="max-w-[800px] mx-auto px-4 py-14 bg-white rounded-md"
+        style={{ marginTop: "4rem" }}
+      >
         <h2 className="text-2xl font-bold mb-4">Xe chất lượng</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {bikes.map((bike) => (
-            <MotoCard
-              key={bike.id}
-              image={bike.image}
-              name={bike.name}
-              year={bike.year}
-              mileage={bike.mileage}
-              price={bike.price}
-            />
-          ))}
-        </div>
+        {filteredBikes.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {filteredBikes.map((bike) => (
+              <MotoCard
+                key={bike.id}
+                image={bike.image}
+                name={bike.name}
+                year={bike.year}
+                mileage={bike.mileage}
+                price={bike.price}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-500 text-center">Không tìm thấy xe phù hợp.</p>
+        )}
       </div>
     </LayoutUser>
   );

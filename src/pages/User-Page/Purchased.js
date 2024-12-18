@@ -38,15 +38,15 @@ function PurchasedPage() {
 
   return (
     <LayoutUser>
-      <div className="bg-gray-100 min-h-screen p-6 max-w-[800px] mx-auto">
+      <div className="bg-gray-100 min-h-screen p-4 sm:p-6 max-w-[800px] mx-auto">
         <div className="flex items-center mb-4">
           <button
-            className="text-2xl mr-4 cursor-pointer"
+            className="text-xl sm:text-2xl mr-4 cursor-pointer"
             onClick={() => navigate(-1)}
           >
             <IoMdArrowRoundBack />
           </button>
-          <h1 className="text-2xl font-bold">Quản lý xe đã mua</h1>
+          <h1 className="text-lg sm:text-2xl font-bold">Quản lý xe đã mua</h1>
         </div>
 
         <div className="flex border-b-2 mb-6">
@@ -54,7 +54,7 @@ function PurchasedPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`text-lg px-4 py-2 font-medium ${
+              className={`text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2 font-medium ${
                 activeTab === tab.id
                   ? "text-[#d59648] border-b-2 border-[#d59648]"
                   : "text-gray-600"
