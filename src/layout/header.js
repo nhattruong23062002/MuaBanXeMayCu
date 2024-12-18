@@ -7,30 +7,13 @@ import {
 import { FaUserDoctor } from "react-icons/fa6";
 import { MdAddBox } from "react-icons/md";
 import { IoStorefrontSharp } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleShowHome = () => {
-    navigate(`/`);
-  }
-
-  const onClickToExpert = () => {
-    navigate(`/listexp`);
-  }
-
-  const onClickToUpload = () => {
-    navigate(`/upload`);
-  }
-
-  const handleShowAccount = () => {
-    navigate(`/account`);
-  }
-
-  const handleClickShowListStore = () => {
-    navigate(`/listStore`);
-  }
+  const isActive = (path) => location.pathname === path;
   return (
     <div className="bg-[#0e0f2b] text-white py-2">
       <div className="max-w-[800px] mx-auto flex justify-between items-center px-6">
@@ -41,54 +24,84 @@ function Header() {
         </div>
 
         <nav className="flex flex-wrap justify-center space-x-3 sm:space-x-6 md:space-x-14 text-xs sm:text-sm md:text-base font-medium">
-          <div className="flex flex-col items-center group cursor-pointer" onClick={handleShowHome}>
-            <FaHome className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
-            <a
-              href="#"
-              className="text-gray-100 group-hover:text-[#d59648] mt-1 text-[10px] sm:text-xs"
-            >
-              Trang chủ
-            </a>
+          <div
+            className={`flex flex-col items-center group cursor-pointer ${
+              isActive("/") ? "text-[#d59648]" : ""
+            }`}
+            onClick={() => navigate("/")}
+          >
+            <FaHome
+              className={`text-lg sm:text-xl ${
+                isActive("/")
+                  ? "text-[#d59648]"
+                  : "text-gray-100 group-hover:text-[#d59648]"
+              }`}
+            />
+            <span className="mt-1 text-[10px] sm:text-xs">Trang chủ</span>
           </div>
 
-          <div className="flex flex-col items-center group cursor-pointer" onClick={onClickToExpert}>
-            <FaUserDoctor className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
-            <a
-              href="#"
-              className="text-gray-100 group-hover:text-[#d59648] mt-1 text-[10px] sm:text-xs"
-            >
-              Chuyên gia
-            </a>
+          <div
+            className={`flex flex-col items-center group cursor-pointer ${
+              isActive("/listexp") ? "text-[#d59648]" : ""
+            }`}
+            onClick={() => navigate("/listexp")}
+          >
+            <FaUserDoctor
+              className={`text-lg sm:text-xl ${
+                isActive("/listexp")
+                  ? "text-[#d59648]"
+                  : "text-gray-100 group-hover:text-[#d59648]"
+              }`}
+            />
+            <span className="mt-1 text-[10px] sm:text-xs">Chuyên gia</span>
           </div>
 
-          <div className="flex flex-col items-center group cursor-pointer" onClick={onClickToUpload}>
-            <MdAddBox className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
-            <a
-              href="#"
-              className="text-gray-100 group-hover:text-[#d59648] mt-1 text-[10px] sm:text-xs"
-            >
-              Đăng tin
-            </a>
+          <div
+            className={`flex flex-col items-center group cursor-pointer ${
+              isActive("/upload") ? "text-[#d59648]" : ""
+            }`}
+            onClick={() => navigate("/upload")}
+          >
+            <MdAddBox
+              className={`text-lg sm:text-xl ${
+                isActive("/upload")
+                  ? "text-[#d59648]"
+                  : "text-gray-100 group-hover:text-[#d59648]"
+              }`}
+            />
+            <span className="mt-1 text-[10px] sm:text-xs">Đăng tin</span>
           </div>
 
-          <div className="flex flex-col items-center group cursor-pointer" onClick={handleClickShowListStore}>
-            <IoStorefrontSharp className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
-            <a
-              href="#"
-              className="text-gray-100 group-hover:text-[#d59648] mt-1 text-[10px] sm:text-xs"
-            >
-              Cửa hàng
-            </a>
+          <div
+            className={`flex flex-col items-center group cursor-pointer ${
+              isActive("/listStore") ? "text-[#d59648]" : ""
+            }`}
+            onClick={() => navigate("/listStore")}
+          >
+            <IoStorefrontSharp
+              className={`text-lg sm:text-xl ${
+                isActive("/listStore")
+                  ? "text-[#d59648]"
+                  : "text-gray-100 group-hover:text-[#d59648]"
+              }`}
+            />
+            <span className="mt-1 text-[10px] sm:text-xs">Cửa hàng</span>
           </div>
 
-          <div className="flex flex-col items-center group cursor-pointer" onClick={handleShowAccount}>
-            <FaRegUserCircle className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
-            <a
-              href="#"
-              className="text-gray-100 group-hover:text-[#d59648] mt-1 text-[10px] sm:text-xs"
-            >
-              Tài khoản
-            </a>
+          <div
+            className={`flex flex-col items-center group cursor-pointer ${
+              isActive("/account") ? "text-[#d59648]" : ""
+            }`}
+            onClick={() => navigate("/account")}
+          >
+            <FaRegUserCircle
+              className={`text-lg sm:text-xl ${
+                isActive("/account")
+                  ? "text-[#d59648]"
+                  : "text-gray-100 group-hover:text-[#d59648]"
+              }`}
+            />
+            <span className="mt-1 text-[10px] sm:text-xs">Tài khoản</span>
           </div>
         </nav>
         <div className="flex items-center space-x-8"></div>
