@@ -40,7 +40,7 @@ function Header() {
           </span>
         </div>
 
-        <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 md:space-x-14 text-xs sm:text-sm md:text-base font-medium">
+        <nav className="flex flex-wrap justify-center space-x-3 sm:space-x-6 md:space-x-14 text-xs sm:text-sm md:text-base font-medium">
           <div className="flex flex-col items-center group cursor-pointer" onClick={handleShowHome}>
             <FaHome className="text-gray-100 group-hover:text-[#d59648] text-lg sm:text-xl" />
             <a
