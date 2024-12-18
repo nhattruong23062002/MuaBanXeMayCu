@@ -17,20 +17,70 @@ import DetailMoto from "./pages/User-Page/detailMoto";
 import AccountPage from "./pages/User-Page/accountPage";
 import PurchasedPage from "./pages/User-Page/Purchased";
 import AdminLayout from "./layout/layoutAdmin";
+import ListExpert from "./pages/User-Page/ListExpert";
+import UserIdentificationForm from "./pages/User-Page/Identification";
+import PaymentForm from "./pages/User-Page/Payment";
+import Upload from "./pages/User-Page/Upload";
+import ChatMessage from "./components/ChatMessage";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
-        {/* User Pages */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/detailMoto" element={<DetailMoto />} />
-        <Route path="/account" element={<AccountPage />} />
-        <Route path="/purchased" element={<PurchasedPage />} />
+        <Route
+          path="/"
+          element={
+            <div>
+              <HomePage />
+            </div>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <div>
+              <LoginForm />
+            </div>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <div>
+              <RegisterForm />
+            </div>
+          }
+        />
+        <Route
+          path="/detailMoto"
+          element={
+            <div>
+              <DetailMoto />
+            </div>
+          }
+        />
+        <Route
+          path="/account"
+          element={
+            <div>
+              <AccountPage />
+            </div>
+          }
+        />
+        <Route
+          path="/purchased"
+          element={
+            <div>
+              <PurchasedPage />
+            </div>
+          }
+        />
+        <Route path="/listexp" element={<ListExpert />} />
+        <Route path="/chat" element={<ChatMessage />} />
+        <Route path="/identification" element={<UserIdentificationForm />} />
+        <Route path="/payment" element={<PaymentForm />} />
+        <Route path="/upload" element={<Upload />} />
 
-        {/* Admin Pages */}
         <Route
           path="/admin/manage-cars"
           element={
@@ -90,6 +140,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
