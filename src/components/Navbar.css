@@ -1,0 +1,78 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0e0f2b;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+.navbar-left svg {
+  /* Chỉnh sửa phần tử icon */
+  margin-left: 100px;
+  margin-right: 50px; /* Tạo khoảng cách 5px giữa logo và chữ "Trang chủ" */
+}
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 50px;
+}
+
+.nav-links li a {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links li a svg {
+  margin-right: 5px;
+}
+
+.nav-links li a:hover {
+  color: #ff7f00; /* Orange color when hover */
+}
+
+/* Right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.search-bar {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 100px;
+}
+
+.user-icon img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.login-btn {
+  padding: 5px 15px;
+  background-color: #ff7f00; /* Orange color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #e67e00; /* Darker orange on hover */
+}

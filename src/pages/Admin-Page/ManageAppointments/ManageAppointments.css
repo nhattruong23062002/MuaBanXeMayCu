@@ -1,0 +1,166 @@
+/* General */
+.manage-appointments {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #e4d7d7;
+  border-radius: 8px; /* Bo góc nếu cần */
+  margin-right: 200px;
+}
+.manage-appointments h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.filter-section div:first-child {
+  /* Phần chứa các cụm chữ */
+  display: flex;
+  gap: 30px; /* Tăng khoảng cách giữa các span */
+}
+
+.filter-section span {
+  white-space: nowrap; /* Giữ các cụm chữ không bị xuống dòng */
+}
+
+.date-title {
+  text-align: center;
+  color: teal;
+  font-size: 24px;
+}
+
+.appointment-table {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.column {
+  width: 30%;
+  background: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.column h4 {
+  text-align: center;
+  background-color: #ccc;
+  padding: 5px;
+}
+
+.appointment-card {
+  background: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.appointment-card p {
+  margin: 5px 0;
+}
+
+.initials {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-appointment-btn {
+  display: block;
+  width: 100%;
+  background: teal;
+  color: white;
+  border: none;
+  padding: 5px 0;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-appointment-btn:hover {
+  background-color: #006666;
+}
+/* Phần chứa ô tìm kiếm và nút */
+.search-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+/* Ô input tìm kiếm */
+.search-input {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 2px solid #0f0f0f;
+  border-radius: 3px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #0078d7; /* Màu khi focus */
+  box-shadow: 0 0 3px #0078d7;
+}
+
+/* Nút bộ lọc */
+.filter-btn {
+  background-color: #2d73d9;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 2px solid #0f0f0f;
+}
+
+.filter-btn i {
+  font-size: 12px;
+}
+
+/* Nút today và List */
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.today-btn,
+.list-btn {
+  font-size: 12px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+}
+
+.today-btn {
+  background-color: #aca5a5; /* Nút today màu xám */
+  color: black;
+}
+
+.list-btn {
+  background-color: #00bfff; /* Màu xanh dương */
+  color: black;
+}
