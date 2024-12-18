@@ -25,6 +25,7 @@ import ChatMessage from "./components/ChatMessage";
 import ExpertDetailPage from "./pages/User-Page/expertDetail";
 import ListStore from "./pages/User-Page/ListStore";
 import StoreDetailPage from "./pages/User-Page/storeDetail";
+import PurchaseDetailPage from "./pages/User-Page/PurchaseDetail";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
         <Route path="/upload" element={<Upload />} />
         <Route path="/expertDetail" element={<ExpertDetailPage />} />
         <Route path="/storeDetail" element={<StoreDetailPage />} />
+        <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
 
         <Route
           path="/admin/manage-cars"

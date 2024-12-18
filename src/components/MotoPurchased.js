@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import RatingModal from "./RatingModal";
+import { useNavigate } from "react-router-dom";
 
 function MotoPurchased({ car }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navagation = useNavigate();
+
+  const handleShowPurchaseDetail = () => {
+    navagation('/purchaseDetail')
+  }
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-md flex flex-col md:flex-row items-center md:items-start text-sm">
@@ -26,7 +32,7 @@ function MotoPurchased({ car }) {
       <div className="flex flex-col items-center md:items-end mt-4 md:mt-0">
         <p className="text-[#d59648] text-lg font-bold mb-2">{car.price}</p>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-          <button className="bg-[#d59648] text-white px-3 py-1 rounded-md hover:bg-[#b27939] w-full sm:w-auto">
+          <button className="bg-[#d59648] text-white px-3 py-1 rounded-md hover:bg-[#b27939] w-full sm:w-auto" onClick={handleShowPurchaseDetail}>
             Xem chi tiết đơn
           </button>
           <button
