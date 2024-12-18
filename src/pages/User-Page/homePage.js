@@ -7,6 +7,7 @@ import "swiper/css/autoplay";
 import BannerSwiper from "../../components/BannerSwipper";
 import FilterBar from "../../components/FilterBar";
 import MotoCard from "../../components/MotoCard";
+import AdBanner from "../../components/AdBanner";
 
 function HomePage() {
   const [searchTerm, setSearchTerm] = useState(""); 
@@ -71,6 +72,7 @@ function HomePage() {
 
   return (
     <LayoutUser>
+      <AdBanner/>
       <div className="max-w-[800px] mx-auto relative bg-white">
         <div className="mb-8 relative">
           <BannerSwiper />
