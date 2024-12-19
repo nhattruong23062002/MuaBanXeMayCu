@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HandleComplaints.css";
 import {
   FaTrashAlt,
@@ -45,6 +45,23 @@ const HandleComplaints = () => {
       link: "https://user.com/",
     },
   ];
+  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
+  const [filteredData, setFilteredData] = useState(complaints); // Lưu dữ liệu được lọc
+
+  // Xử lý tìm kiếm
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    // Lọc dữ liệu dựa trên ID và tiêu đề
+    const filtered = complaints.filter(
+      (item) =>
+        item.time.toLowerCase().includes(value) || // Lọc theo ID
+        item.name.toLowerCase().includes(value) // Lọc theo tiêu đề
+    );
+
+    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
+  };
 
   return (
     <div className="handle-complaints-container">
@@ -74,6 +91,8 @@ const HandleComplaints = () => {
           type="text"
           placeholder="Search Users"
           className="search-input-handle"
+          value={searchTerm}
+          onChange={handleSearch}
         />
         <button className="delete-btn-handle">
           <FaTrashAlt /> Xóa
@@ -101,7 +120,7 @@ const HandleComplaints = () => {
           </tr>
         </thead>
         <tbody>
-          {complaints.map((complaint, index) => (
+          {filteredData.map((complaint, index) => (
             <tr key={index}>
               <td>
                 <input type="checkbox" />

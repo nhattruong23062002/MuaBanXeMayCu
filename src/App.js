@@ -9,6 +9,7 @@ import ManagePosts from "./pages/Admin-Page/ManagePosts";
 import ManageUsers from "./pages/Admin-Page/ManageUsers";
 import HandleComplaints from "./pages/Admin-Page/HandleComplaints";
 import ManageExperts from "./pages/Admin-Page/ManageExperts";
+import EditPost from "./pages/Admin-Page/ManageCars/EditPost";
 
 import LoginForm from "./pages/User-Page/login";
 import RegisterForm from "./pages/User-Page/register";
@@ -86,6 +87,14 @@ const App = () => {
           element={
             <AdminLayout>
               <ManageCars />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/edit-post/:id"
+          element={
+            <AdminLayout>
+              <EditPost />
             </AdminLayout>
           }
         />

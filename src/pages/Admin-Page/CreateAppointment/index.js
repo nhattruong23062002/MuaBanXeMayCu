@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import "./CreateAppointment.css";
-const CreateAppointment = () => {
-  const [certificateImage, setCertificateImage] = useState(null); // State lưu trữ file ảnh
 
-  // Xử lý sự kiện khi người dùng chọn file
+const CreateAppointment = () => {
+  const [certificateImages, setCertificateImages] = useState([]); // State lưu trữ danh sách ảnh
+
+  // Xử lý khi chọn ảnh
   const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setCertificateImage(URL.createObjectURL(file)); // Tạo URL để xem trước ảnh
-    }
+    const files = Array.from(event.target.files); // Lấy danh sách file được chọn
+    const newImages = files.map((file) => URL.createObjectURL(file)); // Tạo URL cho từng ảnh
+    setCertificateImages([...certificateImages, ...newImages]); // Cập nhật danh sách ảnh
   };
-  // Xử lý xóa ảnh
-  const handleImageRemove = () => {
-    setCertificateImage(null); // Reset state ảnh về null
+
+  // Xử lý khi xóa ảnh
+  const handleImageRemove = (indexToRemove) => {
+    const updatedImages = certificateImages.filter(
+      (_, index) => index !== indexToRemove
+    );
+    setCertificateImages(updatedImages); // Cập nhật danh sách ảnh sau khi xóa
   };
+
   return (
     <div className="create-appointment-container">
       <h2>Tạo Lịch trình chuyên gia kiểm tra xe </h2>
@@ -39,25 +44,34 @@ const CreateAppointment = () => {
           <input type="text" placeholder="Nhập kinh nghiệm" />
         </div>
 
-        {/* Upload ảnh cho Giấy tờ chứng chỉ */}
+        {/* Upload nhiều ảnh */}
         <div className="form-group">
           <label>Giấy tờ chứng chỉ:</label>
-          <input type="file" accept="image/*" onChange={handleImageUpload} />
+          <input
+            type="file"
+            accept="image/*"
+            multiple // Cho phép chọn nhiều file
+            onChange={handleImageUpload}
+          />
         </div>
 
         {/* Hiển thị ảnh xem trước */}
-        {certificateImage && (
+        {certificateImages.length > 0 && (
           <div className="image-preview">
             <p>Ảnh chứng chỉ:</p>
-            <div className="image-container">
-              <img src={certificateImage} alt="Chứng chỉ" />
-              <button
-                type="button"
-                className="remove-btn"
-                onClick={handleImageRemove}
-              >
-                X
-              </button>
+            <div className="image-grid">
+              {certificateImages.map((image, index) => (
+                <div key={index} className="image-container">
+                  <img src={image} alt={`Chứng chỉ ${index + 1}`} />
+                  <button
+                    type="button"
+                    className="remove-btn"
+                    onClick={() => handleImageRemove(index)}
+                  >
+                    X
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
         )}

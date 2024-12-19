@@ -209,8 +209,14 @@ p svg {
 .image-nav-button-left {
   left: 10px; /* Căn nút vào bên trái ảnh */
 }
+.image-nav-button-left:hover {
+  background-color: rgb(83, 83, 78);
+}
 
 /* Nút chuyển phải */
 .image-nav-button-right {
   right: 10px; /* Căn nút vào bên phải ảnh */
+}
+.image-nav-button-right:hover {
+  background-color: rgb(83, 83, 78);
 }

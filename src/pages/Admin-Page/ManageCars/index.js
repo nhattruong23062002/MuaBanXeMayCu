@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ManageCars.css"; // Đảm bảo có một file CSS để style các thành phần
 import {
   FaMapMarkerAlt,
@@ -7,9 +8,10 @@ import {
   FaArrowRight,
   FaArrowLeft,
 } from "react-icons/fa";
-
+import HidePostModal from "./HidePostModal";
 // Giả sử bạn có thông tin xe, ví dụ như sau:
 const carInfo = {
+  id: 1,
   name: "Xe Vario mới năm 2024",
   price: "23.000.000 VND",
   condition: "Hết bảo hành",
@@ -41,6 +43,27 @@ const ManageCars = () => {
   // Hàm để chuyển ảnh trước
   const prevImage = () => {
     setCurrentImage(carInfo.image1);
+  };
+  const navigate = useNavigate();
+
+  const handleEdit = () => {
+    navigate(`/edit-post/${carInfo.id}`); // Chuyển đến trang chỉnh sửa
+  };
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedPost, setSelectedPost] = useState(null);
+  const handleOpenModal = (post) => {
+    setSelectedPost(post);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedPost(null);
+  };
+
+  const handleConfirmHide = (reason) => {
+    console.log(`Ẩn tin "${selectedPost.title}" với lý do: ${reason}`);
+    setModalOpen(false);
   };
 
   return (
@@ -98,11 +121,23 @@ const ManageCars = () => {
           </p>
 
           <div className="button-container">
-            <button className="btn-update">
+            <button onClick={handleEdit} className="btn-update">
               <FaPen style={{ marginRight: "5px" }} />
               Sửa tin
             </button>
-            <button className="btn-sell">Đã bán/Ẩn tin</button>
+            <button
+              onClick={() => handleOpenModal(carInfo)}
+              className="btn-sell"
+            >
+              Đã bán/Ẩn tin
+            </button>
+            {/* Modal Ẩn Tin */}
+            <HidePostModal
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              onConfirm={handleConfirmHide}
+              postTitle={selectedPost?.title || ""}
+            />
           </div>
 
           <div className="user-info">

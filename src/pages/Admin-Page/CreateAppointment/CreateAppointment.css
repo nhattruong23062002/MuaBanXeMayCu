@@ -84,28 +84,27 @@
 /* Hiển thị ảnh xem trước */
 .image-preview {
   margin-top: 15px;
-  text-align: left; /* Căn trái khung xem trước */
-  position: relative; /* Đảm bảo vùng chứa ảnh là relative */
-  display: inline-block; /* Không chiếm hết chiều ngang */
-  width: 65%; /* Căn chỉnh ngang với input bên trên */
 }
 
-/* Khung chứa ảnh và nút X */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .image-container {
-  position: relative; /* Đặt làm vùng chứa để nút X nằm đúng chỗ */
-  display: inline-block;
-  width: 100%; /* Đảm bảo không lệch kích thước */
+  position: relative;
+  width: 100px;
+  height: 100px;
 }
 
-/* Ảnh xem trước */
-.image-preview img {
-  width: 50%;
-  height: 150px;
+.image-container img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid #ccc;
   border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 /* Nút X nằm trong khung ảnh */
 .remove-btn {
   position: absolute;

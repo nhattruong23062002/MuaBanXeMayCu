@@ -55,6 +55,24 @@ const ManagePosts = () => {
     },
   ];
   const [selectedOption, setSelectedOption] = useState(""); // Lưu lựa chọn người dùng
+  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
+  const [filteredData, setFilteredData] = useState(posts); // Lưu dữ liệu được lọc
+
+  // Xử lý tìm kiếm
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    // Lọc dữ liệu dựa trên ID và tiêu đề
+    const filtered = posts.filter(
+      (item) =>
+        String(item.id).toLowerCase().includes(value) || // Lọc theo ID
+        item.title.toLowerCase().includes(value) || // Lọc theo tiêu đề
+        item.location.toLowerCase().includes(value)
+    );
+
+    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
+  };
 
   // Dữ liệu danh mục
   const categories = [
@@ -101,7 +119,12 @@ const ManagePosts = () => {
 
       {/* Thanh tìm kiếm và bộ lọc */}
       <div className="filter-section">
-        <input type="text" placeholder="nhập tiêu đề hoặc ID" />
+        <input
+          type="text"
+          placeholder="nhập tiêu đề hoặc ID"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
         <select
           value={selectedOption}
           onChange={handleChange}
@@ -145,7 +168,7 @@ const ManagePosts = () => {
           </tr>
         </thead>
         <tbody>
-          {posts.map((post) => (
+          {filteredData.map((post) => (
             <tr key={post.id}>
               <td>
                 <input className="id-icon" type="checkbox" />

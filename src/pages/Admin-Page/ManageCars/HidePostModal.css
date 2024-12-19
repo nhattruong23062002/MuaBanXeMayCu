@@ -1,0 +1,94 @@
+/* Nền mờ phía sau Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Container Modal */
+.modal-container {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-container h2 {
+  display: flex;
+  height: 48px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px 12px 0 0;
+  color: #f8f7f5; /* Màu vàng nhạt */
+  background-color: #f39c12;
+  margin-bottom: 100px;
+}
+
+.modal-container p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.reason-instruction {
+  font-weight: bold;
+  color: rgb(10, 10, 10);
+  margin-top: 5px; /* Khoảng cách phía trên đoạn văn */
+}
+.modal-container form label {
+  display: flex; /* Dùng Flexbox để căn chỉnh */
+  align-items: center; /* Đảm bảo nút radio và chữ thẳng hàng theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa nút radio và chữ */
+  margin-bottom: 12px; /* Khoảng cách giữa các dòng */
+  font-size: 14px; /* Kích thước chữ */
+  cursor: pointer; /* Thêm con trỏ cho label */
+}
+
+.modal-container form input[type="radio"] {
+  margin: 0; /* Loại bỏ margin mặc định */
+  width: 16px; /* Đặt kích thước cụ thể cho radio button */
+  height: 16px;
+  cursor: pointer; /* Thêm con trỏ khi hover */
+}
+
+/* Nút hành động */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background: #f5f5f5;
+}
+
+.confirm-button {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background: darkorange;
+}
