@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LayoutUser from '../../layout/layoutUser';
+import { FaArrowLeft } from 'react-icons/fa';
 
 
 const PaymentForm = () => {
@@ -26,7 +27,11 @@ const PaymentForm = () => {
     };
 
     const onClickIdentification = (event) => {
-        navigate(-1);
+        navigate("/identification");
+    }
+
+    const onBackToHome = (event) => {
+        navigate("/")
     }
 
     const handleSubmit = (e) => {
@@ -38,30 +43,20 @@ const PaymentForm = () => {
         <LayoutUser>
             <div className="min-h-screen bg-gray-100">
                 {/* Payment Form */}
-                <div className="flex justify-center items-start py-10">
-                    <div className="w-full max-w-4xl p-8 bg-white rounded-xl shadow-lg space-y-8 relative">
-                        {/* Button chuyển hướng */}
-                        <button
-                            className="absolute top-4 left-4 bg-white text-blue-500 p-2 rounded-full shadow hover:bg-blue-200 transition duration-300"
-                            onClick={(onClickIdentification)}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-4 h-4"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M15 19l-7-7 7-7"
-                                />
-                            </svg>
-                        </button>
+                <div className="flex justify-center items-start">
+                    <div className="w-[800px] p-8 bg-gray-100 rounded-xl shadow-lg space-y-4 relative">
+                        <hr className="border-t border-gray-400 w-full" />
+                        <div className="flex justify-start items-center space-x-4">
+                            {/* Nút chuyển hướng */}
+                            <button onClick={onBackToHome} className="bg-white text-blue-500 p-2 rounded-full shadow hover:bg-blue-200 transition duration-300">
+                                <FaArrowLeft />
+                            </button>
+                            {/* Dòng chữ */}
+                            <span className="text-base font-semibold text-gray-500">Thông tin thanh toán</span>
+                        </div>
+                        <hr className="my-4 border-t border-gray-400 w-full" />
                         {/* Order Information */}
-                        <div className="mb-6 bg-gray-200 p-6 rounded-lg shadow-md">
+                        <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
                             <h2 className="text-lg font-semibold text-gray-800 mb-4">Thông tin đơn hàng</h2>
                             <p className="text-lg font-semibold text-gray-800 mb-4 text-right">ID: 1</p>
                             <div className="border-b pb-4">
@@ -103,7 +98,7 @@ const PaymentForm = () => {
                         </div>
 
                         {/* Customer Information */}
-                        <div className="bg-blue-100 p-6 rounded-lg shadow-md mb-6 relative text-left">
+                        <div className="bg-white p-6 rounded-lg shadow-md mb-6 relative text-left">
                             <h2 className="text-lg font-semibold text-gray-800 mb-4 ">
                                 Thông tin khách hàng
                             </h2>
@@ -120,7 +115,7 @@ const PaymentForm = () => {
                             </div>
                             {/* Button chuyển hướng */}
                             <button
-                                className="absolute top-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow hover:bg-blue-600 transition duration-300"
+                                className="absolute top-4 right-4 bg-blue-300 text-white p-2 rounded-full shadow hover:bg-blue-500 transition duration-300"
                                 onClick={(onClickIdentification)}
                             >
                                 <svg
@@ -138,10 +133,21 @@ const PaymentForm = () => {
                                     />
                                 </svg>
                             </button>
+                            <div className="bg-[#DAF4F6] p-4 rounded-md mt-4 shadow-md">
+                                <p className="text-base font-bold pb-6 text-gray-700 mb-2">
+                                    Vui lòng định danh tài khoản để hoàn tất thủ tục mua bán xe
+                                </p>
+                                <button
+                                    className="bg-[#00BCC3] text-white px-4 py-2 rounded shadow hover:bg-[#DAF4F6] transition duration-300 font-medium"
+                                    onClick={onClickIdentification}
+                                >
+                                    Định Danh
+                                </button>
+                            </div>
                         </div>
 
                         {/* Payment Method */}
-                        <div className="mb-6 bg-green-100 p-6 rounded-lg shadow-md text-lg text-left">
+                        <div className="mb-6 bg-white p-6 rounded-lg shadow-md text-lg text-left">
                             <h2 className="text-lg font-semibold text-gray-800 mb-4">Phương thức thanh toán</h2>
                             <div className="space-y-4">
                                 <div>

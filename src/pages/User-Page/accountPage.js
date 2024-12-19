@@ -6,6 +6,7 @@ import {
   FaHeart,
   FaRegHeart,
 } from "react-icons/fa";
+import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { FaRegMessage } from "react-icons/fa6";
 import LayoutUser from "../../layout/layoutUser";
 import { useNavigate } from "react-router-dom";
@@ -24,6 +25,9 @@ function AccountPage() {
   }
   const handleShowListSender = () => {
     navigate(`/listSender`); 
+  }
+  const handleShowIdent = () => {
+    navigate(`/identification`); 
   }
   return (
     <LayoutUser>
@@ -59,6 +63,11 @@ function AccountPage() {
           <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]" onClick={handleShowListSender}>
             <FaRegMessage className="text-2xl text-[#00a0e9]" />
             <span className="text-lg font-medium">Tin nhắn</span>
+          </li>
+
+          <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]" onClick={handleShowIdent}>
+            <BsCreditCard2FrontFill className="text-2xl text-[#00a0e9]" />
+            <span className="text-lg font-medium">Định danh tài khoản</span>
           </li>
 
           <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]">
