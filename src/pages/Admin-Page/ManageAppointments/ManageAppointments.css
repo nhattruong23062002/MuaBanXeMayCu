@@ -5,7 +5,7 @@
   align-items: center;
   text-align: center;
   padding: 20px;
-  background-color: #e4d7d7;
+  background-color: #f8f8ff;
   border-radius: 8px; /* Bo góc nếu cần */
   margin-right: 200px;
 }
@@ -52,7 +52,17 @@
 
 .column h4 {
   text-align: center;
-  background-color: #ccc;
+  background-color: #0a93ee;
+  padding: 5px;
+}
+.column h5 {
+  text-align: center;
+  background-color: #f7f307;
+  padding: 5px;
+}
+.column h6 {
+  text-align: center;
+  background-color: #08f313;
   padding: 5px;
 }
 
@@ -105,10 +115,13 @@
   align-items: center;
   gap: 10px; /* Khoảng cách giữa các phần tử */
 }
+/* Ô input tìm kiếm có icon */
+.search-input-wrapper {
+  position: relative;
+}
 
-/* Ô input tìm kiếm */
 .search-input {
-  padding: 5px 10px;
+  padding: 6px 10px 6px 30px; /* Dành khoảng trống cho icon */
   font-size: 14px;
   border: 2px solid #0f0f0f;
   border-radius: 3px;
@@ -116,12 +129,20 @@
 }
 
 .search-input:focus {
-  border-color: #0078d7; /* Màu khi focus */
+  border-color: #0078d7;
   box-shadow: 0 0 3px #0078d7;
 }
 
+.search-input-wrapper .icon {
+  position: absolute;
+  right: 10px; /* Đặt icon trong input */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 14px;
+}
 /* Nút bộ lọc */
-.filter-btn {
+.filters-btn {
   background-color: #2d73d9;
   color: white;
   border: none;
@@ -134,11 +155,9 @@
   cursor: pointer;
   border: 2px solid #0f0f0f;
 }
-
-.filter-btn i {
-  font-size: 12px;
+.filters-btn:hover {
+  background-color: #054070;
 }
-
 /* Nút today và List */
 .button-group {
   display: flex;

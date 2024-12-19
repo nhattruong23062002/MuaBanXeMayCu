@@ -8,7 +8,8 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <h2 className="sidebar-title">
-        <FaAlignJustify size={20} /> Quản lý của admin
+        <FaAlignJustify size={20} />
+        Quản lý của admin
       </h2>
       <ul className="sidebar-links">
         <li>

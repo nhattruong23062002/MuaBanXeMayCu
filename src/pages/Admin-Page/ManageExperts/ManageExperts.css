@@ -1,0 +1,165 @@
+/* Container chính */
+.manage-experts-container {
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8ff;
+  border-radius: 8px; /* Bo góc nếu cần */
+  margin-right: 200px;
+}
+
+/* Header */
+.manage-experts-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.manage-experts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.manage-experts-add-user-btn {
+  display: flex;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.manage-experts-add-user-btn:hover {
+  background-color: #2980b9;
+}
+.manage-experts-add-user-btn svg {
+  margin: 3px 4px;
+}
+
+/* Summary Cards */
+.manage-experts-summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.manage-experts-card {
+  width: 23%;
+  background-color: #ebe0e0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.manage-experts-card p {
+  font-size: 30px;
+  color: #1a98be;
+  font-weight: bold;
+}
+
+.manage-experts-card h3 {
+  margin: 10px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+.manage-experts-card span {
+  font-size: 15px;
+  font-weight: normal;
+}
+/* Actions */
+/* Container chứa thanh tìm kiếm và các nút */
+.manage-experts-actions {
+  display: flex; /* Hiển thị các phần tử trên cùng một hàng */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Thanh tìm kiếm */
+.manage-experts-search-input {
+  flex-grow: 1; /* Cho phép thanh tìm kiếm mở rộng hết phần còn lại */
+  max-width: 1000px; /* Giới hạn chiều rộng tối đa */
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+.manage-experts-delete-btn,
+.manage-experts-export-btn,
+.manage-experts-filter-btn {
+  display: flex;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.manage-experts-delete-btn {
+  background-color: #e74c3c;
+}
+.manage-experts-delete-btn:hover {
+  background-color: #9e1b0c;
+}
+.btn-experts-icon {
+  margin: 5px;
+}
+
+.manage-experts-export-btn {
+  background-color: #1abc9c;
+}
+.manage-experts-export-btn:hover {
+  background-color: #045746;
+}
+.manage-experts-filter-btn {
+  background-color: #f39c12;
+}
+.manage-experts-filter-btn:hover {
+  background-color: #805105;
+}
+
+/* Table */
+.manage-experts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.manage-experts-table th,
+.manage-experts-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+.manage-experts-table th {
+  background-color: #f4f4f4;
+}
+.manage-experts-status-active {
+  color: green;
+}
+
+.manage-experts-status-inactive {
+  color: gray;
+}
+
+.manage-experts-edit-btn {
+  display: flex;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.manage-experts-edit-btn svg {
+  margin: 5px;
+}
+.manage-experts-edit-btn:hover {
+  background-color: #2980b9;
+}

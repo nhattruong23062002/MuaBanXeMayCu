@@ -36,7 +36,7 @@ const ManageAppointments = () => {
               className="search-input"
             />
           </div>
-          <button className="filter-btn">
+          <button className="filters-btn">
             <FaFilter className="icon" />
             Hiển thị bộ lọc
           </button>
