@@ -27,6 +27,7 @@ import StoreDetailPage from "./pages/User-Page/storeDetail";
 import PurchaseDetailPage from "./pages/User-Page/PurchaseDetail";
 import SellPage from "./pages/User-Page/ManagerSell";
 import PostDetail from "./pages/User-Page/postDetail";
+import MessageList from "./pages/User-Page/ListSender";
 
 const App = () => {
   return (
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="/storeDetail" element={<StoreDetailPage />} />
         <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
         <Route path="/postDetail" element={<PostDetail />} />
+        <Route path="/listSender" element={<MessageList />} />
 
         <Route
           path="/admin/manage-appointments"
