@@ -18,7 +18,7 @@ function Header() {
     <div className="bg-[#0e0f2b] text-white py-2">
       <div className="max-w-[800px] mx-auto flex justify-between items-center px-6">
         <div className="flex items-center space-x-2">
-          <span className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl">
+          <span className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl" onClick={() => navigate("/")}>
             <FaMotorcycle />
           </span>
         </div>
