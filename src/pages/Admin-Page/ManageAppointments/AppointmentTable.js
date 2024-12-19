@@ -28,7 +28,7 @@ const AppointmentTable = () => {
 
       {/* Cột Khách Đang Chờ */}
       <div className="column">
-        <h4>Khách đang chờ</h4>
+        <h5>Khách đang chờ</h5>
         <AppointmentCard
           id="25647"
           name="Quốc Nga"
@@ -50,7 +50,7 @@ const AppointmentTable = () => {
 
       {/* Cột Khách Hoàn Thành */}
       <div className="column">
-        <h4>Khách hoàn thành</h4>
+        <h6>Khách hoàn thành</h6>
         <AppointmentCard
           id="11233"
           name="Giang Mai"

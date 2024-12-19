@@ -23,13 +23,13 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="/experts">
+            <a href="/listexp">
               <FaAccessibleIcon size={20} />
               Chuyên gia
             </a>
           </li>
           <li>
-            <a href="/post">
+            <a href="/upload">
               <FaPen size={20} />
               Đăng tin
             </a>
@@ -45,7 +45,10 @@ const Navbar = () => {
       <div className="navbar-right">
         <input type="text" className="search-bar" placeholder="Tìm kiếm..." />
         <div className="user-icon">
-          <img src="/path-to-user-icon.png" alt="User" />
+          <img
+            src="https://kenh14cdn.com/203336854389633024/2024/12/10/img6508jpg-1591784578-15917845-6209-7466-15917848032-1733854484177-17338544927331380039156.jpg"
+            alt="User"
+          />
         </div>
         <button className="login-btn">Login/Register</button>
       </div>

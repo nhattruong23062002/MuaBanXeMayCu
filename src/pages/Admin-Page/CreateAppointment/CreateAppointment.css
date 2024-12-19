@@ -1,0 +1,150 @@
+/* Container chính */
+.create-appointment-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-left: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f8f8ff;
+  font-family: Arial, sans-serif;
+}
+
+/* Tiêu đề chính */
+.create-appointment-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Form nhóm */
+.appointment-form .form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.appointment-form label {
+  width: 30%;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.appointment-form input {
+  width: 65%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.appointment-form input:focus {
+  border-color: #0078d7;
+  box-shadow: 0 0 3px #0078d7;
+}
+
+/* Thời gian trống */
+.time-slots {
+  margin-top: 20px;
+}
+
+.time-slots label {
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.time-options {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.time-options span {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.time-options span:hover {
+  background-color: #ddd;
+}
+/* Hiển thị ảnh xem trước */
+.image-preview {
+  margin-top: 15px;
+  text-align: left; /* Căn trái khung xem trước */
+  position: relative; /* Đảm bảo vùng chứa ảnh là relative */
+  display: inline-block; /* Không chiếm hết chiều ngang */
+  width: 65%; /* Căn chỉnh ngang với input bên trên */
+}
+
+/* Khung chứa ảnh và nút X */
+.image-container {
+  position: relative; /* Đặt làm vùng chứa để nút X nằm đúng chỗ */
+  display: inline-block;
+  width: 100%; /* Đảm bảo không lệch kích thước */
+}
+
+/* Ảnh xem trước */
+.image-preview img {
+  width: 50%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Nút X nằm trong khung ảnh */
+.remove-btn {
+  position: absolute;
+  top: 5px; /* Khoảng cách từ đỉnh ảnh */
+  left: 5px; /* Khoảng cách từ mép phải ảnh */
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.remove-btn:hover {
+  background-color: darkred;
+}
+/* Nút Xác nhận */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #f49c42;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.submit-btn:hover {
+  background-color: #d9842f;
+}
