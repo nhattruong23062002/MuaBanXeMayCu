@@ -19,6 +19,9 @@ function AccountPage() {
   const handleShowPurchased = () => {
     navigate(`/purchased`); 
   }
+  const handleShowSelling = () => {
+    navigate(`/selling`); 
+  }
   return (
     <LayoutUser>
     <div className="max-w-[800px] mx-auto bg-gray-50 min-h-screen shadow-md">
@@ -40,8 +43,8 @@ function AccountPage() {
             <span className="text-lg font-medium">Gian hàng của tôi</span>
           </li>
 
-          <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]">
-            <FaCarSide className="text-2xl text-[#00a0e9]" />
+          <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]" onClick={handleShowSelling}>
+            <FaCarSide className="text-2xl text-[#00a0e9]"/>
             <span className="text-lg font-medium">Xe đang bán</span>
           </li>
 

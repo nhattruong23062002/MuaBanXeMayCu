@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import ManageCars from "./pages/Admin-Page/ManageCars";
 import ManageAppointments from "./pages/Admin-Page/ManageAppointments";
 import CreateAppointment from "./pages/Admin-Page/CreateAppointment";
 import ManagePosts from "./pages/Admin-Page/ManagePosts";
@@ -15,7 +14,7 @@ import RegisterForm from "./pages/User-Page/register";
 import HomePage from "./pages/User-Page/homePage";
 import DetailMoto from "./pages/User-Page/detailMoto";
 import AccountPage from "./pages/User-Page/accountPage";
-import PurchasedPage from "./pages/User-Page/Purchased";
+import PurchasedPage from "./pages/User-Page/ManagerPurchased";
 import AdminLayout from "./layout/layoutAdmin";
 import ListExpert from "./pages/User-Page/ListExpert";
 import UserIdentificationForm from "./pages/User-Page/Identification";
@@ -26,6 +25,8 @@ import ExpertDetailPage from "./pages/User-Page/expertDetail";
 import ListStore from "./pages/User-Page/ListStore";
 import StoreDetailPage from "./pages/User-Page/storeDetail";
 import PurchaseDetailPage from "./pages/User-Page/PurchaseDetail";
+import SellPage from "./pages/User-Page/ManagerSell";
+import PostDetail from "./pages/User-Page/postDetail";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/detailMoto" element={<DetailMoto />} />
         <Route path="/account" element={<AccountPage />} />
         <Route path="/purchased" element={<PurchasedPage />} />
+        <Route path="/selling" element={<SellPage />} />
         <Route path="/listexp" element={<ListExpert />} />
         <Route path="/listStore" element={<ListStore />} />
         <Route path="/chat" element={<ChatMessage />} />
@@ -46,15 +48,8 @@ const App = () => {
         <Route path="/expertDetail" element={<ExpertDetailPage />} />
         <Route path="/storeDetail" element={<StoreDetailPage />} />
         <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
+        <Route path="/postDetail" element={<PostDetail />} />
 
-        <Route
-          path="/admin/manage-cars"
-          element={
-            <AdminLayout>
-              <ManageCars />
-            </AdminLayout>
-          }
-        />
         <Route
           path="/admin/manage-appointments"
           element={

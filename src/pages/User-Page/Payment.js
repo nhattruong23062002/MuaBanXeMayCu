@@ -39,7 +39,7 @@ const PaymentForm = () => {
             <div className="min-h-screen bg-gray-100">
                 {/* Payment Form */}
                 <div className="flex justify-center items-start py-10">
-                    <div className="w-[800px] p-8 bg-white rounded-xl shadow-lg space-y-8 relative">
+                    <div className="w-full max-w-4xl p-8 bg-white rounded-xl shadow-lg space-y-8 relative">
                         {/* Button chuyển hướng */}
                         <button
                             className="absolute top-4 left-4 bg-white text-blue-500 p-2 rounded-full shadow hover:bg-blue-200 transition duration-300"
