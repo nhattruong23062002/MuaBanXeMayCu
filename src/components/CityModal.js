@@ -43,6 +43,7 @@ const CitySelectModal = ({ isOpen, closeModal, setSelectedCity }) => {
                         />
                     </svg>
                 </button>
+
                 {/* Modal Header */}
                 <div className="p-6 border-b">
                     <h2 className="text-2xl font-semibold text-center">Chọn Tỉnh/Thành Phố</h2>
