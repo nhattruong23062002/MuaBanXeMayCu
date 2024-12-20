@@ -43,10 +43,10 @@
 }
 .text-process {
   text-align: center;
-  margin-left: 100px;
   color: #88cde2;
   font-size: 25px;
   font-weight: bold;
+  justify-content: center;
 }
 .File-icon-success {
   margin-left: 130px;

@@ -68,6 +68,30 @@
 .appointment-card p {
   margin: 5px 0;
 }
+/* Căn chỉnh icon và chữ */
+.appointment-item {
+  display: flex;
+  align-items: center; /* Đảm bảo icon và chữ căn giữa theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa icon và chữ */
+  font-size: 16px; /* Kích thước chữ */
+  margin: 5px 0; /* Khoảng cách giữa các dòng */
+}
+
+/* Định dạng icon */
+.icon-phone {
+  color: #007bff; /* Màu xanh */
+  font-size: 18px;
+}
+
+.icon-status {
+  color: #28a745; /* Màu xanh lá */
+  font-size: 18px;
+}
+
+.icon-time {
+  color: #f39c12; /* Màu cam */
+  font-size: 18px;
+}
 
 .initials {
   position: absolute;
