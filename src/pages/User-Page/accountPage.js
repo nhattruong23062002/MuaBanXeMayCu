@@ -45,11 +45,12 @@ function AccountPage() {
         </h3>
 
         <ul className="space-y-8">
+          {/* 
           <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]">
             <FaStore className="text-2xl text-[#00a0e9]" />
             <span className="text-lg font-medium">Gian hàng của tôi</span>
           </li>
-
+          */}
           <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]" onClick={handleShowSelling}>
             <FaCarSide className="text-2xl text-[#00a0e9]"/>
             <span className="text-lg font-medium">Xe đang bán</span>
