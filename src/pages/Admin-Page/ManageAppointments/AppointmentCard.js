@@ -11,26 +11,23 @@ const AppointmentCard = ({
   status,
 }) => {
   return (
-    <div className="appointment-card">
-      <p>
-        <b>{id}</b> {name}
+    <div className="bg-white shadow-md rounded-lg p-4 mb-4 border border-gray-200">
+      <p className="font-bold text-gray-800 mb-2">
+        <span className="text-blue-500">#{id}</span> {name}
       </p>
-      <p>
-        <FaPhoneAlt style={{ color: "#007bff", marginRight: "5px" }} />{" "}
-        {/* Icon điện thoại */}
-        {phone}
+      <p className="flex items-center text-gray-700 text-lg mb-2">
+        <FaPhoneAlt className="text-blue-500 mr-2" /> {phone}
       </p>
-      <p>
-        <FaInfoCircle style={{ color: "#28a745", marginRight: "5px" }} />{" "}
-        {/* Icon trạng thái */}
-        {status}
+      <p className="flex items-center text-gray-700 text-lg mb-2">
+        <FaInfoCircle className="text-green-500 mr-2" /> {status}
       </p>
-      <p>
-        <FaClock style={{ color: "#f39c12", marginRight: "5px" }} />{" "}
-        {/* Icon thời gian */}
-        {time}
+      <p className="flex items-center text-gray-700 text-lg mb-2">
+        <FaClock className="text-yellow-500 mr-2" /> {time}
       </p>
-      <div className="initials" style={{ backgroundColor: color }}>
+      <div
+        className="w-10 h-10 flex items-center justify-center text-white text-lg font-bold rounded-full mt-4 mx-auto"
+        style={{ backgroundColor: color }}
+      >
         {initials}
       </div>
     </div>

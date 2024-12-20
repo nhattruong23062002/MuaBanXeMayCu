@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./HandleComplaints.css";
 import {
   FaTrashAlt,
   FaFilter,
@@ -10,7 +9,6 @@ import {
 } from "react-icons/fa";
 
 const HandleComplaints = () => {
-  // Dữ liệu mẫu
   const complaints = [
     {
       name: "Lê Văn A",
@@ -45,102 +43,107 @@ const HandleComplaints = () => {
       link: "https://user.com/",
     },
   ];
-  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
-  const [filteredData, setFilteredData] = useState(complaints); // Lưu dữ liệu được lọc
 
-  // Xử lý tìm kiếm
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState(complaints);
+
   const handleSearch = (e) => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
-
-    // Lọc dữ liệu dựa trên ID và tiêu đề
     const filtered = complaints.filter(
       (item) =>
-        item.time.toLowerCase().includes(value) || // Lọc theo ID
-        item.name.toLowerCase().includes(value) // Lọc theo tiêu đề
+        item.time.toLowerCase().includes(value) ||
+        item.name.toLowerCase().includes(value)
     );
-
-    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
+    setFilteredData(filtered || []);
   };
 
   return (
-    <div className="handle-complaints-container">
-      <h2>Danh sách khiếu nại</h2>
+    <div className="p-6 max-w-7xl mx-auto">
+      <h2 className="text-2xl font-bold mb-6">Danh sách khiếu nại</h2>
+
       {/* Summary Cards */}
-      <div className="summary-cards-handle">
-        <div className="cards processing">
-          <FaFileAlt className="File-icon" />
-          <p className="text-process">Đang xử lý</p>
-          <h3>45</h3>
+      <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
+          <FaFileAlt className="text-blue-500 text-4xl mb-2" />
+          <p className="text-blue-500 font-medium">Đang xử lý</p>
+          <h3 className="text-2xl font-bold">45</h3>
         </div>
-        <div className="cards success">
-          <FaFileAlt className="File-icon-success" />
-          <p className="text-process">Thành công</p>
-          <h3>15</h3>
+        <div className="bg-green-100 p-4 rounded-lg flex flex-col items-center">
+          <FaFileAlt className="text-green-500 text-4xl mb-2" />
+          <p className="text-green-500 font-medium">Thành công</p>
+          <h3 className="text-2xl font-bold">15</h3>
         </div>
-        <div className="cards rejected">
-          <FaFileAlt className="File-icon-reject" />
-          <p className="text-process">Từ chối</p>
-          <h3>15</h3>
+        <div className="bg-red-100 p-4 rounded-lg flex flex-col items-center">
+          <FaFileAlt className="text-red-500 text-4xl mb-2" />
+          <p className="text-red-500 font-medium">Từ chối</p>
+          <h3 className="text-2xl font-bold">15</h3>
         </div>
       </div>
 
       {/* Action Section */}
-      <div className="actions-handle">
+      <div className="flex items-center space-x-4 mb-6">
         <input
           type="text"
           placeholder="Search Users"
-          className="search-input-handle"
+          className="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={searchTerm}
           onChange={handleSearch}
         />
-        <button className="delete-btn-handle">
-          <FaTrashAlt /> Xóa
+        <button className="flex items-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
+          <FaTrashAlt className="mr-2" /> Xóa
         </button>
-        <button className="export-btn-handle">Export</button>
-        <button className="filter-btn-handle">
-          <FaFilter /> filter
+        <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
+          Export
+        </button>
+        <button className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+          <FaFilter className="mr-2" /> Filter
         </button>
       </div>
 
       {/* Table */}
-      <table className="complaints-table">
+      <table className="w-full border-collapse border border-gray-200">
         <thead>
-          <tr>
-            <th>
+          <tr className="bg-gray-100">
+            <th className="border border-gray-200 p-2 text-left">
               <input type="checkbox" />
             </th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Time</th>
-            <th>Reason</th>
-            <th>Role</th>
-            <th>Link người bị khiếu nại</th>
-            <th>Actions</th>
+            <th className="border border-gray-200 p-2 text-left">Name</th>
+            <th className="border border-gray-200 p-2 text-left">Email</th>
+            <th className="border border-gray-200 p-2 text-left">Time</th>
+            <th className="border border-gray-200 p-2 text-left">Reason</th>
+            <th className="border border-gray-200 p-2 text-left">Role</th>
+            <th className="border border-gray-200 p-2 text-left">Link người bị khiếu nại</th>
+            <th className="border border-gray-200 p-2 text-left">Actions</th>
           </tr>
         </thead>
         <tbody>
           {filteredData.map((complaint, index) => (
-            <tr key={index}>
-              <td>
+            <tr key={index} className="hover:bg-gray-50">
+              <td className="border border-gray-200 p-2">
                 <input type="checkbox" />
               </td>
-              <td>{complaint.name}</td>
-              <td>{complaint.email}</td>
-              <td>{complaint.time}</td>
-              <td>{complaint.reason}</td>
-              <td>{complaint.role}</td>
-              <td>
-                <a href={complaint.link} target="_blank" rel="noreferrer">
-                  <FaLink /> {complaint.link}
+              <td className="border border-gray-200 p-2">{complaint.name}</td>
+              <td className="border border-gray-200 p-2">{complaint.email}</td>
+              <td className="border border-gray-200 p-2">{complaint.time}</td>
+              <td className="border border-gray-200 p-2">{complaint.reason}</td>
+              <td className="border border-gray-200 p-2">{complaint.role}</td>
+              <td className="border border-gray-200 p-2">
+                <a
+                  href={complaint.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  <FaLink className="inline mr-1" /> {complaint.link}
                 </a>
               </td>
-              <td className="action-buttons-handle">
-                <button className="approve-btn-handle">
-                  <FaCheck className="approve-icon" /> Phê duyệt
+              <td className="border border-gray-200 p-2 space-x-2">
+                <button className="flex items-center px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600">
+                  <FaCheck className="mr-1" /> Phê duyệt
                 </button>
-                <button className="reject-btn-handle">
-                  <FaTimes className="reject-icon" /> Từ chối
+                <button className="flex items-center px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600">
+                  <FaTimes className="mr-1" /> Từ chối
                 </button>
               </td>
             </tr>
