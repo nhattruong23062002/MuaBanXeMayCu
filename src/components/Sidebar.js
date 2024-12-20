@@ -13,9 +13,6 @@ const Sidebar = () => {
       </h2>
       <ul className="sidebar-links">
         <li>
-          <Link to="/admin/manage-cars">Quản lý xe</Link>
-        </li>
-        <li>
           <Link to="/admin/manage-appointments">Quản lý lịch hẹn</Link>
         </li>
         <li>
