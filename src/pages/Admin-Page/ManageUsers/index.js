@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ManageUsers.css";
 import {
   FaTrashAlt,
@@ -45,6 +45,23 @@ const ManageUsers = () => {
       transactions: 2,
     },
   ];
+  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
+  const [filteredData, setFilteredData] = useState(users); // Lưu dữ liệu được lọc
+
+  // Xử lý tìm kiếm
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    // Lọc dữ liệu dựa trên ID và tiêu đề
+    const filtered = users.filter(
+      (item) =>
+        item.city.toLowerCase().includes(value) || // Lọc theo ID
+        item.name.toLowerCase().includes(value) // Lọc theo tiêu đề
+    );
+
+    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
+  };
 
   return (
     <div className="manage-users-container">
@@ -103,7 +120,12 @@ const ManageUsers = () => {
 
       {/* Filter and Actions */}
       <div className="actions-users">
-        <input type="text" placeholder="Search Users" />
+        <input
+          type="text"
+          placeholder="Search Users"
+          value={searchTerm}
+          onChange={handleSearch}
+        />
         <button className="delete-btn-users">
           <FaTrashAlt /> Xóa
         </button>
@@ -132,7 +154,7 @@ const ManageUsers = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, index) => (
+          {filteredData.map((user, index) => (
             <tr key={index}>
               <td>
                 <input type="checkbox" />

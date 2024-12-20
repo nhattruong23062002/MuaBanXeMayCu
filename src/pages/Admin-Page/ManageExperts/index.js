@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ManageExperts.css";
 import {
   FaPlus,
@@ -44,6 +44,24 @@ const ManageExperts = () => {
       reputation: "97%",
     },
   ];
+  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
+  const [filteredData, setFilteredData] = useState(experts); // Lưu dữ liệu được lọc
+
+  // Xử lý tìm kiếm
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    // Lọc dữ liệu dựa trên ID và tiêu đề
+    const filtered = experts.filter(
+      (item) =>
+        item.city.toLowerCase().includes(value) || // Lọc theo ID
+        item.name.toLowerCase().includes(value) || // Lọc theo tiêu đề
+        item.experience.toLowerCase().includes(value)
+    );
+
+    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
+  };
 
   return (
     <div className="manage-experts-container">
@@ -106,6 +124,8 @@ const ManageExperts = () => {
           type="text"
           placeholder="Search Users"
           className="manage-experts-search-input"
+          value={searchTerm}
+          onChange={handleSearch}
         />
         <button className="manage-experts-delete-btn">
           <FaTrashAlt className="btn-experts-icon" /> Xóa
@@ -135,7 +155,7 @@ const ManageExperts = () => {
           </tr>
         </thead>
         <tbody>
-          {experts.map((expert, index) => (
+          {filteredData.map((expert, index) => (
             <tr key={index}>
               <td>
                 <input type="checkbox" />

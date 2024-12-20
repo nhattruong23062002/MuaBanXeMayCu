@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
+import "./../src/styles/App.css";
 
 import ManageAppointments from "./pages/Admin-Page/ManageAppointments";
 import CreateAppointment from "./pages/Admin-Page/CreateAppointment";
@@ -28,6 +28,7 @@ import PurchaseDetailPage from "./pages/User-Page/PurchaseDetail";
 import SellPage from "./pages/User-Page/ManagerSell";
 import PostDetail from "./pages/User-Page/postDetail";
 import MessageList from "./pages/User-Page/ListSender";
+import EditPost from "./pages/User-Page/EditPost";
 
 const App = () => {
   return (
@@ -50,6 +51,7 @@ const App = () => {
         <Route path="/storeDetail" element={<StoreDetailPage />} />
         <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
         <Route path="/postDetail" element={<PostDetail />} />
+        <Route path="/editPost/:id" element={<EditPost />} />
         <Route path="/listSender" element={<MessageList />} />
 
         <Route

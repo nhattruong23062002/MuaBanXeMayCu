@@ -9,6 +9,7 @@ import {
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import LayoutUser from "../../layout/layoutUser";
+import HidePostModal from "../../components/HidePostModal";
 
 const carInfo = {
   name: "Xe Vario mới năm 2024",
@@ -27,12 +28,33 @@ const carInfo = {
 const PostDetail = () => {
   const [currentImage, setCurrentImage] = useState(carInfo.image1);
   const navigate = useNavigate();
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedPost, setSelectedPost] = useState(null);
+  const handleOpenModal = (post) => {
+    setSelectedPost(post);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedPost(null);
+  };
+
+  const handleConfirmHide = (reason) => {
+    alert(`Ẩn tin "${selectedPost.title}" với lý do: ${reason}`);
+    setModalOpen(false);
+  };
 
   const toggleImage = () => {
     setCurrentImage(
       currentImage === carInfo.image1 ? carInfo.image2 : carInfo.image1
     );
   };
+
+  const handleShowEditPost = () => {
+    navigate(`/editPost/1`);
+  };
+
 
   return (
     <LayoutUser>
@@ -100,13 +122,19 @@ const PostDetail = () => {
             </p>
 
             <div className="flex mt-4 space-x-4">
-              <button className="flex items-center px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+              <button className="flex items-center px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600" onClick={handleShowEditPost}>
                 <FaEdit />
                 Sửa tin
               </button>
-              <button className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400">
+              <button className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400" onClick={() => handleOpenModal(carInfo)}>
                 Ẩn tin
               </button>
+              <HidePostModal
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              onConfirm={handleConfirmHide}
+              postTitle={selectedPost?.title || ""}
+            />
             </div>
 
             <div className="mt-6 flex items-center">

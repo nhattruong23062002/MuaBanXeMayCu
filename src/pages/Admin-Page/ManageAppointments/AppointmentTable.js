@@ -1,74 +1,68 @@
 import React from "react";
 import AppointmentCard from "./AppointmentCard";
 
-const AppointmentTable = () => {
+const AppointmentTable = ({ appointments }) => {
+  const getBackgroundColor = (category) => {
+    switch (category) {
+      case "Khách hẹn":
+        return "#f8d7da"; // Màu đỏ nhạt
+      case "Khách đang chờ":
+        return "#fff3cd"; // Màu vàng nhạt
+      case "Khách hoàn thành":
+        return "#d4edda"; // Màu xanh nhạt
+      default:
+        return "#ffffff"; // Màu trắng
+    }
+  };
+  const getTitleBackgroundColor = (category) => {
+    switch (category) {
+      case "Khách hẹn":
+        return "#3498db"; // Màu xanh dương
+      case "Khách đang chờ":
+        return "#f1c40f"; // Màu vàng
+      case "Khách hoàn thành":
+        return "#2ecc71"; // Màu xanh lá
+      default:
+        return "#bdc3c7"; // Màu xám
+    }
+  };
   return (
     <div className="appointment-table">
-      {/* Cột Khách Hẹn */}
-      <div className="column">
-        <h4>Khách hẹn</h4>
-        <AppointmentCard
-          id="10033"
-          name="Anh Kiều"
-          phone="0935647894"
-          time="13:00 - 30 min"
-          initials="AK"
-          color="pink"
-        />
-        <AppointmentCard
-          id="10233"
-          name="Nhật Trường"
-          phone="0926222354"
-          time="15:00 - 30 min"
-          initials="NT"
-          color="purple"
-        />
-        <button className="add-appointment-btn">Xem thêm lịch hẹn</button>
-      </div>
-
-      {/* Cột Khách Đang Chờ */}
-      <div className="column">
-        <h5>Khách đang chờ</h5>
-        <AppointmentCard
-          id="25647"
-          name="Quốc Nga"
-          phone="0935647894"
-          time="9h - 15/12/2024"
-          initials="QN"
-          color="violet"
-        />
-        <AppointmentCard
-          id="25476"
-          name="Thị Bình"
-          phone="0935647894"
-          time="10h - 17/12/2024"
-          initials="AK"
-          color="pink"
-        />
-        <button className="add-appointment-btn">Xem thêm lịch hẹn</button>
-      </div>
-
-      {/* Cột Khách Hoàn Thành */}
-      <div className="column">
-        <h6>Khách hoàn thành</h6>
-        <AppointmentCard
-          id="11233"
-          name="Giang Mai"
-          phone="0935647894"
-          time="9/10/2024"
-          initials="GM"
-          color="lightblue"
-        />
-        <AppointmentCard
-          id="14033"
-          name="Văn Long"
-          phone="0935647894"
-          time="9/9/2024"
-          initials="VL"
-          color="lightgreen"
-        />
-        <button className="add-appointment-btn">Xem thêm lịch hẹn</button>
-      </div>
+      {/* Tách dữ liệu thành các cột dựa trên category */}
+      {["Khách hẹn", "Khách đang chờ", "Khách hoàn thành"].map((category) => (
+        <div
+          className="column"
+          key={category}
+          style={{ backgroundColor: getBackgroundColor(category) }}
+        >
+          <h4
+            style={{
+              backgroundColor: getTitleBackgroundColor(category), // Màu nền tiêu đề
+              color: "white", // Màu chữ trắng
+              padding: "10px",
+              borderRadius: "4px",
+              textAlign: "center",
+            }}
+          >
+            {category}
+          </h4>
+          {appointments
+            .filter((item) => item.category === category)
+            .map((appointment) => (
+              <AppointmentCard
+                key={appointment.id}
+                id={appointment.id}
+                name={appointment.name}
+                phone={appointment.phone}
+                status={appointment.status}
+                time={appointment.time} // Thay đổi nếu có thời gian trong dữ liệu
+                initials={appointment.initials}
+                color={appointment.color}
+              />
+            ))}
+          <button className="add-appointment-btn">Xem thêm lịch hẹn</button>
+        </div>
+      ))}
     </div>
   );
 };
