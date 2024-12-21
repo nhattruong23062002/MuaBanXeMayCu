@@ -45,22 +45,20 @@ const HandleComplaints = () => {
       link: "https://user.com/",
     },
   ];
-  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
-  const [filteredData, setFilteredData] = useState(complaints); // Lưu dữ liệu được lọc
+  const [searchTerm, setSearchTerm] = useState(""); 
+  const [filteredData, setFilteredData] = useState(complaints);
 
-  // Xử lý tìm kiếm
   const handleSearch = (e) => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
 
-    // Lọc dữ liệu dựa trên ID và tiêu đề
     const filtered = complaints.filter(
       (item) =>
-        item.time.toLowerCase().includes(value) || // Lọc theo ID
-        item.name.toLowerCase().includes(value) // Lọc theo tiêu đề
+        item.time.toLowerCase().includes(value) || 
+        item.name.toLowerCase().includes(value) 
     );
 
-    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
+    setFilteredData(filtered || []); 
   };
 
   return (

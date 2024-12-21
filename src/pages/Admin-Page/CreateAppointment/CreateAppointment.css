@@ -10,6 +10,21 @@
   font-family: Arial, sans-serif;
 }
 
+@media (max-width: 768px) {
+  .create-appointment-container {
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-appointment-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+
 /* Tiêu đề chính */
 .create-appointment-container h2 {
   text-align: center;
@@ -17,6 +32,12 @@
   font-size: 24px;
   color: #333;
   font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .create-appointment-container h2 {
+    font-size: 20px;
+  }
 }
 
 /* Form nhóm */
@@ -34,6 +55,21 @@
   color: #333;
 }
 
+@media (max-width: 768px) {
+  .appointment-form label {
+    width: 40%; /* Tăng chiều rộng label */
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-form label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+}
+
+/* Input của form */
 .appointment-form input {
   width: 65%;
   padding: 8px;
@@ -41,6 +77,18 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
+}
+
+@media (max-width: 768px) {
+  .appointment-form input {
+    width: 55%; /* Giảm chiều rộng input */
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-form input {
+    width: 100%;
+  }
 }
 
 .appointment-form input:focus {
@@ -81,6 +129,7 @@
 .time-options span:hover {
   background-color: #ddd;
 }
+
 /* Hiển thị ảnh xem trước */
 .image-preview {
   margin-top: 15px;
@@ -105,6 +154,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 /* Nút X nằm trong khung ảnh */
 .remove-btn {
   position: absolute;
@@ -128,6 +178,7 @@
 .remove-btn:hover {
   background-color: darkred;
 }
+
 /* Nút Xác nhận */
 .submit-btn {
   display: block;
@@ -146,4 +197,11 @@
 
 .submit-btn:hover {
   background-color: #d9842f;
+}
+
+@media (max-width: 480px) {
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
 }

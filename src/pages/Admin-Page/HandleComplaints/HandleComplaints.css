@@ -43,10 +43,10 @@
 }
 .text-process {
   text-align: center;
-  margin-left: 100px;
   color: #88cde2;
   font-size: 25px;
   font-weight: bold;
+  justify-content: center;
 }
 .File-icon-success {
   margin-left: 130px;
@@ -158,4 +158,31 @@
 }
 .reject-btn-handle:hover {
   background-color: #8a2317;
+}
+
+@media (max-width: 768px) {
+  .handle-complaints-container {
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .summary-cards-handle {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .actions-handle {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .complaints-table th,
+  .complaints-table td {
+    padding: 5px;
+  }
 }

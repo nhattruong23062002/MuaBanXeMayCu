@@ -163,3 +163,30 @@
 .manage-experts-edit-btn:hover {
   background-color: #2980b9;
 }
+
+@media (max-width: 768px) {
+  .manage-experts-container {
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .manage-experts-summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manage-experts-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .manage-experts-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .manage-experts-table th,
+  .manage-experts-table td {
+    padding: 5px;
+  }
+}

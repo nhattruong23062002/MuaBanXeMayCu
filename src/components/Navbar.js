@@ -50,7 +50,9 @@ const Navbar = () => {
             alt="User"
           />
         </div>
-        <button className="login-btn">Login/Register</button>
+        <a href="/login">
+          <button className="login-btn">Logout</button>
+        </a>
       </div>
     </nav>
   );
