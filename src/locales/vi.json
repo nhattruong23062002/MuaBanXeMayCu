@@ -424,5 +424,243 @@
     "location": "Địa điểm",
     "img": "Hình ảnh",
     "save": "Lưu thay đổi"
+  },
+  "navbar": {
+    "home": "Trang chủ",
+    "expert": "Chuyên gia",
+    "post": "Đăng tin",
+    "store": "Cửa hàng",
+    "logout": "Đăng xuất",
+    "search": "Tìm kiếm..."
+  },
+  "sidebar": {
+    "title": "Quản lý của admin",
+    "manageAppointments": "Quản lý lịch hẹn",
+    "createAppointment": "Tạo lịch hẹn",
+    "managePosts": "Quản lý bài đăng",
+    "manageUsers": "Quản lý người dùng",
+    "handleComplaints": "Xử lý khiếu nại",
+    "manageExperts": "Quản lý chuyên gia"
+  },
+  "manageAppointments": {
+    "title": "Quản lý lịch hẹn kiểm tra xe",
+    "stats": {
+      "today": "Hôm nay",
+      "pending": "Đang chờ",
+      "processing": "Đang xử lý",
+      "completed": "Hoàn thành"
+    },
+    "searchPlaceholder": "Tìm kiếm lịch hẹn",
+    "filterButton": "Hiển thị bộ lọc",
+    "todayButton": "Hôm nay",
+    "listButton": "Danh sách",
+    "dateTitle": "Ngày 13 tháng 12 năm 2024",
+    "context": {
+      "status": {
+        "needAdvice": "Cần tư vấn mua xe",
+        "depositPaid": "Đã cọc tiền",
+        "consulted": "Đã tư vấn"
+      },
+      "categories": {
+        "scheduled": "Khách hẹn",
+        "waiting": "Khách đang chờ",
+        "completed": "Khách hoàn thành"
+      }
+    },
+    "categories": {
+      "scheduled": "Khách hẹn",
+      "waiting": "Khách đang chờ",
+      "completed": "Khách hoàn thành"
+    },
+    "buttons": {
+      "viewMore": "Xem thêm lịch hẹn"
+    }
+  },
+  "createAppointment": {
+    "title": "Tạo Lịch trình chuyên gia kiểm tra xe",
+    "form": {
+      "name": "Họ và tên:",
+      "namePlaceholder": "Nhập họ và tên",
+      "phone": "SĐT:",
+      "phonePlaceholder": "Nhập số điện thoại",
+      "address": "Địa chỉ:",
+      "addressPlaceholder": "Nhập địa chỉ",
+      "experience": "Kinh nghiệm:",
+      "experiencePlaceholder": "Nhập kinh nghiệm",
+      "certificate": "Giấy tờ chứng chỉ:",
+      "price": "Mức giá:",
+      "pricePlaceholder": "Nhập mức giá",
+      "timeSlots": "Giờ trống lịch:"
+    },
+    "preview": {
+      "title": "Ảnh chứng chỉ:",
+      "removeButton": "X"
+    },
+    "timeOptions": {
+      "slot1": "7:00-8:00",
+      "slot2": "9:00-10:00",
+      "slot3": "13:00-14:00",
+      "slot4": "15:00-16:00"
+    },
+    "submitButton": "Xác nhận tạo lịch"
+  },
+  "managePosts": {
+    "title": "Quản lý bài đăng",
+    "searchPlaceholder": "nhập tiêu đề hoặc ID",
+    "categories": {
+      "default": "Chọn danh mục",
+      "bike": "Xe Máy số",
+      "scooter": "Xe tay ga",
+      "manualBike": "Xe tay côn",
+      "largeBike": "Xe phân khối lớn"
+    },
+    "buttons": {
+      "ok": "OK",
+      "delete": "xóa",
+      "approve": "Phê duyệt"
+    },
+    "tableHeaders": {
+      "id": "ID",
+      "title": "Tiêu đề",
+      "productCode": "Mã Sản phẩm",
+      "type": "Loại xe",
+"price": "Giá bán",
+      "location": "Địa điểm",
+      "image": "Hình ảnh",
+      "actions": "Chức Năng"
+    },
+    "posts": [
+      {
+        "title": "Bán xe máy cũ sirius",
+        "type": "Xe máy",
+        "location": "Đà Nẵng"
+      },
+      {
+        "title": "Bán xe máy cũ SH",
+        "type": "Xe máy",
+        "location": "Hà Nội"
+      },
+      {
+        "title": "Bán xe máy cũ wave",
+        "type": "Xe máy",
+        "location": "Hải Phòng"
+      },
+      {
+        "title": "Bán xe máy cũ Airblack",
+        "type": "Xe máy",
+        "location": "Quảng Nam"
+      },
+      {
+        "title": "Bán xe máy cũ R15",
+        "type": "Xe máy",
+        "location": "Hồ Chí Minh"
+      }
+    ]
+  },
+  "manageUsers": {
+    "title": "Quản lý người dùng",
+    "summaryCards": {
+      "totalUsers": "Tổng số người dùng",
+      "active": "Hoạt động",
+      "newUsers": "Người dùng mới",
+      "inactive": "Không hoạt động"
+    },
+    "actions": {
+      "addUser": "Thêm người dùng",
+      "delete": "Xóa",
+      "export": "Xuất dữ liệu",
+      "filter": "Bộ lọc",
+      "searchPlaceholder": "Tìm kiếm người dùng",
+      "edit": "Chỉnh sửa"
+    },
+    "tableHeaders": {
+      "name": "Tên",
+      "email": "Email",
+      "city": "Thành phố",
+      "status": "Trạng thái",
+      "posts": "Số bài viết",
+      "transactions": "Số giao dịch",
+      "actions": "Hành động"
+    },
+    "status": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "units": {
+      "users": "Người dùng",
+      "posts": "Bài viết",
+      "transactions": "Giao dịch"
+    },
+    "cities": {
+      "daNang": "Đà Nẵng",
+      "haNoi": "Hà Nội",
+      "hue": "Huế",
+      "kontum": "Kontum"
+    }
+  },
+
+  "handleComplaints": {
+    "title": "Danh sách khiếu nại",
+    "status": {
+      "processing": "Đang xử lý",
+      "success": "Thành công",
+      "rejected": "Từ chối"
+    },
+    "actions": {
+      "delete": "Xóa",
+      "export": "Xuất dữ liệu",
+      "filter": "Bộ lọc",
+      "approve": "Phê duyệt",
+      "reject": "Từ chối"
+    },
+    "tableHeaders": {
+      "name": "Tên",
+      "email": "Email",
+      "time": "Thời gian",
+      "reason": "Lý do",
+      "role": "Vai trò",
+      "link": "Liên kết người bị khiếu nại",
+      "actions": "Hành động"
+    },
+    "searchPlaceholder": "Tìm kiếm khiếu nại",
+    "reasons": {
+      "defer": "Đề nghị bảo lưu",
+      "refund": "Đề nghị hoàn tiền"
+    },
+    "roles": {
+      "user": "Người dùng"
+    }
+  },
+  "manageExperts": {
+    "title": "Quản lý chuyên gia",
+    "header": "Chuyên gia",
+    "summary": {
+      "totalUsers": "Tổng Users",
+      "active": "Đang hoạt động",
+      "newUser": "Người dùng mới",
+      "inactive": "Không hoạt động",
+      "users": "người dùng"
+},
+    "statuses": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "actions": {
+      "addUser": "Thêm người dùng",
+      "searchPlaceholder": "Tìm kiếm người dùng",
+      "delete": "Xóa",
+      "export": "Xuất dữ liệu",
+      "filter": "Lọc",
+      "edit": "Chỉnh sửa"
+    },
+    "tableHeaders": {
+      "name": "Tên",
+      "email": "Email",
+      "city": "Thành phố",
+      "status": "Trạng thái",
+      "experience": "Kinh nghiệm",
+      "reputation": "Độ uy tín",
+      "actions": "Hành động"
+    }
   }
 }

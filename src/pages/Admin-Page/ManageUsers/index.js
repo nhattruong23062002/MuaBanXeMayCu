@@ -8,39 +8,42 @@ import {
 } from "react-icons/fa";
 import { IoPersonAddOutline } from "react-icons/io5";
 import { FaPenToSquare } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 const ManageUsers = () => {
+  const { t } = useTranslation("manageUsers"); // Hook để sử dụng bản dịch
+
   // Dữ liệu mẫu
   const users = [
     {
       name: "Lê Văn A",
       email: "A@gmail.com",
-      city: "Đà Nẵng",
-      status: "Active",
+      city: t("cities.daNang"),
+      status: t("status.active"),
       posts: 15,
       transactions: 5,
     },
     {
       name: "Tạ Văn B",
       email: "B@gmail.com",
-      city: "Hà Nội",
-      status: "Unactive",
+      city: t("cities.haNoi"),
+      status: t("status.inactive"),
       posts: 5,
       transactions: 2,
     },
     {
       name: "Lê Hùng",
       email: "Hung@gmail.com",
-      city: "Huế",
-      status: "Active",
+      city: t("cities.hue"),
+      status: t("status.active"),
       posts: 0,
       transactions: 0,
     },
     {
       name: "Trần Đô",
       email: "Do12@gmail.com",
-      city: "Kontum",
-      status: "Active",
+      city: t("cities.kontum"),
+      status: t("status.active"),
       posts: 4,
       transactions: 2,
     },
@@ -53,11 +56,10 @@ const ManageUsers = () => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
 
-    // Lọc dữ liệu dựa trên ID và tiêu đề
     const filtered = users.filter(
       (item) =>
-        item.city.toLowerCase().includes(value) || // Lọc theo ID
-        item.name.toLowerCase().includes(value) // Lọc theo tiêu đề
+        item.city.toLowerCase().includes(value) || // Lọc theo thành phố
+        item.name.toLowerCase().includes(value) // Lọc theo tên
     );
 
     setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
@@ -65,21 +67,21 @@ const ManageUsers = () => {
 
   return (
     <div className="manage-users-container">
-      <h1>Quản lý người dùng</h1>
+      <h1>{t("title")}</h1>
       {/* Header */}
       <div className="header">
-        <h2>Quản lý người dùng</h2>
+        <h2>{t("title")}</h2>
         <button className="add-user-btn">
-          <IoPersonAddOutline /> Add user
+          <IoPersonAddOutline /> {t("actions.addUser")}
         </button>
       </div>
 
       {/* Summary Cards */}
       <div className="summary-cards">
         <div className="card">
-          <p>Tổng Users</p>
+          <p>{t("summaryCards.totalUsers")}</p>
           <h3>
-            45 <span>users</span>
+            45 <span>{t("units.users")}</span>
           </h3>
           <small className="growth-indicator">
             <FaChartLine className="chart-icon" />
@@ -87,9 +89,9 @@ const ManageUsers = () => {
           </small>
         </div>
         <div className="card">
-          <p>Active</p>
+          <p>{t("summaryCards.active")}</p>
           <h3>
-            15 <span>users</span>
+            15 <span>{t("units.users")}</span>
           </h3>
           <small className="growth-indicator">
             <FaChartLine className="chart-icon" />
@@ -97,9 +99,9 @@ const ManageUsers = () => {
           </small>
         </div>
         <div className="card">
-          <p>New User</p>
+          <p>{t("summaryCards.newUsers")}</p>
           <h3>
-            20 <span>users</span>
+            20 <span>{t("units.users")}</span>
           </h3>
           <small className="growth-indicator">
             <FaChartLine className="chart-icon" />
@@ -107,9 +109,9 @@ const ManageUsers = () => {
           </small>
         </div>
         <div className="card">
-          <p>InActive</p>
+          <p>{t("summaryCards.inactive")}</p>
           <h3>
-            5 <span>users</span>
+            5 <span>{t("units.users")}</span>
           </h3>
           <small className="decrease-indicator">
             <FaChartLine className="chart-icon decrease" />
@@ -122,18 +124,18 @@ const ManageUsers = () => {
       <div className="actions-users">
         <input
           type="text"
-          placeholder="Search Users"
+          placeholder={t("actions.searchPlaceholder")}
           value={searchTerm}
           onChange={handleSearch}
         />
         <button className="delete-btn-users">
-          <FaTrashAlt /> Xóa
+          <FaTrashAlt /> {t("actions.delete")}
         </button>
         <button className="export-btn-users">
-          <FaFileExport /> Export
+          <FaFileExport /> {t("actions.export")}
         </button>
         <button className="filter-btn-users">
-          <FaFilter /> filter
+          <FaFilter /> {t("actions.filter")}
         </button>
       </div>
 
@@ -144,13 +146,13 @@ const ManageUsers = () => {
             <th>
               <input type="checkbox" />
             </th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>City</th>
-            <th>Status</th>
-            <th>Số lượng tin</th>
-            <th>Số giao dịch</th>
-            <th>Actions</th>
+            <th>{t("tableHeaders.name")}</th>
+            <th>{t("tableHeaders.email")}</th>
+            <th>{t("tableHeaders.city")}</th>
+            <th>{t("tableHeaders.status")}</th>
+            <th>{t("tableHeaders.posts")}</th>
+            <th>{t("tableHeaders.transactions")}</th>
+            <th>{t("tableHeaders.actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -163,18 +165,23 @@ const ManageUsers = () => {
               <td>{user.email}</td>
               <td>{user.city}</td>
               <td>
-                {user.status === "Active" ? (
+                {user.status === t("status.active") ? (
                   <span className="status-active">●</span>
                 ) : (
                   <span className="status-inactive">●</span>
                 )}
                 {user.status}
               </td>
-              <td>{user.posts} Post</td>
-              <td>{user.transactions} giao dịch</td>
+              <td>
+                {user.posts} {t("units.posts")}
+              </td>
+              <td>
+                {user.transactions} {t("units.transactions")}
+              </td>
               <td>
                 <button className="edit-btn-users">
-                  <FaPenToSquare className="edit-icon-users" /> Edit
+                  <FaPenToSquare className="edit-icon-users" />{" "}
+                  {t("actions.edit")}
                 </button>
               </td>
             </tr>

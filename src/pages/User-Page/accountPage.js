@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  FaCarSide,
-  FaShoppingCart,
-} from "react-icons/fa";
+import { FaCarSide, FaShoppingCart } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { IoLanguageSharp } from "react-icons/io5";
@@ -55,7 +52,9 @@ function AccountPage() {
               {t("login")}
             </h2>
           ) : (
-            <h2 className="text-white text-2xl font-bold ml-4">{t("user_name", { name: "User 1" })}</h2>
+            <h2 className="text-white text-2xl font-bold ml-4">
+              {t("user_name", { name: "User 1" })}
+            </h2>
           )}
         </div>
 
@@ -70,7 +69,9 @@ function AccountPage() {
               onClick={() => navigate(`/selling`)}
             >
               <FaCarSide className="text-2xl text-[#00a0e9]" />
-              <span className="text-lg font-medium">{t("vehicles_on_sale")}</span>
+              <span className="text-lg font-medium">
+                {t("vehicles_on_sale")}
+              </span>
             </li>
 
             <li
@@ -78,7 +79,9 @@ function AccountPage() {
               onClick={() => navigate(`/purchased`)}
             >
               <FaShoppingCart className="text-2xl text-[#00a0e9]" />
-              <span className="text-lg font-medium">{t("vehicles_purchased")}</span>
+              <span className="text-lg font-medium">
+                {t("vehicles_purchased")}
+              </span>
             </li>
 
             <li
@@ -94,7 +97,9 @@ function AccountPage() {
               onClick={() => navigate(`/identification`)}
             >
               <BsCreditCard2FrontFill className="text-2xl text-[#00a0e9]" />
-              <span className="text-lg font-medium">{t("account_verification")}</span>
+              <span className="text-lg font-medium">
+                {t("account_verification")}
+              </span>
             </li>
 
             <li className="flex items-center space-x-4 text-gray-700 relative">

@@ -424,5 +424,238 @@
     "location": "Location",
     "img": "Images",
     "save": "Save Changes"
+  },
+  "navbar": {
+    "home": "Home",
+    "expert": "Experts",
+    "post": "Post",
+    "store": "Store",
+    "logout": "Logout",
+    "search": "Search..."
+  },
+  "sidebar": {
+    "title": "Admin Management",
+    "manageAppointments": "Manage Appointments",
+    "createAppointment": "Create Appointment",
+    "managePosts": "Manage Posts",
+    "manageUsers": "Manage Users",
+    "handleComplaints": "Handle Complaints",
+    "manageExperts": "Manage Experts"
+  },
+  "manageAppointments": {
+    "title": "Manage Appointment Schedules",
+    "stats": {
+      "today": "Today",
+      "pending": "Pending",
+      "processing": "Processing",
+      "completed": "Completed"
+    },
+    "searchPlaceholder": "Search appointments",
+    "filterButton": "Show Filters",
+    "todayButton": "Today",
+    "listButton": "List",
+    "dateTitle": "December 13, 2024",
+    "context": {
+      "status": {
+        "needAdvice": "Need advice to buy a car",
+        "depositPaid": "Deposit paid",
+        "consulted": "Consulted"
+      }
+    },
+    "categories": {
+      "scheduled": "Scheduled",
+      "waiting": "Waiting",
+      "completed": "Completed"
+    },
+    "buttons": {
+      "viewMore": "View more appointments"
+    }
+  },
+  "createAppointment": {
+    "title": "Create Appointment Schedule for Expert",
+    "form": {
+      "name": "Full Name:",
+      "namePlaceholder": "Enter full name",
+      "phone": "Phone:",
+      "phonePlaceholder": "Enter phone number",
+      "address": "Address:",
+      "addressPlaceholder": "Enter address",
+      "experience": "Experience:",
+      "experiencePlaceholder": "Enter experience",
+      "certificate": "Certificate documents:",
+      "price": "Price:",
+      "pricePlaceholder": "Enter price",
+      "timeSlots": "Available time slots:"
+    },
+    "preview": {
+      "title": "Certificate Images:",
+      "removeButton": "X"
+    },
+    "timeOptions": {
+      "slot1": "7:00-8:00",
+      "slot2": "9:00-10:00",
+      "slot3": "13:00-14:00",
+      "slot4": "15:00-16:00"
+    },
+    "submitButton": "Confirm Appointment"
+  },
+  "managePosts": {
+    "title": "Manage Posts",
+    "searchPlaceholder": "Enter title or ID",
+    "categories": {
+      "default": "Select category",
+      "bike": "Motorbike",
+      "scooter": "Scooter",
+      "manualBike": "Manual Bike",
+      "largeBike": "Large Bike"
+    },
+    "buttons": {
+      "ok": "OK",
+      "delete": "Delete",
+      "approve": "Approve"
+    },
+    "tableHeaders": {
+      "id": "ID",
+      "title": "Title",
+      "productCode": "Product Code",
+      "type": "Type",
+      "price": "Price",
+      "location": "Location",
+      "image": "Image",
+      "actions": "Actions"
+    },
+    "posts": [
+      {
+        "title": "Sell used Sirius motorbike",
+        "type": "Motorbike",
+        "location": "Da Nang"
+      },
+      {
+        "title": "Sell used SH motorbike",
+        "type": "Motorbike",
+        "location": "Hanoi"
+      },
+      {
+        "title": "Sell used Wave motorbike",
+        "type": "Motorbike",
+"location": "Hai Phong"
+      },
+      {
+        "title": "Sell used Airblack motorbike",
+        "type": "Motorbike",
+        "location": "Quang Nam"
+      },
+      {
+        "title": "Sell used R15 motorbike",
+        "type": "Motorbike",
+        "location": "Ho Chi Minh City"
+      }
+    ]
+  },
+  "manageUsers": {
+    "title": "Manage Users",
+    "summaryCards": {
+      "totalUsers": "Total Users",
+      "active": "Active",
+      "newUsers": "New Users",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "addUser": "Add User",
+      "delete": "Delete",
+      "export": "Export",
+      "filter": "Filter",
+      "searchPlaceholder": "Search Users",
+      "edit": "Edit"
+    },
+    "tableHeaders": {
+      "name": "Name",
+      "email": "Email",
+      "city": "City",
+      "status": "Status",
+      "posts": "Posts",
+      "transactions": "Transactions",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "units": {
+      "users": "Users",
+      "posts": "Posts",
+      "transactions": "Transactions"
+    },
+    "cities": {
+      "daNang": "Da Nang",
+      "haNoi": "Ha Noi",
+      "hue": "Hue",
+      "kontum": "Kontum"
+    }
+  },
+  "handleComplaints": {
+    "title": "Complaint List",
+    "status": {
+      "processing": "Processing",
+      "success": "Success",
+      "rejected": "Rejected"
+    },
+    "actions": {
+      "delete": "Delete",
+      "export": "Export",
+      "filter": "Filter",
+      "approve": "Approve",
+      "reject": "Reject"
+    },
+    "tableHeaders": {
+      "name": "Name",
+      "email": "Email",
+      "time": "Time",
+      "reason": "Reason",
+      "role": "Role",
+      "link": "Link to Complained User",
+      "actions": "Actions"
+    },
+    "searchPlaceholder": "Search Complaints",
+    "reasons": {
+      "defer": "Request for deferment",
+      "refund": "Request for refund"
+    },
+    "roles": {
+      "user": "User"
+    }
+  },
+
+  "manageExperts": {
+    "title": "Manage Experts",
+    "header": "Experts",
+    "summary": {
+      "totalUsers": "Total Users",
+      "active": "Active",
+      "newUser": "New Users",
+      "inactive": "Inactive",
+      "users": "users"
+    },
+    "statuses": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "addUser": "Add user",
+      "searchPlaceholder": "Search Users",
+      "delete": "Delete",
+      "export": "Export",
+      "filter": "Filter",
+      "edit": "Edit"
+    },
+    "tableHeaders": {
+      "name": "Name",
+      "email": "Email",
+      "city": "City",
+      "status": "Status",
+      "experience": "Experience",
+      "reputation": "Reputation",
+      "actions": "Actions"
+    }
   }
 }

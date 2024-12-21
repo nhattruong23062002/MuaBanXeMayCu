@@ -424,5 +424,242 @@
     "location": "위치",
     "img": "이미지",
     "save": "변경 사항 저장"
+  },
+  "navbar": {
+    "home": "홈",
+    "expert": "전문가",
+    "post": "게시물",
+    "store": "상점",
+    "logout": "로그아웃",
+    "search": "검색..."
+  },
+  "sidebar": {
+    "title": "관리자 관리",
+    "manageAppointments": "약속 관리",
+    "createAppointment": "약속 생성",
+    "managePosts": "게시물 관리",
+    "manageUsers": "사용자 관리",
+    "handleComplaints": "불만 처리",
+    "manageExperts": "전문가 관리"
+  },
+  "manageAppointments": {
+    "title": "예약 일정 관리",
+    "stats": {
+      "today": "오늘",
+      "pending": "대기 중",
+      "processing": "처리 중",
+      "completed": "완료"
+    },
+    "searchPlaceholder": "예약 검색",
+    "filterButton": "필터 표시",
+    "todayButton": "오늘",
+    "listButton": "목록",
+    "dateTitle": "2024년 12월 13일",
+    "context": {
+      "status": {
+        "needAdvice": "차량 구매 조언 필요",
+        "depositPaid": "보증금 지불",
+        "consulted": "상담 완료"
+      },
+      "categories": {
+        "scheduled": "예약됨",
+        "waiting": "대기 중",
+        "completed": "완료됨"
+      }
+    },
+    "categories": {
+      "scheduled": "예약된",
+      "waiting": "대기 중인 고객",
+      "completed": "완료된 고객"
+    },
+    "buttons": {
+      "viewMore": "약속 더 보기"
+    }
+  },
+  "createAppointment": {
+    "title": "전문가 차량 점검 예약 생성",
+    "form": {
+      "name": "이름:",
+      "namePlaceholder": "이름을 입력하세요",
+      "phone": "전화번호:",
+      "phonePlaceholder": "전화번호를 입력하세요",
+      "address": "주소:",
+      "addressPlaceholder": "주소를 입력하세요",
+      "experience": "경험:",
+      "experiencePlaceholder": "경험을 입력하세요",
+      "certificate": "증명서 문서:",
+      "price": "가격:",
+      "pricePlaceholder": "가격을 입력하세요",
+      "timeSlots": "가능한 시간:"
+    },
+    "preview": {
+      "title": "증명서 이미지:",
+      "removeButton": "X"
+    },
+    "timeOptions": {
+      "slot1": "7:00-8:00",
+      "slot2": "9:00-10:00",
+      "slot3": "13:00-14:00",
+      "slot4": "15:00-16:00"
+    },
+    "submitButton": "예약 확인"
+  },
+  "managePosts": {
+    "title": "게시물 관리",
+    "searchPlaceholder": "제목 또는 ID를 입력하세요",
+    "categories": {
+      "default": "카테고리 선택",
+      "bike": "모터바이크",
+      "scooter": "스쿠터",
+      "manualBike": "수동 오토바이",
+      "largeBike": "대형 오토바이"
+    },
+    "buttons": {
+      "ok": "확인",
+      "delete": "삭제",
+      "approve": "승인"
+    },
+    "tableHeaders": {
+      "id": "ID",
+      "title": "제목",
+      "productCode": "상품 코드",
+      "type": "종류",
+      "price": "가격",
+      "location": "위치",
+      "image": "이미지",
+      "actions": "작업"
+    },
+    "posts": [
+      {
+        "title": "중고 시리우스 오토바이 판매",
+"type": "모터바이크",
+        "location": "다낭"
+      },
+      {
+        "title": "중고 SH 오토바이 판매",
+        "type": "모터바이크",
+        "location": "하노이"
+      },
+      {
+        "title": "중고 웨이브 오토바이 판매",
+        "type": "모터바이크",
+        "location": "하이퐁"
+      },
+      {
+        "title": "중고 에어블랙 오토바이 판매",
+        "type": "모터바이크",
+        "location": "꽝남"
+      },
+      {
+        "title": "중고 R15 오토바이 판매",
+        "type": "모터바이크",
+        "location": "호치민시"
+      }
+    ]
+  },
+  "manageUsers": {
+    "title": "사용자 관리",
+    "summaryCards": {
+      "totalUsers": "총 사용자",
+      "active": "활성화",
+      "newUsers": "새로운 사용자",
+      "inactive": "비활성화"
+    },
+    "actions": {
+      "addUser": "사용자 추가",
+      "delete": "삭제",
+      "export": "내보내기",
+      "filter": "필터",
+      "searchPlaceholder": "사용자 검색",
+      "edit": "편집"
+    },
+    "tableHeaders": {
+      "name": "이름",
+      "email": "이메일",
+      "city": "도시",
+      "status": "상태",
+      "posts": "게시물 수",
+      "transactions": "거래 수",
+      "actions": "작업"
+    },
+    "status": {
+      "active": "활성화",
+      "inactive": "비활성화"
+    },
+    "units": {
+      "users": "사용자",
+      "posts": "게시물",
+      "transactions": "거래"
+    },
+    "cities": {
+      "daNang": "다낭",
+      "haNoi": "하노이",
+      "hue": "후에",
+      "kontum": "꽁뚬"
+    }
+  },
+  "handleComplaints": {
+    "title": "불만 목록",
+    "status": {
+      "processing": "처리 중",
+      "success": "성공",
+      "rejected": "거부됨"
+    },
+    "actions": {
+      "delete": "삭제",
+      "export": "내보내기",
+      "filter": "필터",
+      "approve": "승인",
+      "reject": "거부"
+    },
+    "tableHeaders": {
+      "name": "이름",
+      "email": "이메일",
+      "time": "시간",
+      "reason": "사유",
+      "role": "역할",
+      "link": "불만 제기된 사용자 링크",
+      "actions": "작업"
+    },
+    "searchPlaceholder": "불만 검색",
+    "reasons": {
+      "defer": "연기 요청",
+      "refund": "환불 요청"
+    },
+    "roles": {
+      "user": "사용자"
+    }
+  },
+  "manageExperts": {
+    "title": "전문가 관리",
+    "header": "전문가",
+    "summary": {
+      "totalUsers": "총 사용자",
+      "active": "활동 중",
+      "newUser": "신규 사용자",
+      "inactive": "비활성",
+      "users": "사용자"
+    },
+    "statuses": {
+      "active": "활동 중",
+      "inactive": "비활성"
+    },
+    "actions": {
+      "addUser": "사용자 추가",
+      "searchPlaceholder": "사용자 검색",
+      "delete": "삭제",
+      "export": "내보내기",
+      "filter": "필터",
+      "edit": "수정"
+    },
+    "tableHeaders": {
+      "name": "이름",
+      "email": "이메일",
+"city": "도시",
+      "status": "상태",
+      "experience": "경험",
+      "reputation": "신뢰도",
+      "actions": "작업"
+    }
   }
 }
