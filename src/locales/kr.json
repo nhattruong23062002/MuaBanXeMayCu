@@ -199,5 +199,22 @@
     "emailPlaceholder": "이메일을 입력하세요",
     "phonePlaceholder": "전화번호를 입력하세요",
     "addressPlaceholder": "주소를 입력하세요"
+  },
+  "editPost": {
+    "title": "게시물 수정",
+    "nameProduct": "제품 이름",
+    "menu": "카테고리",
+    "option1": "오토바이",
+    "option2": "자동차",
+    "option3": "부품",
+    "price": "가격",
+    "status": "상태",
+    "option4": "새 제품",
+    "option5": "중고",
+    "option6": "보증 기간 종료",
+    "description": "설명",
+    "location": "위치",
+    "img": "이미지",
+    "save": "변경 사항 저장"
   }
 }

@@ -199,5 +199,22 @@
     "emailPlaceholder": "Enter your email",
     "phonePlaceholder": "Enter your phone number",
     "addressPlaceholder": "Enter your address"
+  },
+  "editPost": {
+    "title": "Edit Post",
+    "nameProduct": "Product Name",
+    "menu": "Category",
+    "option1": "Motorbike",
+    "option2": "Car",
+    "option3": "Spare Parts",
+    "price": "Price",
+    "status": "Condition",
+    "option4": "New",
+    "option5": "Used",
+    "option6": "Out of Warranty",
+    "description": "Description",
+    "location": "Location",
+    "img": "Images",
+    "save": "Save Changes"
   }
 }

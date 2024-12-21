@@ -199,5 +199,22 @@
     "emailPlaceholder": "Nhập email của bạn",
     "phonePlaceholder": "Nhập số điện thoại của bạn",
     "addressPlaceholder": "Nhập địa chỉ của bạn"
+  },
+  "editPost": {
+    "title": "Chỉnh sửa bài đăng",
+    "nameProduct": "Tên sản phẩm",
+    "menu": "Danh mục",
+    "option1": "Xe Máy",
+    "option2": "Ô Tô",
+    "option3": "Phụ Tùng",
+    "price": "Giá",
+    "status": "Tình trạng",
+    "option4": "Mới",
+    "option5": "Đã qua sử dụng",
+    "option6": "Hết bảo hành",
+    "description": "Mô tả",
+    "location": "Địa điểm",
+    "img": "Hình ảnh",
+    "save": "Lưu thay đổi"
   }
 }
