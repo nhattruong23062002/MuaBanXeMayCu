@@ -1,14 +1,16 @@
 import React from "react";
 import AppointmentCard from "./AppointmentCard";
+import { useTranslation } from "react-i18next";
 
 const AppointmentTable = ({ appointments }) => {
+  const { t } = useTranslation("manageAppointments");
   const getBackgroundColor = (category) => {
     switch (category) {
-      case "Khách hẹn":
+      case t("categories.scheduled"):
         return "#f8d7da"; // Màu đỏ nhạt
-      case "Khách đang chờ":
+      case t("categories.waiting"):
         return "#fff3cd"; // Màu vàng nhạt
-      case "Khách hoàn thành":
+      case t("categories.completed"):
         return "#d4edda"; // Màu xanh nhạt
       default:
         return "#ffffff"; // Màu trắng
@@ -16,11 +18,11 @@ const AppointmentTable = ({ appointments }) => {
   };
   const getTitleBackgroundColor = (category) => {
     switch (category) {
-      case "Khách hẹn":
+      case t("categories.scheduled"):
         return "#3498db"; // Màu xanh dương
-      case "Khách đang chờ":
+      case t("categories.waiting"):
         return "#f1c40f"; // Màu vàng
-      case "Khách hoàn thành":
+      case t("categories.completed"):
         return "#2ecc71"; // Màu xanh lá
       default:
         return "#bdc3c7"; // Màu xám
@@ -29,7 +31,11 @@ const AppointmentTable = ({ appointments }) => {
   return (
     <div className="appointment-table">
       {/* Tách dữ liệu thành các cột dựa trên category */}
-      {["Khách hẹn", "Khách đang chờ", "Khách hoàn thành"].map((category) => (
+      {[
+        t("categories.scheduled"),
+        t("categories.waiting"),
+        t("categories.completed"),
+      ].map((category) => (
         <div
           className="column"
           key={category}
@@ -60,7 +66,10 @@ const AppointmentTable = ({ appointments }) => {
                 color={appointment.color}
               />
             ))}
-          <button className="add-appointment-btn">Xem thêm lịch hẹn</button>
+          <button className="add-appointment-btn">
+            {" "}
+            {t("buttons.viewMore")}
+          </button>
         </div>
       ))}
     </div>

@@ -8,43 +8,47 @@ import {
   FaTimes,
   FaFileAlt,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const HandleComplaints = () => {
+  const { t } = useTranslation("handleComplaints");
+
   const complaints = [
     {
       name: "Lê Văn A",
       email: "A@gmail.com",
       time: "14/7/2024",
-      reason: "Đề nghị bảo lưu",
-      role: "User",
+      reason: t("reasons.defer"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
     {
       name: "Tạ Văn B",
       email: "B@gmail.com",
       time: "14/12/2024",
-      reason: "Đề nghị hoàn tiền",
-      role: "User",
+      reason: t("reasons.refund"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
     {
       name: "Lê Hùng",
       email: "Hung@gmail.com",
       time: "14/9/2024",
-      reason: "Đề nghị hoàn tiền",
-      role: "User",
+      reason: t("reasons.refund"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
     {
       name: "Trần Đô",
       email: "Do12@gmail.com",
       time: "14/1/2024",
-      reason: "Đề nghị bảo lưu",
-      role: "User",
+      reason: t("reasons.defer"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
   ];
-  const [searchTerm, setSearchTerm] = useState(""); 
+
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(complaints);
 
   const handleSearch = (e) => {
@@ -53,31 +57,31 @@ const HandleComplaints = () => {
 
     const filtered = complaints.filter(
       (item) =>
-        item.time.toLowerCase().includes(value) || 
-        item.name.toLowerCase().includes(value) 
+        item.time.toLowerCase().includes(value) ||
+        item.name.toLowerCase().includes(value)
     );
 
-    setFilteredData(filtered || []); 
+    setFilteredData(filtered || []);
   };
 
   return (
     <div className="handle-complaints-container">
-      <h2>Danh sách khiếu nại</h2>
+      <h2>{t("title")}</h2>
       {/* Summary Cards */}
       <div className="summary-cards-handle">
         <div className="cards processing">
           <FaFileAlt className="File-icon" />
-          <p className="text-process">Đang xử lý</p>
+          <p className="text-process">{t("status.processing")}</p>
           <h3>45</h3>
         </div>
         <div className="cards success">
           <FaFileAlt className="File-icon-success" />
-          <p className="text-process">Thành công</p>
+          <p className="text-process">{t("status.success")}</p>
           <h3>15</h3>
         </div>
         <div className="cards rejected">
           <FaFileAlt className="File-icon-reject" />
-          <p className="text-process">Từ chối</p>
+          <p className="text-process">{t("status.rejected")}</p>
           <h3>15</h3>
         </div>
       </div>
@@ -86,17 +90,17 @@ const HandleComplaints = () => {
       <div className="actions-handle">
         <input
           type="text"
-          placeholder="Search Users"
+          placeholder={t("searchPlaceholder")}
           className="search-input-handle"
           value={searchTerm}
           onChange={handleSearch}
         />
         <button className="delete-btn-handle">
-          <FaTrashAlt /> Xóa
+          <FaTrashAlt /> {t("actions.delete")}
         </button>
-        <button className="export-btn-handle">Export</button>
+        <button className="export-btn-handle">{t("actions.export")}</button>
         <button className="filter-btn-handle">
-          <FaFilter /> filter
+          <FaFilter /> {t("actions.filter")}
         </button>
       </div>
 
@@ -107,13 +111,13 @@ const HandleComplaints = () => {
             <th>
               <input type="checkbox" />
             </th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Time</th>
-            <th>Reason</th>
-            <th>Role</th>
-            <th>Link người bị khiếu nại</th>
-            <th>Actions</th>
+            <th>{t("tableHeaders.name")}</th>
+            <th>{t("tableHeaders.email")}</th>
+            <th>{t("tableHeaders.time")}</th>
+            <th>{t("tableHeaders.reason")}</th>
+            <th>{t("tableHeaders.role")}</th>
+            <th>{t("tableHeaders.link")}</th>
+            <th>{t("tableHeaders.actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -134,10 +138,10 @@ const HandleComplaints = () => {
               </td>
               <td className="action-buttons-handle">
                 <button className="approve-btn-handle">
-                  <FaCheck className="approve-icon" /> Phê duyệt
+                  <FaCheck className="approve-icon" /> {t("actions.approve")}
                 </button>
                 <button className="reject-btn-handle">
-                  <FaTimes className="reject-icon" /> Từ chối
+                  <FaTimes className="reject-icon" /> {t("actions.reject")}
                 </button>
               </td>
             </tr>

@@ -8,14 +8,17 @@ import {
   FaEdit,
   FaChartLine,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ManageExperts = () => {
+  const { t } = useTranslation("manageExperts");
+
   const experts = [
     {
       name: "Lê Văn A",
       email: "A@gmail.com",
       city: "Đà Nẵng",
-      status: "Active",
+      status: t("statuses.active"),
       experience: "5 năm",
       reputation: "85%",
     },
@@ -23,7 +26,7 @@ const ManageExperts = () => {
       name: "Tạ Văn B",
       email: "B@gmail.com",
       city: "Hà Nội",
-      status: "Unactive",
+      status: t("statuses.inactive"),
       experience: "5 năm",
       reputation: "95%",
     },
@@ -31,7 +34,7 @@ const ManageExperts = () => {
       name: "Lê Hùng",
       email: "Hung@gmail.com",
       city: "Huế",
-      status: "Active",
+      status: t("statuses.active"),
       experience: "2 năm",
       reputation: "99%",
     },
@@ -39,11 +42,12 @@ const ManageExperts = () => {
       name: "Trần Đô",
       email: "Do12@gmail.com",
       city: "Kontum",
-      status: "Active",
+      status: t("statuses.active"),
       experience: "4 năm",
       reputation: "97%",
     },
   ];
+
   const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
   const [filteredData, setFilteredData] = useState(experts); // Lưu dữ liệu được lọc
 
@@ -52,11 +56,11 @@ const ManageExperts = () => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
 
-    // Lọc dữ liệu dựa trên ID và tiêu đề
+    // Lọc dữ liệu dựa trên tên, thành phố hoặc kinh nghiệm
     const filtered = experts.filter(
       (item) =>
-        item.city.toLowerCase().includes(value) || // Lọc theo ID
-        item.name.toLowerCase().includes(value) || // Lọc theo tiêu đề
+        item.city.toLowerCase().includes(value) ||
+        item.name.toLowerCase().includes(value) ||
         item.experience.toLowerCase().includes(value)
     );
 
@@ -65,21 +69,21 @@ const ManageExperts = () => {
 
   return (
     <div className="manage-experts-container">
-      <h1>Quản lý chuyên gia </h1>
+      <h1>{t("title")}</h1>
       {/* Header */}
       <div className="manage-experts-header">
-        <h2>Users</h2>
+        <h2>{t("header")}</h2>
         <button className="manage-experts-add-user-btn">
-          <FaPlus /> Add user
+          <FaPlus /> {t("actions.addUser")}
         </button>
       </div>
 
       {/* Summary Cards */}
       <div className="manage-experts-summary-cards">
         <div className="manage-experts-card">
-          <p>Tổng Users</p>
+          <p>{t("summary.totalUsers")}</p>
           <h3>
-            45 <span>users</span>
+            45 <span>{t("summary.users")}</span>
           </h3>
           <small className="growth-indicator">
             <FaChartLine className="chart-icon" />
@@ -87,9 +91,9 @@ const ManageExperts = () => {
           </small>
         </div>
         <div className="manage-experts-card">
-          <p>Active</p>
+          <p>{t("summary.active")}</p>
           <h3>
-            15 <span>users</span>
+            15 <span>{t("summary.users")}</span>
           </h3>
           <small className="growth-indicator">
             <FaChartLine className="chart-icon" />
@@ -97,9 +101,9 @@ const ManageExperts = () => {
           </small>
         </div>
         <div className="manage-experts-card">
-          <p>New User</p>
+          <p>{t("summary.newUser")}</p>
           <h3>
-            20 <span>users</span>
+            20 <span>{t("summary.users")}</span>
           </h3>
           <small className="growth-indicator">
             <FaChartLine className="chart-icon" />
@@ -107,9 +111,9 @@ const ManageExperts = () => {
           </small>
         </div>
         <div className="manage-experts-card">
-          <p>InActive</p>
+          <p>{t("summary.inactive")}</p>
           <h3>
-            5 <span>users</span>
+            5 <span>{t("summary.users")}</span>
           </h3>
           <small className="decrease-indicator">
             <FaChartLine className="chart-icon decrease" />
@@ -122,19 +126,19 @@ const ManageExperts = () => {
       <div className="manage-experts-actions">
         <input
           type="text"
-          placeholder="Search Users"
+          placeholder={t("actions.searchPlaceholder")}
           className="manage-experts-search-input"
           value={searchTerm}
           onChange={handleSearch}
         />
         <button className="manage-experts-delete-btn">
-          <FaTrashAlt className="btn-experts-icon" /> Xóa
+          <FaTrashAlt className="btn-experts-icon" /> {t("actions.delete")}
         </button>
         <button className="manage-experts-export-btn">
-          <FaFileExport className="btn-experts-icon" /> Export
+          <FaFileExport className="btn-experts-icon" /> {t("actions.export")}
         </button>
         <button className="manage-experts-filter-btn">
-          <FaFilter className="btn-experts-icon" /> filter
+          <FaFilter className="btn-experts-icon" /> {t("actions.filter")}
         </button>
       </div>
 
@@ -145,13 +149,13 @@ const ManageExperts = () => {
             <th>
               <input type="checkbox" />
             </th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>City</th>
-            <th>Status</th>
-            <th>Kinh nghiệm</th>
-            <th>Độ uy tín</th>
-            <th>Actions</th>
+            <th>{t("tableHeaders.name")}</th>
+            <th>{t("tableHeaders.email")}</th>
+            <th>{t("tableHeaders.city")}</th>
+            <th>{t("tableHeaders.status")}</th>
+            <th>{t("tableHeaders.experience")}</th>
+            <th>{t("tableHeaders.reputation")}</th>
+            <th>{t("tableHeaders.actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -166,7 +170,7 @@ const ManageExperts = () => {
               <td>
                 <span
                   className={
-                    expert.status === "Active"
+                    expert.status === t("statuses.active")
                       ? "manage-experts-status-active"
                       : "manage-experts-status-inactive"
                   }
@@ -179,7 +183,7 @@ const ManageExperts = () => {
               <td>{expert.reputation}</td>
               <td>
                 <button className="manage-experts-edit-btn">
-                  <FaEdit /> Edit
+                  <FaEdit /> {t("actions.edit")}
                 </button>
               </td>
             </tr>

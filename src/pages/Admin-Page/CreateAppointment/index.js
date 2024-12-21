@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./CreateAppointment.css";
+import { useTranslation } from "react-i18next"; // Import i18n hook
 
 const CreateAppointment = () => {
+  const { t } = useTranslation("createAppointment"); // Sử dụng namespace 'createAppointment'
   const [certificateImages, setCertificateImages] = useState([]); // State lưu trữ danh sách ảnh
 
   // Xử lý khi chọn ảnh
@@ -21,32 +23,31 @@ const CreateAppointment = () => {
 
   return (
     <div className="create-appointment-container">
-      <h2>Tạo Lịch trình chuyên gia kiểm tra xe </h2>
-
+      <h2>{t("title")}</h2> {/* Tiêu đề từ JSON */}
       <form className="appointment-form">
         <div className="form-group">
-          <label>Họ và tên:</label>
-          <input type="text" placeholder="Nhập họ và tên" />
+          <label>{t("form.name")}</label>
+          <input type="text" placeholder={t("form.namePlaceholder")} />
         </div>
 
         <div className="form-group">
-          <label>SDT:</label>
-          <input type="text" placeholder="Nhập số điện thoại" />
+          <label>{t("form.phone")}</label>
+          <input type="text" placeholder={t("form.phonePlaceholder")} />
         </div>
 
         <div className="form-group">
-          <label>Địa chỉ:</label>
-          <input type="text" placeholder="Nhập địa chỉ" />
+          <label>{t("form.address")}</label>
+          <input type="text" placeholder={t("form.addressPlaceholder")} />
         </div>
 
         <div className="form-group">
-          <label>Kinh nghiệm:</label>
-          <input type="text" placeholder="Nhập kinh nghiệm" />
+          <label>{t("form.experience")}</label>
+          <input type="text" placeholder={t("form.experiencePlaceholder")} />
         </div>
 
         {/* Upload nhiều ảnh */}
         <div className="form-group">
-          <label>Giấy tờ chứng chỉ:</label>
+          <label>{t("form.certificate")}</label>
           <input
             type="file"
             accept="image/*"
@@ -58,17 +59,20 @@ const CreateAppointment = () => {
         {/* Hiển thị ảnh xem trước */}
         {certificateImages.length > 0 && (
           <div className="image-preview">
-            <p>Ảnh chứng chỉ:</p>
+            <p>{t("preview.title")}</p>
             <div className="image-grid">
               {certificateImages.map((image, index) => (
                 <div key={index} className="image-container">
-                  <img src={image} alt={`Chứng chỉ ${index + 1}`} />
+                  <img
+                    src={image}
+                    alt={`${t("preview.certificate")} ${index + 1}`}
+                  />
                   <button
                     type="button"
                     className="remove-btn"
                     onClick={() => handleImageRemove(index)}
                   >
-                    X
+                    {t("preview.removeButton")}
                   </button>
                 </div>
               ))}
@@ -77,22 +81,22 @@ const CreateAppointment = () => {
         )}
 
         <div className="form-group">
-          <label>Mức giá:</label>
-          <input type="text" placeholder="Nhập mức giá" />
+          <label>{t("form.price")}</label>
+          <input type="text" placeholder={t("form.pricePlaceholder")} />
         </div>
 
         <div className="time-slots">
-          <label>Giờ trống lịch:</label>
+          <label>{t("form.timeSlots")}</label>
           <div className="time-options">
-            <span>7:00-8:00</span>
-            <span>9:00-10:00</span>
-            <span>13:00-14:00</span>
-            <span>15:00-16:00</span>
+            <span>{t("timeOptions.slot1")}</span>
+            <span>{t("timeOptions.slot2")}</span>
+            <span>{t("timeOptions.slot3")}</span>
+            <span>{t("timeOptions.slot4")}</span>
           </div>
         </div>
 
         <button type="submit" className="submit-btn">
-          Xác nhận tạo lịch
+          {t("submitButton")}
         </button>
       </form>
     </div>
