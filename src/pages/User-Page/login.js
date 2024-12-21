@@ -4,13 +4,39 @@ import LayoutUser from "../../layout/layoutUser";
 import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
-  const handleShowRegister = () => {
-    navigate(`/register`); 
-  }
+  const fakeUsers = [
+    { email: "user@gmail.com", password: "user123", role: "user" },
+    { email: "admin@gmail.com", password: "admin123", role: "admin" },
+  ];
+
+  const handleLogin = () => {
+    const user = fakeUsers.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (user) {
+      localStorage.setItem(
+        "auth",
+        JSON.stringify({ email: user.email, role: user.role })
+      );
+      
+    if (user.role === "user") {
+      window.location.href = "/";
+    } else if (user.role === "admin") {
+      window.location.href = "/admin/manage-appointments"; 
+    }
+
+    } else {
+      setError("Email hoặc mật khẩu không đúng!");
+    }
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -24,12 +50,16 @@ function LoginForm() {
             Đăng nhập
           </h2>
 
+          {error && <p className="text-red-500 text-center">{error}</p>}
+
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-1">
               Email *
             </label>
             <input
               type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Nhập Email"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
@@ -41,6 +71,8 @@ function LoginForm() {
             </label>
             <input
               type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Nhập mật khẩu"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
@@ -53,21 +85,12 @@ function LoginForm() {
             </button>
           </div>
 
-          <div className="flex justify-end mb-6">
-            <a href="#" className="text-[#d59648] hover:underline text-sm">
-              Quên ID/Mật khẩu?
-            </a>
-          </div>
-          <button className="w-full bg-[#d59648] hover:bg-[#b27939] text-white font-medium py-2 rounded-md">
+          <button
+            onClick={handleLogin}
+            className="w-full bg-[#d59648] hover:bg-[#b27939] text-white font-medium py-2 rounded-md"
+          >
             Đăng nhập
           </button>
-
-          <p className="text-center text-gray-600 text-sm mt-4">
-            Bạn chưa có tài khoản?{" "}
-            <a href="#" className="text-[#d59648] hover:underline font-medium" onClick={handleShowRegister}>
-              Đăng ký ngay
-            </a>
-          </p>
         </div>
       </div>
     </LayoutUser>

@@ -6,10 +6,12 @@ import {
   FaHeart,
   FaRegHeart,
 } from "react-icons/fa";
+import { CiLogout } from "react-icons/ci";
 import { BsCreditCard2FrontFill } from "react-icons/bs";
 import { FaRegMessage } from "react-icons/fa6";
 import LayoutUser from "../../layout/layoutUser";
 import { useNavigate } from "react-router-dom";
+const auth = JSON.parse(localStorage.getItem("auth"));
 
 function AccountPage() {
   const navigate = useNavigate();
@@ -29,6 +31,11 @@ function AccountPage() {
   const handleShowIdent = () => {
     navigate(`/identification`); 
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem("auth"); 
+    navigate("/login"); 
+  };
   return (
     <LayoutUser>
     <div className="max-w-[800px] mx-auto bg-gray-50 min-h-screen shadow-md">
@@ -36,7 +43,11 @@ function AccountPage() {
         <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center">
           <span className="text-4xl text-gray-500">👤</span>
         </div>
-        <h2 className="text-white text-2xl font-bold ml-4" onClick={handleShowLogin}>Đăng nhập</h2>
+        {!auth ? (
+          <h2 className="text-white text-2xl font-bold ml-4" onClick={handleShowLogin}>Đăng nhập</h2>
+        ): (
+          <h2 className="text-white text-2xl font-bold ml-4">User 1</h2>
+        )}
       </div>
 
       <div className="p-6">
@@ -80,6 +91,12 @@ function AccountPage() {
             <FaRegHeart className="text-2xl text-[#00a0e9]" />
             <span className="text-lg font-medium">Sản phẩm yêu thích</span>
           </li>
+          {auth && 
+            <li className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]" onClick={handleLogout}>
+            <CiLogout className="text-2xl text-[#00a0e9]" />
+            <span className="text-lg font-medium">Đăng xuất</span>
+          </li>
+          }
         </ul>
       </div>
     </div>

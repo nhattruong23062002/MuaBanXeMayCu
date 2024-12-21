@@ -29,13 +29,13 @@ function FilterBar({ onFilter }) {
             <option value="">Chọn loại xe</option>
             <option value="Xe tay ga">Xe tay ga</option>
             <option value="Xe phân khối lớn">Xe phân khối lớn</option>
-            <option value="Xe số">Xe phân khối lớn</option>
+            <option value="Xe số">Xe số</option>
           </select>
         </div>
 
         <div className="flex flex-col w-[40%] pl-2">
           <label className="text-gray-600 font-medium mb-1 text-sm">
-            Mức giá: {filters.price * 2} triệu VNĐ
+            Mức giá: {filters.price * 2} triệu VNĐ 
           </label>
           <input
             type="range"

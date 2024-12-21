@@ -14,8 +14,6 @@ function HomePage() {
     location: "",
   });
 
-  console.log("filters",filters)
-
   const bikes = [
     {
       id: 1,

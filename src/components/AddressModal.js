@@ -28,7 +28,7 @@ const AddressModal = ({ isOpen, onClose, onSave }) => {
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Tỉnh, thành phố <span className="text-red-500">*</span>
-            </label>
+            </label> 
             <input
               type="text"
               name="city"

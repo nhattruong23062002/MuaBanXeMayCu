@@ -28,7 +28,7 @@ const CitySelectModal = ({ isOpen, closeModal, setSelectedCity }) => {
                     className="absolute top-3 left-3 text-gray-600 hover:text-gray-800 p-1 rounded-full hover:bg-gray-200"
                     aria-label="Close Modal"
                 >
-                    <svg
+                    <svg 
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
