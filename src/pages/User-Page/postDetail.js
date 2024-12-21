@@ -10,26 +10,28 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import LayoutUser from "../../layout/layoutUser";
 import HidePostModal from "../../components/HidePostModal";
+import { useTranslation } from "react-i18next";
 
 const carInfo = {
-  name: "Xe Vario mới năm 2024",
+  nameKey: "carName",
   price: "23.000.000 VND",
-  condition: "Hết bảo hành",
-  location: "170 Phạm Văn Đồng",
+  conditionKey: "carConditionValue",
+  locationKey: "carLocationValue",
   images: [
     "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/hinh-anh-xe-may.jpg",
     "https://i.pinimg.com/originals/29/85/ae/2985ae8ef7683f84498143b7079ba85e.jpg",
   ],
-  updatedAt: "Cập nhật 5 giờ trước",
+  updatedAtKey: "updatedTimeValue",
   sellerName: "Name User",
-  sellerStatus: "1 đã bán",
+  sellerStatusKey: "sellerStatusValue",
 };
 
 const PostDetail = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); 
+  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
+  const { t } = useTranslation("postDetail");
 
   const handleOpenModal = (post) => {
     setSelectedPost(post);
@@ -39,11 +41,6 @@ const PostDetail = () => {
   const handleCloseModal = () => {
     setModalOpen(false);
     setSelectedPost(null);
-  };
-
-  const handleConfirmHide = (reason) => {
-    alert(`Ẩn tin "${selectedPost.title}" với lý do: ${reason}`);
-    setModalOpen(false);
   };
 
   const handlePrevImage = () => {
@@ -72,7 +69,7 @@ const PostDetail = () => {
           >
             <IoMdArrowRoundBack />
           </button>
-          <h1 className="text-lg sm:text-2xl font-bold">Chỉnh sửa thông tin bài đăng</h1>
+          <h1 className="text-lg sm:text-2xl font-bold">{t("editPost")}</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-md">
           <div>
@@ -113,18 +110,20 @@ const PostDetail = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold">{carInfo.name}</h2>
+            <h2 className="text-2xl font-bold">{t(carInfo.nameKey)}</h2>
             <p className="mt-2 text-gray-600">
-              Tình trạng xe: {carInfo.condition}
+              {t("carCondition")}: {t(carInfo.conditionKey)}
             </p>
             <p className="mt-2 text-red-500 text-xl font-bold">
               {carInfo.price}
             </p>
             <p className="mt-2 flex items-center text-gray-600">
-              <FaMapMarkerAlt className="mr-2" /> {carInfo.location}
+              <FaMapMarkerAlt className="mr-2" /> {t("location")}:{" "}
+              {t(carInfo.locationKey)}
             </p>
             <p className="mt-2 flex items-center text-gray-600">
-              <FaClock className="mr-2" /> {carInfo.updatedAt}
+              <FaClock className="mr-2" /> {t("updatedAt")}:{" "}
+              {t(carInfo.updatedAtKey)}
             </p>
 
             <div className="flex mt-4 space-x-4">
@@ -133,18 +132,18 @@ const PostDetail = () => {
                 onClick={handleShowEditPost}
               >
                 <FaEdit />
-                Sửa tin
+                {t("edit")}
               </button>
               <button
                 className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400"
                 onClick={() => handleOpenModal(carInfo)}
               >
-                Ẩn tin
+                {t("hidePost")}
               </button>
               <HidePostModal
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
-                onConfirm={handleConfirmHide}
+                onConfirm={(reason) => alert(`${t("hidePost")}: ${reason}`)}
                 postTitle={selectedPost?.title || ""}
               />
             </div>
@@ -158,16 +157,16 @@ const PostDetail = () => {
               <div className="ml-4">
                 <h4 className="text-lg font-bold">{carInfo.sellerName}</h4>
                 <p className="text-sm text-gray-600">
-                  Phản hồi: {carInfo.sellerStatus}
+                  {t("seller.response")}: {t("seller.statusValue")}
                 </p>
                 <div className="flex items-center mt-1 text-green-500 text-sm">
                   <span className="mr-1">●</span>
-                  <span>Đang hoạt động</span>
+                  <span>{t("seller.status")}</span>
                 </div>
               </div>
               <div className="ml-auto flex items-center space-x-1 text-yellow-500">
                 <span className="text-lg">&#9733;</span>
-                <span>5,360</span>
+                <span>4,343</span>
               </div>
             </div>
           </div>

@@ -100,5 +100,219 @@
     "description": "Mô tả sản phẩm:",
     "confirm": "Xác nhận",
     "select": "Chọn"
+  },
+  "expertDetail": {
+    "title": "Thông tin chuyên gia",
+    "expert": "Chuyên gia",
+    "dob": "Ngày sinh",
+    "address": "Địa chỉ",
+    "phone": "Số điện thoại",
+    "workingHours": "Giờ làm việc",
+    "services": "Dịch vụ cung cấp",
+    "serviceItems": [
+      "Kiểm tra dấu hiệu xe tai nạn, xe lên đời & xe trộm cắp",
+      "Ước tính số km thực tế của xe",
+      "Phát hiện lỗi phun xăng, cảm biến bằng thiết bị chính xác",
+      "Đánh giá tổng quát và định giá xe kiểm tra"
+    ],
+    "bookNow": "Đặt lịch ngay",
+    "days": {
+      "monday": "Thứ 2",
+      "tuesday": "Thứ 3",
+      "wednesday": "Thứ 4",
+      "thursday": "Thứ 5",
+      "friday": "Thứ 6",
+      "saturday": "Thứ 7",
+      "sunday": "Chủ nhật"
+    }
+  },
+  "bookingModal": {
+    "title": "Đặt lịch kiểm tra xe",
+    "name": "Họ và tên",
+    "phone": "Số điện thoại",
+    "address": "Địa chỉ kiểm tra",
+    "carType": "Loại xe",
+    "purpose": "Mục đích kiểm tra",
+    "appointmentDate": "Ngày hẹn",
+    "appointmentTime": "Giờ hẹn",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận đặt lịch",
+    "successMessage": "Đặt lịch thành công!"
+  },
+  "storeDetail": {
+    "pageTitle": "Thông tin cửa hàng",
+    "storeName": "Xe máy Út Tịch",
+    "stats": {
+      "selling": "Đang bán",
+      "sold": "Đã bán",
+      "favorites": "Yêu thích"
+    },
+    "bikeListTitle": "Danh sách xe"
+  },
+  "login": {
+    "title": "Đăng nhập",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "emailPlaceholder": "Nhập Email",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "forgotPassword": "Quên ID/Mật khẩu?",
+    "loginButton": "Đăng nhập",
+    "registerPrompt": "Bạn chưa có tài khoản?",
+    "registerLink": "Đăng ký ngay"
+  },
+  "register": {
+    "title": "Đăng ký",
+    "name": "Họ và tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "namePlaceholder": "Nhập họ và tên",
+    "emailPlaceholder": "Nhập Email",
+    "phonePlaceholder": "Nhập SĐT",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "confirmPasswordPlaceholder": "Xác nhận mật khẩu",
+    "registerButton": "Đăng Ký",
+    "loginPrompt": "Bạn đã có tài khoản?",
+    "loginLink": "Đăng nhập ngay"
+  },
+  "purchasedPage": {
+    "title": "Quản lý xe đã mua",
+    "tabs": {
+      "all": "Tất cả",
+      "pending": "Đang chờ",
+      "processing": "Giao dịch",
+      "completed": "Hoàn tất"
+    }
+  },
+  "purchaseDetailPage": {
+    "title": "Chi tiết xe đã mua",
+    "steps": {
+      "pending": "Đang chờ",
+      "processing": "Giao dịch",
+      "shipping": "Đang vận chuyển",
+      "completed": "Hoàn tất"
+    },
+    "seller": "Nhat moto",
+    "car": {
+      "yearMileage": "{{year}} &nbsp;&nbsp; {{mileage}}",
+      "plateNumber": "Biển số: {{plateNumber}}"
+    },
+    "details": {
+      "deliveryAddress": "Địa chỉ giao xe",
+      "shippingCost": "Phí vận chuyển",
+      "totalPrice": "Thành tiền",
+      "paymentMethod": "Phương thức thanh toán"
+    },
+    "methods": {
+      "payment": "Thanh toán tiền mặt",
+      "delivery": "Nhận xe tại cửa hàng"
+    }
+  },
+  "ratingModal": {
+    "title": "Đánh giá sản phẩm",
+    "feedback": {
+      "satisfied": "Hài lòng",
+      "disappointed": "Thất vọng"
+    },
+    "detailedFeedback": "Góp ý chi tiết:",
+    "cancel": "Hủy",
+    "submit": "Gửi"
+  },
+  "motoPurchased": {
+    "seller": "Người bán",
+    "sold": "Đã bán",
+    "trading": "Đang giao dịch",
+    "price": "Giá",
+    "viewDetails": "Xem chi tiết đơn",
+    "rate": "Đánh giá",
+    "editInfo": "Chỉnh sửa thông tin xe"
+  },
+ "sellPage": {
+    "manageSelling": "Quản lý xe đang bán",
+    "tabs": {
+      "all": "Sản phẩm của tôi",
+      "pending": "Đang chờ",
+      "processing": "Giao dịch",
+      "completed": "Hoàn tất"
+    }
+  },
+  "postDetail": {
+    "carName": "Xe Vario mới năm 2024",
+    "carCondition": "Tình trạng xe",
+    "carConditionValue": "Hết bảo hành",
+    "location": "Địa chỉ",
+    "carLocationValue": "170 Phạm Văn Đồng",
+    "updatedAt": "Cập nhật",
+    "updatedTimeValue": "Cập nhật 5 giờ trước",
+    "back": "Quay lại",
+    "editPost": "Chỉnh sửa thông tin bài đăng",
+    "hidePost": "Ẩn tin",
+    "edit": "Sửa tin",
+    "seller": {
+      "name": "Người bán",
+      "response": "Phản hồi",
+      "status": "Đang hoạt động",
+      "statusValue": "1 đã bán"
+    }
+  },
+  "hidePost": {
+    "title": "Ẩn tin {{name}}",
+    "description": "Khi bạn đã bán được hàng, hoặc không muốn tin xuất hiện trên Vipxe, hãy chọn 'Ẩn tin'.",
+    "reasonPrompt": "Vui lòng chọn lý do ẩn tin:",
+    "reasons": [
+      "Không muốn bán nữa",
+      "Đã bán qua trang Vipxe",
+      "Đã bán qua các kênh khác",
+      "Tôi bị làm phiền vì môi giới/dịch vụ đăng tin",
+      "Khác"
+    ],
+    "cancel": "Hủy",
+    "hidePost": "Ẩn tin",
+    "alert": {
+      "noReason": "Vui lòng chọn lý do ẩn tin!"
+    },
+    "carName": "Xe Vario mới năm 2024"
+  },
+  "editPost": {
+    "title": "Chỉnh sửa bài đăng",
+    "productName": "Tên sản phẩm",
+    "loading": "Đang tải...",
+    "logMessage": "Dữ liệu đã chỉnh sửa:"
+  },
+  "addressModal": {
+    "title": "Địa chỉ",
+    "city": "Tỉnh, thành phố",
+    "district": "Quận, huyện",
+    "ward": "Phường, xã, thị trấn",
+    "specificAddress": "Địa chỉ cụ thể",
+    "done": "XONG"
+  },
+  "listSender": {
+    "header": "Bạn đã đọc hết tin nhắn",
+    "allButton": "Tất cả",
+    "messages": [
+      {
+        "name": "Xe máy Nhật Trương",
+        "message": "Bạn gửi sđt hoặc sđt zalo giúp mình nhé",
+        "avatar": "https://img.freepik.com/free-vector/vintage-flat-motorcycle-logo_23-2149450072.jpg?size=338&ext=jpg&ga=GA1.1.2113030492.1720051200&semt=ais_user",
+        "date": "11/12/2024",
+        "time": "13:52"
+      },
+      {
+        "name": "Chuyên gia kiểm định xe Nguyễn Thắng",
+        "message": "Anh đang dùng sđt này đúng kh ạ",
+        "avatar": "https://cl-wpml.careerlink.vn/cam-nang-viec-lam/wp-content/uploads/2023/04/03112520/building-sector-industrial-workers-concept-confident-young-asian-engineer-construction-manager-reflective-clothes-helmet-cross-arms-smiling-sassy-ensuring-quality-white-wall.jpg",
+        "date": "10/12/2024",
+        "time": "14:32"
+      },
+      {
+        "name": "Xe máy Thanh Tùng",
+        "message": "Dạ cho em hỏi em muốn mua xe bên mình thì cần những thủ tục giấy tờ gì ạ, biển ...",
+        "avatar":"https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "date": "10/12/2024",
+        "time": "13:54"
+      }
+    ]
   }
 }

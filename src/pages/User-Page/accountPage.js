@@ -27,10 +27,13 @@ function AccountPage() {
   const currentLanguage = languages.find((lang) => lang.code === i18n.language);
 
 
+
   const handleLanguageChange = (lang) => {
-    i18n.changeLanguage(lang.code); 
+    i18n.changeLanguage(lang.code);
     setShowLanguageOptions(false);
+    localStorage.setItem("i18nextLng", lang.code); 
   };
+  
 
   const handleLogout = () => {
     localStorage.removeItem("auth");

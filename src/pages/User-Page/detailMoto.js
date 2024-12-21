@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function DetailMoto() {
-  const { t } = useTranslation("detailMoto"); // Sử dụng namespace "detailMoto"
+  const { t } = useTranslation("detailMoto"); 
   const images = [
     "https://media.moitruongvadothi.vn/images/2023/10/25/9883-1698207232-9883-1695003555-gia-xe-honda-sh-2023-1.jpg",
     "https://xemayanhloc.com.vn/wp-content/uploads/2022/05/z3403832730322_3dc7bd30894c8821da2984ba662a860e.jpg",

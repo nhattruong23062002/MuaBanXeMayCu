@@ -73,32 +73,246 @@
     "no_bikes_found": "적합한 바이크를 찾을 수 없습니다."
   },
   "listExpert": {
-      "listExpertTitle": "전문가 목록",
-      "searchPlaceholder": "전문가 검색...",
-      "listShopTitle": "오토바이 판매점 목록",
-      "searchPlaceStore": "오토바이 상점 찾기...",
-      "contactButton": "연락하기",
-      "showDetailsButton": "세부사항 보기",
-      "fullname": "이름",
-      "nameStore": "상점 이름",
-      "dob": "생년월일",
-      "address": "주소",
-      "phone": "전화",
-      "hometown": "고향"
+    "listExpertTitle": "전문가 목록",
+    "searchPlaceholder": "전문가 검색...",
+    "listShopTitle": "오토바이 판매점 목록",
+    "searchPlaceStore": "오토바이 상점 찾기...",
+    "contactButton": "연락하기",
+    "showDetailsButton": "세부사항 보기",
+    "fullname": "이름",
+    "nameStore": "상점 이름",
+    "dob": "생년월일",
+    "address": "주소",
+    "phone": "전화",
+    "hometown": "고향"
   },
   "upload": {
-      "uploadMotorbike": "판매할 오토바이를 업로드하세요",
-      "uploadImages": "오토바이 이미지:",
-      "uploadImagesHelp": "3-6장의 이미지를 업로드해야 합니다",
-      "chooseVehicleBrand": "차량 브랜드:",
-      "selectYear": "제조 연도:",
-      "selectKilometer": "주행한 킬로미터:",
-      "selectColor": "색상:",
-      "licensePlate": "차량 번호:",
-      "selectCity": "판매할 도시 선택:",
-      "price": "판매 가격:",
-      "description": "제품 설명:",
-      "confirm": "확인",
-      "select": "선택"
+    "uploadMotorbike": "판매할 오토바이를 업로드하세요",
+    "uploadImages": "오토바이 이미지:",
+    "uploadImagesHelp": "3-6장의 이미지를 업로드해야 합니다",
+    "chooseVehicleBrand": "차량 브랜드:",
+    "selectYear": "제조 연도:",
+    "selectKilometer": "주행한 킬로미터:",
+    "selectColor": "색상:",
+    "licensePlate": "차량 번호:",
+    "selectCity": "판매할 도시 선택:",
+    "price": "판매 가격:",
+    "description": "제품 설명:",
+    "confirm": "확인",
+    "select": "선택"
+  },
+  "expertDetail": {
+    "title": "전문가 정보",
+    "expert": "전문가",
+    "dob": "생년월일",
+    "address": "주소",
+    "phone": "전화번호",
+    "workingHours": "근무 시간",
+    "services": "제공 서비스",
+    "serviceItems": [
+      "사고, 업그레이드 차량 및 도난 차량의 징후 점검",
+      "차량의 실제 주행 거리 추정",
+      "정확한 장치를 사용하여 연료 분사 및 센서 오류 감지",
+      "검사 차량의 종합 평가 및 가격 책정"
+    ],
+    "bookNow": "지금 예약하기",
+    "days": {
+      "monday": "월요일",
+      "tuesday": "화요일",
+      "wednesday": "수요일",
+      "thursday": "목요일",
+      "friday": "금요일",
+      "saturday": "토요일",
+      "sunday": "일요일"
+    }
+  },
+  "bookingModal": {
+    "title": "예약하기",
+    "name": "이름",
+    "phone": "전화번호",
+    "address": "점검 주소",
+    "carType": "차량 유형",
+    "purpose": "점검 목적",
+    "appointmentDate": "예약 날짜",
+    "appointmentTime": "예약 시간",
+    "cancel": "취소",
+    "confirm": "예약 확인",
+    "successMessage": "예약이 성공적으로 완료되었습니다!"
+  },
+  "storeDetail": {
+    "pageTitle": "매장 정보",
+    "storeName": "Xe máy Út Tịch",
+    "stats": {
+      "selling": "판매 중",
+      "sold": "판매 완료",
+      "favorites": "즐겨찾기"
+    },
+    "bikeListTitle": "오토바이 목록"
+  },
+  "login": {
+    "title": "로그인",
+    "email": "이메일",
+    "password": "비밀번호",
+    "emailPlaceholder": "이메일을 입력하세요",
+    "passwordPlaceholder": "비밀번호를 입력하세요",
+    "forgotPassword": "ID/비밀번호를 잊으셨나요?",
+    "loginButton": "로그인",
+    "registerPrompt": "계정이 없으신가요?",
+    "registerLink": "지금 등록하세요"
+  },
+  "register": {
+    "title": "가입",
+    "name": "성명",
+    "email": "이메일",
+    "phone": "전화번호",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "namePlaceholder": "성명을 입력하세요",
+    "emailPlaceholder": "이메일을 입력하세요",
+    "phonePlaceholder": "전화번호를 입력하세요",
+    "passwordPlaceholder": "비밀번호를 입력하세요",
+    "confirmPasswordPlaceholder": "비밀번호를 확인하세요",
+    "registerButton": "가입",
+    "loginPrompt": "이미 계정이 있으신가요?",
+    "loginLink": "지금 로그인하세요"
+  },
+  "purchasedPage": {
+    "title": "구매한 차량 관리",
+    "tabs": {
+      "all": "전체",
+      "pending": "대기 중",
+      "processing": "처리 중",
+      "completed": "완료됨"
+    }
+  },
+  "purchaseDetailPage": {
+    "title": "구매한 차량 세부 정보",
+    "steps": {
+      "pending": "대기 중",
+      "processing": "처리 중",
+      "shipping": "배송 중",
+      "completed": "완료됨"
+    },
+    "seller": "Nhat moto",
+    "car": {
+      "yearMileage": "{{year}} &nbsp;&nbsp; {{mileage}}",
+      "plateNumber": "번호판: {{plateNumber}}"
+    },
+    "details": {
+      "deliveryAddress": "배송지",
+      "shippingCost": "배송비",
+      "totalPrice": "총 금액",
+      "paymentMethod": "결제 방법"
+    }, 
+    "methods": {
+      "payment": "현금 결제",
+      "delivery": "매장에서 수령"
+    }
+  },
+  "ratingModal": {
+    "title": "제품 평가",
+    "feedback": {
+      "satisfied": "만족",
+      "disappointed": "실망"
+    },
+    "detailedFeedback": "상세한 피드백:",
+    "cancel": "취소",
+    "submit": "제출"
+  },
+  "motoPurchased": {
+    "seller": "판매자",
+    "sold": "판매 완료",
+    "trading": "거래 중",
+    "price": "가격",
+    "viewDetails": "주문 세부정보 보기",
+    "rate": "평가",
+    "editInfo": "차량 정보 수정"
+  },
+  "sellPage": {
+    "manageSelling": "판매 중 차량 관리",
+    "tabs": {
+      "all": "내 제품",
+      "pending": "대기 중",
+      "processing": "거래 중",
+      "completed": "완료"
+    }
+  },
+  "postDetail": {
+    "carName": "2024년 새로운 Vario 오토바이",
+    "carCondition": "차량 상태",
+    "carConditionValue": "보증 없음",
+    "location": "위치",
+    "carLocationValue": "170 Pham Van Dong",
+    "updatedAt": "업데이트 시간",
+    "updatedTimeValue": "5시간 전에 업데이트",
+    "back": "뒤로",
+    "editPost": "게시물 정보 수정",
+    "hidePost": "게시물 숨기기",
+    "edit": "수정",
+    "seller": {
+      "name": "판매자",
+      "response": "응답",
+      "status": "활성",
+      "statusValue": "1 판매됨"
+    }
+  },
+  "hidePost": {
+    "title": "게시물 숨기기 {{name}}",
+    "description": "제품을 판매했거나 더 이상 Vipxe에 표시하고 싶지 않을 경우 '게시물 숨기기'를 선택하세요.",
+    "reasonPrompt": "게시물을 숨길 이유를 선택하세요:",
+    "reasons": [
+      "더 이상 판매를 원하지 않음",
+      "Vipxe를 통해 판매 완료",
+      "다른 채널을 통해 판매 완료",
+      "중개인/게시 서비스로 인해 불편함",
+      "기타"
+    ],
+    "cancel": "취소",
+    "hidePost": "게시물 숨기기",
+    "alert": {
+      "noReason": "게시물을 숨길 이유를 선택하세요!"
+    },
+    "carName": "2024년 새로운 Vario 오토바이"
+  },
+  "editPost": {
+    "title": "게시물 수정",
+    "productName": "제품 이름",
+    "loading": "로딩 중...",
+    "logMessage": "수정된 데이터:"
+  },
+  "addressModal": {
+    "title": "주소",
+    "city": "도시/도",
+    "district": "구/군",
+    "ward": "동/면",
+    "specificAddress": "상세 주소",
+    "done": "완료"
+  },
+  "listSender": {
+    "header": "모든 메시지를 읽었습니다",
+    "allButton": "전체",
+    "messages": [
+      {
+        "name": "Nhat Truong 오토바이",
+        "message": "전화번호 또는 Zalo 번호를 보내주세요.",
+        "avatar": "https://img.freepik.com/free-vector/vintage-flat-motorcycle-logo_23-2149450072.jpg?size=338&ext=jpg&ga=GA1.1.2113030492.1720051200&semt=ais_user",
+        "date": "2024년 12월 11일",
+        "time": "오후 1:52"
+      },
+      {
+        "name": "차량 검사관 Nguyen Thang",
+        "message": "이 번호를 사용 중이신가요?",
+        "avatar": "https://cl-wpml.careerlink.vn/cam-nang-viec-lam/wp-content/uploads/2023/04/03112520/building-sector-industrial-workers-concept-confident-young-asian-engineer-construction-manager-reflective-clothes-helmet-cross-arms-smiling-sassy-ensuring-quality-white-wall.jpg",
+        "date": "2024년 12월 10일",
+        "time": "오후 2:32"
+      },
+      {
+        "name": "Thanh Tung 오토바이",
+        "message": "안녕하세요, 오토바이를 구매하려면 어떤 서류가 필요합니까?",
+        "avatar":"https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "date": "2024년 12월 10일",
+        "time": "오후 1:54"
+      }
+    ]
   }
 }

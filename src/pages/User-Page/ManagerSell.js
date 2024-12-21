@@ -3,10 +3,12 @@ import LayoutUser from "../../layout/layoutUser";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import MotoPurchased from "../../components/MotoPurchased";
+import { useTranslation } from "react-i18next";
 
 function SellPage() {
   const [activeTab, setActiveTab] = useState("all");
   const navigate = useNavigate();
+  const { t } = useTranslation("sellPage"); // Sử dụng namespace "sellPage"
 
   const cars = [
     {
@@ -16,8 +18,8 @@ function SellPage() {
       mileage: "5000km",
       price: "130.000.000 đ",
       image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87",
-      sold : "0",
-      trading: "0"
+      sold: "0",
+      trading: "0",
     },
     {
       id: 2,
@@ -25,17 +27,18 @@ function SellPage() {
       year: 2020,
       mileage: "5000km",
       price: "60.000.000 đ",
-      image: "https://kuongngan.com/wp-content/uploads/2023/08/nqWK6azOcQk9GhvZvtcS.png",
-      sold : "0",
-      trading: "1"
+      image:
+        "https://kuongngan.com/wp-content/uploads/2023/08/nqWK6azOcQk9GhvZvtcS.png",
+      sold: "0",
+      trading: "1",
     },
   ];
 
   const tabs = [
-    { id: "all", label: "Sản phẩm của tôi" },
-    { id: "pending", label: "Đang chờ" },
-    { id: "processing", label: "Giao dịch" },
-    { id: "completed", label: "Hoàn tất" },
+    { id: "all", label: t("tabs.all") },
+    { id: "pending", label: t("tabs.pending") },
+    { id: "processing", label: t("tabs.processing") },
+    { id: "completed", label: t("tabs.completed") },
   ];
 
   return (
@@ -48,7 +51,7 @@ function SellPage() {
           >
             <IoMdArrowRoundBack />
           </button>
-          <h1 className="text-lg sm:text-2xl font-bold">Quản lý xe đang bán</h1>
+          <h1 className="text-lg sm:text-2xl font-bold">{t("manageSelling")}</h1>
         </div>
 
         <div className="flex border-b-2 mb-6">
