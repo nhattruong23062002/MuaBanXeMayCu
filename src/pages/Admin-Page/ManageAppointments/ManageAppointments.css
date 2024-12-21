@@ -6,7 +6,7 @@
   text-align: center;
   padding: 20px;
   background-color: #f8f8ff;
-  border-radius: 8px; /* Bo góc nếu cần */
+  border-radius: 8px;
   margin-right: 200px;
 }
 .manage-appointments h2 {
@@ -15,32 +15,39 @@
   margin-bottom: 20px;
 }
 
+/* Responsive chỉnh layout */
 .filter-section {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Đảm bảo các thành phần xuống dòng khi không đủ chỗ */
+  gap: 15px; /* Khoảng cách giữa các thành phần */
   margin: 10px 0;
 }
 
 .filter-section div:first-child {
-  /* Phần chứa các cụm chữ */
   display: flex;
-  gap: 30px; /* Tăng khoảng cách giữa các span */
+  gap: 20px; /* Tăng khoảng cách giữa các span */
+  flex-wrap: wrap; /* Xuống dòng khi không đủ chỗ */
 }
 
 .filter-section span {
-  white-space: nowrap; /* Giữ các cụm chữ không bị xuống dòng */
+  white-space: nowrap;
 }
 
+/* Title ngày tháng */
 .date-title {
   text-align: center;
   color: teal;
   font-size: 24px;
 }
 
+/* Bảng danh sách lịch hẹn */
 .appointment-table {
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
+  flex-wrap: wrap; /* Đảm bảo các cột xuống dòng khi không đủ chỗ */
+  gap: 20px;
 }
 
 .column {
@@ -50,12 +57,26 @@
   border-radius: 8px;
 }
 
+/* Responsive cho cột */
+@media (max-width: 768px) {
+  .column {
+    width: 45%; /* Điều chỉnh để hiển thị 2 cột trên màn hình nhỏ */
+  }
+}
+
+@media (max-width: 480px) {
+  .column {
+    width: 100%; /* Mỗi cột chiếm toàn bộ màn hình */
+  }
+}
+
 .column h4 {
   text-align: center;
   background-color: #0a93ee;
   padding: 5px;
 }
 
+/* Card lịch hẹn */
 .appointment-card {
   background: white;
   padding: 10px;
@@ -68,28 +89,28 @@
 .appointment-card p {
   margin: 5px 0;
 }
+
 /* Căn chỉnh icon và chữ */
 .appointment-item {
   display: flex;
-  align-items: center; /* Đảm bảo icon và chữ căn giữa theo chiều dọc */
-  gap: 10px; /* Khoảng cách giữa icon và chữ */
-  font-size: 16px; /* Kích thước chữ */
-  margin: 5px 0; /* Khoảng cách giữa các dòng */
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin: 5px 0;
 }
 
-/* Định dạng icon */
 .icon-phone {
-  color: #007bff; /* Màu xanh */
+  color: #007bff;
   font-size: 18px;
 }
 
 .icon-status {
-  color: #28a745; /* Màu xanh lá */
+  color: #28a745;
   font-size: 18px;
 }
 
 .icon-time {
-  color: #f39c12; /* Màu cam */
+  color: #f39c12;
   font-size: 18px;
 }
 
@@ -123,23 +144,28 @@
 .add-appointment-btn:hover {
   background-color: #006666;
 }
+
 /* Phần chứa ô tìm kiếm và nút */
 .search-filter {
   display: flex;
   align-items: center;
-  gap: 10px; /* Khoảng cách giữa các phần tử */
+  gap: 10px;
+  flex-wrap: wrap; /* Đảm bảo các thành phần xuống dòng khi không đủ chỗ */
 }
+
 /* Ô input tìm kiếm có icon */
 .search-input-wrapper {
   position: relative;
+  flex: 1; /* Chiếm toàn bộ chiều rộng nếu cần */
 }
 
 .search-input {
-  padding: 6px 10px 6px 30px; /* Dành khoảng trống cho icon */
+  padding: 6px 10px 6px 30px;
   font-size: 14px;
   border: 2px solid #0f0f0f;
   border-radius: 3px;
   outline: none;
+  width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
 }
 
 .search-input:focus {
@@ -149,12 +175,13 @@
 
 .search-input-wrapper .icon {
   position: absolute;
-  right: 10px; /* Đặt icon trong input */
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   color: #888;
   font-size: 14px;
 }
+
 /* Nút bộ lọc */
 .filters-btn {
   background-color: #2d73d9;
@@ -172,10 +199,12 @@
 .filters-btn:hover {
   background-color: #054070;
 }
+
 /* Nút today và List */
 .button-group {
   display: flex;
   gap: 5px;
+  flex-wrap: wrap; /* Xuống dòng nếu không đủ chỗ */
 }
 
 .today-btn,
@@ -189,11 +218,57 @@
 }
 
 .today-btn {
-  background-color: #aca5a5; /* Nút today màu xám */
+  background-color: #aca5a5;
   color: black;
 }
 
 .list-btn {
-  background-color: #00bfff; /* Màu xanh dương */
+  background-color: #00bfff;
   color: black;
+}
+
+/* Responsive cho màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .manage-appointments {
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .filter-section div:first-child {
+    justify-content: center;
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+  }
+}
+
+/* Responsive cho màn hình nhỏ hơn 480px */
+@media (max-width: 480px) {
+  .manage-appointments h2 {
+    font-size: 1.5rem;
+  }
+
+  .column h4 {
+    font-size: 14px;
+  }
+
+  .add-appointment-btn {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .search-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-group {
+    justify-content: center;
+  }
 }

@@ -159,3 +159,30 @@
 .reject-btn-handle:hover {
   background-color: #8a2317;
 }
+
+@media (max-width: 768px) {
+  .handle-complaints-container {
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .summary-cards-handle {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .actions-handle {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .complaints-table th,
+  .complaints-table td {
+    padding: 5px;
+  }
+}
