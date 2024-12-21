@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import LayoutUser from '../../layout/layoutUser';
 import { FaArrowLeft } from 'react-icons/fa';
 
 
 const PaymentForm = () => {
+    const { t } = useTranslation("payment");
     const customerInfo = {
         name: "Phạm Văn Nga",
         phone: "123-456-7890",
@@ -52,12 +54,12 @@ const PaymentForm = () => {
                                 <FaArrowLeft />
                             </button>
                             {/* Dòng chữ */}
-                            <span className="text-base font-semibold text-gray-500">Thông tin thanh toán</span>
+                            <span className="text-base font-semibold text-gray-500">{t("title")}</span>
                         </div>
                         <hr className="my-4 border-t border-gray-400 w-full" />
                         {/* Order Information */}
                         <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
-                            <h2 className="text-lg font-semibold text-gray-800 mb-4">Thông tin đơn hàng</h2>
+                            <h2 className="text-lg font-semibold text-gray-800 mb-4">{t("orderInf")}</h2>
                             <p className="text-lg font-semibold text-gray-800 mb-4 text-right">ID: 1</p>
                             <div className="border-b pb-4">
                                 <div className="flex items-center space-x-4">
@@ -72,16 +74,16 @@ const PaymentForm = () => {
                                             SH 150i
                                         </p>
                                         <p className="flex justify-between text-lg">
-                                            Loại xe: <span className="text-right text-lg">Cũ</span>
+                                            {t("type")}: <span className="text-right text-lg">{t("typeInput")}</span>
                                         </p>
                                         <p className="flex justify-between text-lg">
-                                            Năm sản xuất: <span className="text-right text-lg">2023</span>
+                                            {t("year")}: <span className="text-right text-lg">2023</span>
                                         </p>
                                         <p className="flex justify-between text-lg">
-                                            Động cơ (phân khối): <span className="text-right text-lg">150cc</span>
+                                            {t("cc")}: <span className="text-right text-lg">150cc</span>
                                         </p>
                                         <p className="flex justify-between text-lg">
-                                            Màu: <span className="text-right text-lg">Trắng</span>
+                                            {t("color")}: <span className="text-right text-lg">{t("colorInput")}</span>
                                         </p>
                                     </div>
                                 </div>
@@ -92,7 +94,7 @@ const PaymentForm = () => {
 
                             {/* Phần Price */}
                             <div className="flex justify-between">
-                                <p className="font-semibold text-gray-700 text-lg">Giá sản phẩm</p>
+                                <p className="font-semibold text-gray-700 text-lg">{t("price")}:</p>
                                 <p className="font-semibold text-gray-800 text-right text-lg">100.000.000 đ</p>
                             </div>
                         </div>
@@ -100,17 +102,17 @@ const PaymentForm = () => {
                         {/* Customer Information */}
                         <div className="bg-white p-6 rounded-lg shadow-md mb-6 relative text-left">
                             <h2 className="text-lg font-semibold text-gray-800 mb-4 ">
-                                Thông tin khách hàng
+                                {t("cusInf")}:
                             </h2>
                             <div className="space-y-2 text-lg">
                                 <p>
-                                    <span className="font-medium">Họ và tên:</span> {customerInfo.name}
+                                    <span className="font-medium">{t("fullName")}:</span> {customerInfo.name}
                                 </p>
                                 <p>
-                                    <span className="font-medium">SĐT:</span> {customerInfo.phone}
+                                    <span className="font-medium">{t("phoneNumber")}:</span> {customerInfo.phone}
                                 </p>
                                 <p>
-                                    <span className="font-medium">Địa chỉ:</span> {customerInfo.address}
+                                    <span className="font-medium">{t("address")}:</span> {customerInfo.address}
                                 </p>
                             </div>
                             {/* Button chuyển hướng */}
@@ -135,20 +137,20 @@ const PaymentForm = () => {
                             </button>
                             <div className="bg-[#DAF4F6] p-4 rounded-md mt-4 shadow-md">
                                 <p className="text-base font-bold pb-6 text-gray-700 mb-2">
-                                    Vui lòng định danh tài khoản để hoàn tất thủ tục mua bán xe
+                                    {t("notification")}
                                 </p>
                                 <button
                                     className="bg-[#00BCC3] text-white px-4 py-2 rounded shadow hover:bg-[#DAF4F6] transition duration-300 font-medium"
                                     onClick={onClickIdentification}
                                 >
-                                    Định Danh
+                                    {t("notiButton")}
                                 </button>
                             </div>
                         </div>
 
                         {/* Payment Method */}
                         <div className="mb-6 bg-white p-6 rounded-lg shadow-md text-lg text-left">
-                            <h2 className="text-lg font-semibold text-gray-800 mb-4">Phương thức thanh toán</h2>
+                            <h2 className="text-lg font-semibold text-gray-800 mb-4">{t("method")}</h2>
                             <div className="space-y-4">
                                 <div>
                                     <label className="inline-flex items-center space-x-2 cursor-pointer">
@@ -164,7 +166,7 @@ const PaymentForm = () => {
                                                 <span className="w-2.5 h-2.5 bg-green-300 rounded-full"></span>
                                             )}
                                         </span>
-                                        <span>Tiền mặt</span>
+                                        <span>{t("cash")}</span>
                                     </label>
                                 </div>
 
@@ -182,7 +184,7 @@ const PaymentForm = () => {
                                                 <span className="w-2.5 h-2.5 bg-green-300 rounded-full"></span>
                                             )}
                                         </span>
-                                        <span>Chuyển khoản</span>
+                                        <span>{t("transfer")}</span>
                                     </label>
                                 </div>
 
@@ -200,7 +202,7 @@ const PaymentForm = () => {
                                                 <span className="w-2.5 h-2.5 bg-green-300 rounded-full"></span>
                                             )}
                                         </span>
-                                        <span>Trả góp</span>
+                                        <span>{t("installment")}</span>
                                     </label>
                                 </div>
                             </div>
@@ -214,7 +216,7 @@ const PaymentForm = () => {
                                 onClick={handleSubmit}
                                 className="w-full py-3 bg-[#d59648] text-white rounded-md hover:bg-orange-800 transition duration-300"
                             >
-                                Tiếp tục
+                                {t("continue")}
                             </button>
                         </div>
                     </div>

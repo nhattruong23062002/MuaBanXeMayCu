@@ -15,7 +15,7 @@ const auth = JSON.parse(localStorage.getItem("auth"));
 
 function AccountPage() {
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation("account"); 
+  const { t, i18n } = useTranslation("account");
   const [showLanguageOptions, setShowLanguageOptions] = useState(false);
 
   const languages = [
@@ -28,7 +28,8 @@ function AccountPage() {
 
 
   const handleLanguageChange = (lang) => {
-    i18n.changeLanguage(lang.code); 
+    console.log(`Changing language to ${lang.code}`);
+    i18n.changeLanguage(lang.code);
     setShowLanguageOptions(false);
   };
 
@@ -109,11 +110,10 @@ function AccountPage() {
                     <li
                       key={lang.code}
                       onClick={() => handleLanguageChange(lang)}
-                      className={`flex items-center p-2 rounded-md hover:bg-[#00a0e9] hover:text-white cursor-pointer ${
-                        i18n.language === lang.code
-                          ? "bg-[#00a0e9] text-white"
-                          : ""
-                      }`}
+                      className={`flex items-center p-2 rounded-md hover:bg-[#00a0e9] hover:text-white cursor-pointer ${i18n.language === lang.code
+                        ? "bg-[#00a0e9] text-white"
+                        : ""
+                        }`}
                     >
                       <img
                         src={lang.flag}

@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
+import { useTranslation } from "react-i18next";
 
 const ColorSelectModal = ({ isOpen, closeModal, setSelectedColor }) => {
+    const { t } = useTranslation("colorModal");
     const colors = [
-        { name: 'Trắng', code: '#FFFFFF' },
-        { name: 'Màu be', code: '#FFFFF0' },
-        { name: 'Đen', code: '#000000' },
-        { name: 'Bạc', code: '#C0C0C0' },
-        { name: 'Xám', code: '#808080' },
-        { name: 'Vàng', code: '#FFFF00' },
-        { name: 'Nâu', code: '#A52A2A' },
-        { name: 'Cam', code: '#FFA500' },
-        { name: 'Đỏ', code: '#FF0000' },
-        { name: 'Hồng', code: '#FFC0CB' },
-        { name: 'Tím', code: '#800080' },
-        { name: 'Xanh lá', code: '#008000' },
-        { name: 'Xanh dương', code: '#0000FF' },
-        { name: 'Xanh da trời', code: '#87CEEB' },
+        { name: t('white'), code: '#FFFFFF' },
+        { name: t('beige'), code: '#FFFFF0' },
+        { name: t('black'), code: '#000000' },
+        { name: t('silver'), code: '#C0C0C0' },
+        { name: t('gray'), code: '#808080' },
+        { name: t('yellow'), code: '#FFFF00' },
+        { name: t('brown'), code: '#A52A2A' },
+        { name: t('orange'), code: '#FFA500' },
+        { name: t('red'), code: '#FF0000' },
+        { name: t('pink'), code: '#FFC0CB' },
+        { name: t('purple'), code: '#800080' },
+        { name: t('green'), code: '#008000' },
+        { name: t('blue'), code: '#0000FF' },
+        { name: t('skyBlue'), code: '#87CEEB' },
     ];
 
     const [selectedColor, setSelected] = useState(null); // Lưu màu duy nhất được chọn
@@ -29,7 +31,7 @@ const ColorSelectModal = ({ isOpen, closeModal, setSelectedColor }) => {
                 <button
                     onClick={closeModal}
                     className="absolute top-3 left-3 text-gray-600 hover:text-gray-800 p-1 rounded-full hover:bg-gray-200"
-                    aria-label="Close Modal"
+                    aria-label={t('closeModal')}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +50,7 @@ const ColorSelectModal = ({ isOpen, closeModal, setSelectedColor }) => {
                 </button>
                 {/* Modal Header */}
                 <div className="p-6 border-b">
-                    <h2 className="text-2xl font-semibold text-center">Chọn Màu Sắc</h2>
+                    <h2 className="text-2xl font-semibold text-center">{t('selectColor')}</h2>
                 </div>
 
                 {/* Modal Body */}
@@ -92,7 +94,7 @@ const ColorSelectModal = ({ isOpen, closeModal, setSelectedColor }) => {
                             : 'bg-gray-300 text-gray-700 cursor-not-allowed'
                             }`}
                     >
-                        Xác nhận
+                        {t('confirm')}
                     </button>
                 </div>
             </div>

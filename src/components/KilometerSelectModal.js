@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
-
+import { useTranslation } from 'react-i18next';
 const KilometerSelectModal = ({ isOpen, closeModal, setSelectedKilometer }) => {
+    const { t } = useTranslation("kilometerSelectModal");
     const kilometerOptions = [
-        'Dưới 5000km',
-        'Dưới 10000km',
-        'Dưới 20000km',
-        'Dưới 30000km',
-        'Dưới 40000km',
-        'Dưới 50000km',
-        'Dưới 60000km',
-        'Dưới 70000km',
-        'Dưới 80000km',
-        'Dưới 90000km',
-        'Dưới 100000km',
-        'Dưới 110000km',
-        'Dưới 120000km',
-        'Dưới 130000km',
-        'Dưới 140000km',
-        'Dưới 150000km',
-        'Dưới 160000km',
-        'Dưới 170000km',
-        'Dưới 180000km',
-        'Dưới 190000km',
-        'Dưới 200000km',
-        'Trên 200000km',
+        t('under5000km'),
+        t('under10000km'),
+        t('under20000km'),
+        t('under30000km'),
+        t('under40000km'),
+        t('under50000km'),
+        t('under60000km'),
+        t('under70000km'),
+        t('under80000km'),
+        t('under90000km'),
+        t('under100000km'),
+        t('under110000km'),
+        t('under120000km'),
+        t('under130000km'),
+        t('under140000km'),
+        t('under150000km'),
+        t('under160000km'),
+        t('under170000km')
     ];
 
     const [selectedKilometer, setSelected] = useState(null); // State để lưu tùy chọn đã chọn
@@ -56,7 +53,7 @@ const KilometerSelectModal = ({ isOpen, closeModal, setSelectedKilometer }) => {
                 </button>
                 {/* Modal Header */}
                 <div className="p-2 border-b">
-                    <h2 className="text-2xl font-semibold text-center">Chọn Số Kilometers Đã Đi</h2>
+                    <h2 className="text-2xl font-semibold text-center">{t("title")}</h2>
                 </div>
 
                 {/* Modal Body */}
