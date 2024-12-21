@@ -16,8 +16,8 @@ const auth = JSON.parse(localStorage.getItem("auth"));
 
 function AccountPage() {
   const navigate = useNavigate();
-  const [language, setLanguage] = useState("Tiếng Việt"); // Ngôn ngữ mặc định
-  const [showLanguageOptions, setShowLanguageOptions] = useState(false); // Hiển thị danh sách ngôn ngữ
+  const [language, setLanguage] = useState("Tiếng Việt"); 
+  const [showLanguageOptions, setShowLanguageOptions] = useState(false); 
 
   const languages = [
     { name: "Tiếng Việt", flag: "https://flagcdn.com/w40/vn.png" },
@@ -27,12 +27,12 @@ function AccountPage() {
 
   const handleLanguageChange = (selectedLanguage) => {
     setLanguage(selectedLanguage.name);
-    setShowLanguageOptions(false); // Ẩn danh sách sau khi chọn
+    setShowLanguageOptions(false); 
   };
 
   const handleLogout = () => {
     localStorage.removeItem("auth");
-    navigate("/login");
+    window.location.href = "/login";
   };
 
   return (
@@ -43,7 +43,7 @@ function AccountPage() {
             <span className="text-4xl text-gray-500">👤</span>
           </div>
           {!auth ? (
-            <h2 className="text-white text-2xl font-bold ml-4">
+            <h2 className="text-white text-2xl font-bold ml-4"  onClick={() => navigate(`/login`)}>
               Đăng nhập
             </h2>
           ) : (
