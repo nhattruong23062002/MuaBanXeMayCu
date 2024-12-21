@@ -1,24 +1,23 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import HttpApi from "i18next-http-backend";
-import LanguageDetector from "i18next-browser-languagedetector";
+import en from "../locales/en.json";
+import vi from "../locales/vi.json";
+import kr from "../locales/kr.json";
 
 i18n
-  .use(HttpApi) // Dùng backend để load file JSON
-  .use(LanguageDetector) // Dùng bộ phát hiện ngôn ngữ
-  .use(initReactI18next) // Kết nối với React
+  .use(initReactI18next)
   .init({
-    supportedLngs: ["vi","en", "kr"], // Các ngôn ngữ hỗ trợ
-    fallbackLng: "vi", // Ngôn ngữ mặc định
-    detection: {
-      order: ["localStorage", "cookie", "htmlTag", "path", "subdomain"],
-      caches: ["localStorage"],
+    resources: {
+      en: en,
+      vi: vi,
+      kr: kr
     },
-    backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json", // Đường dẫn tới file dịch
+    lng: "vi",
+    fallbackLng: "en",
+    interpolation: {
+      escapeValue: false
     },
-    ns: ["common", "account", "homepage"], // Namespace để phân biệt các phần
-    defaultNS: "common",
+    debug: true
   });
 
 export default i18n;

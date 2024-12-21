@@ -1,3 +1,4 @@
+import React from "react";
 import {
   FaMotorcycle,
   FaSearch,
@@ -8,17 +9,23 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { MdAddBox } from "react-icons/md";
 import { IoStorefrontSharp } from "react-icons/io5";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation("header"); // Sử dụng namespace `header`
 
   const isActive = (path) => location.pathname === path;
+
   return (
     <div className="bg-[#0e0f2b] text-white py-2">
       <div className="max-w-[800px] mx-auto flex justify-between items-center px-6">
         <div className="flex items-center space-x-2">
-          <span className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl" onClick={() => navigate("/")}>
+          <span
+            className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             <FaMotorcycle />
           </span>
         </div>
@@ -37,7 +44,7 @@ function Header() {
                   : "text-gray-100 group-hover:text-[#d59648]"
               }`}
             />
-            <span className="mt-1 text-[10px] sm:text-xs">Trang chủ</span>
+            <span className="mt-1 text-[10px] sm:text-xs">{t("home")}</span>
           </div>
 
           <div
@@ -53,7 +60,9 @@ function Header() {
                   : "text-gray-100 group-hover:text-[#d59648]"
               }`}
             />
-            <span className="mt-1 text-[10px] sm:text-xs">Chuyên gia</span>
+            <span className="mt-1 text-[10px] sm:text-xs">
+              {t("experts")}
+            </span>
           </div>
 
           <div
@@ -69,7 +78,7 @@ function Header() {
                   : "text-gray-100 group-hover:text-[#d59648]"
               }`}
             />
-            <span className="mt-1 text-[10px] sm:text-xs">Đăng tin</span>
+            <span className="mt-1 text-[10px] sm:text-xs">{t("post_ad")}</span>
           </div>
 
           <div
@@ -85,7 +94,7 @@ function Header() {
                   : "text-gray-100 group-hover:text-[#d59648]"
               }`}
             />
-            <span className="mt-1 text-[10px] sm:text-xs">Cửa hàng</span>
+            <span className="mt-1 text-[10px] sm:text-xs">{t("stores")}</span>
           </div>
 
           <div
@@ -101,7 +110,7 @@ function Header() {
                   : "text-gray-100 group-hover:text-[#d59648]"
               }`}
             />
-            <span className="mt-1 text-[10px] sm:text-xs">Tài khoản</span>
+            <span className="mt-1 text-[10px] sm:text-xs">{t("account")}</span>
           </div>
         </nav>
         <div className="flex items-center space-x-8"></div>

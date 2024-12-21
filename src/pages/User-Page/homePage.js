@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next"; // Import hook i18next
 import LayoutUser from "../../layout/layoutUser";
 import BannerSwiper from "../../components/BannerSwipper";
 import FilterBar from "../../components/FilterBar";
@@ -6,6 +7,7 @@ import MotoCard from "../../components/MotoCard";
 import AdBanner from "../../components/AdBanner";
 
 function HomePage() {
+  const { t } = useTranslation("homepage");
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState({
     type: "",
@@ -19,7 +21,7 @@ function HomePage() {
       id: 1,
       name: "Honda Sh 125i",
       year: "2020",
-      type:"Xe tay ga",
+      type: t("scooter"),
       mileage: "1000km",
       price: 20,
       location: "Hà Nội",
@@ -30,7 +32,7 @@ function HomePage() {
       id: 2,
       name: "Ducati Monster 821",
       year: "2023",
-      type:"Xe phân khối lớn",
+      type: t("big_bike"),
       mileage: "1600km",
       price: 40,
       location: "TP.HCM",
@@ -40,7 +42,7 @@ function HomePage() {
       id: 3,
       name: "BMW R1250GS",
       year: "2021",
-      type:"Xe phân khối lớn",
+      type: t("big_bike"),
       mileage: "3000km",
       price: 50,
       location: "Hà Nội",
@@ -52,7 +54,7 @@ function HomePage() {
       year: "2023",
       mileage: "1400km",
       price: 70,
-      type:"Xe tay ga",
+      type: t("scooter"),
       location: "TP.HCM",
       image:
         "https://kuongngan.com/wp-content/uploads/2023/08/nqWK6azOcQk9GhvZvtcS.png",
@@ -61,7 +63,7 @@ function HomePage() {
       id: 5,
       name: "Honda Sh 125i",
       year: "2021",
-      type:"Xe tay ga",
+      type: t("scooter"),
       mileage: "3000km",
       price: 68,
       location: "Đà Nẵng",
@@ -72,7 +74,7 @@ function HomePage() {
       id: 6,
       name: "Xe moto Honda CB190R",
       year: "2017",
-      type:"Xe phân khối lớn",
+      type: t("big_bike"),
       mileage: "12000km",
       price: 77,
       location: "Đà Nẵng",
@@ -89,11 +91,10 @@ function HomePage() {
       (!filters.type || bike.type === filters.type) &&
       (!filters.year || bike.year === filters.year) &&
       (!filters.location || bike.location === filters.location) &&
-      bike.price <= filters.price * 2 && 
+      bike.price <= filters.price * 2 &&
       bike.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
-  
 
   return (
     <LayoutUser>
@@ -106,7 +107,7 @@ function HomePage() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Tìm kiếm..."
+                placeholder={t("search_placeholder")}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full py-3 pl-4 pr-12 text-gray-700 border rounded-full focus:outline-none focus:ring-2 focus:ring-[#0e0f2b]"
@@ -116,8 +117,11 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="max-w-[800px] mx-auto px-4 py-14 bg-white rounded-md" style={{ marginTop: "4rem" }}>
-        <h2 className="text-2xl font-bold mb-4">Xe chất lượng</h2>
+      <div
+        className="max-w-[800px] mx-auto px-4 py-14 bg-white rounded-md"
+        style={{ marginTop: "4rem" }}
+      >
+        <h2 className="text-2xl font-bold mb-4">{t("quality_bikes")}</h2>
         {filteredBikes.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {filteredBikes.map((bike) => (
@@ -132,7 +136,7 @@ function HomePage() {
             ))}
           </div>
         ) : (
-          <p className="text-gray-500 text-center">Không tìm thấy xe phù hợp.</p>
+          <p className="text-gray-500 text-center">{t("no_bikes_found")}</p>
         )}
       </div>
     </LayoutUser>
