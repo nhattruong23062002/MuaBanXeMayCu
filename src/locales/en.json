@@ -92,14 +92,23 @@
     "uploadImagesHelp": "You need to upload 3-6 images",
     "chooseVehicleBrand": "Vehicle brand:",
     "selectYear": "Manufacturing year:",
-    "selectKilometer": "Kilometers driven:",
+    "selectKilometer": "Kilometers riden:",
     "selectColor": "Color:",
     "licensePlate": "License plate:",
     "selectCity": "Select the city to sell in:",
     "price": "Price to sell:",
     "description": "Product description:",
     "confirm": "Confirm",
-    "select": "Select"
+    "select": "Select",
+    "addDescription": "Please add a description for the product",
+    "placeholderVehicleBrand": "Choose vehicle brand",
+    "placeholderYear": "Choose manufacturing year",
+    "placeholderKilometer": "Choose kilometers riden",
+    "placeholderColor": "Choose color",
+    "placeholderLicensePlate": "Enter license plate",
+    "placeholderCity": "Select city",
+    "placeholderDescription": "Please add a description for the product",
+    "placeholderPrice": "Enter selling price"
   },
   "expertDetail": {
     "title": "Expert Information",
@@ -274,12 +283,6 @@
     },
     "carName": "New Vario Motorbike 2024"
   },
-  "editPost": {
-    "title": "Edit Post",
-    "productName": "Product Name",
-    "loading": "Loading...",
-    "logMessage": "Edited data:"
-  },
   "addressModal": {
     "title": "Address",
     "city": "City/Province",
@@ -314,6 +317,112 @@
         "time": "1:54 PM"
       }
     ]
+  },
+  "colorModal": {
+    "white": "White",
+    "beige": "Beige",
+    "black": "Black",
+    "silver": "Silver",
+    "gray": "Gray",
+    "yellow": "Yellow",
+    "brown": "Brown",
+    "orange": "Orange",
+    "red": "Red",
+    "pink": "Pink",
+    "purple": "Purple",
+    "green": "Green",
+    "blue": "Blue",
+    "skyBlue": "Sky Blue",
+    "selectColor": "Select a Color",
+    "closeModal": "Close Modal",
+    "confirm": "Confirm"
+  },
+  "brandModal": {
+    "title": "Select a Brand",
+    "yearTitle": "Select Year of Manufacture",
+    "cityTitle": "Select a City",
+    "searchPlaceholder": "Search for a brand...",
+    "popularBrands": "Popular Brands",
+    "allBrands": "All Brands",
+    "close": "Close",
+    "confirm": "Confirm"
+  },
+  "kilometerSelectModal": {
+    "title": "Choose your riding distance",
+    "under5000km": "Under 5000km",
+    "under10000km": "Under 10000km",
+    "under20000km": "Under 20000km",
+    "under30000km": "Under 30000km",
+    "under40000km": "Under 40000km",
+    "under50000km": "Under 50000km",
+    "under60000km": "Under 60000km",
+    "under70000km": "Under 70000km",
+    "under80000km": "Under 80000km",
+    "under90000km": "Under 90000km",
+    "under100000km": "Under 100000km",
+    "under110000km": "Under 110000km",
+    "under120000km": "Under 120000km",
+    "under130000km": "Under 130000km",
+    "under140000km": "Under 140000km",
+    "under150000km": "Under 150000km",
+    "under160000km": "Under 160000km",
+    "under170000km": "Under 170000km"
+  },
+  "chat": {
+    "active": "Active",
+    "placeholder": "Please enter a message"
+  },
+  "payment": {
+    "title": "Payment Information",
+    "orderInf": "Order Information",
+    "cusInf": "Customer Information",
+    "method": "Payment Method",
+    "type": "Vehicle Type",
+    "typeInput": "Used",
+    "cc": "Engine (Displacement)",
+    "year": "Year of Manufacture",
+    "color": "Color",
+    "colorInput": "White",
+    "price": "Product Price",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
+    "notification": "Please verify your account to complete the vehicle purchase process",
+    "notiButton": "Verify",
+    "cash": "Cash",
+    "transfer": "Bank Transfer",
+    "installment": "Installment",
+    "continue": "Continue"
+  },
+  "identification": {
+    "title": "ACCOUNT IDENTIFICATION",
+    "id": "Identity Card (Upload Photo)",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
+    "dob": "Date of Birth",
+    "confirm": "Confirm",
+    "fullNamePlaceholder": "Enter your full name",
+    "emailPlaceholder": "Enter your email",
+    "phonePlaceholder": "Enter your phone number",
+    "addressPlaceholder": "Enter your address"
+  },
+  "editPost": {
+    "title": "Edit Post",
+    "nameProduct": "Product Name",
+    "menu": "Category",
+    "option1": "Motorbike",
+    "option2": "Car",
+    "option3": "Spare Parts",
+    "price": "Price",
+    "status": "Condition",
+    "option4": "New",
+    "option5": "Used",
+    "option6": "Out of Warranty",
+    "description": "Description",
+    "location": "Location",
+    "img": "Images",
+    "save": "Save Changes"
   }
-  
 }

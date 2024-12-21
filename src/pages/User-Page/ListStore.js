@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ExpertCard from "../../components/ExpertCard";
 import { useNavigate } from "react-router-dom";
 import LayoutUser from "../../layout/layoutUser";
+import { useTranslation } from 'react-i18next';
 const ListStore = () => {
+  const { t } = useTranslation("listExpert");
   const stores = [
     {
       id: 1,
@@ -82,13 +84,13 @@ const ListStore = () => {
       <div className="bg-[#f5f5f5] py-6 min-h-screen">
         <div className="max-w-[800px] mx-auto bg-white p-4 rounded-lg shadow-md">
           <h2 className="text-2xl font-bolder text-center mb-6">
-            DANH SÁCH CÁC CỬA HÀNG BÁN XE
+            {t('listShopTitle')}
           </h2>
 
           <div className="relative mb-6">
             <input
               type="text"
-              placeholder="Tìm cửa hàng..."
+              placeholder={t('searchPlaceStore')}
               className="pl-4 pr-4 py-2 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}

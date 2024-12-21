@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import AddressModal from "../../components/AddressModal";
 import LayoutUser from "../../layout/layoutUser";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
+
 
 const mockPosts = [
   {
@@ -21,6 +23,7 @@ const mockPosts = [
 ];
 
 const EditPost = () => {
+  const { t } = useTranslation("editPost");
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState(null);
@@ -85,18 +88,18 @@ const EditPost = () => {
         className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-6"
       >
         <div className="flex">
-        <button
-          className="text-2xl mr-4 cursor-pointer"
-          onClick={() => window.history.back()}
-        >
-          <IoMdArrowRoundBack />
-        </button>
-        <h1 className="text-2xl font-bold text-gray-800">Chỉnh sửa bài đăng</h1>
+          <button
+            className="text-2xl mr-4 cursor-pointer"
+            onClick={() => window.history.back()}
+          >
+            <IoMdArrowRoundBack />
+          </button>
+          <h1 className="text-2xl font-bold text-gray-800">{t("title")}</h1>
         </div>
 
         <div>
           <label htmlFor="title" className="block text-gray-700 font-medium">
-            Tên sản phẩm
+            {t("nameProduct")}
           </label>
           <input
             type="text"
@@ -110,7 +113,7 @@ const EditPost = () => {
 
         <div>
           <label htmlFor="category" className="block text-gray-700 font-medium">
-            Danh mục
+            {t("menu")}
           </label>
           <select
             name="category"
@@ -118,15 +121,15 @@ const EditPost = () => {
             onChange={handleInputChange}
             className="mt-1 p-2 w-full border-gray-300 rounded-md shadow-sm focus:ring-[#d59648] focus:border-[#d59648]"
           >
-            <option value="xe-may">Xe Máy</option>
-            <option value="o-to">Ô Tô</option>
-            <option value="phu-tung">Phụ Tùng</option>
+            <option value="xe-may">{t("option1")}</option>
+            <option value="o-to">{t("option2")}</option>
+            <option value="phu-tung">{t("option3")}</option>
           </select>
         </div>
 
         <div>
           <label htmlFor="price" className="block text-gray-700 font-medium">
-            Giá
+            {t("price")}
           </label>
           <input
             type="number"
@@ -143,7 +146,7 @@ const EditPost = () => {
             htmlFor="condition"
             className="block text-gray-700 font-medium"
           >
-            Tình trạng
+            {t("status")}
           </label>
           <select
             name="condition"
@@ -151,9 +154,9 @@ const EditPost = () => {
             onChange={handleInputChange}
             className="mt-1 p-2 w-full border-gray-300 rounded-md shadow-sm focus:ring-[#d59648] focus:border-[#d59648]"
           >
-            <option value="Mới">Mới</option>
-            <option value="Đã qua sử dụng">Đã qua sử dụng</option>
-            <option value="Hết bảo hành">Hết bảo hành</option>
+            <option value="Mới">{t("option4")}</option>
+            <option value="Đã qua sử dụng">{t("option5")}</option>
+            <option value="Hết bảo hành">{t("option6")}</option>
           </select>
         </div>
 
@@ -162,7 +165,7 @@ const EditPost = () => {
             htmlFor="description"
             className="block text-gray-700 font-medium"
           >
-            Mô tả
+            {t("description")}
           </label>
           <textarea
             name="description"
@@ -175,7 +178,7 @@ const EditPost = () => {
 
         <div>
           <label htmlFor="location" className="block text-gray-700 font-medium">
-            Địa điểm
+            {t("location")}
           </label>
           <input
             type="text"
@@ -194,7 +197,7 @@ const EditPost = () => {
 
         <div>
           <label htmlFor="image" className="block text-gray-700 font-medium">
-            Hình ảnh
+            {t("img")}
           </label>
           <div className="flex gap-4 flex-wrap">
             {previewImages.map((image, index) => (
@@ -229,7 +232,7 @@ const EditPost = () => {
             type="submit"
             className="bg-[#d59648] text-white font-medium px-6 py-2 rounded-md hover:bg-[#b27939]"
           >
-            Lưu thay đổi
+            {t("save")}
           </button>
         </div>
       </form>

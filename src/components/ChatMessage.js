@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import LayoutUser from '../layout/layoutUser';
+import { useTranslation } from 'react-i18next';
 
 const ChatMessage = ({ onBack }) => {
+    const { t } = useTranslation("chat");
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]); // Lưu tin nhắn trong state
     const [file, setFile] = useState(null); // Lưu file được chọn
@@ -70,7 +72,7 @@ const ChatMessage = ({ onBack }) => {
                             />
                             <div className="flex flex-col text-left">
                                 <span className="font-bold">{expert?.fullname}</span>
-                                <span className="text-sm text-green-500">Đang hoạt động</span>
+                                <span className="text-sm text-green-500">{t("active")}</span>
                             </div>
                         </div>
                         <div className="flex space-x-4">
@@ -130,7 +132,7 @@ const ChatMessage = ({ onBack }) => {
                                 className="flex-grow p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                                 value={message}
                                 onChange={handleInputChange}
-                                placeholder="Nhập tin nhắn"
+                                placeholder={t("placeholder")}
                             />
 
                             {/* Nút gửi tin nhắn */}

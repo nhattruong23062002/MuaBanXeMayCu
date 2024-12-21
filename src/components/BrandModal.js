@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const BrandModal = ({
+
     isOpen,
     closeModal,
     brands,
@@ -10,6 +12,7 @@ const BrandModal = ({
     setSelectedBrand,
     openModelModal, // Hàm này để mở modal chọn dòng xe sau khi chọn thương hiệu
 }) => {
+    const { t } = useTranslation("brandModal");
     if (!isOpen) return null;
 
     const handleBrandSelect = (brand) => {
@@ -44,10 +47,10 @@ const BrandModal = ({
                 </button>
                 {/* Modal Header */}
                 <div className="p-6 border-b">
-                    <h2 className="text-2xl font-semibold text-center">Lựa Chọn Thương Hiệu</h2>
+                    <h2 className="text-2xl font-semibold text-center">{t("title")}</h2>
                     <input
                         type="text"
-                        placeholder="Tìm kiếm thương hiệu..."
+                        placeholder={t("searchPlaceholder")}
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}
                         className="mt-4 p-3 border rounded w-full text-xl"
@@ -56,7 +59,7 @@ const BrandModal = ({
 
                 {/* Popular Brands */}
                 <div className="p-6 overflow-x-auto">
-                    <h3 className="text-lg font-semibold mb-4">Thương hiệu phổ biến</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t("popularBrands")}</h3>
                     <div className="flex gap-4 pb-4 whitespace-nowrap min-w-max">
                         {brands
                             .filter((brand) => brand.popular)
@@ -79,7 +82,7 @@ const BrandModal = ({
 
                 {/* All Brands */}
                 <div className="p-6 border-t">
-                    <h3 className="text-lg font-semibold mb-4">Tất cả thương hiệu</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t("allBrands")}</h3>
                     <div className="grid grid-cols-5 gap-4 justify-items-center">
                         {filteredBrands.map((brand, index) => (
                             <button

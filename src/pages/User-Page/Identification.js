@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import LayoutUser from '../../layout/layoutUser';
+import { useTranslation } from 'react-i18next';
 
 const UserIdentificationForm = () => {
+    const { t } = useTranslation("identification");
     const [identityCard, setIdentityCard] = useState(null);
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -28,12 +30,12 @@ const UserIdentificationForm = () => {
 
             <div className="flex justify-center items-start min-h-screen bg-gray-200 pt-10">
                 <div className="w-[800px] p-8 bg-white rounded-xl shadow-lg space-y-8">
-                    <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">ĐỊNH DANH TÀI KHOẢN</h2>
+                    <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">{t("title")}</h2>
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* IDENTITY CARD */}
                         <div className="mb-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="identityCard">
-                                Căn cước công dân/Chứng minh nhân dân (Tải ảnh lên)
+                                {t("id")}
                             </label>
                             <input
                                 type="file"
@@ -52,7 +54,7 @@ const UserIdentificationForm = () => {
                         {/* Fullname */}
                         <div className="mb-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="fullName">
-                                Họ và tên
+                                {t("fullName")}
                             </label>
                             <input
                                 type="text"
@@ -60,14 +62,14 @@ const UserIdentificationForm = () => {
                                 value={fullName}
                                 onChange={(e) => setFullName(e.target.value)}
                                 className="block w-full p-3 border-2 border-gray-300 rounded-md shadow-sm hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                placeholder="Nhập họ và tên của bạn"
+                                placeholder={t("fullNamePlaceholder")}
                             />
                         </div>
 
                         {/* Email */}
                         <div className="mb-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="email">
-                                Email
+                                {t("email")}
                             </label>
                             <input
                                 type="email"
@@ -75,14 +77,14 @@ const UserIdentificationForm = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="block w-full p-3 border-2 border-gray-300 rounded-md shadow-sm hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                placeholder="Nhập email của bạn"
+                                placeholder={t("emailPlaceholder")}
                             />
                         </div>
 
                         {/* Phone Number */}
                         <div className="mb-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="phoneNumber">
-                                Số điện thoại
+                                {t("phoneNumber")}
                             </label>
                             <input
                                 type="tel"
@@ -90,14 +92,14 @@ const UserIdentificationForm = () => {
                                 value={phoneNumber}
                                 onChange={(e) => setPhoneNumber(e.target.value)}
                                 className="block w-full p-3 border-2 border-gray-300 rounded-md shadow-sm hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                placeholder="Nhập số điện thoại của bạn"
+                                placeholder={t("phonePlaceholder")}
                             />
                         </div>
 
                         {/* Address */}
                         <div className="mb-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="address">
-                                Địa chỉ
+                                {t("address")}
                             </label>
                             <input
                                 type="text"
@@ -105,14 +107,14 @@ const UserIdentificationForm = () => {
                                 value={address}
                                 onChange={(e) => setAddress(e.target.value)}
                                 className="block w-full p-3 border-2 border-gray-300 rounded-md shadow-sm hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                placeholder="Nhập địa chỉ của bạn"
+                                placeholder={t("addressPlaceholder")}
                             />
                         </div>
 
                         {/* Date of Birth */}
                         <div className="mb-6">
                             <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="dob">
-                                Ngày sinh
+                                {t("dob")}
                             </label>
                             <input
                                 type="date"
@@ -129,7 +131,7 @@ const UserIdentificationForm = () => {
                                 type="submit"
                                 className="w-full py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-105"
                             >
-                                Xác nhận
+                                {t("confirm")}
                             </button>
                         </div>
                     </form>

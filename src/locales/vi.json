@@ -99,7 +99,16 @@
     "price": "Giá trị muốn bán:",
     "description": "Mô tả sản phẩm:",
     "confirm": "Xác nhận",
-    "select": "Chọn"
+    "select": "Chọn",
+    "addDescription": "Vui lòng thêm thông tin mô tả về sản phẩm",
+    "placeholderVehicleBrand": "Chọn dòng xe",
+    "placeholderYear": "Chọn năm sản xuất",
+    "placeholderKilometer": "Chọn số km đã đi",
+    "placeholderColor": "Chọn màu",
+    "placeholderLicensePlate": "Nhập biển số xe",
+    "placeholderCity": "Chọn thành phố",
+    "placeholderDescription": "Vui lòng thêm thông tin mô tả về sản phẩm",
+    "placeholderPrice": "Nhập giá bán"
   },
   "expertDetail": {
     "title": "Thông tin chuyên gia",
@@ -274,12 +283,6 @@
     },
     "carName": "Xe Vario mới năm 2024"
   },
-  "editPost": {
-    "title": "Chỉnh sửa bài đăng",
-    "productName": "Tên sản phẩm",
-    "loading": "Đang tải...",
-    "logMessage": "Dữ liệu đã chỉnh sửa:"
-  },
   "addressModal": {
     "title": "Địa chỉ",
     "city": "Tỉnh, thành phố",
@@ -314,5 +317,112 @@
         "time": "13:54"
       }
     ]
+  },
+  "colorModal": {
+    "white": "Trắng",
+    "beige": "Màu be",
+    "black": "Đen",
+    "silver": "Bạc",
+    "gray": "Xám",
+    "yellow": "Vàng",
+    "brown": "Nâu",
+    "orange": "Cam",
+    "red": "Đỏ",
+    "pink": "Hồng",
+    "purple": "Tím",
+    "green": "Xanh lá",
+    "blue": "Xanh dương",
+    "skyBlue": "Xanh da trời",
+    "selectColor": "Chọn Màu Sắc",
+    "closeModal": "Đóng cửa sổ",
+    "confirm": "Xác nhận"
+  },
+  "brandModal": {
+    "title": "Lựa Chọn Thương Hiệu",
+    "yearTitle": "Chọn năm sản xuất",
+    "cityTitle": "Chọn Tỉnh/Thành Phố",
+    "searchPlaceholder": "Tìm kiếm thương hiệu...",
+    "popularBrands": "Thương hiệu phổ biến",
+    "allBrands": "Tất cả thương hiệu",
+    "close": "Đóng",
+    "confirm": "Xác nhận"
+  },
+  "kilometerSelectModal": {
+    "title": "Chọn Số Kilometers Đã Đi",
+    "under5000km": "Dưới 5000km",
+    "under10000km": "Dưới 10000km",
+    "under20000km": "Dưới 20000km",
+    "under30000km": "Dưới 30000km",
+    "under40000km": "Dưới 40000km",
+    "under50000km": "Dưới 50000km",
+    "under60000km": "Dưới 60000km",
+    "under70000km": "Dưới 70000km",
+    "under80000km": "Dưới 80000km",
+    "under90000km": "Dưới 90000km",
+    "under100000km": "Dưới 100000km",
+    "under110000km": "Dưới 110000km",
+    "under120000km": "Dưới 120000km",
+    "under130000km": "Dưới 130000km",
+    "under140000km": "Dưới 140000km",
+    "under150000km": "Dưới 150000km",
+    "under160000km": "Dưới 160000km",
+    "under170000km": "Dưới 170000km"
+  },
+  "chat": {
+    "active": "Đang hoạt động",
+    "placeholder": "Nhập tin nhắn"
+  },
+  "payment": {
+    "title": "Thông tin thanh toán",
+    "orderInf": "Thông tin đơn hàng",
+    "cusInf": "Thông tin khách hàng",
+    "method": "Phương thức thanh toán",
+    "type": "Loại xe",
+    "typeInput": "Cũ",
+    "cc": "Động cơ(Phân khối)",
+    "year": "Năm sản xuất",
+    "color": "Màu",
+    "colorInput": "Trắng",
+    "price": "Giá sản phẩm",
+    "fullName": "Họ và tên",
+    "phoneNumber": "SĐT",
+    "address": "Địa chỉ",
+    "notification": "Vui lòng định danh tài khoản để hoàn tất thủ tục mua bán xe",
+    "notiButton": "Định Danh",
+    "cash": "Tiền mặt",
+    "transfer": "Chuyển khoản",
+    "installment": "Trả góp",
+    "continue": "Tiếp tục"
+  },
+  "identification": {
+    "title": "ĐỊNH DANH TÀI KHOẢN",
+    "id": "Căn cước công dân/Chứng minh nhân dân (Tải ảnh lên)",
+    "fullName": "Họ và tên",
+    "email": "Email",
+    "phoneNumber": "Số điện thoại",
+    "address": "Địa chỉ",
+    "dob": "Ngày sinh",
+    "confirm": "Xác nhận",
+    "fullNamePlaceholder": "Nhập họ và tên của bạn",
+    "emailPlaceholder": "Nhập email của bạn",
+    "phonePlaceholder": "Nhập số điện thoại của bạn",
+    "addressPlaceholder": "Nhập địa chỉ của bạn"
+  },
+  "editPost": {
+    "title": "Chỉnh sửa bài đăng",
+    "nameProduct": "Tên sản phẩm",
+    "menu": "Danh mục",
+    "option1": "Xe Máy",
+    "option2": "Ô Tô",
+    "option3": "Phụ Tùng",
+    "price": "Giá",
+    "status": "Tình trạng",
+    "option4": "Mới",
+    "option5": "Đã qua sử dụng",
+    "option6": "Hết bảo hành",
+    "description": "Mô tả",
+    "location": "Địa điểm",
+    "img": "Hình ảnh",
+    "save": "Lưu thay đổi"
   }
 }

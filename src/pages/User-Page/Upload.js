@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaMotorcycle } from "react-icons/fa6";
@@ -20,6 +21,9 @@ import ColorSelectModal from "../../components/ColorSelectModal";
 import CitySelectModal from "../../components/CityModal";
 
 const Upload = () => {
+
+    const { t } = useTranslation("upload");
+
     const [selectedImages, setSelectedImages] = useState([]);
     const [isBrandModalOpen, setIsBrandModalOpen] = useState(false);
     const [isModelModalOpen, setIsModelModalOpen] = useState(false);
@@ -142,7 +146,7 @@ const Upload = () => {
                         </button>
 
                         {/* Dòng chữ */}
-                        <span className="text-base font-semibold text-gray-500">Đăng tải xe để bán</span>
+                        <span className="text-base font-semibold text-gray-500">{t("uploadMotorbike")}</span>
 
                     </div>
 
@@ -153,8 +157,8 @@ const Upload = () => {
                         <div className="flex justify-start items-center space-x-4">
                             {/* Dòng chữ */}
                             <div>
-                                <p className="text-lg font-semibold text-gray-700">Ảnh xe máy của bạn:</p>
-                                <p className="text-sm text-gray-500">Bạn cần phải đăng tải từ 3-6 ảnh</p>
+                                <p className="text-lg font-semibold text-gray-700">{t("uploadImages")}</p>
+                                <p className="text-sm text-gray-500">{t("uploadImagesHelp")}</p>
                             </div>
 
                             {/* Nút upload và input */}
@@ -205,14 +209,14 @@ const Upload = () => {
                     </div>
                     {/* Select Vehicle Brand */}
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700 ">Dòng xe:</p>
+                        <p className="text-lg font-semibold text-gray-700 ">{t("chooseVehicleBrand")}</p>
                         <div className="relative">
                             <FaThList className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                             <button
                                 onClick={openBrandModal}
                                 className="bg-white text-black p-2 pl-10 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14 text-left flex items-center justify-between"
                             >
-                                {selectedBrand ? selectedBrand : "Chọn dòng xe"}
+                                {selectedBrand ? selectedBrand : t("placeholderVehicleBrand")}
                                 <span className="text-gray-400">▼</span>
                             </button>
                         </div>
@@ -236,7 +240,7 @@ const Upload = () => {
                     />
                     {/* Year Section */}
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700">Năm sản xuất:</p>
+                        <p className="text-lg font-semibold text-gray-700">{t("selectYear")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
                             {/* Icon bên trái */}
                             <FaCalendarDays className="text-gray-400 mr-2 ml-1" />
@@ -246,7 +250,7 @@ const Upload = () => {
                                 onClick={openYearModal}
                                 className="flex-1 bg-transparent text-left flex items-center justify-between outline-none"
                             >
-                                {selectedYear ? selectedYear : "Chọn năm sản xuất"}
+                                {selectedYear ? selectedYear : t("placeholderYear")}
                                 <span className="text-gray-400">▼</span>
                             </button>
                         </div>
@@ -260,7 +264,7 @@ const Upload = () => {
 
                     {/* Kilometer Select */}
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700">Số km đã đi:</p>
+                        <p className="text-lg font-semibold text-gray-700">{t("selectKilometer")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
                             {/* Icon bên trái */}
                             <PiRoadHorizonFill className="text-gray-400 mr-2 ml-1" />
@@ -270,7 +274,7 @@ const Upload = () => {
                                 onClick={openKilometerModal}
                                 className="flex-1 bg-transparent text-left flex items-center justify-between outline-none"
                             >
-                                {selectedKilometer ? selectedKilometer : "Chọn số km đã đi"}
+                                {selectedKilometer ? selectedKilometer : t("placeholderKilometer")}
                                 <span className="text-gray-400">▼</span>
                             </button>
                         </div>
@@ -283,7 +287,7 @@ const Upload = () => {
                     />
                     {/* Color Select */}
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700">Màu sắc:</p>
+                        <p className="text-lg font-semibold text-gray-700">{t("selectColor")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
                             {/* Icon bên trái */}
                             <IoColorPaletteOutline className="text-gray-400 ml-1 mr-2" />
@@ -293,7 +297,7 @@ const Upload = () => {
                                 onClick={openColorModal}
                                 className="flex-1 bg-transparent text-left flex items-center justify-between outline-none"
                             >
-                                {selectedColors ? selectedColors : "Chọn màu xe"}
+                                {selectedColors ? selectedColors : t("placeholderColor")}
                                 <span className="text-gray-400">▼</span>
                             </button>
                         </div>
@@ -306,7 +310,7 @@ const Upload = () => {
                         setSelectedColor={setSelectedColors}
                     />
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700">Biển số xe:</p>
+                        <p className="text-lg font-semibold text-gray-700">{t("licensePlate")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
                             {/* Icon bên trái */}
                             <FaMotorcycle className="text-gray-400 ml-1 mr-2" />
@@ -316,7 +320,7 @@ const Upload = () => {
                                 type="text"
                                 className="flex-1 outline-none bg-transparent"
                                 value={licensePlate}
-                                placeholder="Nhập biển số xe"
+                                placeholder={t("placeholderLicensePlate")}
                                 onChange={handleChange} // Cập nhật giá trị khi người dùng nhập
                             />
                         </div>
@@ -324,7 +328,7 @@ const Upload = () => {
                     <hr className="my-4 border-t border-gray-200 w-full" />
                     {/* Color Select */}
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700">Chọn thành phố muốn bán:</p>
+                        <p className="text-lg font-semibold text-gray-700">{t("selectCity")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
                             {/* Icon bên trái */}
                             <FaCity className="text-gray-400 ml-1 mr-2" />
@@ -334,7 +338,7 @@ const Upload = () => {
                                 onClick={openCityModal}
                                 className="flex-1 bg-transparent text-left flex items-center justify-between outline-none"
                             >
-                                {selectedCities ? selectedCities : "Chọn thành phố"}
+                                {selectedCities ? selectedCities : t("placeholderCity")}
                                 <span className="text-gray-400">▼</span>
                             </button>
                         </div>
@@ -346,7 +350,7 @@ const Upload = () => {
                         setSelectedCity={setSelectedCities}
                     />
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700">Giá trị muốn bán:</p>
+                        <p className="text-lg font-semibold text-gray-700">{t("price")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
                             {/* Icon bên trái */}
                             <LiaMoneyCheckAltSolid className="text-gray-400 ml-1 mr-2" />
@@ -357,7 +361,7 @@ const Upload = () => {
                                     type="text"
                                     className="flex-1 outline-none bg-transparent"
                                     value={price}
-                                    placeholder="Vui lòng nhập giá"
+                                    placeholder={t("placeholderPrice")}
                                     onChange={handleChangePrice} // Cập nhật giá trị khi người dùng nhập
                                 />
                                 {/* VNĐ */}
@@ -366,7 +370,7 @@ const Upload = () => {
                         </div>
                     </div>
                     <div className="my-6">
-                        <p className="text-lg font-semibold text-gray-700">Mô tả sản phẩm:</p>
+                        <p className="text-lg font-semibold text-gray-700">{t("description")}</p>
                         <div className="flex bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full">
                             {/* Icon bên trái */}
                             <MdOutlineDescription className="text-gray-400 ml-1 mr-2 mt-1" />
@@ -375,7 +379,7 @@ const Upload = () => {
                             <textarea
                                 className="flex-1 outline-none bg-transparent resize-none h-[200px]"
                                 value={description}
-                                placeholder="Vui lòng thêm thông tin mô tả về sản phẩm"
+                                placeholder={t("placeholderDescription")}
                                 onChange={handleDescription} // Cập nhật giá trị khi người dùng nhập
                             />
                         </div>
@@ -385,7 +389,7 @@ const Upload = () => {
                         <div className="flex justify-center bg-blue-400 text-white p-2 rounded shadow hover:bg-blue-200 cursor-pointer font-semibold transition duration-300 w-full h-14">
                             {/* Nút chọn thành phố */}
                             <button>
-                                Xác nhận
+                                {t("confirm")}
                             </button>
                         </div>
                     </div>
