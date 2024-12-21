@@ -10,7 +10,6 @@ import {
 } from "react-icons/fa";
 
 const HandleComplaints = () => {
-  // Dữ liệu mẫu
   const complaints = [
     {
       name: "Lê Văn A",
