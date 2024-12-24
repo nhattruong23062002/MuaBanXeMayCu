@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <div className="bg-[#0e0f2b] text-white py-2">
-      <div className="max-w-[800px] mx-auto flex justify-between items-center pl-6 pr-1">
+      <div className="max-w-[800px] mx-auto flex justify-between items-center pl-6">
         <div className="flex items-center space-x-2">
           <span
             className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl cursor-pointer"

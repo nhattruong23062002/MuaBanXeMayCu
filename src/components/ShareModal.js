@@ -2,7 +2,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { SiX } from "react-icons/si";
-function ShareModal({ isOpen, onClose, productLink }) {
+
+function ShareModal({ isOpen, onClose, productLink, productTitle }) {
   const { t } = useTranslation("shareModal");
 
   if (!isOpen) return null;
@@ -11,18 +12,26 @@ function ShareModal({ isOpen, onClose, productLink }) {
     navigator.clipboard.writeText(productLink);
   };
 
+  // Mã hóa URL và nội dung cần chia sẻ
+  const encodedProductLink = encodeURIComponent(productLink);
+  const encodedProductTitle = encodeURIComponent(productTitle);
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-lg w-[90%] sm:w-[400px]">
         <h3 className="text-xl font-bold mb-4">{t('title')}</h3>
         <div className="flex justify-around mb-4">
-          <a href={`https://facebook.com/sharer/sharer.php?u=${productLink}`} target="_blank" rel="noopener noreferrer">
+          <a 
+            href={`https://facebook.com/sharer/sharer.php?u=${encodedProductLink}&quote=${encodedProductTitle}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <FaFacebook className="text-blue-600 text-2xl" />
           </a>
-          <a href={`https://x.com/intent/tweet?url=${productLink}`} target="_blank" rel="noopener noreferrer">
-            <SiX className="text-black text-2xl" /> {/* Biểu tượng X */}
+          <a href={`https://x.com/intent/tweet?url=${encodedProductLink}`} target="_blank" rel="noopener noreferrer">
+            <SiX className="text-black text-2xl" /> 
           </a>
-          <a href={`https://api.whatsapp.com/send?text=${productLink}`} target="_blank" rel="noopener noreferrer">
+          <a href={`https://api.whatsapp.com/send?text=${encodedProductLink}`} target="_blank" rel="noopener noreferrer">
             <FaWhatsapp className="text-green-600 text-2xl" />
           </a>
         </div>
