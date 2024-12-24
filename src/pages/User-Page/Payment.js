@@ -224,8 +224,8 @@ const PaymentForm = () => {
 
                         {showModal && (
                             <Modal title={t("titleModal")} onClose={handleCloseModal}>
-                                <div className="flex space-x-6">
-                                    <div className="w-1/2 space-y-6">
+                                <div className="flex flex-col lg:flex-row lg:space-x-6">
+                                    <div className="w-full lg:w-1/2 space-y-6">
                                         <h3 className="text-2xl font-semibold mb-4 text-gray-800 text-center">{t("idInf")}</h3>
                                         <div className="space-y-4">
                                             <div>
@@ -237,7 +237,6 @@ const PaymentForm = () => {
                                                     className="mt-2 block w-full h-14 p-4 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50"
                                                 />
                                             </div>
-
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700">{t("numberId")}</label>
                                                 <input
@@ -247,7 +246,6 @@ const PaymentForm = () => {
                                                     className="mt-2 block w-full h-14 p-4 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50"
                                                 />
                                             </div>
-
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700">{t("bankName")}</label>
                                                 <input
@@ -257,7 +255,6 @@ const PaymentForm = () => {
                                                     className="mt-2 block w-full h-14 p-4 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50"
                                                 />
                                             </div>
-
                                             <div>
                                                 <label className="block text-sm font-medium text-gray-700">{t("bankBranch")}</label>
                                                 <input
@@ -268,7 +265,6 @@ const PaymentForm = () => {
                                                 />
                                             </div>
                                         </div>
-
                                         <div className="flex justify-between mt-4 w-full">
                                             <div className="w-1/4">
                                                 <img
@@ -299,7 +295,6 @@ const PaymentForm = () => {
                                                 />
                                             </div>
                                         </div>
-
                                         <div className="flex justify-center mt-6">
                                             <button
                                                 type="button"
@@ -311,16 +306,18 @@ const PaymentForm = () => {
                                         </div>
                                     </div>
 
-                                    <div className="border-l-2 border-gray-300 mx-6"></div>
+                                    {/* Phân chia dạng cột trên mobile và dạng hàng trên desktop */}
+                                    <div className="border-t-2 lg:border-t-0 lg:border-l-2 border-gray-300 mt-6 lg:mt-0 lg:mx-6"></div>
 
-                                    <div className="w-1/2 flex justify-center items-center">
+                                    <div className="w-full lg:w-1/2 flex justify-center items-center mb-60 lg:mt-0">
                                         <img
                                             src="https://th.bing.com/th/id/OIP.9_HJ8MQaeWA2WJc_24unQgHaEs?w=280&h=180&c=7&r=0&o=5&pid=1.7"
                                             alt="Bank Card"
-                                            className="rounded-lg shadow-xl h-52 object-contain border-4 mb-80"
+                                            className="rounded-lg shadow-xl h-52 object-contain border-4"
                                         />
                                     </div>
                                 </div>
+
                             </Modal>
                         )}
                     </div>
