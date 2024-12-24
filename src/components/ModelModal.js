@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
-const ModelModal = ({ isOpen, closeModal, brands, setSelectedModel }) => {
+const ModelModal = ({ isOpen, closeModal, brands, selectedBrand, setSelectedModel }) => {
     const [searchTerm, setSearchTerm] = useState("");
 
-    // Kiểm tra nếu brands tồn tại và là mảng, sau đó lấy tất cả các dòng xe
-    const allModels = Array.isArray(brands)
-        ? [...new Set(brands.flatMap(brand => brand.models || []))]  // Sử dụng || [] nếu models không tồn tại
+    const modelsOfSelectedBrand = brands && Array.isArray(brands) && selectedBrand
+        ? brands.find(brand => brand.name === selectedBrand)?.models || []
         : [];
 
-    // Lọc các dòng xe theo từ khóa tìm kiếm
-    const filteredModels = allModels.filter((model) =>
-        model.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredModels = searchTerm
+        ? modelsOfSelectedBrand.filter((model) =>
+            model.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        : modelsOfSelectedBrand;
 
     if (!isOpen) return null;
 

@@ -34,14 +34,12 @@ function ExpertDetailPage() {
             Thông tin chuyên gia
           </h1>
         </div>
-
         <div className="max-w-[800px] mx-auto bg-white rounded-lg shadow-md">
           <img
             src="https://kiemtraxecu.com/wp-content/uploads/2022/05/IMG_8158-scaled.jpg"
             alt="Chuyên gia"
             className="w-full h-96 object-cover rounded-t-lg"
           />
-
           <div className="p-6 -mt-8 relative z-10 bg-white mx-4 rounded-lg shadow-lg">
             <h2 className="text-xl font-bold mb-2">
               Chuyên gia: <span className="text-[#f59e0b]">{expert.name}</span>
@@ -56,7 +54,6 @@ function ExpertDetailPage() {
               <strong>SĐT: {expert.phone}</strong>
             </p>
           </div>
-
           <div className="p-8">
             <h3 className="text-xl font-bold mb-2">Giờ làm việc:</h3>
             <div className="grid grid-cols-2 gap-y-2 text-blue-600">
@@ -67,7 +64,6 @@ function ExpertDetailPage() {
               ))}
             </div>
           </div>
-
           <div className="px-8 pb-6">
             <h3 className="text-xl font-bold mb-2">Dịch vụ cung cấp</h3>
             <p className="text-gray-500">

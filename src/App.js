@@ -29,81 +29,85 @@ import SellPage from "./pages/User-Page/ManagerSell";
 import PostDetail from "./pages/User-Page/postDetail";
 import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
+import SnowEffect from "./components/SnowEffect";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/detailMoto" element={<DetailMoto />} />
-        <Route path="/account" element={<AccountPage />} />
-        <Route path="/purchased" element={<PurchasedPage />} />
-        <Route path="/selling" element={<SellPage />} />
-        <Route path="/listexp" element={<ListExpert />} />
-        <Route path="/listStore" element={<ListStore />} />
-        <Route path="/chat" element={<ChatMessage />} />
-        <Route path="/identification" element={<UserIdentificationForm />} />
-        <Route path="/payment" element={<PaymentForm />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/expertDetail" element={<ExpertDetailPage />} />
-        <Route path="/storeDetail" element={<StoreDetailPage />} />
-        <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
-        <Route path="/postDetail" element={<PostDetail />} />
-        <Route path="/editPost/:id" element={<EditPost />} />
-        <Route path="/listSender" element={<MessageList />} />
+    <>
+      <SnowEffect />
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/detailMoto" element={<DetailMoto />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/purchased" element={<PurchasedPage />} />
+          <Route path="/selling" element={<SellPage />} />
+          <Route path="/listexp" element={<ListExpert />} />
+          <Route path="/listStore" element={<ListStore />} />
+          <Route path="/chat" element={<ChatMessage />} />
+          <Route path="/identification" element={<UserIdentificationForm />} />
+          <Route path="/payment" element={<PaymentForm />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/expertDetail" element={<ExpertDetailPage />} />
+          <Route path="/storeDetail" element={<StoreDetailPage />} />
+          <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
+          <Route path="/postDetail" element={<PostDetail />} />
+          <Route path="/editPost/:id" element={<EditPost />} />
+          <Route path="/listSender" element={<MessageList />} />
 
-        <Route
-          path="/admin/manage-appointments"
-          element={
-            <AdminLayout>
-              <ManageAppointments />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/create-appointment"
-          element={
-            <AdminLayout>
-              <CreateAppointment />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/manage-posts"
-          element={
-            <AdminLayout>
-              <ManagePosts />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/manage-users"
-          element={
-            <AdminLayout>
-              <ManageUsers />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/handle-complaints"
-          element={
-            <AdminLayout>
-              <HandleComplaints />
-            </AdminLayout>
-          }
-        />
-        <Route
-          path="/admin/manage-experts"
-          element={
-            <AdminLayout>
-              <ManageExperts />
-            </AdminLayout>
-          }
-        />
-      </Routes>
-    </Router>
+          <Route
+            path="/admin/manage-appointments"
+            element={
+              <AdminLayout>
+                <ManageAppointments />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/create-appointment"
+            element={
+              <AdminLayout>
+                <CreateAppointment />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/manage-posts"
+            element={
+              <AdminLayout>
+                <ManagePosts />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/manage-users"
+            element={
+              <AdminLayout>
+                <ManageUsers />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/handle-complaints"
+            element={
+              <AdminLayout>
+                <HandleComplaints />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/manage-experts"
+            element={
+              <AdminLayout>
+                <ManageExperts />
+              </AdminLayout>
+            }
+          />
+        </Routes>
+      </Router>
+    </>
   );
 };
 
