@@ -56,11 +56,11 @@
     "filter": "Filter"
   },
   "header": {
-    "home": "Home",
-    "experts": "Experts",
-    "post_ad": "Post Ad",
-    "stores": "Stores",
-    "account": "Account"
+    "home": " Home ",
+    "experts": " Experts ",
+    "post_ad": " Post Ad ",
+    "stores": " Stores ",
+    "account": " Account "
   },
   "homepage": {
     "scooter": "Scooter",
@@ -156,7 +156,9 @@
       "sold": "Sold",
       "favorites": "Favorites"
     },
-    "bikeListTitle": "Bike List"
+    "bikeListTitle": "Bike List",
+    "contactButton": "Contact information"
+
   },
   "login": {
     "title": "Login",
@@ -369,8 +371,16 @@
     "under170000km": "Under 170000km"
   },
   "chat": {
+    "chat": "Chat",
     "active": "Active",
-    "placeholder": "Please enter a message"
+    "offer": "Offer",
+    "placeholder": "Type your message",
+    "priceError": "The offer cannot be less than 50,000,000 VND",
+    "enterPrice": "Enter the price you want to offer",
+    "enterPricePlaceholder": "Enter price",
+    "messageSend": "I would like to pay:",
+    "cancel": "Cancel",
+    "submit": "Submit"
   },
   "payment": {
     "title": "Payment Information",
@@ -657,5 +667,21 @@
       "reputation": "Reputation",
       "actions": "Actions"
     }
+  },
+  "contactModal": {
+    "contactInfoTitle": "Contact information",
+    "call": "Call",
+    "viewAddress": "View Address",
+    "chat": "Chat"
+  },
+  "mapModal": {
+    "location": "Location",
+    "myLocation": "My Location",
+    "directions": "Directions"
+  },
+  "shareModal": {
+    "title": "Share product",
+    "copy": "Copy",
+    "close": "Close"
   }
 }

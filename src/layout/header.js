@@ -14,13 +14,13 @@ import { useTranslation } from "react-i18next";
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { t } = useTranslation("header"); // Sử dụng namespace `header`
+  const { t } = useTranslation("header"); 
 
   const isActive = (path) => location.pathname === path;
 
   return (
     <div className="bg-[#0e0f2b] text-white py-2">
-      <div className="max-w-[800px] mx-auto flex justify-between items-center px-6">
+      <div className="max-w-[800px] mx-auto flex justify-between items-center pl-6 pr-1">
         <div className="flex items-center space-x-2">
           <span
             className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl cursor-pointer"
@@ -30,7 +30,7 @@ function Header() {
           </span>
         </div>
 
-        <nav className="flex flex-wrap justify-center space-x-3 sm:space-x-6 md:space-x-14 text-xs sm:text-sm md:text-base font-medium">
+        <nav className="flex justify-center space-x-5 sm:space-x-6 md:space-x-14 text-xs sm:text-sm md:text-base font-medium">
           <div
             className={`flex flex-col items-center group cursor-pointer ${
               isActive("/") ? "text-[#d59648]" : ""

@@ -87,14 +87,21 @@ function HomePage() {
   };
 
   const filteredBikes = bikes.filter((bike) => {
+    const actualPrice = bike.price * 10; 
+    const filterPrice = filters.price * 10; 
+
     return (
       (!filters.type || bike.type === filters.type) &&
       (!filters.year || bike.year === filters.year) &&
       (!filters.location || bike.location === filters.location) &&
-      bike.price <= filters.price * 2 &&
+      actualPrice <= filterPrice + 10 && 
       bike.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
+
+  const formatPrice = (price) => {
+    return `${Math.floor(price / 10)}x.000.000đ`;
+  };
 
   return (
     <LayoutUser>
@@ -131,7 +138,7 @@ function HomePage() {
                 name={bike.name}
                 year={bike.year}
                 mileage={bike.mileage}
-                price={`${bike.price}.000.000đ`}
+                price={formatPrice(bike.price)}
               />
             ))}
           </div>

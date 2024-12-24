@@ -1,39 +1,63 @@
 import React, { useState } from "react";
-import { IoStar } from "react-icons/io5";
-import {
-  FaCalendarAlt,
-  FaTachometerAlt,
-  FaCogs,
-  FaCheckCircle,
-  FaClock,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-} from "react-icons/fa";
+import { FaShareFromSquare } from "react-icons/fa6";
+import { FaCalendarAlt, FaTachometerAlt, FaCogs, FaCheckCircle } from "react-icons/fa";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import LayoutUser from "../../layout/layoutUser";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import ShareModal from "../../components/ShareModal"; 
 
 function DetailMoto() {
-  const { t } = useTranslation("detailMoto"); 
+  const { t } = useTranslation("detailMoto");
   const images = [
     "https://media.moitruongvadothi.vn/images/2023/10/25/9883-1698207232-9883-1695003555-gia-xe-honda-sh-2023-1.jpg",
     "https://xemayanhloc.com.vn/wp-content/uploads/2022/05/z3403832730322_3dc7bd30894c8821da2984ba662a860e.jpg",
   ];
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activeImage, setActiveImage] = useState(images[0]);
+  const [isModalOpen, setModalOpen] = useState(false); 
+  const productLink = window.location.href;
 
   const onClickChat = () => {
-    navigate("/chat");
+    const productInfo = {
+      name: "Honda SH 125i",
+      price: "6x,000,000 VND",
+      image:
+        "https://media.moitruongvadothi.vn/images/2023/10/25/9883-1698207232-9883-1695003555-gia-xe-honda-sh-2023-1.jpg",
+    };
+    navigate("/chat", { state: { product: productInfo } });
   };
 
   const onClickPayment = () => {
     navigate("/payment");
   };
 
-  const [activeImage, setActiveImage] = useState(images[0]);
-
   return (
     <LayoutUser>
-      <div className="max-w-[800px] mx-auto py-6 px-4 bg-white rounded-lg shadow-md">
+      <div className="max-w-[800px] mx-auto py-4 px-4 bg-white rounded-lg shadow-md">
+        <div className="flex justify-between items-center pb-2">
+          <button
+            className="text-2xl mr-4 cursor-pointer"
+            onClick={() => window.history.back()}
+          >
+            <IoMdArrowRoundBack />
+          </button>
+          <div
+            className="text-xl cursor-pointer"
+            onClick={() => setModalOpen(true)}
+          >
+            <FaShareFromSquare className="text-xl hover:text-blue-500" />
+          </div>
+        </div>
+
+        <ShareModal 
+          isOpen={isModalOpen} 
+          onClose={() => setModalOpen(false)} 
+          productLink={productLink} 
+        />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <img
@@ -41,7 +65,6 @@ function DetailMoto() {
               alt="Honda SH 125i"
               className="w-full h-[350px] object-cover rounded-md"
             />
-
             <div className="flex mt-4 space-x-4">
               {images.map((image, index) => (
                 <img
@@ -58,9 +81,7 @@ function DetailMoto() {
           </div>
 
           <div>
-            <h1 className="text-3xl font-bold mb-2 text-left">
-              {t("title")}
-            </h1>
+            <h1 className="text-3xl font-bold mb-2 text-left">{t("title")}</h1>
             <p className="text-2xl text-[#d59648] font-bold mb-4 text-left">
               {t("price")}
             </p>
@@ -131,12 +152,14 @@ function DetailMoto() {
             <hr className="my-4" />
 
             <ul className="space-y-2">
-              {t("warranty_items", { returnObjects: true }).map((item, index) => (
-                <li key={index} className="flex items-center">
-                  <FaCheckCircle className="text-[#d59648] mr-2" />
-                  {item}
-                </li>
-              ))}
+              {t("warranty_items", { returnObjects: true }).map(
+                (item, index) => (
+                  <li key={index} className="flex items-center">
+                    <FaCheckCircle className="text-[#d59648] mr-2" />
+                    {item}
+                  </li>
+                )
+              )}
             </ul>
 
             <p className="mt-6 font-bold text-center text-[#d59648]">

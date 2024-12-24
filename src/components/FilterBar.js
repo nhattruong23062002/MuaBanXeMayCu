@@ -6,7 +6,7 @@ function FilterBar({ onFilter }) {
 
   const [filters, setFilters] = useState({
     type: "",
-    price: 100,
+    price: 200,
     year: "",
     location: "",
   });
@@ -40,12 +40,12 @@ function FilterBar({ onFilter }) {
 
         <div className="flex flex-col w-[40%] pl-2">
           <label className="text-gray-600 font-medium mb-1 text-sm">
-            {t("price")}: {filters.price * 2} {t("million")}
+            {t("price")}: {filters.price} {t("million")}
           </label>
           <input
             type="range"
             min="1"
-            max="100"
+            max="200"
             step="1"
             value={filters.price}
             onChange={(e) => handleChange("price", e.target.value)}
