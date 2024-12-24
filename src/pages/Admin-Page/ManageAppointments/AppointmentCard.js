@@ -15,19 +15,26 @@ const AppointmentCard = ({
       <p className="font-bold text-gray-800 mb-2">
         <span className="text-blue-500">#{id}</span> {name}
       </p>
-      <p className="flex items-center text-gray-700 text-lg mb-2">
-        <FaPhoneAlt className="text-blue-500 mr-2" /> {phone}
-      </p>
-      <p className="flex items-center text-gray-700 text-lg mb-2">
-        <FaInfoCircle className="text-green-500 mr-2" /> {status}
-      </p>
-      <p className="flex items-center text-gray-700 text-lg mb-2">
-        <FaClock className="text-yellow-500 mr-2" /> {time}
-      </p>
-      <div
-        className="w-10 h-10 flex items-center justify-center text-white text-lg font-bold rounded-full mt-4 mx-auto"
-        style={{ backgroundColor: color }}
-      >
+
+      {/* Số điện thoại */}
+      <div className="appointment-item">
+        <FaPhoneAlt className="icon-phone" />
+        <span>{phone}</span>
+      </div>
+
+      {/* Trạng thái */}
+      <div className="appointment-item">
+        <FaInfoCircle className="icon-status" />
+        <span>{status}</span>
+      </div>
+
+      {/* Thời gian */}
+      <div className="appointment-item">
+        <FaClock className="icon-time" />
+        <span>{time}</span>
+      </div>
+
+      <div className="initials" style={{ backgroundColor: color }}>
         {initials}
       </div>
     </div>

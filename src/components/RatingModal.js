@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FaStar, FaSmile, FaFrown } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function RatingModal({ isOpen, onClose }) {
-  const [rating, setRating] = useState(4); 
+  const { t } = useTranslation("ratingModal"); // Sử dụng namespace "ratingModal"
+  const [rating, setRating] = useState(4);
   const [comment, setComment] = useState("");
 
   const handleStarClick = (index) => {
@@ -11,19 +13,25 @@ function RatingModal({ isOpen, onClose }) {
 
   const getFeedback = () => {
     if (rating <= 2) {
-      return { icon: <FaFrown className="text-5xl text-red-500" />, text: "Thất vọng" };
+      return {
+        icon: <FaFrown className="text-5xl text-red-500" />,
+        text: t("feedback.disappointed"),
+      };
     }
-    return { icon: <FaSmile className="text-5xl text-green-500" />, text: "Hài lòng" };
+    return {
+      icon: <FaSmile className="text-5xl text-green-500" />,
+      text: t("feedback.satisfied"),
+    };
   };
 
   if (!isOpen) return null;
 
-  const feedback = getFeedback(); 
+  const feedback = getFeedback();
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white w-[500px] p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold mb-4 text-center">Đánh giá sản phẩm</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">{t("title")}</h2>
 
         <div className="flex flex-col items-center mb-4">
           {feedback.icon}
@@ -44,7 +52,7 @@ function RatingModal({ isOpen, onClose }) {
 
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-2 text-left">
-            Góp ý chi tiết:
+            {t("detailedFeedback")}
           </label>
           <textarea
             rows="4"
@@ -59,13 +67,13 @@ function RatingModal({ isOpen, onClose }) {
             onClick={onClose}
             className="px-4 py-2 border rounded-md text-gray-600 hover:bg-gray-100"
           >
-            Hủy
+            {t("cancel")}
           </button>
           <button
-            onClick={() => alert("Đã gửi đánh giá!")}
+            onClick={() => alert(t("submit"))}
             className="px-4 py-2 bg-orange-400 text-white rounded-md hover:bg-orange-500"
           >
-            Gửi
+            {t("submit")}
           </button>
         </div>
       </div>

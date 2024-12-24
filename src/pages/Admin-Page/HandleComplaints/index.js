@@ -7,6 +7,7 @@ import {
   FaTimes,
   FaFileAlt,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const HandleComplaints = () => {
   const complaints = [
@@ -14,32 +15,32 @@ const HandleComplaints = () => {
       name: "Lê Văn A",
       email: "A@gmail.com",
       time: "14/7/2024",
-      reason: "Đề nghị bảo lưu",
-      role: "User",
+      reason: t("reasons.defer"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
     {
       name: "Tạ Văn B",
       email: "B@gmail.com",
       time: "14/12/2024",
-      reason: "Đề nghị hoàn tiền",
-      role: "User",
+      reason: t("reasons.refund"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
     {
       name: "Lê Hùng",
       email: "Hung@gmail.com",
       time: "14/9/2024",
-      reason: "Đề nghị hoàn tiền",
-      role: "User",
+      reason: t("reasons.refund"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
     {
       name: "Trần Đô",
       email: "Do12@gmail.com",
       time: "14/1/2024",
-      reason: "Đề nghị bảo lưu",
-      role: "User",
+      reason: t("reasons.defer"),
+      role: t("roles.user"),
       link: "https://user.com/",
     },
   ];
@@ -59,25 +60,24 @@ const HandleComplaints = () => {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Danh sách khiếu nại</h2>
-
+    <div className="handle-complaints-container">
+      <h2>{t("title")}</h2>
       {/* Summary Cards */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
-        <div className="bg-blue-100 p-4 rounded-lg flex flex-col items-center">
-          <FaFileAlt className="text-blue-500 text-4xl mb-2" />
-          <p className="text-blue-500 font-medium">Đang xử lý</p>
-          <h3 className="text-2xl font-bold">45</h3>
+      <div className="summary-cards-handle">
+        <div className="cards processing">
+          <FaFileAlt className="File-icon" />
+          <p className="text-process">{t("status.processing")}</p>
+          <h3>45</h3>
         </div>
-        <div className="bg-green-100 p-4 rounded-lg flex flex-col items-center">
-          <FaFileAlt className="text-green-500 text-4xl mb-2" />
-          <p className="text-green-500 font-medium">Thành công</p>
-          <h3 className="text-2xl font-bold">15</h3>
+        <div className="cards success">
+          <FaFileAlt className="File-icon-success" />
+          <p className="text-process">{t("status.success")}</p>
+          <h3>15</h3>
         </div>
-        <div className="bg-red-100 p-4 rounded-lg flex flex-col items-center">
-          <FaFileAlt className="text-red-500 text-4xl mb-2" />
-          <p className="text-red-500 font-medium">Từ chối</p>
-          <h3 className="text-2xl font-bold">15</h3>
+        <div className="cards rejected">
+          <FaFileAlt className="File-icon-reject" />
+          <p className="text-process">{t("status.rejected")}</p>
+          <h3>15</h3>
         </div>
       </div>
 
@@ -85,19 +85,17 @@ const HandleComplaints = () => {
       <div className="flex items-center space-x-4 mb-6">
         <input
           type="text"
-          placeholder="Search Users"
-          className="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder={t("searchPlaceholder")}
+          className="search-input-handle"
           value={searchTerm}
           onChange={handleSearch}
         />
-        <button className="flex items-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
-          <FaTrashAlt className="mr-2" /> Xóa
+        <button className="delete-btn-handle">
+          <FaTrashAlt /> {t("actions.delete")}
         </button>
-        <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
-          Export
-        </button>
-        <button className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-          <FaFilter className="mr-2" /> Filter
+        <button className="export-btn-handle">{t("actions.export")}</button>
+        <button className="filter-btn-handle">
+          <FaFilter /> {t("actions.filter")}
         </button>
       </div>
 
@@ -108,13 +106,13 @@ const HandleComplaints = () => {
             <th className="border border-gray-200 p-2 text-left">
               <input type="checkbox" />
             </th>
-            <th className="border border-gray-200 p-2 text-left">Name</th>
-            <th className="border border-gray-200 p-2 text-left">Email</th>
-            <th className="border border-gray-200 p-2 text-left">Time</th>
-            <th className="border border-gray-200 p-2 text-left">Reason</th>
-            <th className="border border-gray-200 p-2 text-left">Role</th>
-            <th className="border border-gray-200 p-2 text-left">Link người bị khiếu nại</th>
-            <th className="border border-gray-200 p-2 text-left">Actions</th>
+            <th>{t("tableHeaders.name")}</th>
+            <th>{t("tableHeaders.email")}</th>
+            <th>{t("tableHeaders.time")}</th>
+            <th>{t("tableHeaders.reason")}</th>
+            <th>{t("tableHeaders.role")}</th>
+            <th>{t("tableHeaders.link")}</th>
+            <th>{t("tableHeaders.actions")}</th>
           </tr>
         </thead>
         <tbody>
@@ -138,12 +136,12 @@ const HandleComplaints = () => {
                   <FaLink className="inline mr-1" /> {complaint.link}
                 </a>
               </td>
-              <td className="border border-gray-200 p-2 space-x-2">
-                <button className="flex items-center px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600">
-                  <FaCheck className="mr-1" /> Phê duyệt
+              <td className="action-buttons-handle">
+                <button className="approve-btn-handle">
+                  <FaCheck className="approve-icon" /> {t("actions.approve")}
                 </button>
-                <button className="flex items-center px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600">
-                  <FaTimes className="mr-1" /> Từ chối
+                <button className="reject-btn-handle">
+                  <FaTimes className="reject-icon" /> {t("actions.reject")}
                 </button>
               </td>
             </tr>

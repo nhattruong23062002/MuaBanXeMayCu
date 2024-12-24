@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CitySelectModal = ({ isOpen, closeModal, setSelectedCity }) => {
+    const { t } = useTranslation("brandModal");
     const cities = [
         "An Giang", "Bà Rịa - Vũng Tàu", "Bạc Liêu", "Bắc Giang", "Bắc Kạn", "Bắc Ninh",
         "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau",
@@ -46,7 +48,7 @@ const CitySelectModal = ({ isOpen, closeModal, setSelectedCity }) => {
 
                 {/* Modal Header */}
                 <div className="p-6 border-b">
-                    <h2 className="text-2xl font-semibold text-center">Chọn Tỉnh/Thành Phố</h2>
+                    <h2 className="text-2xl font-semibold text-center">{t("cityTitle")}</h2>
                 </div>
 
                 {/* Modal Body */}
@@ -80,7 +82,7 @@ const CitySelectModal = ({ isOpen, closeModal, setSelectedCity }) => {
                             : 'bg-gray-300 text-gray-700 cursor-not-allowed'
                             }`}
                     >
-                        Xác nhận
+                        {t("confirm")}
                     </button>
                 </div>
             </div>

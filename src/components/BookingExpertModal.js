@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function BookingModal({ isOpen, onClose }) {
+  const { t } = useTranslation("bookingModal");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -19,9 +21,9 @@ function BookingModal({ isOpen, onClose }) {
   };
 
   const handleSubmit = () => {
-    console.log("Thông tin đặt lịch:", formData);
-    alert("Đặt lịch thành công!");
-    onClose(); 
+    console.log(t("successMessage"), formData);
+    alert(t("successMessage"));
+    onClose();
   };
 
   if (!isOpen) return null;
@@ -30,11 +32,11 @@ function BookingModal({ isOpen, onClose }) {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-[500px]">
         <h2 className="text-2xl font-bold mb-4 text-center">
-          Đặt lịch kiểm tra xe
+          {t("title")}
         </h2>
         <div className="space-y-3">
           <div className="flex items-center">
-            <label className="w-40 font-medium">Họ và tên:</label>
+            <label className="w-40 font-medium">{t("name")}:</label>
             <input
               type="text"
               name="name"
@@ -44,7 +46,7 @@ function BookingModal({ isOpen, onClose }) {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-40 font-medium">SĐT:</label>
+            <label className="w-40 font-medium">{t("phone")}:</label>
             <input
               type="text"
               name="phone"
@@ -54,7 +56,7 @@ function BookingModal({ isOpen, onClose }) {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-40 font-medium">Địa chỉ kiểm tra:</label>
+            <label className="w-40 font-medium">{t("address")}:</label>
             <input
               type="text"
               name="address"
@@ -64,7 +66,7 @@ function BookingModal({ isOpen, onClose }) {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-40 font-medium">Loại xe:</label>
+            <label className="w-40 font-medium">{t("carType")}:</label>
             <input
               type="text"
               name="carType"
@@ -74,7 +76,7 @@ function BookingModal({ isOpen, onClose }) {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-40 font-medium">Mục đích kiểm tra:</label>
+            <label className="w-40 font-medium">{t("purpose")}:</label>
             <input
               type="text"
               name="purpose"
@@ -84,7 +86,7 @@ function BookingModal({ isOpen, onClose }) {
             />
           </div>
           <div className="flex items-center">
-            <label className="w-40 font-medium">Ngày hẹn:</label>
+            <label className="w-40 font-medium">{t("appointmentDate")}:</label>
             <input
               type="date"
               name="date"
@@ -94,7 +96,7 @@ function BookingModal({ isOpen, onClose }) {
             />
           </div>
           <div>
-            <label className="font-medium mb-2 block">Giờ hẹn:</label>
+            <label className="font-medium mb-2 block">{t("appointmentTime")}:</label>
             <div className="grid grid-cols-2 gap-2">
               {timeSlots.map((slot, index) => (
                 <button
@@ -120,13 +122,13 @@ function BookingModal({ isOpen, onClose }) {
             className="bg-gray-400 px-4 py-2 rounded-md mr-2 text-white"
             onClick={onClose}
           >
-            Hủy
+            {t("cancel")}
           </button>
           <button
             className="bg-[#f59e0b] px-4 py-2 rounded-md text-white hover:bg-[#d97706]"
             onClick={handleSubmit}
           >
-            Xác nhận đặt lịch
+            {t("confirm")}
           </button>
         </div>
       </div>

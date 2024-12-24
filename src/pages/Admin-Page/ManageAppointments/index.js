@@ -2,69 +2,71 @@ import React, { useState } from "react";
 import AppointmentTable from "./AppointmentTable";
 import "./ManageAppointments.css";
 import { FaSearch, FaFilter } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ManageAppointments = () => {
+  const { t } = useTranslation("manageAppointments");
   // Dữ liệu mẫu
   const appointments = [
     {
       id: "10033",
       name: "Anh Kiều",
       phone: "0935647894",
-      status: "cần tư vấn mua xe",
+      status: t("context.status.needAdvice"),
       time: "13:00 - 30 min",
       initials: "AK",
       color: "pink",
-      category: "Khách hẹn",
+      category: t("categories.scheduled"),
     },
     {
       id: "10233",
       name: "Nhật Trường",
       phone: "0926222354",
-      status: "cần tư vấn mua xe",
+      status: t("context.status.needAdvice"),
       time: "15:00 - 30 min",
       initials: "NT",
       color: "purple",
-      category: "Khách hẹn",
+      category: t("categories.scheduled"),
     },
     {
       id: "25647",
       name: "Quốc Nga",
       phone: "0935647894",
-      status: "Đã cọc tiền",
+      status: t("context.status.depositPaid"),
       time: "9h - 15/12/2024",
       initials: "QN",
       color: "violet",
-      category: "Khách đang chờ",
+      category: t("categories.waiting"),
     },
     {
       id: "25476",
       name: "Thị Bình",
       phone: "0935647894",
-      status: "Đã cọc tiền",
+      status: t("context.status.depositPaid"),
       time: "10h - 17/12/2024",
       initials: "TB",
       color: "pink",
-      category: "Khách đang chờ",
+      category: t("categories.waiting"),
     },
     {
       id: "11233",
       name: "Giang Mai",
       phone: "0935647894",
-      status: "Đã tư vấn",
+      status: t("context.status.consulted"),
       time: "10/8/2024",
       initials: "GM",
       color: "lightblue",
-      category: "Khách hoàn thành",
+      category: t("categories.completed"),
     },
     {
       id: "14033",
       name: "Văn Long",
       phone: "0935647894",
-      status: "Đã tư vấn",
+      status: t("context.status.consulted"),
       time: "9/10/2024",
       initials: "VL",
       color: "lightblue",
-      category: "Khách hoàn thành",
+      category: t("categories.completed"),
     },
   ];
 
@@ -89,33 +91,28 @@ const ManageAppointments = () => {
 
   return (
     <div className="manage-appointments">
-      <h2>Quản lý lịch hẹn kiểm tra xe</h2>
-
-      {/* Main Content */}
+      <h2>{t("title")}</h2>
       <div className="filter-section">
-        {/* Phần thống kê */}
         <div className="stats">
           <span>
-            Hôm nay <b>7</b>
+            {t("stats.today")} <b>7</b>
           </span>
           <span>
-            Đang chờ <b>2</b>
+            {t("stats.pending")} <b>2</b>
           </span>
           <span>
-            Đang xử lý <b>1</b>
+            {t("stats.processing")} <b>1</b>
           </span>
           <span>
-            Hoàn thành <b>5</b>
+            {t("stats.completed")} <b>5</b>
           </span>
         </div>
-
-        {/* Phần tìm kiếm và bộ lọc */}
         <div className="search-filter">
           <div className="search-input-wrapper">
             <FaSearch className="icon" />
             <input
               type="text"
-              placeholder="Tìm kiếm lịch hẹn"
+              placeholder={t("searchPlaceholder")}
               className="search-input"
               value={searchTerm}
               onChange={handleSearch}
@@ -123,18 +120,15 @@ const ManageAppointments = () => {
           </div>
           <button className="filters-btn">
             <FaFilter className="icon" />
-            Hiển thị bộ lọc
+            {t("filterButton")}
           </button>
           <div className="button-group">
-            <button className="today-btn">today</button>
-            <button className="list-btn">List</button>
+            <button className="today-btn">{t("todayButton")}</button>
+            <button className="list-btn">{t("listButton")}</button>
           </div>
         </div>
       </div>
-
-      <h3 className="date-title">December 13.2024</h3>
-
-      {/* Truyền dữ liệu đã lọc xuống AppointmentTable */}
+      <h3 className="date-title">{t("dateTitle")}</h3>
       <AppointmentTable appointments={filteredData} />
     </div>
   );

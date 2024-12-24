@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const YearSelectModal = ({ isOpen, closeModal, setSelectedYear }) => {
+    const { t } = useTranslation("brandModal");
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: 25 }, (_, i) => currentYear - i); // Tạo danh sách năm từ năm hiện tại đến 30 năm trước
     const [selectedYear, setSelected] = useState(null); // State để lưu năm đã chọn
@@ -33,7 +35,7 @@ const YearSelectModal = ({ isOpen, closeModal, setSelectedYear }) => {
                 </button>
                 {/* Modal Header */}
                 <div className="p-2 border-b">
-                    <h2 className="text-2xl font-semibold text-center">Chọn Năm Sản Xuất</h2>
+                    <h2 className="text-2xl font-semibold text-center">{t("yearTitle")}</h2>
                 </div>
 
                 {/* Modal Body */}

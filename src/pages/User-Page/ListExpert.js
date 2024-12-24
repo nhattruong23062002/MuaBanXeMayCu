@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import ExpertCard from "../../components/ExpertCard";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import LayoutUser from "../../layout/layoutUser";
 const ListExpert = () => {
+
+    const { t } = useTranslation("listExpert");
+
     const experts = [
         {
             id: 1,
@@ -105,13 +109,13 @@ const ListExpert = () => {
         <LayoutUser>
             <div className="bg-[#f5f5f5] py-6 min-h-screen"> {/* Viền ngoài với background #f5f5f5 */}
                 <div className="max-w-[800px] mx-auto bg-white p-4 rounded-lg shadow-md"> {/* Khung ListExpert với background trắng */}
-                    <h2 className="text-2xl font-bolder text-center mb-6">DANH SÁCH CÁC CHUYÊN GIA KIỂM ĐỊNH XE</h2>
+                    <h2 className="text-2xl font-bolder text-center mb-6">{t('listExpertTitle')}</h2>
 
                     {/* Thanh tìm kiếm */}
                     <div className="relative mb-6">
                         <input
                             type="text"
-                            placeholder="Tìm chuyên gia..."
+                            placeholder={t('searchPlaceholder')}
                             className="pl-10 pr-4 py-2 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
@@ -146,6 +150,9 @@ const ListExpert = () => {
                                 hometown={expert.hometown}
                                 onContactClick={() => handleContactClick(expert)}
                                 onShowExpertDetail={handleShowExpertDetail}
+                                fullnameLabel={t('fullname')}
+                                dobLabel={t('dob')}
+                                hometownLabel={t('hometown')}
                             />
                         ))}
                     </div>

@@ -202,3 +202,30 @@
 .edit-btn-users:hover {
   background-color: #2980b9;
 }
+
+@media (max-width: 768px) {
+  .manage-users-container {
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .summary-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .actions-users {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "account": {
+    "login": "Đăng nhập",
+    "manage_vehicles": "Quản lý mua bán xe",
+    "vehicles_on_sale": "Xe đang bán",
+    "vehicles_purchased": "Xe đã mua",
+    "messages": "Tin nhắn",
+    "account_verification": "Định danh tài khoản",
+    "language": "Ngôn ngữ",
+    "logout": "Đăng xuất"
+  },
+  "detailMoto": {
+    "title": "Honda SH 125i",
+    "price": "6x.000.000 đ",
+    "year": "Năm",
+    "mileage": "Số km",
+    "engine": "Động cơ",
+    "condition": "Tình trạng",
+    "used": "Đã sử dụng",
+    "description_title": "Mô tả",
+    "description_content": "Honda SH 125i 2019 - Xe cũ chính chủ, máy móc nguyên bản, odo 15,000 km. Giá 6x.000.000 VNĐ. Liên hệ ngay để xem xe!",
+    "buy_now": "Mua hàng",
+    "contact": "Liên hệ",
+    "details_title": "Mô tả chi tiết",
+    "color": "Màu sắc",
+    "black": "Đen",
+    "odo": "ODO",
+    "license_plate": "Biển số",
+    "manufacture_year": "Năm sản xuất",
+    "status": "Tình trạng",
+    "like_new": "Gần như mới",
+    "warranty_items": [
+      "Bảo hành 12 tháng với 10 hạng mục",
+      "Cam kết pháp lý đầy đủ",
+      "Thông tin xe chính xác",
+      "Hỗ trợ thu đổi xe",
+      "Hỗ trợ trả góp linh hoạt"
+    ],
+    "schedule_now": "ĐẶT LỊCH HẸN ĐỂ GIỮ XE VÀ ĐƯỢC PHỤC VỤ TỐT NHẤT!"
+  },
+  "filterBar": {
+    "type": "Loại xe",
+    "select_type": "Chọn loại xe",
+    "scooter": "Xe tay ga",
+    "big_bike": "Xe phân khối lớn",
+    "manual": "Xe số",
+    "price": "Mức giá",
+    "million": "triệu VNĐ",
+    "year": "Năm",
+    "select_year": "Chọn năm",
+    "location": "Khu vực",
+    "select_location": "Chọn khu vực",
+    "hanoi": "Hà Nội",
+    "hcm": "TP.HCM",
+    "danang": "Đà Nẵng",
+    "filter": "Lọc"
+  },
+  "header": {
+    "home": "Trang chủ",
+    "experts": "Chuyên gia",
+    "post_ad": "Đăng tin",
+    "stores": "Cửa hàng",
+    "account": "Tài khoản"
+  },
+  "homepage": {
+    "scooter": "Xe tay ga",
+    "big_bike": "Xe phân khối lớn",
+    "hanoi": "Hà Nội",
+    "hcm": "TP.HCM",
+    "danang": "Đà Nẵng",
+    "search_placeholder": "Tìm kiếm xe...",
+    "quality_bikes": "Xe chất lượng",
+    "no_bikes_found": "Không tìm thấy xe phù hợp."
+  },
+  "listExpert": {
+    "listExpertTitle": "Danh Sách Các Chuyên Gia Kiểm Định Xe",
+    "listShopTitle": "Danh Sách Các Cửa Hàng Bán Xe",
+    "searchPlaceholder": "Tìm chuyên gia...",
+    "searchPlaceStore": "Tìm cửa hàng...",
+    "contactButton": "Liên Hệ",
+    "showDetailsButton": "Xem Chi Tiết",
+    "fullname": "Họ và tên",
+    "nameStore": "Tên cửa hàng",
+    "dob": "Ngày sinh",
+    "address": "Địa chỉ",
+    "phone": "Số điện thoại",
+    "hometown": "Quê quán"
+  },
+  "upload": {
+    "uploadMotorbike": "Đăng tải xe để bán",
+    "uploadImages": "Ảnh xe máy của bạn:",
+    "uploadImagesHelp": "Bạn cần phải đăng tải từ 3-6 ảnh",
+    "chooseVehicleBrand": "Dòng xe:",
+    "selectYear": "Năm sản xuất:",
+    "selectKilometer": "Số km đã đi:",
+    "selectColor": "Màu sắc:",
+    "licensePlate": "Biển số xe:",
+    "selectCity": "Chọn thành phố muốn bán:",
+    "price": "Giá trị muốn bán:",
+    "description": "Mô tả sản phẩm:",
+    "confirm": "Xác nhận",
+    "select": "Chọn",
+    "addDescription": "Vui lòng thêm thông tin mô tả về sản phẩm",
+    "placeholderVehicleBrand": "Chọn dòng xe",
+    "placeholderYear": "Chọn năm sản xuất",
+    "placeholderKilometer": "Chọn số km đã đi",
+    "placeholderColor": "Chọn màu",
+    "placeholderLicensePlate": "Nhập biển số xe",
+    "placeholderCity": "Chọn thành phố",
+    "placeholderDescription": "Vui lòng thêm thông tin mô tả về sản phẩm",
+    "placeholderPrice": "Nhập giá bán"
+  },
+  "expertDetail": {
+    "title": "Thông tin chuyên gia",
+    "expert": "Chuyên gia",
+    "dob": "Ngày sinh",
+    "address": "Địa chỉ",
+    "phone": "Số điện thoại",
+    "workingHours": "Giờ làm việc",
+    "services": "Dịch vụ cung cấp",
+    "serviceItems": [
+      "Kiểm tra dấu hiệu xe tai nạn, xe lên đời & xe trộm cắp",
+      "Ước tính số km thực tế của xe",
+      "Phát hiện lỗi phun xăng, cảm biến bằng thiết bị chính xác",
+      "Đánh giá tổng quát và định giá xe kiểm tra"
+    ],
+    "bookNow": "Đặt lịch ngay",
+    "days": {
+      "monday": "Thứ 2",
+      "tuesday": "Thứ 3",
+      "wednesday": "Thứ 4",
+      "thursday": "Thứ 5",
+      "friday": "Thứ 6",
+      "saturday": "Thứ 7",
+      "sunday": "Chủ nhật"
+    }
+  },
+  "bookingModal": {
+    "title": "Đặt lịch kiểm tra xe",
+    "name": "Họ và tên",
+    "phone": "Số điện thoại",
+    "address": "Địa chỉ kiểm tra",
+    "carType": "Loại xe",
+    "purpose": "Mục đích kiểm tra",
+    "appointmentDate": "Ngày hẹn",
+    "appointmentTime": "Giờ hẹn",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận đặt lịch",
+    "successMessage": "Đặt lịch thành công!"
+  },
+  "storeDetail": {
+    "pageTitle": "Thông tin cửa hàng",
+    "storeName": "Xe máy Út Tịch",
+    "stats": {
+      "selling": "Đang bán",
+      "sold": "Đã bán",
+      "favorites": "Yêu thích"
+    },
+    "bikeListTitle": "Danh sách xe",
+    "contactButton": "Thông tin liên lạc"
+  },
+  "login": {
+    "title": "Đăng nhập",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "emailPlaceholder": "Nhập Email",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "forgotPassword": "Quên ID/Mật khẩu?",
+    "loginButton": "Đăng nhập",
+    "registerPrompt": "Bạn chưa có tài khoản?",
+    "registerLink": "Đăng ký ngay"
+  },
+  "register": {
+    "title": "Đăng ký",
+    "name": "Họ và tên",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "namePlaceholder": "Nhập họ và tên",
+    "emailPlaceholder": "Nhập Email",
+    "phonePlaceholder": "Nhập SĐT",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "confirmPasswordPlaceholder": "Xác nhận mật khẩu",
+    "registerButton": "Đăng Ký",
+    "loginPrompt": "Bạn đã có tài khoản?",
+    "loginLink": "Đăng nhập ngay"
+  },
+  "purchasedPage": {
+    "title": "Quản lý xe đã mua",
+    "tabs": {
+      "all": "Tất cả",
+      "pending": "Đang chờ",
+      "processing": "Giao dịch",
+      "completed": "Hoàn tất"
+    }
+  },
+  "purchaseDetailPage": {
+    "title": "Chi tiết xe đã mua",
+    "steps": {
+      "pending": "Đang chờ",
+      "processing": "Giao dịch",
+      "shipping": "Đang vận chuyển",
+      "completed": "Hoàn tất"
+    },
+    "seller": "Nhat moto",
+    "car": {
+      "yearMileage": "{{year}} &nbsp;&nbsp; {{mileage}}",
+      "plateNumber": "Biển số: {{plateNumber}}"
+    },
+    "details": {
+      "deliveryAddress": "Địa chỉ giao xe",
+      "shippingCost": "Phí vận chuyển",
+      "totalPrice": "Thành tiền",
+      "paymentMethod": "Phương thức thanh toán"
+    },
+    "methods": {
+      "payment": "Thanh toán tiền mặt",
+      "delivery": "Nhận xe tại cửa hàng"
+    }
+  },
+  "ratingModal": {
+    "title": "Đánh giá sản phẩm",
+    "feedback": {
+      "satisfied": "Hài lòng",
+      "disappointed": "Thất vọng"
+    },
+    "detailedFeedback": "Góp ý chi tiết:",
+    "cancel": "Hủy",
+    "submit": "Gửi"
+  },
+  "motoPurchased": {
+    "seller": "Người bán",
+    "sold": "Đã bán",
+    "trading": "Đang giao dịch",
+    "price": "Giá",
+    "viewDetails": "Xem chi tiết đơn",
+    "rate": "Đánh giá",
+    "editInfo": "Chỉnh sửa thông tin xe"
+  },
+  "sellPage": {
+    "manageSelling": "Quản lý xe đang bán",
+    "tabs": {
+      "all": "Sản phẩm của tôi",
+      "pending": "Đang chờ",
+      "processing": "Giao dịch",
+      "completed": "Hoàn tất"
+    }
+  },
+  "postDetail": {
+    "carName": "Xe Vario mới năm 2024",
+    "carCondition": "Tình trạng xe",
+    "carConditionValue": "Hết bảo hành",
+    "location": "Địa chỉ",
+    "carLocationValue": "170 Phạm Văn Đồng",
+    "updatedAt": "Cập nhật",
+    "updatedTimeValue": "Cập nhật 5 giờ trước",
+    "back": "Quay lại",
+    "editPost": "Chỉnh sửa thông tin bài đăng",
+    "hidePost": "Ẩn tin",
+    "edit": "Sửa tin",
+    "seller": {
+      "name": "Người bán",
+      "response": "Phản hồi",
+      "status": "Đang hoạt động",
+      "statusValue": "1 đã bán"
+    }
+  },
+  "hidePost": {
+    "title": "Ẩn tin {{name}}",
+    "description": "Khi bạn đã bán được hàng, hoặc không muốn tin xuất hiện trên Vipxe, hãy chọn 'Ẩn tin'.",
+    "reasonPrompt": "Vui lòng chọn lý do ẩn tin:",
+    "reasons": [
+      "Không muốn bán nữa",
+      "Đã bán qua trang Vipxe",
+      "Đã bán qua các kênh khác",
+      "Tôi bị làm phiền vì môi giới/dịch vụ đăng tin",
+      "Khác"
+    ],
+    "cancel": "Hủy",
+    "hidePost": "Ẩn tin",
+    "alert": {
+      "noReason": "Vui lòng chọn lý do ẩn tin!"
+    },
+    "carName": "Xe Vario mới năm 2024"
+  },
+  "addressModal": {
+    "title": "Địa chỉ",
+    "city": "Tỉnh, thành phố",
+    "district": "Quận, huyện",
+    "ward": "Phường, xã, thị trấn",
+    "specificAddress": "Địa chỉ cụ thể",
+    "done": "XONG"
+  },
+  "listSender": {
+    "header": "Bạn đã đọc hết tin nhắn",
+    "allButton": "Tất cả",
+    "messages": [
+      {
+        "name": "Xe máy Nhật Trương",
+        "message": "Bạn gửi sđt hoặc sđt zalo giúp mình nhé",
+        "avatar": "https://img.freepik.com/free-vector/vintage-flat-motorcycle-logo_23-2149450072.jpg?size=338&ext=jpg&ga=GA1.1.2113030492.1720051200&semt=ais_user",
+        "date": "11/12/2024",
+        "time": "13:52"
+      },
+      {
+        "name": "Chuyên gia kiểm định xe Nguyễn Thắng",
+        "message": "Anh đang dùng sđt này đúng kh ạ",
+        "avatar": "https://cl-wpml.careerlink.vn/cam-nang-viec-lam/wp-content/uploads/2023/04/03112520/building-sector-industrial-workers-concept-confident-young-asian-engineer-construction-manager-reflective-clothes-helmet-cross-arms-smiling-sassy-ensuring-quality-white-wall.jpg",
+        "date": "10/12/2024",
+        "time": "14:32"
+      },
+      {
+        "name": "Xe máy Thanh Tùng",
+        "message": "Dạ cho em hỏi em muốn mua xe bên mình thì cần những thủ tục giấy tờ gì ạ, biển ...",
+        "avatar": "https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "date": "10/12/2024",
+        "time": "13:54"
+      }
+    ]
+  },
+  "colorModal": {
+    "white": "Trắng",
+    "beige": "Màu be",
+    "black": "Đen",
+    "silver": "Bạc",
+    "gray": "Xám",
+    "yellow": "Vàng",
+    "brown": "Nâu",
+    "orange": "Cam",
+    "red": "Đỏ",
+    "pink": "Hồng",
+    "purple": "Tím",
+    "green": "Xanh lá",
+    "blue": "Xanh dương",
+    "skyBlue": "Xanh da trời",
+    "selectColor": "Chọn Màu Sắc",
+    "closeModal": "Đóng cửa sổ",
+    "confirm": "Xác nhận"
+  },
+  "brandModal": {
+    "title": "Lựa Chọn Thương Hiệu",
+    "yearTitle": "Chọn năm sản xuất",
+    "cityTitle": "Chọn Tỉnh/Thành Phố",
+    "searchPlaceholder": "Tìm kiếm thương hiệu...",
+    "popularBrands": "Thương hiệu phổ biến",
+    "allBrands": "Tất cả thương hiệu",
+    "close": "Đóng",
+    "confirm": "Xác nhận"
+  },
+  "kilometerSelectModal": {
+    "title": "Chọn Số Kilometers Đã Đi",
+    "under5000km": "Dưới 5000km",
+    "under10000km": "Dưới 10000km",
+    "under20000km": "Dưới 20000km",
+    "under30000km": "Dưới 30000km",
+    "under40000km": "Dưới 40000km",
+    "under50000km": "Dưới 50000km",
+    "under60000km": "Dưới 60000km",
+    "under70000km": "Dưới 70000km",
+    "under80000km": "Dưới 80000km",
+    "under90000km": "Dưới 90000km",
+    "under100000km": "Dưới 100000km",
+    "under110000km": "Dưới 110000km",
+    "under120000km": "Dưới 120000km",
+    "under130000km": "Dưới 130000km",
+    "under140000km": "Dưới 140000km",
+    "under150000km": "Dưới 150000km",
+    "under160000km": "Dưới 160000km",
+    "under170000km": "Dưới 170000km"
+  },
+  "chat": {
+    "chat": "Trò chuyện",
+    "active": "Đang hoạt động",
+    "offer": "Trả giá",
+    "placeholder": "Nhập tin nhắn của bạn",
+    "priceError": "Giá trả không được thấp hơn 50,000,000 VND",
+    "enterPrice": "Nhập giá bạn muốn trả",
+    "enterPricePlaceholder": "Nhập giá",
+    "messageSend": "Tôi muốn trả giá:",
+    "cancel": "Hủy",
+    "submit": "Gửi"
+  },
+  "payment": {
+    "title": "Thông tin thanh toán",
+    "orderInf": "Thông tin đơn hàng",
+    "cusInf": "Thông tin khách hàng",
+    "method": "Phương thức thanh toán",
+    "type": "Loại xe",
+    "typeInput": "Cũ",
+    "cc": "Động cơ(Phân khối)",
+    "year": "Năm sản xuất",
+    "color": "Màu",
+    "colorInput": "Trắng",
+    "price": "Giá sản phẩm",
+    "fullName": "Họ và tên",
+    "phoneNumber": "SĐT",
+    "address": "Địa chỉ",
+    "notification": "Vui lòng định danh tài khoản để hoàn tất thủ tục mua bán xe",
+    "notiButton": "Định Danh",
+    "cash": "Tiền mặt",
+    "transfer": "Chuyển khoản",
+    "installment": "Trả góp",
+    "continue": "Tiếp tục"
+  },
+  "identification": {
+    "title": "ĐỊNH DANH TÀI KHOẢN",
+    "id": "Căn cước công dân/Chứng minh nhân dân (Tải ảnh lên)",
+    "fullName": "Họ và tên",
+    "email": "Email",
+    "phoneNumber": "Số điện thoại",
+    "address": "Địa chỉ",
+    "dob": "Ngày sinh",
+    "confirm": "Xác nhận",
+    "fullNamePlaceholder": "Nhập họ và tên của bạn",
+    "emailPlaceholder": "Nhập email của bạn",
+    "phonePlaceholder": "Nhập số điện thoại của bạn",
+    "addressPlaceholder": "Nhập địa chỉ của bạn"
+  },
+  "editPost": {
+    "title": "Chỉnh sửa bài đăng",
+    "nameProduct": "Tên sản phẩm",
+    "menu": "Danh mục",
+    "option1": "Xe Máy",
+    "option2": "Ô Tô",
+    "option3": "Phụ Tùng",
+    "price": "Giá",
+    "status": "Tình trạng",
+    "option4": "Mới",
+    "option5": "Đã qua sử dụng",
+    "option6": "Hết bảo hành",
+    "description": "Mô tả",
+    "location": "Địa điểm",
+    "img": "Hình ảnh",
+    "save": "Lưu thay đổi"
+  },
+  "navbar": {
+    "home": "Trang chủ",
+    "expert": "Chuyên gia",
+    "post": "Đăng tin",
+    "store": "Cửa hàng",
+    "logout": "Đăng xuất",
+    "search": "Tìm kiếm..."
+  },
+  "sidebar": {
+    "title": "Quản lý của admin",
+    "manageAppointments": "Quản lý lịch hẹn",
+    "createAppointment": "Tạo lịch hẹn",
+    "managePosts": "Quản lý bài đăng",
+    "manageUsers": "Quản lý người dùng",
+    "handleComplaints": "Xử lý khiếu nại",
+    "manageExperts": "Quản lý chuyên gia"
+  },
+  "manageAppointments": {
+    "title": "Quản lý lịch hẹn kiểm tra xe",
+    "stats": {
+      "today": "Hôm nay",
+      "pending": "Đang chờ",
+      "processing": "Đang xử lý",
+      "completed": "Hoàn thành"
+    },
+    "searchPlaceholder": "Tìm kiếm lịch hẹn",
+    "filterButton": "Hiển thị bộ lọc",
+    "todayButton": "Hôm nay",
+    "listButton": "Danh sách",
+    "dateTitle": "Ngày 13 tháng 12 năm 2024",
+    "context": {
+      "status": {
+        "needAdvice": "Cần tư vấn mua xe",
+        "depositPaid": "Đã cọc tiền",
+        "consulted": "Đã tư vấn"
+      },
+      "categories": {
+        "scheduled": "Khách hẹn",
+        "waiting": "Khách đang chờ",
+        "completed": "Khách hoàn thành"
+      }
+    },
+    "categories": {
+      "scheduled": "Khách hẹn",
+      "waiting": "Khách đang chờ",
+      "completed": "Khách hoàn thành"
+    },
+    "buttons": {
+      "viewMore": "Xem thêm lịch hẹn"
+    }
+  },
+  "createAppointment": {
+    "title": "Tạo Lịch trình chuyên gia kiểm tra xe",
+    "form": {
+      "name": "Họ và tên:",
+      "namePlaceholder": "Nhập họ và tên",
+      "phone": "SĐT:",
+      "phonePlaceholder": "Nhập số điện thoại",
+      "address": "Địa chỉ:",
+      "addressPlaceholder": "Nhập địa chỉ",
+      "experience": "Kinh nghiệm:",
+      "experiencePlaceholder": "Nhập kinh nghiệm",
+      "certificate": "Giấy tờ chứng chỉ:",
+      "price": "Mức giá:",
+      "pricePlaceholder": "Nhập mức giá",
+      "timeSlots": "Giờ trống lịch:"
+    },
+    "preview": {
+      "title": "Ảnh chứng chỉ:",
+      "removeButton": "X"
+    },
+    "timeOptions": {
+      "slot1": "7:00-8:00",
+      "slot2": "9:00-10:00",
+      "slot3": "13:00-14:00",
+      "slot4": "15:00-16:00"
+    },
+    "submitButton": "Xác nhận tạo lịch"
+  },
+  "managePosts": {
+    "title": "Quản lý bài đăng",
+    "searchPlaceholder": "nhập tiêu đề hoặc ID",
+    "categories": {
+      "default": "Chọn danh mục",
+      "bike": "Xe Máy số",
+      "scooter": "Xe tay ga",
+      "manualBike": "Xe tay côn",
+      "largeBike": "Xe phân khối lớn"
+    },
+    "buttons": {
+      "ok": "OK",
+      "delete": "xóa",
+      "approve": "Phê duyệt"
+    },
+    "tableHeaders": {
+      "id": "ID",
+      "title": "Tiêu đề",
+      "productCode": "Mã Sản phẩm",
+      "type": "Loại xe",
+      "price": "Giá bán",
+      "location": "Địa điểm",
+      "image": "Hình ảnh",
+      "actions": "Chức Năng"
+    },
+    "posts": [
+      {
+        "title": "Bán xe máy cũ sirius",
+        "type": "Xe máy",
+        "location": "Đà Nẵng"
+      },
+      {
+        "title": "Bán xe máy cũ SH",
+        "type": "Xe máy",
+        "location": "Hà Nội"
+      },
+      {
+        "title": "Bán xe máy cũ wave",
+        "type": "Xe máy",
+        "location": "Hải Phòng"
+      },
+      {
+        "title": "Bán xe máy cũ Airblack",
+        "type": "Xe máy",
+        "location": "Quảng Nam"
+      },
+      {
+        "title": "Bán xe máy cũ R15",
+        "type": "Xe máy",
+        "location": "Hồ Chí Minh"
+      }
+    ]
+  },
+  "manageUsers": {
+    "title": "Quản lý người dùng",
+    "summaryCards": {
+      "totalUsers": "Tổng số người dùng",
+      "active": "Hoạt động",
+      "newUsers": "Người dùng mới",
+      "inactive": "Không hoạt động"
+    },
+    "actions": {
+      "addUser": "Thêm người dùng",
+      "delete": "Xóa",
+      "export": "Xuất dữ liệu",
+      "filter": "Bộ lọc",
+      "searchPlaceholder": "Tìm kiếm người dùng",
+      "edit": "Chỉnh sửa"
+    },
+    "tableHeaders": {
+      "name": "Tên",
+      "email": "Email",
+      "city": "Thành phố",
+      "status": "Trạng thái",
+      "posts": "Số bài viết",
+      "transactions": "Số giao dịch",
+      "actions": "Hành động"
+    },
+    "status": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "units": {
+      "users": "Người dùng",
+      "posts": "Bài viết",
+      "transactions": "Giao dịch"
+    },
+    "cities": {
+      "daNang": "Đà Nẵng",
+      "haNoi": "Hà Nội",
+      "hue": "Huế",
+      "kontum": "Kontum"
+    }
+  },
+
+  "handleComplaints": {
+    "title": "Danh sách khiếu nại",
+    "status": {
+      "processing": "Đang xử lý",
+      "success": "Thành công",
+      "rejected": "Từ chối"
+    },
+    "actions": {
+      "delete": "Xóa",
+      "export": "Xuất dữ liệu",
+      "filter": "Bộ lọc",
+      "approve": "Phê duyệt",
+      "reject": "Từ chối"
+    },
+    "tableHeaders": {
+      "name": "Tên",
+      "email": "Email",
+      "time": "Thời gian",
+      "reason": "Lý do",
+      "role": "Vai trò",
+      "link": "Liên kết người bị khiếu nại",
+      "actions": "Hành động"
+    },
+    "searchPlaceholder": "Tìm kiếm khiếu nại",
+    "reasons": {
+      "defer": "Đề nghị bảo lưu",
+      "refund": "Đề nghị hoàn tiền"
+    },
+    "roles": {
+      "user": "Người dùng"
+    }
+  },
+  "manageExperts": {
+    "title": "Quản lý chuyên gia",
+    "header": "Chuyên gia",
+    "summary": {
+      "totalUsers": "Tổng Users",
+      "active": "Đang hoạt động",
+      "newUser": "Người dùng mới",
+      "inactive": "Không hoạt động",
+      "users": "người dùng"
+    },
+    "statuses": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "actions": {
+      "addUser": "Thêm người dùng",
+      "searchPlaceholder": "Tìm kiếm người dùng",
+      "delete": "Xóa",
+      "export": "Xuất dữ liệu",
+      "filter": "Lọc",
+      "edit": "Chỉnh sửa"
+    },
+    "tableHeaders": {
+      "name": "Tên",
+      "email": "Email",
+      "city": "Thành phố",
+      "status": "Trạng thái",
+      "experience": "Kinh nghiệm",
+      "reputation": "Độ uy tín",
+      "actions": "Hành động"
+    }
+  },
+  "contactModal": {
+    "contactInfoTitle": "Thông tin liên lạc",
+    "call": "Gọi",
+    "viewAddress": "Địa chỉ",
+    "chat": "Nhắn tin"
+  },
+  "mapModal": {
+    "location": "Vị trí",
+    "myLocation": "Vị trí của tôi",
+    "directions": "Chỉ đường"
+  },
+  "shareModal": {
+    "title": "Chia sẻ sản phẩm",
+    "copy": "Sao chép",
+    "close": "Đóng"
+  }
+}
