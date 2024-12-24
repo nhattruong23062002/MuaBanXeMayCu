@@ -402,7 +402,14 @@
     "cash": "현금",
     "transfer": "은행 이체",
     "installment": "할부",
-    "continue": "계속"
+    "continue": "계속",
+    "titleModal": "은행 계좌 이체 상세",
+    "idInf": "계좌 정보",
+    "nameId": "계좌 소유자 이름",
+    "numberId": "계좌 번호",
+    "bankName": "은행 이름",
+    "bankBranch": "은행 지점",
+    "confirm": "확인"
   },
   "identification": {
     "title": "계정 인증",

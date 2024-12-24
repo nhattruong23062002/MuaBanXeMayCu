@@ -401,7 +401,14 @@
     "cash": "Tiền mặt",
     "transfer": "Chuyển khoản",
     "installment": "Trả góp",
-    "continue": "Tiếp tục"
+    "continue": "Tiếp tục",
+    "titleModal": "Chi tiết chuyển khoản ngân hàng",
+    "idInf": "Thông tin tài khoản",
+    "nameId": "Tên chủ tài khoản",
+    "numberId": "Số tài khoản",
+    "bankName": "Tên ngân hàng",
+    "bankBranch": "Chi nhánh",
+    "confirm": "Xác nhận"
   },
   "identification": {
     "title": "ĐỊNH DANH TÀI KHOẢN",

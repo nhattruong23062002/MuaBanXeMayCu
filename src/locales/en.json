@@ -402,7 +402,14 @@
     "cash": "Cash",
     "transfer": "Bank Transfer",
     "installment": "Installment",
-    "continue": "Continue"
+    "continue": "Continue",
+    "titleModal": "Bank Transfer Details",
+    "idInf": "Account Information",
+    "nameId": "Account Holder Name",
+    "numberId": "Account Number",
+    "bankName": "Bank Name",
+    "bankBranch": "Bank Branch",
+    "confirm": "Confirm"
   },
   "identification": {
     "title": "ACCOUNT IDENTIFICATION",
