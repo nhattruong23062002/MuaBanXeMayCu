@@ -60,9 +60,7 @@ function Header() {
                   : "text-gray-100 group-hover:text-[#d59648]"
               }`}
             />
-            <span className="mt-1 text-[10px] sm:text-xs">
-              {t("experts")}
-            </span>
+            <span className="mt-1 text-[10px] sm:text-xs">{t("experts")}</span>
           </div>
 
           <div

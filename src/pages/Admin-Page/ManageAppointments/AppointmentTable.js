@@ -2,8 +2,14 @@ import React from "react";
 import AppointmentCard from "./AppointmentCard";
 import { useTranslation } from "react-i18next";
 
-const AppointmentTable = ({ appointments }) => {
+const AppointmentTable = ({
+  scheduledAppointments,
+  waitingAppointments,
+  completedAppointments,
+  handleViewMore,
+}) => {
   const { t } = useTranslation("manageAppointments");
+
   const getBackgroundColor = (category) => {
     switch (category) {
       case t("categories.scheduled"):
@@ -16,6 +22,7 @@ const AppointmentTable = ({ appointments }) => {
         return "#ffffff"; // Màu trắng
     }
   };
+
   const getTitleBackgroundColor = (category) => {
     switch (category) {
       case t("categories.scheduled"):
@@ -28,50 +35,64 @@ const AppointmentTable = ({ appointments }) => {
         return "#bdc3c7"; // Màu xám
     }
   };
+
+  // Hàm để render từng cột lịch hẹn
+  const renderColumn = (appointments, category, viewMoreHandler) => (
+    <div
+      className="column"
+      style={{
+        backgroundColor: getBackgroundColor(category),
+      }}
+    >
+      <h4
+        style={{
+          backgroundColor: getTitleBackgroundColor(category),
+          color: "white",
+          padding: "10px",
+          borderRadius: "4px",
+          textAlign: "center",
+        }}
+      >
+        {category}
+      </h4>
+      {appointments.map((appointment) => (
+        <AppointmentCard
+          key={appointment.id}
+          id={appointment.id}
+          name={appointment.name}
+          phone={appointment.phone}
+          status={appointment.status}
+          time={appointment.time}
+          initials={appointment.initials}
+          color={appointment.color}
+        />
+      ))}
+      <button
+        className="add-appointment-btn"
+        onClick={() => viewMoreHandler(category)}
+      >
+        {t("buttons.viewMore")}
+      </button>
+    </div>
+  );
+
   return (
     <div className="appointment-table">
-      {/* Tách dữ liệu thành các cột dựa trên category */}
-      {[
+      {renderColumn(
+        scheduledAppointments,
         t("categories.scheduled"),
+        handleViewMore
+      )}
+      {renderColumn(
+        waitingAppointments,
         t("categories.waiting"),
+        handleViewMore
+      )}
+      {renderColumn(
+        completedAppointments,
         t("categories.completed"),
-      ].map((category) => (
-        <div
-          className="column"
-          key={category}
-          style={{ backgroundColor: getBackgroundColor(category) }}
-        >
-          <h4
-            style={{
-              backgroundColor: getTitleBackgroundColor(category), // Màu nền tiêu đề
-              color: "white", // Màu chữ trắng
-              padding: "10px",
-              borderRadius: "4px",
-              textAlign: "center",
-            }}
-          >
-            {category}
-          </h4>
-          {appointments
-            .filter((item) => item.category === category)
-            .map((appointment) => (
-              <AppointmentCard
-                key={appointment.id}
-                id={appointment.id}
-                name={appointment.name}
-                phone={appointment.phone}
-                status={appointment.status}
-                time={appointment.time} // Thay đổi nếu có thời gian trong dữ liệu
-                initials={appointment.initials}
-                color={appointment.color}
-              />
-            ))}
-          <button className="add-appointment-btn">
-            {" "}
-            {t("buttons.viewMore")}
-          </button>
-        </div>
-      ))}
+        handleViewMore
+      )}
     </div>
   );
 };
