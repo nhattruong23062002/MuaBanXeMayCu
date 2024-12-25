@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { FaShareFromSquare } from "react-icons/fa6";
-import { FaCalendarAlt, FaTachometerAlt, FaCogs, FaCheckCircle } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaTachometerAlt,
+  FaCogs,
+  FaCheckCircle,
+  FaHeart,
+  FaRegHeart,
+} from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import LayoutUser from "../../layout/layoutUser";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ShareModal from "../../components/ShareModal"; 
+import ShareModal from "../../components/ShareModal";
+import { MdReport } from "react-icons/md";
 
 function DetailMoto() {
   const { t } = useTranslation("detailMoto");
@@ -17,7 +25,8 @@ function DetailMoto() {
   const location = useLocation();
 
   const [activeImage, setActiveImage] = useState(images[0]);
-  const [isModalOpen, setModalOpen] = useState(false); 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const productLink = window.location.href;
 
   const onClickChat = () => {
@@ -34,6 +43,14 @@ function DetailMoto() {
     navigate("/payment");
   };
 
+  const onClickReport = () => {
+    navigate("/report");
+  };
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <LayoutUser>
       <div className="max-w-[800px] mx-auto py-4 px-4 bg-white rounded-lg shadow-md">
@@ -44,18 +61,32 @@ function DetailMoto() {
           >
             <IoMdArrowRoundBack />
           </button>
-          <div
-            className="text-xl cursor-pointer"
-            onClick={() => setModalOpen(true)}
-          >
-            <FaShareFromSquare className="text-xl hover:text-blue-500" />
+          <div className="text-xl cursor-pointer flex items-center">
+            <button
+              className="text-xl hover:text-red-500 mr-3"
+              onClick={toggleFavorite}
+            >
+              {isFavorite ? (
+                <FaHeart className="text-red-500" />
+              ) : (
+                <FaRegHeart />
+              )}
+            </button>
+            <MdReport
+              className="text-2xl hover:text-red-500 mr-3"
+              onClick={onClickReport}
+            />
+            <FaShareFromSquare
+              className="text-xl hover:text-blue-500"
+              onClick={() => setModalOpen(true)}
+            />
           </div>
         </div>
 
-        <ShareModal 
-          isOpen={isModalOpen} 
-          onClose={() => setModalOpen(false)} 
-          productLink={productLink} 
+        <ShareModal
+          isOpen={isModalOpen}
+          onClose={() => setModalOpen(false)}
+          productLink={productLink}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

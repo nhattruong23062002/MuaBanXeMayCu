@@ -70,7 +70,8 @@
     "danang": "다낭",
     "search_placeholder": "바이크 검색...",
     "quality_bikes": "고품질 바이크",
-    "no_bikes_found": "적합한 바이크를 찾을 수 없습니다."
+    "no_bikes_found": "적합한 차량을 찾을 수 없습니다.",
+    "scanning_image": "스캔 중"
   },
   "listExpert": {
     "listExpertTitle": "전문가 목록",
@@ -375,7 +376,7 @@
     "active": "활성",
     "offer": "제안",
     "placeholder": "메시지를 입력하세요",
-    "priceError": "제안 가격은 50,000,000 VND 미만일 수 없습니다",
+    "priceError": "제안 가격은 60,000,000 VND 미만일 수 없습니다",
     "enterPrice": "제안 가격을 입력하세요",
     "enterPricePlaceholder": "가격 입력",
     "messageSend": "입찰하고 싶습니다:",
@@ -694,5 +695,13 @@
     "title": "제품 공유",
     "copy": "복사",
     "close": "닫다"
+  },
+  "reportPage": {
+    "title": "K-Sparta Motobike와 연락할 수 있도록 정보를 남겨주세요.",
+    "username": "당신의 이름",
+    "phoneNumber": "전화번호",
+    "email": "당신의 이메일 (선택 사항)",
+    "description": "상세 설명 (필수 입력)",
+    "submit": "보고서 제출"
   }
 }

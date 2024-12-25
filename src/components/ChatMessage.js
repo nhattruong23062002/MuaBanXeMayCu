@@ -51,13 +51,14 @@ const ChatMessage = () => {
 
   const handleOfferSubmit = () => {
     if (offerPrice.trim()) {
-      const priceValue = parseInt(offerPrice, 10);
-      if (priceValue < 50000000) {
+      const formattedPrice = parseInt(offerPrice.replace(/\./g, ""), 10); 
+      const priceValue = formattedPrice;
+      if (priceValue < 60000000) {
         setError(t("priceError"));
       } else {
         const offerMessage = {
           id: messages.length + 1,
-          text: t("messageSend") + `${offerPrice} VND`,
+          text: t("messageSend") + ` ${priceValue.toLocaleString()} VND`, 
           sender: "Me",
           timestamp: new Date(),
           productName: product.name,
@@ -67,10 +68,11 @@ const ChatMessage = () => {
         setOfferOpen(false);
         setOfferPrice("");
         setError("");
-        setHasOffered(true); 
+        setHasOffered(true);
       }
     }
   };
+  
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });

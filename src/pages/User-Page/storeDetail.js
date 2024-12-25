@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { FaHeart, FaRegHeart } from "react-icons/fa"; // FaRegHeart là trái tim rỗng
+import { FaHeart, FaRegHeart } from "react-icons/fa"; 
 import { FiPhoneCall } from "react-icons/fi";
 import LayoutUser from "../../layout/layoutUser";
 import MotoCard from "../../components/MotoCard";
@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 function StoreDetailPage() {
   const { t } = useTranslation("storeDetail");
   const [isModalOpen, setModalOpen] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false); // State quản lý trạng thái trái tim
+  const [isFavorite, setIsFavorite] = useState(false); 
 
   const bikes = [
     {
@@ -42,7 +42,7 @@ function StoreDetailPage() {
   ];
 
   const toggleFavorite = () => {
-    setIsFavorite(!isFavorite); // Đảo ngược trạng thái "yêu thích"
+    setIsFavorite(!isFavorite); 
   };
 
   return (
@@ -66,15 +66,14 @@ function StoreDetailPage() {
               className="w-full h-full object-cover"
             />
           </div>
-          {/* Button trái tim */}
           <button
             className="absolute top-6 right-6 text-2xl text-gray-600"
-            onClick={toggleFavorite} // Gọi hàm toggleFavorite
+            onClick={toggleFavorite}
           >
             {isFavorite ? (
-              <FaHeart className="text-red-500" /> // Trái tim đặc
+              <FaHeart className="text-red-500" />
             ) : (
-              <FaRegHeart /> // Trái tim rỗng
+              <FaRegHeart /> 
             )}
           </button>
           <h2 className="text-2xl font-bold mt-4">{t("storeName")}</h2>

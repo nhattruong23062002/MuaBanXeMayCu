@@ -70,7 +70,8 @@
     "danang": "Đà Nẵng",
     "search_placeholder": "Tìm kiếm xe...",
     "quality_bikes": "Xe chất lượng",
-    "no_bikes_found": "Không tìm thấy xe phù hợp."
+    "no_bikes_found": "Không tìm thấy xe phù hợp.",
+    "scanning_image": "Đang quét"
   },
   "listExpert": {
     "listExpertTitle": "Danh Sách Các Chuyên Gia Kiểm Định Xe",
@@ -374,7 +375,7 @@
     "active": "Đang hoạt động",
     "offer": "Trả giá",
     "placeholder": "Nhập tin nhắn của bạn",
-    "priceError": "Giá trả không được thấp hơn 50,000,000 VND",
+    "priceError": "Giá trả không được thấp hơn 60,000,000 VND",
     "enterPrice": "Nhập giá bạn muốn trả",
     "enterPricePlaceholder": "Nhập giá",
     "messageSend": "Tôi muốn trả giá:",
@@ -694,5 +695,13 @@
     "title": "Chia sẻ sản phẩm",
     "copy": "Sao chép",
     "close": "Đóng"
-  }
+  },
+  "reportPage":{
+    "title": "Vui lòng để lại thông tin để K-Sparta Motobike có thể liên lạc với bạn khi cần thiết!",
+    "username": "Tên của bạn",
+    "phoneNumber": "Số điện thoại",
+    "email": "Email của bạn (không bắt buộc)",
+    "description": "Mô tả chi tiết (bắt buộc nhập)",
+    "submit": "Gửi Báo Cáo"
+  }  
 }

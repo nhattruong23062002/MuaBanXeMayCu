@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 function FilterBar({ onFilter }) {
-  const { t } = useTranslation("filterBar"); // Sử dụng namespace "filterBar"
+  const { t } = useTranslation("filterBar"); 
 
   const [filters, setFilters] = useState({
     type: "",
@@ -72,6 +72,11 @@ function FilterBar({ onFilter }) {
             <option value="2022">2022</option>
             <option value="2021">2021</option>
             <option value="2020">2020</option>
+            <option value="2023">2019</option>
+            <option value="2022">2018</option>
+            <option value="2021">2017</option>
+            <option value="2020">2016</option> 
+            <option value="2020">2015</option>
           </select>
         </div>
 
@@ -88,6 +93,14 @@ function FilterBar({ onFilter }) {
             <option value={t("hanoi")}>Hà Nội</option>
             <option value={t("hcm")}>Tp.HCM</option>
             <option value={t("danang")}>Đà Nẵng</option>
+            <option value={t("hanoi")}>Bình Dương</option>
+            <option value={t("hcm")}>Khánh Hòa</option>
+            <option value={t("danang")}>Đồng Nai</option>
+            <option value={t("hanoi")}>Nam Định</option>
+            <option value={t("hcm")}>Quảng Nam</option>
+            <option value={t("danang")}>Quảng Ninh</option>
+            <option value={t("hcm")}>Hải Phòng</option>
+            <option value={t("danang")}>Nghệ An</option>
           </select>
         </div>
 

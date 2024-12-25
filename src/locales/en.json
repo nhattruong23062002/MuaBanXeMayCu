@@ -70,7 +70,8 @@
     "danang": "Da Nang",
     "search_placeholder": "Search for bikes...",
     "quality_bikes": "Quality Bikes",
-    "no_bikes_found": "No bikes found"
+    "no_bikes_found": "No bikes found",
+    "scanning_image": "Scanning"
   },
   "listExpert": {
     "listExpertTitle": "List of Experts",
@@ -375,7 +376,7 @@
     "active": "Active",
     "offer": "Offer",
     "placeholder": "Type your message",
-    "priceError": "The offer cannot be less than 50,000,000 VND",
+    "priceError": "The offer cannot be less than 60,000,000 VND",
     "enterPrice": "Enter the price you want to offer",
     "enterPricePlaceholder": "Enter price",
     "messageSend": "I would like to pay:",
@@ -690,5 +691,13 @@
     "title": "Share product",
     "copy": "Copy",
     "close": "Close"
-  }
+  },
+  "reportPage": {
+    "title": "Please provide the information so that K-Sparta Motobike can contact you when necessary!",
+    "username": "Your Name",
+    "phoneNumber": "Phone Number",
+    "email": "Your Email (Optional)",
+    "description": "Detailed Description (Required)",
+    "submit": "Submit Report"
+  }  
 }

@@ -30,6 +30,7 @@ import PostDetail from "./pages/User-Page/postDetail";
 import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
 import SnowEffect from "./components/SnowEffect";
+import Report from "./pages/User-Page/report";
 
 const App = () => {
   return (
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="/postDetail" element={<PostDetail />} />
           <Route path="/editPost/:id" element={<EditPost />} />
           <Route path="/listSender" element={<MessageList />} />
+          <Route path="report" element={<Report />} />
 
           <Route
             path="/admin/manage-appointments"
