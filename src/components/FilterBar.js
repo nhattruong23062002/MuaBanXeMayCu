@@ -72,11 +72,11 @@ function FilterBar({ onFilter }) {
             <option value="2022">2022</option>
             <option value="2021">2021</option>
             <option value="2020">2020</option>
-            <option value="2023">2019</option>
-            <option value="2022">2018</option>
-            <option value="2021">2017</option>
-            <option value="2020">2016</option> 
-            <option value="2020">2015</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option> 
+            <option value="2015">2015</option>
           </select>
         </div>
 
@@ -90,17 +90,17 @@ function FilterBar({ onFilter }) {
             className="w-full px-2 py-1 border rounded-md text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#d59648]"
           >
             <option value="">{t("select_location")}</option>
-            <option value={t("hanoi")}>Hà Nội</option>
-            <option value={t("hcm")}>Tp.HCM</option>
-            <option value={t("danang")}>Đà Nẵng</option>
-            <option value={t("hanoi")}>Bình Dương</option>
-            <option value={t("hcm")}>Khánh Hòa</option>
-            <option value={t("danang")}>Đồng Nai</option>
-            <option value={t("hanoi")}>Nam Định</option>
-            <option value={t("hcm")}>Quảng Nam</option>
-            <option value={t("danang")}>Quảng Ninh</option>
-            <option value={t("hcm")}>Hải Phòng</option>
-            <option value={t("danang")}>Nghệ An</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="TP.HCM">TP.HCM</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Bình Dương">Bình Dương</option>
+            <option value="Khánh Hòa">Khánh Hòa</option>
+            <option value="Đồng Nai">Đồng Nai</option>
+            <option value="Nam Định">Nam Định</option>
+            <option value="Quảng Nam">Quảng Nam</option>
+            <option value="Quảng Ninh">Quảng Ninh</option>
+            <option value="Hải Phòng">Hải Phòng</option>
+            <option value="Nghệ An">Nghệ An</option>
           </select>
         </div>
 
