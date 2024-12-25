@@ -98,7 +98,7 @@ const HandleComplaints = () => {
       <div className="flex flex-wrap items-center gap-4 mb-6">
         <input
           type="text"
-placeholder={t("searchPlaceholder")}
+          placeholder={t("searchPlaceholder")}
           className="flex-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
           value={searchTerm}
           onChange={handleSearch}
@@ -157,7 +157,7 @@ placeholder={t("searchPlaceholder")}
               <td className="p-4 border-b align-middle flex items-center gap-2">
                 <button className="px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-700 flex items-center gap-1">
                   <FaCheck className="text-white" /> {t("actions.approve")}
-</button>
+                </button>
                 <button className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-700 flex items-center gap-1">
                   <FaTimes className="text-white" /> {t("actions.reject")}
                 </button>

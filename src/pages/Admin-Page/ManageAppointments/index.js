@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 
 const ManageAppointments = () => {
   const { t } = useTranslation("manageAppointments");
+
   // Dữ liệu mẫu
   const appointments = [
     {
@@ -17,6 +18,7 @@ const ManageAppointments = () => {
       initials: "AK",
       color: "pink",
       category: t("categories.scheduled"),
+      date: "25/12/2024",
     },
     {
       id: "10233",
@@ -27,6 +29,18 @@ const ManageAppointments = () => {
       initials: "NT",
       color: "purple",
       category: t("categories.scheduled"),
+      date: "25/12/2024",
+    },
+    {
+      id: "10233",
+      name: "Nhật Quỳnh",
+      phone: "0926222354",
+      status: t("context.status.needAdvice"),
+      time: "15:00 - 30 min",
+      initials: "NT",
+      color: "purple",
+      category: t("categories.scheduled"),
+      date: "25/12/2024",
     },
     {
       id: "25647",
@@ -37,6 +51,7 @@ const ManageAppointments = () => {
       initials: "QN",
       color: "violet",
       category: t("categories.waiting"),
+      date: "15-12-2024",
     },
     {
       id: "25476",
@@ -47,6 +62,7 @@ const ManageAppointments = () => {
       initials: "TB",
       color: "pink",
       category: t("categories.waiting"),
+      date: "15-12-2024",
     },
     {
       id: "11233",
@@ -57,6 +73,7 @@ const ManageAppointments = () => {
       initials: "GM",
       color: "lightblue",
       category: t("categories.completed"),
+      date: "15-12-2024",
     },
     {
       id: "14033",
@@ -67,26 +84,94 @@ const ManageAppointments = () => {
       initials: "VL",
       color: "lightblue",
       category: t("categories.completed"),
+      date: "15-12-2024",
+    },
+    {
+      id: "14035",
+      name: "Huỳnh Hùng",
+      phone: "0935647894",
+      status: t("context.status.consulted"),
+      time: "9/10/2024",
+      initials: "VL",
+      color: "lightblue",
+      category: t("categories.completed"),
+      date: "15-12-2024",
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
-  const [filteredData, setFilteredData] = useState(appointments); // Lưu dữ liệu được lọc
+  // State hiển thị số lượng lịch hẹn
+  const [visibleScheduled, setVisibleScheduled] = useState(2);
+  const [visibleWaiting, setVisibleWaiting] = useState(2);
+  const [visibleCompleted, setVisibleCompleted] = useState(2);
+
+  // State lưu dữ liệu lọc
+  const [filteredAppointments, setFilteredAppointments] =
+    useState(appointments);
+
+  // Xử lý khi nhấn "View More"
+  const handleViewMore = (category) => {
+    if (category === t("categories.scheduled")) {
+      setVisibleScheduled((prev) => prev + 2);
+    } else if (category === t("categories.waiting")) {
+      setVisibleWaiting((prev) => prev + 2);
+    } else if (category === t("categories.completed")) {
+      setVisibleCompleted((prev) => prev + 2);
+    }
+  };
 
   // Xử lý tìm kiếm
+  const [searchTerm, setSearchTerm] = useState("");
   const handleSearch = (e) => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
+  };
 
-    // Lọc dữ liệu dựa trên ID, tên, hoặc số điện thoại
-    const filtered = appointments.filter(
+  // Lọc dữ liệu dựa trên danh mục và số lượng hiển thị
+  const scheduledAppointments = filteredAppointments
+    .filter(
       (item) =>
-        item.name.toLowerCase().includes(value) ||
-        item.id.toLowerCase().includes(value) ||
-        item.phone.includes(value)
+        item.category === t("categories.scheduled") &&
+        (item.name.toLowerCase().includes(searchTerm) ||
+          item.phone.includes(searchTerm))
+    )
+    .slice(0, visibleScheduled);
+
+  const waitingAppointments = filteredAppointments
+    .filter(
+      (item) =>
+        item.category === t("categories.waiting") &&
+        (item.name.toLowerCase().includes(searchTerm) ||
+          item.phone.includes(searchTerm))
+    )
+    .slice(0, visibleWaiting);
+
+  const completedAppointments = filteredAppointments
+    .filter(
+      (item) =>
+        item.category === t("categories.completed") &&
+        (item.name.toLowerCase().includes(searchTerm) ||
+          item.phone.includes(searchTerm))
+    )
+    .slice(0, visibleCompleted);
+
+  // Lấy ngày hiện tại
+  const currentDate = new Date().toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  // Xử lý khi nhấn "Today"
+  const handleToday = () => {
+    const today = currentDate; // Ngày hiện tại (định dạng DD/MM/YYYY)
+
+    // Lọc lịch hẹn của ngày hôm nay
+    const todayAppointments = appointments.filter(
+      (appointment) => appointment.date === today
     );
 
-    setFilteredData(filtered || []);
+    // Cập nhật state hiển thị lịch hẹn
+    setFilteredAppointments(todayAppointments);
   };
 
   return (
@@ -123,13 +208,20 @@ const ManageAppointments = () => {
             {t("filterButton")}
           </button>
           <div className="button-group">
-            <button className="today-btn">{t("todayButton")}</button>
+            <button className="today-btn" onClick={handleToday}>
+              {t("todayButton")}
+            </button>
             <button className="list-btn">{t("listButton")}</button>
           </div>
         </div>
       </div>
-      <h3 className="date-title">{t("dateTitle")}</h3>
-      <AppointmentTable appointments={filteredData} />
+      <h3 className="date-title">{currentDate}</h3>
+      <AppointmentTable
+        scheduledAppointments={scheduledAppointments}
+        waitingAppointments={waitingAppointments}
+        completedAppointments={completedAppointments}
+        handleViewMore={handleViewMore} // Truyền hàm View More
+      />
     </div>
   );
 };
