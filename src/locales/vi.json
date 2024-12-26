@@ -11,14 +11,14 @@
   },
   "detailMoto": {
     "title": "Honda SH 125i",
-    "price": "60.000.000 đ",
+    "price": "6x.000.000 đ",
     "year": "Năm",
     "mileage": "Số km",
     "engine": "Động cơ",
     "condition": "Tình trạng",
     "used": "Đã sử dụng",
     "description_title": "Mô tả",
-    "description_content": "Honda SH 125i 2019 - Xe cũ chính chủ, máy móc nguyên bản, odo 15,000 km. Giá 60.000.000 VNĐ. Liên hệ ngay để xem xe!",
+    "description_content": "Honda SH 125i 2019 - Xe cũ chính chủ, máy móc nguyên bản, odo 15,000 km. Giá 6x.000.000 VNĐ. Liên hệ ngay để xem xe!",
     "buy_now": "Mua hàng",
     "contact": "Liên hệ",
     "details_title": "Mô tả chi tiết",
@@ -70,7 +70,8 @@
     "danang": "Đà Nẵng",
     "search_placeholder": "Tìm kiếm xe...",
     "quality_bikes": "Xe chất lượng",
-    "no_bikes_found": "Không tìm thấy xe phù hợp."
+    "no_bikes_found": "Không tìm thấy xe phù hợp.",
+    "scanning_image": "Đang quét"
   },
   "listExpert": {
     "listExpertTitle": "Danh Sách Các Chuyên Gia Kiểm Định Xe",
@@ -156,7 +157,8 @@
       "sold": "Đã bán",
       "favorites": "Yêu thích"
     },
-    "bikeListTitle": "Danh sách xe"
+    "bikeListTitle": "Danh sách xe",
+    "contactButton": "Thông tin liên lạc"
   },
   "login": {
     "title": "Đăng nhập",
@@ -237,7 +239,7 @@
     "rate": "Đánh giá",
     "editInfo": "Chỉnh sửa thông tin xe"
   },
- "sellPage": {
+  "sellPage": {
     "manageSelling": "Quản lý xe đang bán",
     "tabs": {
       "all": "Sản phẩm của tôi",
@@ -312,7 +314,7 @@
       {
         "name": "Xe máy Thanh Tùng",
         "message": "Dạ cho em hỏi em muốn mua xe bên mình thì cần những thủ tục giấy tờ gì ạ, biển ...",
-        "avatar":"https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "avatar": "https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
         "date": "10/12/2024",
         "time": "13:54"
       }
@@ -369,8 +371,16 @@
     "under170000km": "Dưới 170000km"
   },
   "chat": {
+    "chat": "Trò chuyện",
     "active": "Đang hoạt động",
-    "placeholder": "Nhập tin nhắn"
+    "offer": "Trả giá",
+    "placeholder": "Nhập tin nhắn của bạn",
+    "priceError": "Giá trả không được thấp hơn 60,000,000 VND",
+    "enterPrice": "Nhập giá bạn muốn trả",
+    "enterPricePlaceholder": "Nhập giá",
+    "messageSend": "Tôi muốn trả giá:",
+    "cancel": "Hủy",
+    "submit": "Gửi"
   },
   "payment": {
     "title": "Thông tin thanh toán",
@@ -392,7 +402,14 @@
     "cash": "Tiền mặt",
     "transfer": "Chuyển khoản",
     "installment": "Trả góp",
-    "continue": "Tiếp tục"
+    "continue": "Tiếp tục",
+    "titleModal": "Chi tiết chuyển khoản ngân hàng",
+    "idInf": "Thông tin tài khoản",
+    "nameId": "Tên chủ tài khoản",
+    "numberId": "Số tài khoản",
+    "bankName": "Tên ngân hàng",
+    "bankBranch": "Chi nhánh",
+    "confirm": "Xác nhận"
   },
   "identification": {
     "title": "ĐỊNH DANH TÀI KHOẢN",
@@ -426,12 +443,8 @@
     "save": "Lưu thay đổi"
   },
   "navbar": {
-    "home": "Trang chủ",
-    "expert": "Chuyên gia",
-    "post": "Đăng tin",
-    "store": "Cửa hàng",
-    "logout": "Đăng xuất",
-    "search": "Tìm kiếm..."
+    "adminPageTitle": "Trang quản lý Admin",
+    "logout": "Đăng xuất"
   },
   "sidebar": {
     "title": "Quản lý của admin",
@@ -524,7 +537,7 @@
       "title": "Tiêu đề",
       "productCode": "Mã Sản phẩm",
       "type": "Loại xe",
-"price": "Giá bán",
+      "price": "Giá bán",
       "location": "Địa điểm",
       "image": "Hình ảnh",
       "actions": "Chức Năng"
@@ -640,7 +653,7 @@
       "newUser": "Người dùng mới",
       "inactive": "Không hoạt động",
       "users": "người dùng"
-},
+    },
     "statuses": {
       "active": "Hoạt động",
       "inactive": "Không hoạt động"
@@ -662,5 +675,29 @@
       "reputation": "Độ uy tín",
       "actions": "Hành động"
     }
+  },
+  "contactModal": {
+    "contactInfoTitle": "Thông tin liên lạc",
+    "call": "Gọi",
+    "viewAddress": "Địa chỉ",
+    "chat": "Nhắn tin"
+  },
+  "mapModal": {
+    "location": "Vị trí",
+    "myLocation": "Vị trí của tôi",
+    "directions": "Chỉ đường"
+  },
+  "shareModal": {
+    "title": "Chia sẻ sản phẩm",
+    "copy": "Sao chép",
+    "close": "Đóng"
+  },
+  "reportPage": {
+    "title": "Vui lòng để lại thông tin để K-Sparta Motobike có thể liên lạc với bạn khi cần thiết!",
+    "username": "Tên của bạn",
+    "phoneNumber": "Số điện thoại",
+    "email": "Email của bạn (không bắt buộc)",
+    "description": "Mô tả chi tiết (bắt buộc nhập)",
+    "submit": "Gửi Báo Cáo"
   }
 }

@@ -70,7 +70,8 @@
     "danang": "다낭",
     "search_placeholder": "바이크 검색...",
     "quality_bikes": "고품질 바이크",
-    "no_bikes_found": "적합한 바이크를 찾을 수 없습니다."
+    "no_bikes_found": "적합한 차량을 찾을 수 없습니다.",
+    "scanning_image": "스캔 중"
   },
   "listExpert": {
     "listExpertTitle": "전문가 목록",
@@ -156,7 +157,8 @@
       "sold": "판매 완료",
       "favorites": "즐겨찾기"
     },
-    "bikeListTitle": "오토바이 목록"
+    "bikeListTitle": "오토바이 목록",
+    "contactButton": "연락처 정보"
   },
   "login": {
     "title": "로그인",
@@ -212,7 +214,7 @@
       "shippingCost": "배송비",
       "totalPrice": "총 금액",
       "paymentMethod": "결제 방법"
-    }, 
+    },
     "methods": {
       "payment": "현금 결제",
       "delivery": "매장에서 수령"
@@ -312,7 +314,7 @@
       {
         "name": "Thanh Tung 오토바이",
         "message": "안녕하세요, 오토바이를 구매하려면 어떤 서류가 필요합니까?",
-        "avatar":"https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "avatar": "https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
         "date": "2024년 12월 10일",
         "time": "오후 1:54"
       }
@@ -369,8 +371,16 @@
     "under170000km": "170000km 이하"
   },
   "chat": {
-    "active": "활동적이다",
-    "placeholder": "메시지를 입력해주세요"
+    "chat": "채팅",
+    "active": "활성",
+    "offer": "제안",
+    "placeholder": "메시지를 입력하세요",
+    "priceError": "제안 가격은 60,000,000 VND 미만일 수 없습니다",
+    "enterPrice": "제안 가격을 입력하세요",
+    "enterPricePlaceholder": "가격 입력",
+    "messageSend": "입찰하고 싶습니다:",
+    "cancel": "취소",
+    "submit": "보내기"
   },
   "payment": {
     "title": "결제 정보",
@@ -392,7 +402,14 @@
     "cash": "현금",
     "transfer": "은행 이체",
     "installment": "할부",
-    "continue": "계속"
+    "continue": "계속",
+    "titleModal": "은행 계좌 이체 상세",
+    "idInf": "계좌 정보",
+    "nameId": "계좌 소유자 이름",
+    "numberId": "계좌 번호",
+    "bankName": "은행 이름",
+    "bankBranch": "은행 지점",
+    "confirm": "확인"
   },
   "identification": {
     "title": "계정 인증",
@@ -426,12 +443,8 @@
     "save": "변경 사항 저장"
   },
   "navbar": {
-    "home": "홈",
-    "expert": "전문가",
-    "post": "게시물",
-    "store": "상점",
-    "logout": "로그아웃",
-    "search": "검색..."
+    "adminPageTitle": "관리자 관리 페이지",
+    "logout": "로그아웃"
   },
   "sidebar": {
     "title": "관리자 관리",
@@ -532,7 +545,7 @@
     "posts": [
       {
         "title": "중고 시리우스 오토바이 판매",
-"type": "모터바이크",
+        "type": "모터바이크",
         "location": "다낭"
       },
       {
@@ -655,11 +668,35 @@
     "tableHeaders": {
       "name": "이름",
       "email": "이메일",
-"city": "도시",
+      "city": "도시",
       "status": "상태",
       "experience": "경험",
       "reputation": "신뢰도",
       "actions": "작업"
     }
+  },
+  "contactModal": {
+    "contactInfoTitle": "연락처 정보",
+    "call": "부르다",
+    "viewAddress": "주소",
+    "chat": "문자"
+  },
+  "mapModal": {
+    "location": "위치",
+    "myLocation": "내 위치",
+    "directions": "지도"
+  },
+  "shareModal": {
+    "title": "제품 공유",
+    "copy": "복사",
+    "close": "닫다"
+  },
+  "reportPage": {
+    "title": "K-Sparta Motobike와 연락할 수 있도록 정보를 남겨주세요.",
+    "username": "당신의 이름",
+    "phoneNumber": "전화번호",
+    "email": "당신의 이메일 (선택 사항)",
+    "description": "상세 설명 (필수 입력)",
+    "submit": "보고서 제출"
   }
 }

@@ -235,7 +235,7 @@ const Upload = () => {
                     <ModelModal
                         isOpen={isModelModalOpen}
                         closeModal={closeModelModal}
-                        models={selectedBrand ? brands.find(brand => brand.name === selectedBrand).models : []}
+                        selectedBrand={selectedBrand}
                         setSelectedModel={setSelectedModel}
                     />
                     {/* Year Section */}

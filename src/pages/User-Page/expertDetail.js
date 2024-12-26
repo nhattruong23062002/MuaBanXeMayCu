@@ -36,14 +36,12 @@ function ExpertDetailPage() {
             {t("title")}
           </h1>
         </div>
-
         <div className="max-w-[800px] mx-auto bg-white rounded-lg shadow-md">
           <img
             src="https://kiemtraxecu.com/wp-content/uploads/2022/05/IMG_8158-scaled.jpg"
             alt={t("expert")}
             className="w-full h-96 object-cover rounded-t-lg"
           />
-
           <div className="p-6 -mt-8 relative z-10 bg-white mx-4 rounded-lg shadow-lg">
             <h2 className="text-xl font-bold mb-2">
               {t("expert")}:{" "}
@@ -65,7 +63,6 @@ function ExpertDetailPage() {
               </strong>
             </p>
           </div>
-
           <div className="p-8">
             <h3 className="text-xl font-bold mb-2">{t("workingHours")}:</h3>
             <div className="grid grid-cols-2 gap-y-2 text-blue-600">
@@ -76,7 +73,6 @@ function ExpertDetailPage() {
               ))}
             </div>
           </div>
-
           <div className="px-8 pb-6">
             <h3 className="text-xl font-bold mb-2">{t("services")}</h3>
             {t("serviceItems", { returnObjects: true }).map(

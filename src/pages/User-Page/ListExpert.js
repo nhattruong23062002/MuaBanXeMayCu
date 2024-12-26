@@ -3,6 +3,8 @@ import ExpertCard from "../../components/ExpertCard";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import LayoutUser from "../../layout/layoutUser";
+import { CiSearch } from "react-icons/ci";
+
 const ListExpert = () => {
 
     const { t } = useTranslation("listExpert");
@@ -121,21 +123,8 @@ const ListExpert = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                         {/* Biểu tượng tìm kiếm */}
-                        <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M11 5a6 6 0 1112 0 6 6 0 01-12 0zM19 19l-4-4"
-                                />
-                            </svg>
+                        <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800">
+                            <CiSearch />
                         </div>
                     </div>
 
