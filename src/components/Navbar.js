@@ -13,6 +13,14 @@ const Navbar = () => {
 
   const isActive = (path) => location.pathname === path;
 
+  // Danh sách liên kết điều hướng
+  const navLinks = [
+    { icon: <FaHome />, label: t("home"), path: "/" },
+    { icon: <FaUserDoctor />, label: t("expert"), path: "/listexp" },
+    { icon: <MdAddBox />, label: t("post"), path: "/upload" },
+    { icon: <IoStorefrontSharp />, label: t("store"), path: "/listStore" },
+  ];
+
   return (
     <div className="bg-[#0e0f2b] text-white py-3">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
@@ -26,16 +34,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <nav className="flex items-center space-x-8">
-          {[
-            { icon: <FaHome />, label: t("home"), path: "/" },
-            { icon: <FaUserDoctor />, label: t("expert"), path: "/listexp" },
-            { icon: <MdAddBox />, label: t("post"), path: "/upload" },
-            {
-              icon: <IoStorefrontSharp />,
-              label: t("store"),
-              path: "/listStore",
-            },
-          ].map((item, index) => (
+          {navLinks.map((item, index) => (
             <div
               key={index}
               className={`flex flex-col items-center justify-center w-20 h-16 cursor-pointer ${
@@ -44,8 +43,10 @@ const Navbar = () => {
               onClick={() => navigate(item.path)}
             >
               <span
-                className={`text-xl group-hover:text-[#d59648] ${
-                  isActive(item.path) && "text-[#d59648]"
+                className={`text-xl ${
+                  isActive(item.path)
+                    ? "text-[#d59648]"
+                    : "group-hover:text-[#d59648]"
                 }`}
               >
                 {item.icon}

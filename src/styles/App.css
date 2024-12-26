@@ -30,7 +30,6 @@ body {
 }
 
 .content {
-  margin-left: 250px; /* Đảm bảo phần nội dung không bị che khuất bởi Sidebar */
   padding: 20px;
   width: 100%;
 }

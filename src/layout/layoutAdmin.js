@@ -7,10 +7,7 @@ const AdminLayout = ({ children }) => {
       <Navbar />
       <div style={{ display: "flex" }}>
         <Sidebar />
-        <div
-          className="content"
-          style={{ marginLeft: "250px", padding: "20px", width: "100%" }}
-        >
+        <div className="content" style={{ padding: "20px", width: "100%" }}>
           {children}
         </div>
       </div>
