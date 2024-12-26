@@ -136,8 +136,6 @@ const Upload = () => {
             <div className="flex justify-center items-start min-h-screen bg-gray-200 pt-10">
                 <div className="w-[800px] p-4 bg-white rounded-xl shadow-lg">
                     <hr className="my-4 border-t border-gray-400 w-full" />
-
-                    {/* Dòng chữ Upload Motobike và nút chuyển hướng */}
                     <div className="flex justify-start items-center space-x-4">
 
                         {/* Nút chuyển hướng */}
@@ -184,7 +182,6 @@ const Upload = () => {
                         <div className="flex space-x-4 mt-4">
                             {selectedImages.map((image, index) => (
                                 <div key={index} className="relative">
-                                    {/* Ảnh đã chọn, chỉ hiển thị nếu ảnh chưa bị xóa */}
                                     {!image.isDeleted && (
                                         <img
                                             src={URL.createObjectURL(image.file)}
@@ -193,7 +190,6 @@ const Upload = () => {
                                         />
                                     )}
 
-                                    {/* Nút xóa nếu ảnh chưa bị xóa */}
                                     {!image.isDeleted && (
                                         <button
                                             onClick={() => handleImageRemove(index)}
@@ -375,7 +371,6 @@ const Upload = () => {
                             {/* Icon bên trái */}
                             <MdOutlineDescription className="text-gray-400 ml-1 mr-2 mt-1" />
 
-                            {/* Textarea */}
                             <textarea
                                 className="flex-1 outline-none bg-transparent resize-none h-[200px]"
                                 value={description}
@@ -387,7 +382,6 @@ const Upload = () => {
                     <hr className="my-4 border-t border-gray-200 w-full" />
                     <div className="my-6">
                         <div className="flex justify-center bg-blue-400 text-white p-2 rounded shadow hover:bg-blue-200 cursor-pointer font-semibold transition duration-300 w-full h-14">
-                            {/* Nút chọn thành phố */}
                             <button>
                                 {t("confirm")}
                             </button>
