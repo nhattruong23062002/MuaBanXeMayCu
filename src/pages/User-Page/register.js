@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import LayoutUser from "../../layout/layoutUser";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
+  const { t } = useTranslation("register");
   const navigate = useNavigate();
 
   const handleShowLogin = () => {
-    navigate(`/login`); 
-  }
+    navigate(`/login`);
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -20,49 +22,49 @@ function RegisterForm() {
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mt-[-150px]">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            Đăng ký
+            {t("title")}
           </h2>
 
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-1">
-              Họ và tên *
+              {t("name")} *
             </label>
             <input
               type="text"
-              placeholder="Nhập họ và tên"
+              placeholder={t("namePlaceholder")}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
           </div>
 
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-1">
-              Email *
+              {t("email")} *
             </label>
             <input
               type="text"
-              placeholder="Nhập Email"
+              placeholder={t("emailPlaceholder")}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
           </div>
 
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-1">
-              Số điện thoại *
+              {t("phone")} *
             </label>
             <input
               type="text"
-              placeholder="Nhập SĐT"
+              placeholder={t("phonePlaceholder")}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
           </div>
 
           <div className="mb-4 relative">
             <label className="block text-gray-700 font-medium mb-1">
-              Mật khẩu *
+              {t("password")} *
             </label>
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Nhập mật khẩu"
+              placeholder={t("passwordPlaceholder")}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
             <button
@@ -76,11 +78,11 @@ function RegisterForm() {
 
           <div className="mb-4 relative">
             <label className="block text-gray-700 font-medium mb-1">
-              Xác nhận mật khẩu *
+              {t("confirmPassword")} *
             </label>
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Xấc nhận mật khẩu"
+              placeholder={t("confirmPasswordPlaceholder")}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
             />
             <button
@@ -93,13 +95,17 @@ function RegisterForm() {
           </div>
 
           <button className="w-full bg-[#d59648] hover:bg-[#b27939] text-white font-medium py-2 rounded-md">
-            Đăng Ký
+            {t("registerButton")}
           </button>
 
           <p className="text-center text-gray-600 text-sm mt-4">
-            Bạn đã có tài khoản?{" "}
-            <a href="#" className="text-[#d59648] hover:underline font-medium" onClick={handleShowLogin}>
-              Đăng nhập ngay
+            {t("loginPrompt")}{" "}
+            <a
+              href="#"
+              className="text-[#d59648] hover:underline font-medium"
+              onClick={handleShowLogin}
+            >
+              {t("loginLink")}
             </a>
           </p>
         </div>

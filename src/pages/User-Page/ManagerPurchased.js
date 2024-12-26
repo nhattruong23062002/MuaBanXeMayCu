@@ -3,9 +3,11 @@ import LayoutUser from "../../layout/layoutUser";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import MotoPurchased from "../../components/MotoPurchased";
+import { useTranslation } from "react-i18next";
 
 function PurchasedPage() {
   const [activeTab, setActiveTab] = useState("all");
+  const { t } = useTranslation("purchasedPage");
   const navigate = useNavigate();
 
   const cars = [
@@ -30,10 +32,10 @@ function PurchasedPage() {
   ];
 
   const tabs = [
-    { id: "all", label: "Tất cả" },
-    { id: "pending", label: "Đang chờ" },
-    { id: "processing", label: "Giao dịch" },
-    { id: "completed", label: "Hoàn tất" },
+    { id: "all", label: t("tabs.all") },
+    { id: "pending", label: t("tabs.pending") },
+    { id: "processing", label: t("tabs.processing") },
+    { id: "completed", label: t("tabs.completed") },
   ];
 
   return (
@@ -46,7 +48,7 @@ function PurchasedPage() {
           >
             <IoMdArrowRoundBack />
           </button>
-          <h1 className="text-lg sm:text-2xl font-bold">Quản lý xe đã mua</h1>
+          <h1 className="text-lg sm:text-2xl font-bold">{t("title")}</h1>
         </div>
 
         <div className="flex border-b-2 mb-6">

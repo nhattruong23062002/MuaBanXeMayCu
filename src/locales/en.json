@@ -56,11 +56,11 @@
     "filter": "Filter"
   },
   "header": {
-    "home": "Home",
-    "experts": "Experts",
-    "post_ad": "Post Ad",
-    "stores": "Stores",
-    "account": "Account"
+    "home": " Home ",
+    "experts": " Experts ",
+    "post_ad": " Post Ad ",
+    "stores": " Stores ",
+    "account": " Account "
   },
   "homepage": {
     "scooter": "Scooter",
@@ -70,7 +70,8 @@
     "danang": "Da Nang",
     "search_placeholder": "Search for bikes...",
     "quality_bikes": "Quality Bikes",
-    "no_bikes_found": "No bikes found"
+    "no_bikes_found": "No bikes found",
+    "scanning_image": "Scanning"
   },
   "listExpert": {
     "listExpertTitle": "List of Experts",
@@ -109,6 +110,216 @@
     "placeholderCity": "Select city",
     "placeholderDescription": "Please add a description for the product",
     "placeholderPrice": "Enter selling price"
+  },
+  "expertDetail": {
+    "title": "Expert Information",
+    "expert": "Expert",
+    "dob": "Date of Birth",
+    "address": "Address",
+    "phone": "Phone",
+    "workingHours": "Working Hours",
+    "services": "Provided Services",
+    "serviceItems": [
+      "Inspect for signs of accidents, upgraded vehicles & stolen vehicles",
+      "Estimate the actual mileage of the vehicle",
+      "Detect fuel injection and sensor errors using accurate devices",
+      "General evaluation and pricing of inspected vehicles"
+    ],
+    "bookNow": "Book Now",
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    }
+  },
+  "bookingModal": {
+    "title": "Book an Appointment",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "address": "Inspection Address",
+    "carType": "Car Type",
+    "purpose": "Purpose of Inspection",
+    "appointmentDate": "Appointment Date",
+    "appointmentTime": "Appointment Time",
+    "cancel": "Cancel",
+    "confirm": "Confirm Booking",
+    "successMessage": "Booking successful!"
+  },
+  "storeDetail": {
+    "pageTitle": "Store Information",
+    "storeName": "Xe máy Út Tịch",
+    "stats": {
+      "selling": "Selling",
+      "sold": "Sold",
+      "favorites": "Favorites"
+    },
+    "bikeListTitle": "Bike List",
+    "contactButton": "Contact information"
+
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot ID/Password?",
+    "loginButton": "Login",
+    "registerPrompt": "Don't have an account?",
+    "registerLink": "Register now"
+  },
+  "register": {
+    "title": "Register",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "namePlaceholder": "Enter your full name",
+    "emailPlaceholder": "Enter your email",
+    "phonePlaceholder": "Enter your phone number",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "registerButton": "Register",
+    "loginPrompt": "Already have an account?",
+    "loginLink": "Login now"
+  },
+  "purchasedPage": {
+    "title": "Manage Purchased Vehicles",
+    "tabs": {
+      "all": "All",
+      "pending": "Pending",
+      "processing": "Processing",
+      "completed": "Completed"
+    }
+  },
+  "purchaseDetailPage": {
+    "title": "Purchased Vehicle Details",
+    "steps": {
+      "pending": "Pending",
+      "processing": "Processing",
+      "shipping": "Shipping",
+      "completed": "Completed"
+    },
+    "seller": "Nhat moto",
+    "car": {
+      "yearMileage": "{{year}} &nbsp;&nbsp; {{mileage}}",
+      "plateNumber": "Plate Number: {{plateNumber}}"
+    },
+    "details": {
+      "deliveryAddress": "Delivery Address",
+      "shippingCost": "Shipping Cost",
+      "totalPrice": "Total Price",
+      "paymentMethod": "Payment Method"
+    },
+    "methods": {
+      "payment": "Cash Payment",
+      "delivery": "Pickup at the store"
+    }
+  },
+  "ratingModal": {
+    "title": "Rate the product",
+    "feedback": {
+      "satisfied": "Satisfied",
+      "disappointed": "Disappointed"
+    },
+    "detailedFeedback": "Detailed feedback:",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
+  "motoPurchased": {
+    "seller": "Seller",
+    "sold": "Sold",
+    "trading": "In Transaction",
+    "price": "Price",
+    "viewDetails": "View Order Details",
+    "rate": "Rate",
+    "editInfo": "Edit Vehicle Info"
+  },
+  "sellPage": {
+    "manageSelling": "Manage Vehicles for Sale",
+    "tabs": {
+      "all": "My Products",
+      "pending": "Pending",
+      "processing": "In Transaction",
+      "completed": "Completed"
+    }
+  },
+  "postDetail": {
+    "carName": "New Vario Motorbike 2024",
+    "carCondition": "Car Condition",
+    "carConditionValue": "No warranty",
+    "location": "Location",
+    "carLocationValue": "170 Pham Van Dong",
+    "updatedAt": "Updated at",
+    "updatedTimeValue": "Updated 5 hours ago",
+    "back": "Back",
+    "editPost": "Edit Post Information",
+    "hidePost": "Hide Post",
+    "edit": "Edit",
+    "seller": {
+      "name": "Seller",
+      "response": "Response",
+      "status": "Active",
+      "statusValue": "1 sold"
+    }
+  },
+  "hidePost": {
+    "title": "Hide post {{name}}",
+    "description": "When you've sold the product or no longer want it displayed on Vipxe, select 'Hide Post'.",
+    "reasonPrompt": "Please select a reason to hide the post:",
+    "reasons": [
+      "No longer want to sell",
+      "Sold through Vipxe",
+      "Sold through other channels",
+      "Annoyed by brokers/posting services",
+      "Other"
+    ],
+    "cancel": "Cancel",
+    "hidePost": "Hide Post",
+    "alert": {
+      "noReason": "Please select a reason to hide the post!"
+    },
+    "carName": "New Vario Motorbike 2024"
+  },
+  "addressModal": {
+    "title": "Address",
+    "city": "City/Province",
+    "district": "District",
+    "ward": "Ward/Commune",
+    "specificAddress": "Specific Address",
+    "done": "DONE"
+  },
+  "listSender": {
+    "header": "You have read all messages",
+    "allButton": "All",
+    "messages": [
+      {
+        "name": "Nhat Truong Motorbikes",
+        "message": "Please send me your phone number or Zalo number",
+        "avatar": "https://img.freepik.com/free-vector/vintage-flat-motorcycle-logo_23-2149450072.jpg?size=338&ext=jpg&ga=GA1.1.2113030492.1720051200&semt=ais_user",
+        "date": "12/11/2024",
+        "time": "1:52 PM"
+      },
+      {
+        "name": "Vehicle Inspector Nguyen Thang",
+        "message": "Are you using this phone number?",
+        "avatar": "https://cl-wpml.careerlink.vn/cam-nang-viec-lam/wp-content/uploads/2023/04/03112520/building-sector-industrial-workers-concept-confident-young-asian-engineer-construction-manager-reflective-clothes-helmet-cross-arms-smiling-sassy-ensuring-quality-white-wall.jpg",
+        "date": "12/10/2024",
+        "time": "2:32 PM"
+      },
+      {
+        "name": "Thanh Tung Motorbikes",
+        "message": "Hi, what documents do I need to buy a bike from you?",
+        "avatar":"https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "date": "12/10/2024",
+        "time": "1:54 PM"
+      }
+    ]
   },
   "colorModal": {
     "white": "White",
@@ -161,8 +372,16 @@
     "under170000km": "Under 170000km"
   },
   "chat": {
+    "chat": "Chat",
     "active": "Active",
-    "placeholder": "Please enter a message"
+    "offer": "Offer",
+    "placeholder": "Type your message",
+    "priceError": "The offer cannot be less than 60,000,000 VND",
+    "enterPrice": "Enter the price you want to offer",
+    "enterPricePlaceholder": "Enter price",
+    "messageSend": "I would like to pay:",
+    "cancel": "Cancel",
+    "submit": "Submit"
   },
   "payment": {
     "title": "Payment Information",
@@ -223,5 +442,262 @@
     "location": "Location",
     "img": "Images",
     "save": "Save Changes"
-  }
+  },
+  "navbar": {
+    "home": "Home",
+    "expert": "Experts",
+    "post": "Post",
+    "store": "Store",
+    "logout": "Logout",
+    "search": "Search..."
+  },
+  "sidebar": {
+    "title": "Admin Management",
+    "manageAppointments": "Manage Appointments",
+    "createAppointment": "Create Appointment",
+    "managePosts": "Manage Posts",
+    "manageUsers": "Manage Users",
+    "handleComplaints": "Handle Complaints",
+    "manageExperts": "Manage Experts"
+  },
+  "manageAppointments": {
+    "title": "Manage Appointment Schedules",
+    "stats": {
+      "today": "Today",
+      "pending": "Pending",
+      "processing": "Processing",
+      "completed": "Completed"
+    },
+    "searchPlaceholder": "Search appointments",
+    "filterButton": "Show Filters",
+    "todayButton": "Today",
+    "listButton": "List",
+    "dateTitle": "December 13, 2024",
+    "context": {
+      "status": {
+        "needAdvice": "Need advice to buy a car",
+        "depositPaid": "Deposit paid",
+        "consulted": "Consulted"
+      }
+    },
+    "categories": {
+      "scheduled": "Scheduled",
+      "waiting": "Waiting",
+      "completed": "Completed"
+    },
+    "buttons": {
+      "viewMore": "View more appointments"
+    }
+  },
+  "createAppointment": {
+    "title": "Create Appointment Schedule for Expert",
+    "form": {
+      "name": "Full Name:",
+      "namePlaceholder": "Enter full name",
+      "phone": "Phone:",
+      "phonePlaceholder": "Enter phone number",
+      "address": "Address:",
+      "addressPlaceholder": "Enter address",
+      "experience": "Experience:",
+      "experiencePlaceholder": "Enter experience",
+      "certificate": "Certificate documents:",
+      "price": "Price:",
+      "pricePlaceholder": "Enter price",
+      "timeSlots": "Available time slots:"
+    },
+    "preview": {
+      "title": "Certificate Images:",
+      "removeButton": "X"
+    },
+    "timeOptions": {
+      "slot1": "7:00-8:00",
+      "slot2": "9:00-10:00",
+      "slot3": "13:00-14:00",
+      "slot4": "15:00-16:00"
+    },
+    "submitButton": "Confirm Appointment"
+  },
+  "managePosts": {
+    "title": "Manage Posts",
+    "searchPlaceholder": "Enter title or ID",
+    "categories": {
+      "default": "Select category",
+      "bike": "Motorbike",
+      "scooter": "Scooter",
+      "manualBike": "Manual Bike",
+      "largeBike": "Large Bike"
+    },
+    "buttons": {
+      "ok": "OK",
+      "delete": "Delete",
+      "approve": "Approve"
+    },
+    "tableHeaders": {
+      "id": "ID",
+      "title": "Title",
+      "productCode": "Product Code",
+      "type": "Type",
+      "price": "Price",
+      "location": "Location",
+      "image": "Image",
+      "actions": "Actions"
+    },
+    "posts": [
+      {
+        "title": "Sell used Sirius motorbike",
+        "type": "Motorbike",
+        "location": "Da Nang"
+      },
+      {
+        "title": "Sell used SH motorbike",
+        "type": "Motorbike",
+        "location": "Hanoi"
+      },
+      {
+        "title": "Sell used Wave motorbike",
+        "type": "Motorbike",
+"location": "Hai Phong"
+      },
+      {
+        "title": "Sell used Airblack motorbike",
+        "type": "Motorbike",
+        "location": "Quang Nam"
+      },
+      {
+        "title": "Sell used R15 motorbike",
+        "type": "Motorbike",
+        "location": "Ho Chi Minh City"
+      }
+    ]
+  },
+  "manageUsers": {
+    "title": "Manage Users",
+    "summaryCards": {
+      "totalUsers": "Total Users",
+      "active": "Active",
+      "newUsers": "New Users",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "addUser": "Add User",
+      "delete": "Delete",
+      "export": "Export",
+      "filter": "Filter",
+      "searchPlaceholder": "Search Users",
+      "edit": "Edit"
+    },
+    "tableHeaders": {
+      "name": "Name",
+      "email": "Email",
+      "city": "City",
+      "status": "Status",
+      "posts": "Posts",
+      "transactions": "Transactions",
+      "actions": "Actions"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "units": {
+      "users": "Users",
+      "posts": "Posts",
+      "transactions": "Transactions"
+    },
+    "cities": {
+      "daNang": "Da Nang",
+      "haNoi": "Ha Noi",
+      "hue": "Hue",
+      "kontum": "Kontum"
+    }
+  },
+  "handleComplaints": {
+    "title": "Complaint List",
+    "status": {
+      "processing": "Processing",
+      "success": "Success",
+      "rejected": "Rejected"
+    },
+    "actions": {
+      "delete": "Delete",
+      "export": "Export",
+      "filter": "Filter",
+      "approve": "Approve",
+      "reject": "Reject"
+    },
+    "tableHeaders": {
+      "name": "Name",
+      "email": "Email",
+      "time": "Time",
+      "reason": "Reason",
+      "role": "Role",
+      "link": "Link to Complained User",
+      "actions": "Actions"
+    },
+    "searchPlaceholder": "Search Complaints",
+    "reasons": {
+      "defer": "Request for deferment",
+      "refund": "Request for refund"
+    },
+    "roles": {
+      "user": "User"
+    }
+  },
+
+  "manageExperts": {
+    "title": "Manage Experts",
+    "header": "Experts",
+    "summary": {
+      "totalUsers": "Total Users",
+      "active": "Active",
+      "newUser": "New Users",
+      "inactive": "Inactive",
+      "users": "users"
+    },
+    "statuses": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "actions": {
+      "addUser": "Add user",
+      "searchPlaceholder": "Search Users",
+      "delete": "Delete",
+      "export": "Export",
+      "filter": "Filter",
+      "edit": "Edit"
+    },
+    "tableHeaders": {
+      "name": "Name",
+      "email": "Email",
+      "city": "City",
+      "status": "Status",
+      "experience": "Experience",
+      "reputation": "Reputation",
+      "actions": "Actions"
+    }
+  },
+  "contactModal": {
+    "contactInfoTitle": "Contact information",
+    "call": "Call",
+    "viewAddress": "View Address",
+    "chat": "Chat"
+  },
+  "mapModal": {
+    "location": "Location",
+    "myLocation": "My Location",
+    "directions": "Directions"
+  },
+  "shareModal": {
+    "title": "Share product",
+    "copy": "Copy",
+    "close": "Close"
+  },
+  "reportPage": {
+    "title": "Please provide the information so that K-Sparta Motobike can contact you when necessary!",
+    "username": "Your Name",
+    "phoneNumber": "Phone Number",
+    "email": "Your Email (Optional)",
+    "description": "Detailed Description (Required)",
+    "submit": "Submit Report"
+  }  
 }

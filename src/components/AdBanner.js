@@ -15,12 +15,12 @@ function AdBanner() {
     setIsVisible(false);
     localStorage.setItem("hasSeenAdBanner", "true");
   };
-
+ 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
       localStorage.setItem("hasSeenAdBanner", "true");
-    }, 10000); 
+    }, 100000); 
     return () => clearTimeout(timer);
   }, []);
 

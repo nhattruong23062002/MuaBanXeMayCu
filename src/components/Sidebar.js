@@ -1,34 +1,65 @@
-// src/pages/Admin-Page/components/Sidebar.js
 import React from "react";
-import { Link } from "react-router-dom"; // Để sử dụng Link cho điều hướng
-import "./../styles/Sidebar.css"; // File CSS của Sidebar
+import { Link } from "react-router-dom";
 import { FaAlignJustify } from "react-icons/fa";
+import { useTranslation } from "react-i18next"; // Import hook
 
 const Sidebar = () => {
+  const { t } = useTranslation("sidebar"); // Sử dụng namespace "sidebar"
+
   return (
-    <div className="sidebar">
-      <h2 className="sidebar-title">
+    <div className="w-64 bg-gray-800 text-white min-h-screen shadow-lg">
+      <h2 className="flex items-center gap-2 px-6 py-4 text-lg font-bold bg-gray-700">
         <FaAlignJustify size={20} />
-        Quản lý của admin
+        {t("title")}
       </h2>
-      <ul className="sidebar-links">
+      <ul className="space-y-2 mt-4">
         <li>
-          <Link to="/admin/manage-appointments">Quản lý lịch hẹn</Link>
+          <Link
+            to="/admin/manage-appointments"
+            className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+          >
+            {t("manageAppointments")}
+          </Link>
         </li>
         <li>
-          <Link to="/admin/create-appointment">Tạo lịch hẹn</Link>
+          <Link
+            to="/admin/create-appointment"
+            className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+          >
+            {t("createAppointment")}
+          </Link>
         </li>
         <li>
-          <Link to="/admin/manage-posts">Quản lý bài đăng</Link>
+          <Link
+            to="/admin/manage-posts"
+            className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+          >
+            {t("managePosts")}
+          </Link>
         </li>
         <li>
-          <Link to="/admin/manage-users">Quản lý người dùng</Link>
+          <Link
+            to="/admin/manage-users"
+            className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+          >
+            {t("manageUsers")}
+          </Link>
         </li>
         <li>
-          <Link to="/admin/handle-complaints">Xử lý khiếu nại</Link>
+          <Link
+            to="/admin/handle-complaints"
+            className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+          >
+            {t("handleComplaints")}
+          </Link>
         </li>
         <li>
-          <Link to="/admin/manage-experts">Quản lý chuyên gia</Link>
+          <Link
+            to="/admin/manage-experts"
+            className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+          >
+            {t("manageExperts")}
+          </Link>
         </li>
       </ul>
     </div>

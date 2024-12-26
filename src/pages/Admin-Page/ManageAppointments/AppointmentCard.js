@@ -11,9 +11,9 @@ const AppointmentCard = ({
   status,
 }) => {
   return (
-    <div className="appointment-card">
-      <p>
-        <b>{id}</b> {name}
+    <div className="bg-white shadow-md rounded-lg p-4 mb-4 border border-gray-200">
+      <p className="font-bold text-gray-800 mb-2">
+        <span className="text-blue-500">#{id}</span> {name}
       </p>
 
       {/* Số điện thoại */}

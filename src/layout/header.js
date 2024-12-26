@@ -14,13 +14,13 @@ import { useTranslation } from "react-i18next";
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { t } = useTranslation("header"); // Sử dụng namespace `header`
+  const { t } = useTranslation("header"); 
 
   const isActive = (path) => location.pathname === path;
 
   return (
     <div className="bg-[#0e0f2b] text-white py-2">
-      <div className="max-w-[800px] mx-auto flex justify-between items-center px-6">
+      <div className="max-w-[800px] mx-auto flex justify-between items-center pl-5 pr-10">
         <div className="flex items-center space-x-2">
           <span
             className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl cursor-pointer"
@@ -30,9 +30,9 @@ function Header() {
           </span>
         </div>
 
-        <nav className="flex flex-wrap justify-center space-x-3 sm:space-x-6 md:space-x-14 text-xs sm:text-sm md:text-base font-medium">
+        <nav className="flex justify-center space-x-2 sm:space-x-4 md:space-x-2 text-xs sm:text-sm md:text-base font-medium w-full">
           <div
-            className={`flex flex-col items-center group cursor-pointer ${
+            className={`flex flex-col items-center group cursor-pointer w-[80px] sm:w-[120px] md:w-[120px] ${
               isActive("/") ? "text-[#d59648]" : ""
             }`}
             onClick={() => navigate("/")}
@@ -48,7 +48,7 @@ function Header() {
           </div>
 
           <div
-            className={`flex flex-col items-center group cursor-pointer ${
+            className={`flex flex-col items-center group cursor-pointer w-[90px] sm:w-[120px] md:w-[120px] ${
               isActive("/listexp") ? "text-[#d59648]" : ""
             }`}
             onClick={() => navigate("/listexp")}
@@ -60,13 +60,11 @@ function Header() {
                   : "text-gray-100 group-hover:text-[#d59648]"
               }`}
             />
-            <span className="mt-1 text-[10px] sm:text-xs">
-              {t("experts")}
-            </span>
+            <span className="mt-1 text-[10px] sm:text-xs">{t("experts")}</span>
           </div>
 
           <div
-            className={`flex flex-col items-center group cursor-pointer ${
+            className={`flex flex-col items-center group cursor-pointer w-[80px] sm:w-[120px] md:w-[120px] ${
               isActive("/upload") ? "text-[#d59648]" : ""
             }`}
             onClick={() => navigate("/upload")}
@@ -82,7 +80,7 @@ function Header() {
           </div>
 
           <div
-            className={`flex flex-col items-center group cursor-pointer ${
+            className={`flex flex-col items-center group cursor-pointer w-[80px] sm:w-[120px] md:w-[120px] ${
               isActive("/listStore") ? "text-[#d59648]" : ""
             }`}
             onClick={() => navigate("/listStore")}
@@ -98,7 +96,7 @@ function Header() {
           </div>
 
           <div
-            className={`flex flex-col items-center group cursor-pointer ${
+            className={`flex flex-col items-center group cursor-pointer w-[80px] sm:w-[120px] md:w-[120px] ${
               isActive("/account") ? "text-[#d59648]" : ""
             }`}
             onClick={() => navigate("/account")}

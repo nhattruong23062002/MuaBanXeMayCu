@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const AddressModal = ({ isOpen, onClose, onSave }) => {
+  const { t } = useTranslation("addressModal"); // Namespace riêng cho AddressModal
   const [formData, setFormData] = useState({
     city: "",
     district: "",
@@ -23,12 +25,14 @@ const AddressModal = ({ isOpen, onClose, onSave }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white w-11/12 max-w-md rounded-lg p-6 shadow-md">
-        <h2 className="text-xl font-bold text-gray-800 text-center mb-4">Địa chỉ</h2>
+        <h2 className="text-xl font-bold text-gray-800 text-center mb-4">
+          {t("title")}
+        </h2>
         <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Tỉnh, thành phố <span className="text-red-500">*</span>
-            </label> 
+              {t("city")} <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               name="city"
@@ -40,7 +44,7 @@ const AddressModal = ({ isOpen, onClose, onSave }) => {
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Quận, huyện <span className="text-red-500">*</span>
+              {t("district")} <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -53,7 +57,7 @@ const AddressModal = ({ isOpen, onClose, onSave }) => {
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Phường, xã, thị trấn <span className="text-red-500">*</span>
+              {t("ward")} <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -66,7 +70,7 @@ const AddressModal = ({ isOpen, onClose, onSave }) => {
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Địa chỉ cụ thể <span className="text-red-500">*</span>
+              {t("specificAddress")} <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -82,7 +86,7 @@ const AddressModal = ({ isOpen, onClose, onSave }) => {
             onClick={handleSave}
             className="px-6 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition"
           >
-            XONG
+            {t("done")}
           </button>
         </div>
       </div>

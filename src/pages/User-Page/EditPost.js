@@ -19,19 +19,7 @@ const mockPosts = [
       "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/hinh-anh-xe-may.jpg",
       "https://i.pinimg.com/originals/29/85/ae/2985ae8ef7683f84498143b7079ba85e.jpg",
     ],
-  },
-  {
-    id: "2",
-    title: "Xe SH 2020",
-    description: "Xe SH đời 2020, đã qua sử dụng.",
-    price: "45000000",
-    condition: "Đã qua sử dụng",
-    category: "xe-may",
-    location: "Hà Nội",
-    image: [
-      "https://i.pinimg.com/originals/29/85/ae/2985ae8ef7683f84498143b7079ba85e.jpg",
-    ],
-  },
+  }
 ];
 
 const EditPost = () => {
@@ -56,7 +44,7 @@ const EditPost = () => {
       setFormData(post);
       setPreviewImages(post.image || []);
     } else {
-      console.error("Không tìm thấy bài đăng");
+      console.error("Error");
     }
   }, [id]);
 

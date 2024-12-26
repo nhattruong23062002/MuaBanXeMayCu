@@ -70,7 +70,8 @@
     "danang": "다낭",
     "search_placeholder": "바이크 검색...",
     "quality_bikes": "고품질 바이크",
-    "no_bikes_found": "적합한 바이크를 찾을 수 없습니다."
+    "no_bikes_found": "적합한 차량을 찾을 수 없습니다.",
+    "scanning_image": "스캔 중"
   },
   "listExpert": {
     "listExpertTitle": "전문가 목록",
@@ -109,6 +110,216 @@
     "placeholderCity": "도시 선택",
     "placeholderDescription": "제품에 대한 설명을 추가해주세요",
     "placeholderPrice": "판매 가격 입력"
+  },
+  "expertDetail": {
+    "title": "전문가 정보",
+    "expert": "전문가",
+    "dob": "생년월일",
+    "address": "주소",
+    "phone": "전화번호",
+    "workingHours": "근무 시간",
+    "services": "제공 서비스",
+    "serviceItems": [
+      "사고, 업그레이드 차량 및 도난 차량의 징후 점검",
+      "차량의 실제 주행 거리 추정",
+      "정확한 장치를 사용하여 연료 분사 및 센서 오류 감지",
+      "검사 차량의 종합 평가 및 가격 책정"
+    ],
+    "bookNow": "지금 예약하기",
+    "days": {
+      "monday": "월요일",
+      "tuesday": "화요일",
+      "wednesday": "수요일",
+      "thursday": "목요일",
+      "friday": "금요일",
+      "saturday": "토요일",
+      "sunday": "일요일"
+    }
+  },
+  "bookingModal": {
+    "title": "예약하기",
+    "name": "이름",
+    "phone": "전화번호",
+    "address": "점검 주소",
+    "carType": "차량 유형",
+    "purpose": "점검 목적",
+    "appointmentDate": "예약 날짜",
+    "appointmentTime": "예약 시간",
+    "cancel": "취소",
+    "confirm": "예약 확인",
+    "successMessage": "예약이 성공적으로 완료되었습니다!"
+  },
+  "storeDetail": {
+    "pageTitle": "매장 정보",
+    "storeName": "Xe máy Út Tịch",
+    "stats": {
+      "selling": "판매 중",
+      "sold": "판매 완료",
+      "favorites": "즐겨찾기"
+    },
+    "bikeListTitle": "오토바이 목록",
+    "contactButton": "연락처 정보"
+
+  },
+  "login": {
+    "title": "로그인",
+    "email": "이메일",
+    "password": "비밀번호",
+    "emailPlaceholder": "이메일을 입력하세요",
+    "passwordPlaceholder": "비밀번호를 입력하세요",
+    "forgotPassword": "ID/비밀번호를 잊으셨나요?",
+    "loginButton": "로그인",
+    "registerPrompt": "계정이 없으신가요?",
+    "registerLink": "지금 등록하세요"
+  },
+  "register": {
+    "title": "가입",
+    "name": "성명",
+    "email": "이메일",
+    "phone": "전화번호",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "namePlaceholder": "성명을 입력하세요",
+    "emailPlaceholder": "이메일을 입력하세요",
+    "phonePlaceholder": "전화번호를 입력하세요",
+    "passwordPlaceholder": "비밀번호를 입력하세요",
+    "confirmPasswordPlaceholder": "비밀번호를 확인하세요",
+    "registerButton": "가입",
+    "loginPrompt": "이미 계정이 있으신가요?",
+    "loginLink": "지금 로그인하세요"
+  },
+  "purchasedPage": {
+    "title": "구매한 차량 관리",
+    "tabs": {
+      "all": "전체",
+      "pending": "대기 중",
+      "processing": "처리 중",
+      "completed": "완료됨"
+    }
+  },
+  "purchaseDetailPage": {
+    "title": "구매한 차량 세부 정보",
+    "steps": {
+      "pending": "대기 중",
+      "processing": "처리 중",
+      "shipping": "배송 중",
+      "completed": "완료됨"
+    },
+    "seller": "Nhat moto",
+    "car": {
+      "yearMileage": "{{year}} &nbsp;&nbsp; {{mileage}}",
+      "plateNumber": "번호판: {{plateNumber}}"
+    },
+    "details": {
+      "deliveryAddress": "배송지",
+      "shippingCost": "배송비",
+      "totalPrice": "총 금액",
+      "paymentMethod": "결제 방법"
+    },
+    "methods": {
+      "payment": "현금 결제",
+      "delivery": "매장에서 수령"
+    }
+  },
+  "ratingModal": {
+    "title": "제품 평가",
+    "feedback": {
+      "satisfied": "만족",
+      "disappointed": "실망"
+    },
+    "detailedFeedback": "상세한 피드백:",
+    "cancel": "취소",
+    "submit": "제출"
+  },
+  "motoPurchased": {
+    "seller": "판매자",
+    "sold": "판매 완료",
+    "trading": "거래 중",
+    "price": "가격",
+    "viewDetails": "주문 세부정보 보기",
+    "rate": "평가",
+    "editInfo": "차량 정보 수정"
+  },
+  "sellPage": {
+    "manageSelling": "판매 중 차량 관리",
+    "tabs": {
+      "all": "내 제품",
+      "pending": "대기 중",
+      "processing": "거래 중",
+      "completed": "완료"
+    }
+  },
+  "postDetail": {
+    "carName": "2024년 새로운 Vario 오토바이",
+    "carCondition": "차량 상태",
+    "carConditionValue": "보증 없음",
+    "location": "위치",
+    "carLocationValue": "170 Pham Van Dong",
+    "updatedAt": "업데이트 시간",
+    "updatedTimeValue": "5시간 전에 업데이트",
+    "back": "뒤로",
+    "editPost": "게시물 정보 수정",
+    "hidePost": "게시물 숨기기",
+    "edit": "수정",
+    "seller": {
+      "name": "판매자",
+      "response": "응답",
+      "status": "활성",
+      "statusValue": "1 판매됨"
+    }
+  },
+  "hidePost": {
+    "title": "게시물 숨기기 {{name}}",
+    "description": "제품을 판매했거나 더 이상 Vipxe에 표시하고 싶지 않을 경우 '게시물 숨기기'를 선택하세요.",
+    "reasonPrompt": "게시물을 숨길 이유를 선택하세요:",
+    "reasons": [
+      "더 이상 판매를 원하지 않음",
+      "Vipxe를 통해 판매 완료",
+      "다른 채널을 통해 판매 완료",
+      "중개인/게시 서비스로 인해 불편함",
+      "기타"
+    ],
+    "cancel": "취소",
+    "hidePost": "게시물 숨기기",
+    "alert": {
+      "noReason": "게시물을 숨길 이유를 선택하세요!"
+    },
+    "carName": "2024년 새로운 Vario 오토바이"
+  },
+  "addressModal": {
+    "title": "주소",
+    "city": "도시/도",
+    "district": "구/군",
+    "ward": "동/면",
+    "specificAddress": "상세 주소",
+    "done": "완료"
+  },
+  "listSender": {
+    "header": "모든 메시지를 읽었습니다",
+    "allButton": "전체",
+    "messages": [
+      {
+        "name": "Nhat Truong 오토바이",
+        "message": "전화번호 또는 Zalo 번호를 보내주세요.",
+        "avatar": "https://img.freepik.com/free-vector/vintage-flat-motorcycle-logo_23-2149450072.jpg?size=338&ext=jpg&ga=GA1.1.2113030492.1720051200&semt=ais_user",
+        "date": "2024년 12월 11일",
+        "time": "오후 1:52"
+      },
+      {
+        "name": "차량 검사관 Nguyen Thang",
+        "message": "이 번호를 사용 중이신가요?",
+        "avatar": "https://cl-wpml.careerlink.vn/cam-nang-viec-lam/wp-content/uploads/2023/04/03112520/building-sector-industrial-workers-concept-confident-young-asian-engineer-construction-manager-reflective-clothes-helmet-cross-arms-smiling-sassy-ensuring-quality-white-wall.jpg",
+        "date": "2024년 12월 10일",
+        "time": "오후 2:32"
+      },
+      {
+        "name": "Thanh Tung 오토바이",
+        "message": "안녕하세요, 오토바이를 구매하려면 어떤 서류가 필요합니까?",
+        "avatar": "https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "date": "2024년 12월 10일",
+        "time": "오후 1:54"
+      }
+    ]
   },
   "colorModal": {
     "white": "흰색",
@@ -161,8 +372,16 @@
     "under170000km": "170000km 이하"
   },
   "chat": {
-    "active": "활동적이다",
-    "placeholder": "메시지를 입력해주세요"
+    "chat": "채팅",
+    "active": "활성",
+    "offer": "제안",
+    "placeholder": "메시지를 입력하세요",
+    "priceError": "제안 가격은 60,000,000 VND 미만일 수 없습니다",
+    "enterPrice": "제안 가격을 입력하세요",
+    "enterPricePlaceholder": "가격 입력",
+    "messageSend": "입찰하고 싶습니다:",
+    "cancel": "취소",
+    "submit": "보내기"
   },
   "payment": {
     "title": "결제 정보",
@@ -223,5 +442,266 @@
     "location": "위치",
     "img": "이미지",
     "save": "변경 사항 저장"
+  },
+  "navbar": {
+    "home": "홈",
+    "expert": "전문가",
+    "post": "게시물",
+    "store": "상점",
+    "logout": "로그아웃",
+    "search": "검색..."
+  },
+  "sidebar": {
+    "title": "관리자 관리",
+    "manageAppointments": "약속 관리",
+    "createAppointment": "약속 생성",
+    "managePosts": "게시물 관리",
+    "manageUsers": "사용자 관리",
+    "handleComplaints": "불만 처리",
+    "manageExperts": "전문가 관리"
+  },
+  "manageAppointments": {
+    "title": "예약 일정 관리",
+    "stats": {
+      "today": "오늘",
+      "pending": "대기 중",
+      "processing": "처리 중",
+      "completed": "완료"
+    },
+    "searchPlaceholder": "예약 검색",
+    "filterButton": "필터 표시",
+    "todayButton": "오늘",
+    "listButton": "목록",
+    "dateTitle": "2024년 12월 13일",
+    "context": {
+      "status": {
+        "needAdvice": "차량 구매 조언 필요",
+        "depositPaid": "보증금 지불",
+        "consulted": "상담 완료"
+      },
+      "categories": {
+        "scheduled": "예약됨",
+        "waiting": "대기 중",
+        "completed": "완료됨"
+      }
+    },
+    "categories": {
+      "scheduled": "예약된",
+      "waiting": "대기 중인 고객",
+      "completed": "완료된 고객"
+    },
+    "buttons": {
+      "viewMore": "약속 더 보기"
+    }
+  },
+  "createAppointment": {
+    "title": "전문가 차량 점검 예약 생성",
+    "form": {
+      "name": "이름:",
+      "namePlaceholder": "이름을 입력하세요",
+      "phone": "전화번호:",
+      "phonePlaceholder": "전화번호를 입력하세요",
+      "address": "주소:",
+      "addressPlaceholder": "주소를 입력하세요",
+      "experience": "경험:",
+      "experiencePlaceholder": "경험을 입력하세요",
+      "certificate": "증명서 문서:",
+      "price": "가격:",
+      "pricePlaceholder": "가격을 입력하세요",
+      "timeSlots": "가능한 시간:"
+    },
+    "preview": {
+      "title": "증명서 이미지:",
+      "removeButton": "X"
+    },
+    "timeOptions": {
+      "slot1": "7:00-8:00",
+      "slot2": "9:00-10:00",
+      "slot3": "13:00-14:00",
+      "slot4": "15:00-16:00"
+    },
+    "submitButton": "예약 확인"
+  },
+  "managePosts": {
+    "title": "게시물 관리",
+    "searchPlaceholder": "제목 또는 ID를 입력하세요",
+    "categories": {
+      "default": "카테고리 선택",
+      "bike": "모터바이크",
+      "scooter": "스쿠터",
+      "manualBike": "수동 오토바이",
+      "largeBike": "대형 오토바이"
+    },
+    "buttons": {
+      "ok": "확인",
+      "delete": "삭제",
+      "approve": "승인"
+    },
+    "tableHeaders": {
+      "id": "ID",
+      "title": "제목",
+      "productCode": "상품 코드",
+      "type": "종류",
+      "price": "가격",
+      "location": "위치",
+      "image": "이미지",
+      "actions": "작업"
+    },
+    "posts": [
+      {
+        "title": "중고 시리우스 오토바이 판매",
+        "type": "모터바이크",
+        "location": "다낭"
+      },
+      {
+        "title": "중고 SH 오토바이 판매",
+        "type": "모터바이크",
+        "location": "하노이"
+      },
+      {
+        "title": "중고 웨이브 오토바이 판매",
+        "type": "모터바이크",
+        "location": "하이퐁"
+      },
+      {
+        "title": "중고 에어블랙 오토바이 판매",
+        "type": "모터바이크",
+        "location": "꽝남"
+      },
+      {
+        "title": "중고 R15 오토바이 판매",
+        "type": "모터바이크",
+        "location": "호치민시"
+      }
+    ]
+  },
+  "manageUsers": {
+    "title": "사용자 관리",
+    "summaryCards": {
+      "totalUsers": "총 사용자",
+      "active": "활성화",
+      "newUsers": "새로운 사용자",
+      "inactive": "비활성화"
+    },
+    "actions": {
+      "addUser": "사용자 추가",
+      "delete": "삭제",
+      "export": "내보내기",
+      "filter": "필터",
+      "searchPlaceholder": "사용자 검색",
+      "edit": "편집"
+    },
+    "tableHeaders": {
+      "name": "이름",
+      "email": "이메일",
+      "city": "도시",
+      "status": "상태",
+      "posts": "게시물 수",
+      "transactions": "거래 수",
+      "actions": "작업"
+    },
+    "status": {
+      "active": "활성화",
+      "inactive": "비활성화"
+    },
+    "units": {
+      "users": "사용자",
+      "posts": "게시물",
+      "transactions": "거래"
+    },
+    "cities": {
+      "daNang": "다낭",
+      "haNoi": "하노이",
+      "hue": "후에",
+      "kontum": "꽁뚬"
+    }
+  },
+  "handleComplaints": {
+    "title": "불만 목록",
+    "status": {
+      "processing": "처리 중",
+      "success": "성공",
+      "rejected": "거부됨"
+    },
+    "actions": {
+      "delete": "삭제",
+      "export": "내보내기",
+      "filter": "필터",
+      "approve": "승인",
+      "reject": "거부"
+    },
+    "tableHeaders": {
+      "name": "이름",
+      "email": "이메일",
+      "time": "시간",
+      "reason": "사유",
+      "role": "역할",
+      "link": "불만 제기된 사용자 링크",
+      "actions": "작업"
+    },
+    "searchPlaceholder": "불만 검색",
+    "reasons": {
+      "defer": "연기 요청",
+      "refund": "환불 요청"
+    },
+    "roles": {
+      "user": "사용자"
+    }
+  },
+  "manageExperts": {
+    "title": "전문가 관리",
+    "header": "전문가",
+    "summary": {
+      "totalUsers": "총 사용자",
+      "active": "활동 중",
+      "newUser": "신규 사용자",
+      "inactive": "비활성",
+      "users": "사용자"
+    },
+    "statuses": {
+      "active": "활동 중",
+      "inactive": "비활성"
+    },
+    "actions": {
+      "addUser": "사용자 추가",
+      "searchPlaceholder": "사용자 검색",
+      "delete": "삭제",
+      "export": "내보내기",
+      "filter": "필터",
+      "edit": "수정"
+    },
+    "tableHeaders": {
+      "name": "이름",
+      "email": "이메일",
+      "city": "도시",
+      "status": "상태",
+      "experience": "경험",
+      "reputation": "신뢰도",
+      "actions": "작업"
+    }
+  },
+  "contactModal": {
+    "contactInfoTitle": "연락처 정보",
+   "call": "부르다",
+   "viewAddress": "주소",
+   "chat": "문자"
+  },
+  "mapModal": {
+    "location": "위치",
+    "myLocation": "내 위치",
+    "directions": "지도"
+  },
+  "shareModal": {
+    "title": "제품 공유",
+    "copy": "복사",
+    "close": "닫다"
+  },
+  "reportPage": {
+    "title": "K-Sparta Motobike와 연락할 수 있도록 정보를 남겨주세요.",
+    "username": "당신의 이름",
+    "phoneNumber": "전화번호",
+    "email": "당신의 이메일 (선택 사항)",
+    "description": "상세 설명 (필수 입력)",
+    "submit": "보고서 제출"
   }
 }
