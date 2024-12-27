@@ -520,6 +520,7 @@
   "managePosts": {
     "title": "게시물 관리",
     "searchPlaceholder": "제목 또는 ID를 입력하세요",
+    "choosecity": "위치를 선택하세요",
     "categories": {
       "default": "카테고리 선택",
       "bike": "모터바이크",

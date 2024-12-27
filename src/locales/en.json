@@ -515,6 +515,7 @@
   "managePosts": {
     "title": "Manage Posts",
     "searchPlaceholder": "Enter title or ID",
+    "choosecity": "Select city location",
     "categories": {
       "default": "Select category",
       "bike": "Motorbike",

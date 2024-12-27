@@ -14,7 +14,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center justify-start">
           <div
-            className="text-[#d59648] text-3xl sm:text-4xl md:text-5xl cursor-pointer"
+            className="text-[#d59648] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl cursor-pointer p-2 sm:p-3 md:p-4 ml-auto"
             onClick={() => navigate("/")}
           >
             <FaMotorcycle />
