@@ -7,7 +7,9 @@
     "messages": "Messages",
     "account_verification": "Account Verification",
     "language": "Language",
-    "logout": "Logout"
+    "logout": "Logout",
+    "favorite_product": "Favorite product",
+    "favorite_store": "Favorite store"
   },
   "detailMoto": {
     "title": "Honda SH 125i",
@@ -269,11 +271,11 @@
   },
   "hidePost": {
     "title": "Hide post {{name}}",
-    "description": "When you've sold the product or no longer want it displayed on Vipxe, select 'Hide Post'.",
+    "description": "When you've sold the product or no longer want it displayed on K-bro Motobike, select 'Hide Post'.",
     "reasonPrompt": "Please select a reason to hide the post:",
     "reasons": [
       "No longer want to sell",
-      "Sold through Vipxe",
+      "Sold",
       "Sold through other channels",
       "Annoyed by brokers/posting services",
       "Other"
@@ -694,5 +696,14 @@
     "email": "Your Email (Optional)",
     "description": "Detailed Description (Required)",
     "submit": "Submit Report"
+  },
+  "favoriteStore": {
+    "title": "Favorite Store",
+    "sales": "Sales",
+    "favourite": "Favourite",
+    "trustedPartner": "Trusted Partner"
+  },
+  "favoriteProduct": {
+    "title": "Favorite products"
   }
 }

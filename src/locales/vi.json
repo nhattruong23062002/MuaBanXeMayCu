@@ -7,7 +7,9 @@
     "messages": "Tin nhắn",
     "account_verification": "Định danh tài khoản",
     "language": "Ngôn ngữ",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "favorite_product": "Sản phẩm yêu thích",
+    "favorite_store": "Cửa hàng yêu thích"
   },
   "detailMoto": {
     "title": "Honda SH 125i",
@@ -269,11 +271,11 @@
   },
   "hidePost": {
     "title": "Ẩn tin {{name}}",
-    "description": "Khi bạn đã bán được hàng, hoặc không muốn tin xuất hiện trên Vipxe, hãy chọn 'Ẩn tin'.",
+    "description": "Khi bạn đã bán được hàng, hoặc không muốn tin xuất hiện trên K-Bro Motobike, hãy chọn 'Ẩn tin'.",
     "reasonPrompt": "Vui lòng chọn lý do ẩn tin:",
     "reasons": [
       "Không muốn bán nữa",
-      "Đã bán qua trang Vipxe",
+      "Đã bán",
       "Đã bán qua các kênh khác",
       "Tôi bị làm phiền vì môi giới/dịch vụ đăng tin",
       "Khác"
@@ -699,5 +701,14 @@
     "email": "Email của bạn (không bắt buộc)",
     "description": "Mô tả chi tiết (bắt buộc nhập)",
     "submit": "Gửi Báo Cáo"
+  },
+  "favoriteStore": {
+    "title": "Cửa hàng yêu thích",
+    "sales": "Đã bán",
+    "favourite": "Yêu thích",
+    "trustedPartner": "Đối tác uy tín"
+  },
+  "favoriteProduct": {
+    "title": "Sản phẩm yêu thích"
   }
 }

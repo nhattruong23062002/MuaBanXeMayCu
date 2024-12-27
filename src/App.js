@@ -31,6 +31,8 @@ import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
 import SnowEffect from "./components/SnowEffect";
 import Report from "./pages/User-Page/report";
+import FavoriteStores from "./pages/User-Page/favoriteStore";
+import FavoriteProducts from "./pages/User-Page/favoriteProduct";
 
 const App = () => {
   return (
@@ -41,7 +43,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/detailMoto" element={<DetailMoto />} />
+          <Route path="/detailMoto" element={<DetailMoto />} /> 
           <Route path="/account" element={<AccountPage />} />
           <Route path="/purchased" element={<PurchasedPage />} />
           <Route path="/selling" element={<SellPage />} />
@@ -58,6 +60,8 @@ const App = () => {
           <Route path="/editPost/:id" element={<EditPost />} />
           <Route path="/listSender" element={<MessageList />} />
           <Route path="report" element={<Report />} />
+          <Route path="favorite-store" element={<FavoriteStores />} />
+          <Route path="favorite-products" element={<FavoriteProducts />} />
 
           <Route
             path="/admin/manage-appointments"

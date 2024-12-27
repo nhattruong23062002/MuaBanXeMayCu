@@ -7,7 +7,9 @@
     "messages": "메시지",
     "account_verification": "계정 확인",
     "language": "언어",
-    "logout": "로그아웃"
+    "logout": "로그아웃",
+    "favorite_product": "좋아하는 제품",
+    "favorite_store": "좋아하는 매장"
   },
   "detailMoto": {
     "title": "혼다 SH 125i",
@@ -269,11 +271,11 @@
   },
   "hidePost": {
     "title": "게시물 숨기기 {{name}}",
-    "description": "제품을 판매했거나 더 이상 Vipxe에 표시하고 싶지 않을 경우 '게시물 숨기기'를 선택하세요.",
+    "description": "제품을 판매했거나 더 이상 K-bro Motobike에 표시하고 싶지 않을 경우 '게시물 숨기기'를 선택하세요.",
     "reasonPrompt": "게시물을 숨길 이유를 선택하세요:",
     "reasons": [
       "더 이상 판매를 원하지 않음",
-      "Vipxe를 통해 판매 완료",
+      "판매된",
       "다른 채널을 통해 판매 완료",
       "중개인/게시 서비스로 인해 불편함",
       "기타"
@@ -698,5 +700,14 @@
     "email": "당신의 이메일 (선택 사항)",
     "description": "상세 설명 (필수 입력)",
     "submit": "보고서 제출"
+  },
+  "favoriteStore": {
+    "title": "좋아하는 가게",
+    "sales": "판매",
+    "favourite": "즐겨찾기",
+    "trustedPartner": "신뢰할 수 있는 파트너"
+  },
+  "favoriteProduct": {
+    "title": "좋아하는 제품"
   }
 }

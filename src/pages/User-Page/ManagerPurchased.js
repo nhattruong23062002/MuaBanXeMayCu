@@ -40,7 +40,7 @@ function PurchasedPage() {
 
   return (
     <LayoutUser>
-      <div className="bg-gray-100 min-h-screen p-4 sm:p-6 max-w-[800px] mx-auto">
+      <div className="bg-gray-100 min-h-screen p-4 sm:p-6 max-w-[800px] mx-auto bg-white">
         <div className="flex items-center mb-4">
           <button
             className="text-xl sm:text-2xl mr-4 cursor-pointer"
