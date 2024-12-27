@@ -33,7 +33,8 @@ function HomePage() {
       mileage: "1000km",
       price: 20,
       location: "Thành phố Hà Nội",
-      image: "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735100812/ocqmgrzseb4zsq7hwkcj.jpg",
+      image:
+        "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735100812/ocqmgrzseb4zsq7hwkcj.jpg",
     },
     {
       id: 2,
@@ -43,7 +44,8 @@ function HomePage() {
       mileage: "1600km",
       price: 40,
       location: "Thành phố Hồ Chí Minh",
-      image: "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735100902/locb1d3w3wperlkryebe.jpg",
+      image:
+        "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735100902/locb1d3w3wperlkryebe.jpg",
     },
     {
       id: 3,
@@ -53,7 +55,8 @@ function HomePage() {
       mileage: "3000km",
       price: 50,
       location: "Thành phố Hà Nội",
-      image: "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735101961/ohqgvomzmnkg7swzjvjg.jpg",
+      image:
+        "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735101961/ohqgvomzmnkg7swzjvjg.jpg",
     },
     {
       id: 4,
@@ -63,7 +66,8 @@ function HomePage() {
       price: 70,
       type: t("scooter"),
       location: "Thành phố Hồ Chí Minh",
-      image: "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735102422/ug5dxpfhfp2m5dvfwzhn.png",
+      image:
+        "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735102422/ug5dxpfhfp2m5dvfwzhn.png",
     },
     {
       id: 5,
@@ -73,7 +77,8 @@ function HomePage() {
       mileage: "3000km",
       price: 68,
       location: "Thành phố Đà Nẵng",
-      image: "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735102448/ifazvuf84dbqm6aeue0f.jpg",
+      image:
+        "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735102448/ifazvuf84dbqm6aeue0f.jpg",
     },
     {
       id: 6,
@@ -83,7 +88,8 @@ function HomePage() {
       mileage: "12000km",
       price: 77,
       location: "Thành phố Đà Nẵng",
-      image: "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735102484/pq2v5lfbxls5xjzjdqnm.png",
+      image:
+        "https://res.cloudinary.com/dtq8qjauq/image/upload/v1735102484/pq2v5lfbxls5xjzjdqnm.png",
     },
   ];
 
@@ -118,7 +124,6 @@ function HomePage() {
         };
       });
     }
-
     setScanComplete(true);
   };
 
@@ -139,7 +144,7 @@ function HomePage() {
           setIsScanning(false);
         }, 2000);
       };
-    }
+    }  
   };
 
   const handleFilter = (newFilters) => {
@@ -197,7 +202,10 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="max-w-[800px] mx-auto px-4 py-14 bg-white rounded-md" style={{ marginTop: "4rem" }}>
+      <div
+        className="max-w-[800px] mx-auto px-4 py-14 bg-white rounded-md"
+        style={{ marginTop: "4rem" }}
+      >
         <h2 className="text-2xl font-bold mb-4">{t("quality_bikes")}</h2>
 
         {!image && !scanComplete && (
@@ -229,7 +237,13 @@ function HomePage() {
           </div>
         )}
 
-        {(image && !isScanning && scanComplete && matchingBikes.length === 0) || (filteredBikes.length === 0) && (
+        {image && !isScanning && scanComplete && matchingBikes.length === 0 && (
+          <div className="text-center text-gray-600 mt-6">
+            <h3 className="font-bold text-lg">{t("no_bikes_found")}</h3>
+          </div>
+        )}
+
+        {filteredBikes.length === 0 && (
           <div className="text-center text-gray-600 mt-6">
             <h3 className="font-bold text-lg">{t("no_bikes_found")}</h3>
           </div>

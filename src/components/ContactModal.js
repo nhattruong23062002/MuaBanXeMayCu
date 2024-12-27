@@ -23,7 +23,6 @@ const ContactModal = ({ onClose }) => {
   };
 
   const handleViewAddress = () => {
-    console.log("HIHI")
     setMapModalOpen(true);
   };
 
