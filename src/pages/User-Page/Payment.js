@@ -69,12 +69,11 @@ const PaymentForm = () => {
                             <h2 className="text-lg font-semibold text-gray-800 mb-4">{t("orderInf")}</h2>
                             <p className="text-lg font-semibold text-gray-800 mb-4 text-right">ID: 1</p>
                             <div className="border-b pb-4">
-                                <div className="flex items-center space-x-4">
-                                    {/* Thay ảnh bằng thẻ img */}
+                                <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-4">
                                     <img
                                         src="https://th.bing.com/th/id/OIP.C6tzwuwE3LVK_xHmDXS-SQHaFY?w=232&h=180&c=7&r=0&o=5&pid=1.7" // Thay bằng đường dẫn hình ảnh
                                         alt="Car"
-                                        className="w-70 h-40 rounded-xl object-cover border border-gray-300 mt-6 mb-4"
+                                        className="w-full sm:w-56 sm:h-32 rounded-xl object-cover border border-gray-300 mt-6 mb-4"
                                     />
                                     <div className="w-full">
                                         <p className="font-semibold text-left text-xl">
@@ -103,6 +102,7 @@ const PaymentForm = () => {
                                 <p className="font-semibold text-gray-800 text-right text-lg">100.000.000 đ</p>
                             </div>
                         </div>
+
 
                         <div className="bg-white p-6 rounded-lg shadow-md mb-6 relative text-left">
                             <h2 className="text-lg font-semibold text-gray-800 mb-4 ">

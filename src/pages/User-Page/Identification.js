@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LayoutUser from '../../layout/layoutUser';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const UserIdentificationForm = () => {
     const navigate = useNavigate();
@@ -45,10 +46,18 @@ const UserIdentificationForm = () => {
         }
     };
 
+    const onBackToAccount = (event) => {
+        navigate("/account")
+    }
+
     return (
         <LayoutUser>
             <div className="flex justify-center items-start min-h-screen bg-gray-200 pt-10">
                 <div className="w-[800px] p-8 bg-white rounded-xl shadow-lg space-y-8">
+                    {/* Nút chuyển hướng */}
+                    <button onClick={onBackToAccount} className="bg-white text-blue-500 p-2 rounded-full shadow hover:bg-blue-200 transition duration-300">
+                        <FaArrowLeft />
+                    </button>
                     <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">{t("title")}</h2>
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Identity Card */}

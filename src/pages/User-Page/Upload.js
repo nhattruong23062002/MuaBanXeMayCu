@@ -238,10 +238,7 @@ const Upload = () => {
                     <div className="my-6">
                         <p className="text-lg font-semibold text-gray-700">{t("selectYear")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
-                            {/* Icon bên trái */}
                             <FaCalendarDays className="text-gray-400 mr-2 ml-1" />
-
-                            {/* Nút chọn năm */}
                             <button
                                 onClick={openYearModal}
                                 className="flex-1 bg-transparent text-left flex items-center justify-between outline-none"
@@ -262,10 +259,7 @@ const Upload = () => {
                     <div className="my-6">
                         <p className="text-lg font-semibold text-gray-700">{t("selectKilometer")}</p>
                         <div className="flex items-center bg-white text-black p-2 rounded shadow hover:bg-gray-200 font-semibold text-gray-400 transition duration-300 w-full h-14">
-                            {/* Icon bên trái */}
                             <PiRoadHorizonFill className="text-gray-400 mr-2 ml-1" />
-
-                            {/* Nút chọn số km */}
                             <button
                                 onClick={openKilometerModal}
                                 className="flex-1 bg-transparent text-left flex items-center justify-between outline-none"
