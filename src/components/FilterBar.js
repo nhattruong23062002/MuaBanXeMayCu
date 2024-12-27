@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 function FilterBar({ onFilter }) {
-  const { t } = useTranslation("filterBar"); 
+  const { t } = useTranslation("filterBar");
 
   const [filters, setFilters] = useState({
     type: "",
@@ -11,6 +11,24 @@ function FilterBar({ onFilter }) {
     location: "",
   });
 
+  const [provinces, setProvinces] = useState([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const fetchProvinces = async () => {
+      try {
+        const response = await fetch("https://provinces.open-api.vn/api/");
+        const data = await response.json();
+
+        setProvinces([{ name: t("select_location"), code: "default" }, ...data]);
+      } catch (error) {
+        console.error("Error fetching provinces:", error);
+      }
+    };
+    fetchProvinces();
+  }, [t]);
+
   const handleChange = (key, value) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
   };
@@ -18,6 +36,19 @@ function FilterBar({ onFilter }) {
   const handleFilter = () => {
     onFilter(filters);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="absolute bottom-[-100px] left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-lg w-11/12 max-w-[800px] p-4 z-10">
@@ -52,7 +83,6 @@ function FilterBar({ onFilter }) {
             className="w-full appearance-none h-2 bg-gray-200 rounded-full outline-none focus:ring-2 focus:ring-[#d59648]"
           />
         </div>
-
         <div className="px-7 py-1.5 rounded-md mt-6 text-sm"></div>
       </div>
 
@@ -75,33 +105,40 @@ function FilterBar({ onFilter }) {
             <option value="2019">2019</option>
             <option value="2018">2018</option>
             <option value="2017">2017</option>
-            <option value="2016">2016</option> 
+            <option value="2016">2016</option>
             <option value="2015">2015</option>
           </select>
         </div>
 
-        <div className="flex flex-col w-[40%] pl-2">
+        <div className="flex flex-col w-[40%] pl-2 relative" ref={dropdownRef}>
           <label className="text-gray-600 font-medium mb-1 text-sm">
             {t("location")}:
           </label>
-          <select
-            value={filters.location}
-            onChange={(e) => handleChange("location", e.target.value)}
-            className="w-full px-2 py-1 border rounded-md text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#d59648]"
+          <div
+            className="w-full px-2 py-1 border rounded-md text-gray-700 text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#d59648] select-dropdown"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
-            <option value="">{t("select_location")}</option>
-            <option value="Hà Nội">Hà Nội</option>
-            <option value="TP.HCM">TP.HCM</option>
-            <option value="Đà Nẵng">Đà Nẵng</option>
-            <option value="Bình Dương">Bình Dương</option>
-            <option value="Khánh Hòa">Khánh Hòa</option>
-            <option value="Đồng Nai">Đồng Nai</option>
-            <option value="Nam Định">Nam Định</option>
-            <option value="Quảng Nam">Quảng Nam</option>
-            <option value="Quảng Ninh">Quảng Ninh</option>
-            <option value="Hải Phòng">Hải Phòng</option>
-            <option value="Nghệ An">Nghệ An</option>
-          </select>
+            {filters.location || t("select_location")}
+          </div>
+          {isDropdownOpen && (
+            <ul className="absolute z-50 bg-white border rounded-md shadow-lg w-full max-h-80 overflow-y-auto">
+              {provinces.map((province) => (
+                <li
+                  key={province.code}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => {
+                    handleChange(
+                      "location",
+                      province.code === "default" ? "" : province.name
+                    );
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  {province.name}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         <button
