@@ -9,30 +9,35 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#0e0f2b] text-white py-3">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
-        {/* Logo và Tiêu đề */}
-        <div className="flex items-center space-x-4">
+      {/* Navbar Container */}
+      <div className="max-w-7xl mx-auto grid grid-cols-3 items-center px-4 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <div className="flex items-center justify-start">
           <div
-            className="text-[#d59648] text-4xl sm:text-4xl md:text-5xl cursor-pointer"
+            className="text-[#d59648] text-3xl sm:text-4xl md:text-5xl cursor-pointer"
             onClick={() => navigate("/")}
           >
             <FaMotorcycle />
           </div>
-          <h1 className="absolute left-1/2 transform -translate-x-1/2 text-xl sm:text-2xl md:text-3xl font-bold text-white">
+        </div>
+
+        {/* Tiêu đề nằm giữa */}
+        <div className="flex items-center justify-center">
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white text-center">
             {t("adminPageTitle")}
           </h1>
         </div>
 
         {/* Avatar và Nút Logout */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center justify-end space-x-4">
           <img
             src="https://kenh14cdn.com/203336854389633024/2024/12/10/img6508jpg-1591784578-15917845-6209-7466-15917848032-1733854484177-17338544927331380039156.jpg"
             alt="User"
-            className="w-8 h-8 rounded-full"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
           />
           <button
             onClick={() => navigate("/login")}
-            className="bg-[#ff7f00] hover:bg-[#e67e00] text-white px-4 py-2 rounded"
+            className="bg-[#ff7f00] hover:bg-[#e67e00] text-white px-3 py-1 sm:px-4 sm:py-2 rounded text-sm sm:text-base"
           >
             {t("logout")}
           </button>

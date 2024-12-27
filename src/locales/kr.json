@@ -609,6 +609,13 @@
       "haNoi": "하노이",
       "hue": "후에",
       "kontum": "꽁뚬"
+    },
+    "map": {
+      "maptile": "차트: {{card}}",
+      "totalUsers": "총 사용자",
+      "active": "활성 사용자",
+      "newUsers": "새 사용자",
+      "inactive": "비활성 사용자"
     }
   },
   "handleComplaints": {
@@ -673,6 +680,13 @@
       "experience": "경험",
       "reputation": "신뢰도",
       "actions": "작업"
+    },
+    "map": {
+      "maptile": "차트: {{card}}",
+      "totalUsers": "총 사용자",
+      "active": "활성 사용자",
+      "newUsers": "새 사용자",
+      "inactive": "비활성 사용자"
     }
   },
   "contactModal": {

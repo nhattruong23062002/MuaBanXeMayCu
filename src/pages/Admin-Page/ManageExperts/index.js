@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ManageExperts.css";
+import ChartBarExperts from "./RechartExperts";
 import {
   FaPlus,
   FaTrashAlt,
@@ -19,7 +20,7 @@ const ManageExperts = () => {
       email: "A@gmail.com",
       city: "Đà Nẵng",
       status: t("statuses.active"),
-      experience: "5 năm",
+      experience: "5",
       reputation: "85%",
     },
     {
@@ -27,7 +28,7 @@ const ManageExperts = () => {
       email: "B@gmail.com",
       city: "Hà Nội",
       status: t("statuses.inactive"),
-      experience: "5 năm",
+      experience: "5",
       reputation: "95%",
     },
     {
@@ -35,7 +36,7 @@ const ManageExperts = () => {
       email: "Hung@gmail.com",
       city: "Huế",
       status: t("statuses.active"),
-      experience: "2 năm",
+      experience: "2",
       reputation: "99%",
     },
     {
@@ -43,13 +44,16 @@ const ManageExperts = () => {
       email: "Do12@gmail.com",
       city: "Kontum",
       status: t("statuses.active"),
-      experience: "4 năm",
+      experience: "4",
       reputation: "97%",
     },
   ];
 
   const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
   const [filteredData, setFilteredData] = useState(experts); // Lưu dữ liệu được lọc
+  // State quản lý biểu đồ
+  const [selectedCard, setSelectedCard] = useState(null); // Quản lý card được chọn
+  const [isChartVisible, setChartVisible] = useState(false); // Trạng thái hiển thị biểu đồ
 
   // Xử lý tìm kiếm
   const handleSearch = (e) => {
@@ -66,6 +70,16 @@ const ManageExperts = () => {
 
     setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
   };
+  // Xử lý khi bấm vào card
+  const handleCardClick = (cardId) => {
+    setSelectedCard(cardId);
+    setChartVisible(true); // Hiển thị biểu đồ
+  };
+
+  // Xử lý khi đóng biểu đồ
+  const handleCloseChart = () => {
+    setChartVisible(false); // Ẩn biểu đồ
+  };
 
   return (
     <div className="manage-experts-container">
@@ -80,47 +94,69 @@ const ManageExperts = () => {
 
       {/* Summary Cards */}
       <div className="manage-experts-summary-cards">
-        <div className="manage-experts-card">
-          <p>{t("summary.totalUsers")}</p>
-          <h3>
-            45 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="growth-indicator">
-            <FaChartLine className="chart-icon" />
-            5.0%
-          </small>
-        </div>
-        <div className="manage-experts-card">
-          <p>{t("summary.active")}</p>
-          <h3>
-            15 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="growth-indicator">
-            <FaChartLine className="chart-icon" />
-            5.0%
-          </small>
-        </div>
-        <div className="manage-experts-card">
-          <p>{t("summary.newUser")}</p>
-          <h3>
-            20 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="growth-indicator">
-            <FaChartLine className="chart-icon" />
-            15.0%
-          </small>
-        </div>
-        <div className="manage-experts-card">
-          <p>{t("summary.inactive")}</p>
-          <h3>
-            5 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="decrease-indicator">
-            <FaChartLine className="chart-icon decrease" />
-            15%
-          </small>
-        </div>
+        {[
+          {
+            id: "totalUsers",
+            title: t("summary.totalUsers"),
+            value: 45,
+            percent: "5.0%",
+            isDecrease: false, // Tăng
+          },
+          {
+            id: "active",
+            title: t("summary.active"),
+            value: 15,
+            percent: "5.0%",
+            isDecrease: false, // Tăng
+          },
+          {
+            id: "newUsers",
+            title: t("summary.newUser"),
+            value: 20,
+            percent: "15.0%",
+            isDecrease: false, // Tăng
+          },
+          {
+            id: "inactive",
+            title: t("summary.inactive"),
+            value: 5,
+            percent: "-15.0%",
+            isDecrease: true, // Giảm
+          },
+        ].map((card) => (
+          <div
+            key={card.id}
+            className="card"
+            onClick={() => handleCardClick(card.id)} // Đảm bảo ID được truyền đúng
+          >
+            <p>{card.title}</p>
+            <h3>
+              {card.value} <span>{t("summary.users")}</span>
+            </h3>
+            <small
+              className={`growth-indicator ${
+                card.isDecrease ? "decrease-indicator" : ""
+              }`}
+            >
+              <FaChartLine
+                className={`chart-icon ${
+                  card.isDecrease ? "chart-icon decrease" : ""
+                }`}
+              />
+              {card.percent}
+            </small>
+          </div>
+        ))}
       </div>
+      {/* Biểu đồ */}
+      {isChartVisible && (
+        <div className="chart-modal">
+          <ChartBarExperts
+            onClose={handleCloseChart}
+            selectedCard={selectedCard}
+          />
+        </div>
+      )}
 
       {/* Actions */}
       <div className="manage-experts-actions">
@@ -179,7 +215,9 @@ const ManageExperts = () => {
                 </span>
                 {expert.status}
               </td>
-              <td>{expert.experience}</td>
+              <td>
+                {expert.experience} {t("yearexp.experience")}
+              </td>
               <td>{expert.reputation}</td>
               <td>
                 <button className="manage-experts-edit-btn">
