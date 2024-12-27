@@ -86,6 +86,35 @@ const ManagePosts = () => {
     { value: "xe-tay-con", label: t("categories.manualBike") },
     { value: "xe-pkl", label: t("categories.largeBike") },
   ];
+  // Xử lý sự kiện thay đổi lựa chọn
+  const handleChange = (e) => {
+    setSelectedOption(e.target.value);
+    console.log("Lựa chọn: ", e.target.value);
+  };
+  const [cities, setCities] = useState([]); // State lưu danh sách tỉnh/thành phố
+  const [selectedCity, setSelectedCity] = useState(""); // State lưu tỉnh/thành phố được chọn
+
+  // Gọi API khi component được render
+  useEffect(() => {
+    const fetchCities = async () => {
+      try {
+        const response = await fetch(
+          "https://provinces.open-api.vn/api/?depth=1"
+        );
+        const data = await response.json();
+        setCities(data); // Lưu dữ liệu tỉnh/thành phố vào state
+      } catch (error) {
+        console.error("Lỗi khi lấy danh sách tỉnh/thành phố:", error);
+      }
+    };
+
+    fetchCities();
+  }, []);
+  // Xử lý sự kiện khi thay đổi lựa chọn trong dropdown
+  const handleCityChange = (e) => {
+    setSelectedCity(e.target.value);
+    console.log("Thành phố được chọn:", e.target.value);
+  };
 
   return (
     <div className="manage-posts-container">
@@ -99,14 +128,28 @@ const ManagePosts = () => {
           value={searchTerm}
           onChange={handleSearch}
         />
+
         <select
           value={selectedOption}
-          onChange={(e) => setSelectedOption(e.target.value)}
+          onChange={handleChange}
           className="filter-category-select"
         >
           {categories.map((category, index) => (
             <option key={index} value={category.value}>
               {category.label}
+            </option>
+          ))}
+        </select>
+        <select
+          id="city-select"
+          value={selectedCity}
+          onChange={handleCityChange}
+          className="city-dropdown"
+        >
+          <option value="">-- {t("choosecity")} --</option>
+          {cities.map((city) => (
+            <option key={city.code} value={city.name}>
+              {city.name}
             </option>
           ))}
         </select>

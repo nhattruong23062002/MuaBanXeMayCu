@@ -522,6 +522,7 @@
   "managePosts": {
     "title": "Quản lý bài đăng",
     "searchPlaceholder": "nhập tiêu đề hoặc ID",
+    "choosecity": "Chọn địa điểm thành phố",
     "categories": {
       "default": "Chọn danh mục",
       "bike": "Xe Máy số",
