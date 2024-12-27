@@ -606,8 +606,16 @@
       "haNoi": "Ha Noi",
       "hue": "Hue",
       "kontum": "Kontum"
+    },
+    "map": {
+      "maptile": "Chart: {{card}}",
+      "totalUsers": "Total Users",
+      "active": "Active Users",
+      "newUsers": "New Users",
+      "inactive": "Inactive Users"
     }
   },
+
   "handleComplaints": {
     "title": "Complaint List",
     "status": {
@@ -671,6 +679,16 @@
       "experience": "Experience",
       "reputation": "Reputation",
       "actions": "Actions"
+    },
+    "yearexp": {
+      "experience": "Years"
+    },
+    "map": {
+      "maptile": "Chart: {{card}}",
+      "totalUsers": "Total Users",
+      "active": "Active Users",
+      "newUsers": "New Users",
+      "inactive": "Inactive Users"
     }
   },
   "contactModal": {

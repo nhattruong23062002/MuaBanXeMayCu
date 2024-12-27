@@ -575,7 +575,7 @@
   "manageUsers": {
     "title": "Quản lý người dùng",
     "summaryCards": {
-      "totalUsers": "Tổng số người dùng",
+      "totalUsers": "Tổng số Users",
       "active": "Hoạt động",
       "newUsers": "Người dùng mới",
       "inactive": "Không hoạt động"
@@ -611,6 +611,13 @@
       "haNoi": "Hà Nội",
       "hue": "Huế",
       "kontum": "Kontum"
+    },
+    "map": {
+      "maptile": "Biểu đồ: {{card}}",
+      "totalUsers": "Tổng số người dùng",
+      "active": "Người dùng hoạt động",
+      "newUsers": "Người dùng mới",
+      "inactive": "Người dùng không hoạt động"
     }
   },
 
@@ -676,6 +683,16 @@
       "experience": "Kinh nghiệm",
       "reputation": "Độ uy tín",
       "actions": "Hành động"
+    },
+    "yearexp": {
+      "experience": "Năm"
+    },
+    "map": {
+      "maptile": "Biểu đồ: {{card}}",
+      "totalUsers": "Tổng số người dùng",
+      "active": "Người dùng hoạt động",
+      "newUsers": "Người dùng mới",
+      "inactive": "Người dùng không hoạt động"
     }
   },
   "contactModal": {

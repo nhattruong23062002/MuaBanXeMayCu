@@ -27,6 +27,7 @@
     "react-leaflet-routing-machine": "^0.0.5",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
+    "recharts": "^2.15.0",
     "stream-browserify": "^3.0.0",
     "swiper": "^11.1.15"
   },
