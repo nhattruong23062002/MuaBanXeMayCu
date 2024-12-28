@@ -1,5 +1,4 @@
 import React from "react";
-import "./Recharts.css";
 import {
   LineChart,
   Line,
@@ -12,8 +11,8 @@ import {
 import { useTranslation } from "react-i18next";
 
 const ChartBar = ({ onClose, selectedCard }) => {
-  // Dữ liệu mẫu dựa trên card được chọn
   const { t } = useTranslation("manageUsers");
+
   const data = {
     totalUsers: [
       { time: "00:00", value: 10 },
@@ -42,54 +41,63 @@ const ChartBar = ({ onClose, selectedCard }) => {
     ],
   };
 
-  const chartData = data[selectedCard] || []; // Lấy dữ liệu tương ứng với card
+  const chartData = data[selectedCard] || [];
 
   return (
-    <div className="chart-container">
-      {/* Nút đóng */}
-      <div className="chart-close-btn" onClick={onClose}>
-        ✖
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
+      <div className="relative bg-gray-900 text-white w-full max-w-3xl p-6 rounded-lg shadow-lg">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-400 hover:text-white focus:outline-none"
+        >
+          ✖
+        </button>
+
+        {/* Chart Title */}
+        <h2 className="text-2xl font-bold text-center mb-4">
+          {t(`map.${selectedCard}`)}
+        </h2>
+
+        {/* Line Chart */}
+        <div className="h-72">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={chartData}>
+              <CartesianGrid
+                strokeDasharray="3 3"
+                stroke="rgba(255, 255, 255, 0.2)"
+              />
+              <XAxis
+                dataKey="time"
+                stroke="white"
+                tick={{ fill: "white", fontSize: 12 }}
+              />
+              <YAxis
+                stroke="white"
+                tick={{ fill: "white", fontSize: 12 }}
+                domain={[0, "auto"]}
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#ffffff",
+                  borderRadius: "5px",
+                  fontSize: "12px",
+                  color: "#333",
+                }}
+                labelStyle={{ color: "#333", fontWeight: "bold" }}
+              />
+              <Line
+                type="monotone"
+                dataKey="value"
+                stroke="#ffffff"
+                strokeWidth={2}
+                dot={{ fill: "#ffffff", r: 4 }}
+                activeDot={{ r: 6 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
-
-      {/* Tiêu đề biểu đồ */}
-      <h2 className="chart-title">{t(`map.${selectedCard}`)}</h2>
-
-      {/* Biểu đồ */}
-      <ResponsiveContainer width="100%" height="85%">
-        <LineChart data={chartData}>
-          <CartesianGrid
-            strokeDasharray="3 3"
-            stroke="rgba(255, 255, 255, 0.2)"
-          />
-          <XAxis
-            dataKey="time"
-            stroke="white"
-            tick={{ fill: "white", fontSize: 12 }}
-          />
-          <YAxis
-            stroke="white"
-            tick={{ fill: "white", fontSize: 12 }}
-            domain={[0, "auto"]}
-          />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: "#ffffff",
-              borderRadius: "5px",
-              fontSize: "12px",
-              color: "#333",
-            }}
-            labelStyle={{ color: "#333", fontWeight: "bold" }}
-          />
-          <Line
-            type="monotone"
-            dataKey="value"
-            stroke="#ffffff"
-            strokeWidth={2}
-            dot={{ fill: "#ffffff", r: 4 }}
-            activeDot={{ r: 6 }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
     </div>
   );
 };

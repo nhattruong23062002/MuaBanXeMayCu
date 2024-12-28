@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./ManagePosts.css";
-import { useTranslation } from "react-i18next"; // Import i18n hook
+import { useTranslation } from "react-i18next";
 
 const ManagePosts = () => {
-  const { t } = useTranslation("managePosts"); // Sử dụng namespace `managePosts`
+  const { t } = useTranslation("managePosts");
 
-  // Dữ liệu mẫu
   const posts = [
     {
       id: 328,
@@ -58,43 +56,12 @@ const ManagePosts = () => {
     },
   ];
 
-  const [selectedOption, setSelectedOption] = useState(""); // Lưu lựa chọn người dùng
-  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
-  const [filteredData, setFilteredData] = useState(posts); // Lưu dữ liệu được lọc
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState(posts);
+  const [cities, setCities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState("");
 
-  // Xử lý tìm kiếm
-  const handleSearch = (e) => {
-    const value = e.target.value.toLowerCase();
-    setSearchTerm(value);
-
-    // Lọc dữ liệu dựa trên ID và tiêu đề
-    const filtered = posts.filter(
-      (item) =>
-        String(item.id).toLowerCase().includes(value) || // Lọc theo ID
-        item.title.toLowerCase().includes(value) || // Lọc theo tiêu đề
-        item.location.toLowerCase().includes(value)
-    );
-
-    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
-  };
-
-  // Dữ liệu danh mục
-  const categories = [
-    { value: "", label: t("categories.default") },
-    { value: "xe-may", label: t("categories.bike") },
-    { value: "xe-tay-ga", label: t("categories.scooter") },
-    { value: "xe-tay-con", label: t("categories.manualBike") },
-    { value: "xe-pkl", label: t("categories.largeBike") },
-  ];
-  // Xử lý sự kiện thay đổi lựa chọn
-  const handleChange = (e) => {
-    setSelectedOption(e.target.value);
-    console.log("Lựa chọn: ", e.target.value);
-  };
-  const [cities, setCities] = useState([]); // State lưu danh sách tỉnh/thành phố
-  const [selectedCity, setSelectedCity] = useState(""); // State lưu tỉnh/thành phố được chọn
-
-  // Gọi API khi component được render
+  // Fetch cities from API
   useEffect(() => {
     const fetchCities = async () => {
       try {
@@ -102,7 +69,7 @@ const ManagePosts = () => {
           "https://provinces.open-api.vn/api/?depth=1"
         );
         const data = await response.json();
-        setCities(data); // Lưu dữ liệu tỉnh/thành phố vào state
+        setCities(data); // Lưu danh sách tỉnh/thành phố
       } catch (error) {
         console.error("Lỗi khi lấy danh sách tỉnh/thành phố:", error);
       }
@@ -110,94 +77,134 @@ const ManagePosts = () => {
 
     fetchCities();
   }, []);
-  // Xử lý sự kiện khi thay đổi lựa chọn trong dropdown
+
+  // Tìm kiếm
+  const handleSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    const filtered = posts.filter(
+      (item) =>
+        String(item.id).toLowerCase().includes(value) ||
+        item.title.toLowerCase().includes(value) ||
+        item.location.toLowerCase().includes(value)
+    );
+
+    setFilteredData(filtered || []);
+  };
+
+  // Lọc theo thành phố
   const handleCityChange = (e) => {
-    setSelectedCity(e.target.value);
-    console.log("Thành phố được chọn:", e.target.value);
+    const value = e.target.value;
+    setSelectedCity(value);
+
+    const filtered = posts.filter((post) =>
+      value === "" ? true : post.location === value
+    );
+
+    setFilteredData(filtered || []);
   };
 
   return (
-    <div className="manage-posts-container">
-      <h2>{t("title")}</h2>
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h2 className="text-2xl font-bold mb-6">{t("title")}</h2>
 
       {/* Thanh tìm kiếm và bộ lọc */}
-      <div className="filter-section">
+      <div className="flex flex-wrap items-center gap-4 mb-6">
+        {/* Tìm kiếm */}
         <input
           type="text"
           placeholder={t("searchPlaceholder")}
           value={searchTerm}
           onChange={handleSearch}
+          className="p-2 border border-gray-300 rounded-md w-60 focus:ring focus:ring-blue-300"
         />
 
+        {/* Ô chọn danh mục */}
         <select
-          value={selectedOption}
-          onChange={handleChange}
-          className="filter-category-select"
+          className="p-2 border border-gray-300 rounded-md bg-white w-40 sm:w-48 focus:ring focus:ring-blue-300"
         >
-          {categories.map((category, index) => (
-            <option key={index} value={category.value}>
-              {category.label}
-            </option>
-          ))}
+          <option value="">{t("categories.default")}</option>
+          <option value="xe-may">{t("categories.bike")}</option>
+          <option value="xe-tay-ga">{t("categories.scooter")}</option>
+          <option value="xe-tay-con">{t("categories.manualBike")}</option>
+          <option value="xe-pkl">{t("categories.largeBike")}</option>
         </select>
+
+        {/* Ô chọn thành phố */}
         <select
-          id="city-select"
           value={selectedCity}
           onChange={handleCityChange}
-          className="city-dropdown"
+          className="p-2 border border-gray-300 rounded-md bg-white w-40 sm:w-48 focus:ring focus:ring-blue-300"
         >
-          <option value="">-- {t("choosecity")} --</option>
+          <option value="">{t("choosecity")}</option>
           {cities.map((city) => (
             <option key={city.code} value={city.name}>
               {city.name}
             </option>
           ))}
         </select>
-        <button className="ok-btn">{t("buttons.ok")}</button>
-        <button className="delete-btn-post">{t("buttons.delete")}</button>
+
+        {/* Nút OK */}
+        <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+          {t("buttons.ok")}
+        </button>
+
+        {/* Nút Xóa */}
+        <button className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700">
+          {t("buttons.delete")}
+        </button>
       </div>
 
       {/* Bảng danh sách bài đăng */}
-      <table className="posts-table">
-        <thead>
-          <tr>
-            <th>{t("tableHeaders.id")}</th>
-            <th>{t("tableHeaders.title")}</th>
-            <th>{t("tableHeaders.productCode")}</th>
-            <th>{t("tableHeaders.type")}</th>
-            <th>{t("tableHeaders.price")}</th>
-            <th>{t("tableHeaders.location")}</th>
-            <th>{t("tableHeaders.image")}</th>
-            <th>{t("tableHeaders.actions")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.map((post) => (
-            <tr key={post.id}>
-              <td>
-                <input className="id-icon" type="checkbox" />
-                {post.id}
-              </td>
-              <td className="post-title">{post.title}</td>
-              <td>{post.productCode}</td>
-              <td>{post.type}</td>
-              <td>{post.price}</td>
-              <td>{post.location}</td>
-              <td>
-                <img src={post.image} alt="Hình ảnh xe" />
-              </td>
-              <td>
-                <button className="approve-btn-post">
-                  {t("buttons.approve")}
-                </button>
-                <button className="delete-btn-post">
-                  {t("buttons.delete")}
-                </button>
-              </td>
+      <div className="overflow-x-auto bg-white shadow rounded-lg">
+        <table className="table-auto w-full text-left border-collapse">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.id")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.title")}</th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.productCode")}
+              </th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.type")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.price")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.location")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.image")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.actions")}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredData.map((post) => (
+              <tr key={post.id} className="hover:bg-gray-50">
+                <td className="px-4 py-2 border-b">
+                  <input type="checkbox" className="mr-2" />
+                  {post.id}
+                </td>
+                <td className="px-4 py-2 border-b">{post.title}</td>
+                <td className="px-4 py-2 border-b">{post.productCode}</td>
+                <td className="px-4 py-2 border-b">{post.type}</td>
+                <td className="px-4 py-2 border-b">{post.price}</td>
+                <td className="px-4 py-2 border-b">{post.location}</td>
+                <td className="px-4 py-2 border-b">
+                  <img
+                    src={post.image}
+                    alt="Post"
+                    className="w-20 h-20 object-cover rounded"
+                  />
+                </td>
+                <td className="px-4 py-2 border-b">
+                  <button className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-700">
+                    {t("buttons.approve")}
+                  </button>
+                  <button className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-700 ml-2">
+                    {t("buttons.delete")}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

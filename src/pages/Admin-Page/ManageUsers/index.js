@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ChartBar from "./Recharts"; // Import component biểu đồ
-import "./ManageUsers.css";
 import {
   FaTrashAlt,
   FaFilter,
@@ -14,7 +13,6 @@ import { useTranslation } from "react-i18next";
 const ManageUsers = () => {
   const { t } = useTranslation("manageUsers");
 
-  // Dữ liệu mẫu
   const users = [
     {
       name: "Lê Văn A",
@@ -23,7 +21,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 15,
       transactions: 5,
-      role: "Người dùng"
+      role: "Người dùng",
     },
     {
       name: "Tạ Văn B",
@@ -32,7 +30,7 @@ const ManageUsers = () => {
       status: t("status.inactive"),
       posts: 5,
       transactions: 2,
-      role: "Người dùng"
+      role: "Người dùng",
     },
     {
       name: "Lê Hùng",
@@ -41,7 +39,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 0,
       transactions: 0,
-      role: "Chuyên gia"
+      role: "Chuyên gia",
     },
     {
       name: "Trần Đô",
@@ -50,7 +48,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 4,
       transactions: 2,
-      role: "Người dùng"
+      role: "Người dùng",
     },
     {
       name: "Văn Nga",
@@ -59,18 +57,15 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 0,
       transactions: 0,
-      role: "Chuyên gia"
+      role: "Chuyên gia",
     },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(users);
-
-  // State quản lý biểu đồ
   const [selectedCard, setSelectedCard] = useState(null); // Quản lý card được chọn
-  const [isChartVisible, setChartVisible] = useState(false); // Trạng thái hiển thị biểu đồ
+  const [isChartVisible, setChartVisible] = useState(false); // Quản lý trạng thái hiển thị biểu đồ
 
-  // Xử lý tìm kiếm
   const handleSearch = (e) => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
@@ -84,159 +79,165 @@ const ManageUsers = () => {
     setFilteredData(filtered || []);
   };
 
-  // Xử lý khi bấm vào card
+  // Khi click vào thẻ tổng quan
   const handleCardClick = (cardId) => {
     setSelectedCard(cardId);
     setChartVisible(true); // Hiển thị biểu đồ
   };
 
-  // Xử lý khi đóng biểu đồ
+  // Khi đóng biểu đồ
   const handleCloseChart = () => {
-    setChartVisible(false); // Ẩn biểu đồ
+    setChartVisible(false);
   };
 
   return (
-    <div className="manage-users-container">
-      <h1>{t("title")}</h1>
-      {/* Header */}
-      <div className="header">
-        <h2>{t("title")}</h2>
-        <button className="add-user-btn">
-          <IoPersonAddOutline /> {t("actions.addUser")}
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
+
+      {/* Header Section */}
+      <div className="flex justify-between items-center mb-6">
+        <button className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+          <IoPersonAddOutline className="mr-2" /> {t("actions.addUser")}
         </button>
       </div>
+
       {/* Summary Cards */}
-      <div className="summary-cards">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {[
           {
             id: "totalUsers",
             title: t("summaryCards.totalUsers"),
             value: 45,
             percent: "5.0%",
-            isDecrease: false, // Tăng
+            isDecrease: false,
           },
           {
             id: "active",
             title: t("summaryCards.active"),
             value: 15,
             percent: "5.0%",
-            isDecrease: false, // Tăng
+            isDecrease: false,
           },
           {
             id: "newUsers",
             title: t("summaryCards.newUsers"),
             value: 20,
             percent: "15.0%",
-            isDecrease: false, // Tăng
+            isDecrease: false,
           },
           {
             id: "inactive",
             title: t("summaryCards.inactive"),
             value: 5,
             percent: "-15.0%",
-            isDecrease: true, // Giảm
+            isDecrease: true,
           },
         ].map((card) => (
           <div
             key={card.id}
-            className="card"
+            className="p-4 bg-white shadow rounded-lg cursor-pointer hover:shadow-lg"
             onClick={() => handleCardClick(card.id)} // Đảm bảo ID được truyền đúng
           >
-            <p>{card.title}</p>
-            <h3>
+            <p className="text-gray-600">{card.title}</p>
+            <h3 className="text-xl font-bold text-gray-800">
               {card.value} <span>{t("units.users")}</span>
             </h3>
             <small
-              className={`growth-indicator ${card.isDecrease ? "decrease-indicator" : ""
+              className={`block mt-1 ${card.isDecrease ? "text-red-500" : "text-green-500"
                 }`}
             >
-              <FaChartLine
-                className={`chart-icon ${card.isDecrease ? "chart-icon decrease" : ""
-                  }`}
-              />
+              <FaChartLine className="inline mr-1" />
               {card.percent}
             </small>
           </div>
         ))}
       </div>
+
       {/* Biểu đồ */}
       {isChartVisible && (
-        <div className="chart-modal">
-          <ChartBar onClose={handleCloseChart} selectedCard={selectedCard} />
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg relative">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              onClick={handleCloseChart}
+            >
+              ✕
+            </button>
+            <ChartBar selectedCard={selectedCard} onClose={handleCloseChart}/>
+          </div>
         </div>
       )}
+
       {/* Filter and Actions */}
-      <div className="actions-users">
+      <div className="flex flex-wrap items-center gap-4 mb-6">
         <input
           type="text"
           placeholder={t("actions.searchPlaceholder")}
+          className="flex-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
           value={searchTerm}
           onChange={handleSearch}
         />
-        <button className="delete-btn-users">
-          <FaTrashAlt /> {t("actions.delete")}
+        <button className="flex items-center px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700">
+          <FaTrashAlt className="mr-2" /> {t("actions.delete")}
         </button>
-        <button className="export-btn-users">
-          <FaFileExport /> {t("actions.export")}
+        <button className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+          <FaFileExport className="mr-2" /> {t("actions.export")}
         </button>
-        <button className="filter-btn-users">
-          <FaFilter /> {t("actions.filter")}
+        <button className="flex items-center px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700">
+          <FaFilter className="mr-2" /> {t("actions.filter")}
         </button>
       </div>
-      {/* Users Table */}
-      <table className="users-table">
-        <thead>
-          <tr>
-            <th>
-              <input type="checkbox" />
-            </th>
-            <th>{t("tableHeaders.name")}</th>
-            <th>{t("tableHeaders.email")}</th>
-            <th>{t("tableHeaders.city")}</th>
-            <th>{t("tableHeaders.status")}</th>
-            <th>{t("role.title")}</th>
-            <th>{t("tableHeaders.posts")}</th>
-            <th>{t("tableHeaders.transactions")}</th>
-            <th>{t("tableHeaders.actions")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.map((user, index) => (
-            <tr key={index}>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.city}</td>
-              <td>
-                {user.status === t("status.active") ? (
-                  <span className="status-active">●</span>
-                ) : (
-                  <span className="status-inactive">●</span>
-                )}
-                {user.status}
-              </td>
-              <td>
-                {t(`${user.role}`)}
-              </td>
 
-              <td>
-                {user.posts} {t("units.posts")}
-              </td>
-              <td>
-                {user.transactions} {t("units.transactions")}
-              </td>
-              <td>
-                <button className="edit-btn-users">
-                  <FaPenToSquare className="edit-icon-users" />{" "}
-                  {t("actions.edit")}
-                </button>
-              </td>
+      {/* Users Table */}
+      <div className="overflow-x-auto bg-white shadow rounded-lg">
+        <table className="table-auto w-full text-left border-collapse">
+          <thead>
+            <tr className="bg-gray-100 text-gray-700">
+              <th className="px-4 py-2 border-b">
+                <input type="checkbox" />
+              </th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.name")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.email")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.city")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.status")}</th>
+              <th className="px-4 py-2 border-b">{t("role.title")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.posts")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.transactions")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.actions")}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredData.map((user, index) => (
+              <tr key={index} className="hover:bg-gray-50">
+                <td className="px-4 py-2 border-b">
+                  <input type="checkbox" />
+                </td>
+                <td className="px-4 py-2 border-b">{user.name}</td>
+                <td className="px-4 py-2 border-b">{user.email}</td>
+                <td className="px-4 py-2 border-b">{user.city}</td>
+                <td className="px-4 py-2 border-b">
+                  {user.status === t("status.active") ? (
+                    <span className="text-green-500 font-semibold">●</span>
+                  ) : (
+                    <span className="text-red-500 font-semibold">●</span>
+                  )}
+                  {user.status}
+                </td>
+                <td className="px-4 py-2 border-b">{t(`${user.role}`)}</td>
+                <td className="px-4 py-2 border-b">{user.posts} {t("units.posts")}</td>
+                <td className="px-4 py-2 border-b">
+                  {user.transactions} {t("units.transactions")}
+                </td>
+                <td className="px-4 py-2 border-b">
+                  <button className="flex items-center px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600">
+                    <FaPenToSquare className="mr-2" /> {t("actions.edit")}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

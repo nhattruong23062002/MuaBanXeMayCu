@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import "./ManageExperts.css";
-import ChartBarExperts from "./RechartExperts";
 import {
   FaPlus,
   FaTrashAlt,
   FaFilter,
   FaFileExport,
   FaEdit,
-  FaChartLine,
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
@@ -49,18 +46,13 @@ const ManageExperts = () => {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
-  const [filteredData, setFilteredData] = useState(experts); // Lưu dữ liệu được lọc
-  // State quản lý biểu đồ
-  const [selectedCard, setSelectedCard] = useState(null); // Quản lý card được chọn
-  const [isChartVisible, setChartVisible] = useState(false); // Trạng thái hiển thị biểu đồ
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState(experts);
 
-  // Xử lý tìm kiếm
   const handleSearch = (e) => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
 
-    // Lọc dữ liệu dựa trên tên, thành phố hoặc kinh nghiệm
     const filtered = experts.filter(
       (item) =>
         item.city.toLowerCase().includes(value) ||
@@ -68,28 +60,12 @@ const ManageExperts = () => {
         item.experience.toLowerCase().includes(value)
     );
 
-    setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
-  };
-  // Xử lý khi bấm vào card
-  const handleCardClick = (cardId) => {
-    setSelectedCard(cardId);
-    setChartVisible(true); // Hiển thị biểu đồ
-  };
-
-  // Xử lý khi đóng biểu đồ
-  const handleCloseChart = () => {
-    setChartVisible(false); // Ẩn biểu đồ
+    setFilteredData(filtered || []);
   };
 
   return (
-    <div className="manage-experts-container">
-      <h1>{t("title")}</h1>
-      {/* Header */}
-      <div className="manage-experts-header">
-      </div>
-
-
-
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
 
       {/* Action Section */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -112,47 +88,53 @@ const ManageExperts = () => {
       </div>
 
       {/* Experts Table */}
-      <table className="manage-experts-table">
-        <thead>
-          <tr>
-            <th>
-              <input type="checkbox" />
-            </th>
-            <th>{t("tableHeaders.name")}</th>
-            <th>{t("tableHeaders.email")}</th>
-            <th>{t("tableHeaders.city")}</th>
-            <th>{t("tableHeaders.experience")}</th>
-            <th>{t("tableHeaders.reputation")}</th>
-            <th>{t("tableHeaders.actions")}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.map((expert, index) => (
-            <tr key={index}>
-              <td>
+      <div className="overflow-x-auto bg-white shadow rounded-lg">
+        <table className="table-auto w-full text-left border-collapse">
+          <thead>
+            <tr className="bg-gray-100 text-gray-700">
+              <th className="px-4 py-2 border-b">
                 <input type="checkbox" />
-              </td>
-              <td>{expert.name}</td>
-              <td>{expert.email}</td>
-              <td>{expert.city}</td>
-              <td>
-                {expert.experience} {t("yearexp.experience")}
-              </td>
-              <td>{expert.reputation}</td>
-              <td className="flex space-x-4">
-                <button className="flex items-center px-4 py-2 manage-experts-edit-btn">
-                  <FaEdit /> {t("actions.examine")}
-                </button>
-                <button className="flex items-center px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600">
-                  <FaTrashAlt className="mr-2" />
-                  {t("actions.delete")}
-                </button>
-              </td>
-
+              </th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.name")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.email")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.city")}</th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.experience")}
+              </th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.reputation")}
+              </th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.actions")}</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredData.map((expert, index) => (
+              <tr key={index} className="hover:bg-gray-50">
+                <td className="px-4 py-2 border-b">
+                  <input type="checkbox" />
+                </td>
+                <td className="px-4 py-2 border-b">{expert.name}</td>
+                <td className="px-4 py-2 border-b">{expert.email}</td>
+                <td className="px-4 py-2 border-b">{expert.city}</td>
+                <td className="px-4 py-2 border-b">
+                  {expert.experience} {t("yearexp.experience")}
+                </td>
+                <td className="px-4 py-2 border-b">{expert.reputation}</td>
+                <td className="px-4 py-2 border-b flex gap-2">
+                  <button className="flex items-center px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600">
+                    <FaEdit className="mr-2" />
+                    {t("actions.examine")}
+                  </button>
+                  <button className="flex items-center px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600">
+                    <FaTrashAlt className="mr-2" />
+                    {t("actions.delete")}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

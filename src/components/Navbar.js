@@ -19,7 +19,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center justify-start">
           <div
-            className="text-[#d59648] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl cursor-pointer p-2 sm:p-3 md:p-4 ml-auto"
+            className="text-[#d59648] text-xl sm:text-2xl md:text-3xl lg:text-4xl cursor-pointer p-2 sm:p-3 md:p-4"
             onClick={() => navigate("/")}
           >
             <FaMotorcycle />
@@ -28,21 +28,21 @@ const Navbar = () => {
 
         {/* Tiêu đề nằm giữa */}
         <div className="flex items-center justify-center">
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white text-center">
+          <h1 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-bold text-white text-center">
             {t("adminPageTitle")}
           </h1>
         </div>
 
         {/* Avatar và Nút Logout */}
-        <div className="flex items-center justify-end space-x-4">
+        <div className="flex items-center justify-end space-x-2 sm:space-x-4">
           <img
             src="https://kenh14cdn.com/203336854389633024/2024/12/10/img6508jpg-1591784578-15917845-6209-7466-15917848032-1733854484177-17338544927331380039156.jpg"
             alt="User"
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
+            className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full"
           />
           <button
             onClick={handleLogout}
-            className="bg-[#ff7f00] hover:bg-[#e67e00] text-white px-3 py-1 sm:px-4 sm:py-2 rounded text-sm sm:text-base"
+            className="bg-[#ff7f00] hover:bg-[#e67e00] text-white px-2 py-1 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded text-xs sm:text-sm md:text-base"
           >
             {t("logout")}
           </button>
