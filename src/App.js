@@ -34,6 +34,7 @@ import Report from "./pages/User-Page/report";
 import FavoriteStores from "./pages/User-Page/favoriteStore";
 import FavoriteProducts from "./pages/User-Page/favoriteProduct";
 import RegisterExpert from "./pages/User-Page/registerExpert";
+import Dashboard from "./pages/Admin-Page/Dashboard";
 
 const App = () => {
   return (
@@ -64,6 +65,15 @@ const App = () => {
           <Route path="favorite-store" element={<FavoriteStores />} />
           <Route path="favorite-products" element={<FavoriteProducts />} />
           <Route path="register-expert" element={<RegisterExpert />} />
+
+          <Route
+            path="/admin/dashboard"
+            element={
+              <AdminLayout>
+                <Dashboard />
+              </AdminLayout>
+            }
+          />
 
           <Route
             path="/admin/manage-appointments"

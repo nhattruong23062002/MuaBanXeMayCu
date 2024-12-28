@@ -49,7 +49,7 @@ function AccountPage() {
               className="text-white text-2xl font-bold ml-4 cursor-pointer"
               onClick={() => navigate(`/login`)}
             >
-              {t("login")}
+              {t("login")} 
             </h2>
           ) : (
             <h2 className="text-white text-2xl font-bold ml-4">

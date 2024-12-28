@@ -58,6 +58,15 @@ const Sidebar = () => {
           )}
           {auth.role === "admin" && (
             <>
+             <li>
+                <Link
+                  to="/admin/dashboard"
+                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                >
+                  {t("Dashboard")}
+                </Link>
+              </li>
+
               <li>
                 <Link
                   to="/admin/manage-posts"
