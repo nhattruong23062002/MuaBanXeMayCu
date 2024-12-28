@@ -9,7 +9,8 @@
     "language": "언어",
     "logout": "로그아웃",
     "favorite_product": "좋아하는 제품",
-    "favorite_store": "좋아하는 매장"
+    "favorite_store": "좋아하는 매장",
+    "register_expert": "전문가 계정 등록"
   },
   "detailMoto": {
     "title": "혼다 SH 125i",
@@ -174,7 +175,7 @@
     "registerLink": "지금 등록하세요"
   },
   "register": {
-    "title": "가입",
+    "title": "회원가입",
     "name": "성명",
     "email": "이메일",
     "phone": "전화번호",
@@ -185,7 +186,7 @@
     "phonePlaceholder": "전화번호를 입력하세요",
     "passwordPlaceholder": "비밀번호를 입력하세요",
     "confirmPasswordPlaceholder": "비밀번호를 확인하세요",
-    "registerButton": "가입",
+    "registerButton": "회원가입",
     "loginPrompt": "이미 계정이 있으신가요?",
     "loginLink": "지금 로그인하세요"
   },
@@ -503,7 +504,7 @@
       "experience": "경험:",
       "experiencePlaceholder": "경험을 입력하세요",
       "certificate": "증명서 문서:",
-      "price": "가격:",
+      "services": "제공되는 서비스",
       "pricePlaceholder": "가격을 입력하세요",
       "timeSlots": "가능한 시간:"
     },
@@ -724,5 +725,19 @@
   },
   "favoriteProduct": {
     "title": "좋아하는 제품"
+  },
+  "registerExpert": {
+    "title": "전문가 계정 등록",
+    "fullName": "전체 이름",
+    "address": "주소",
+    "dob": "생년월일",
+    "experience": "경험 연수",
+    "workUnit": "작업 단위",
+    "id": "증명서 문서",
+    "fullNamePlaceholder": "성명을 입력하세요",
+    "addressPlaceholder": "주소를 입력하세요",
+    "experiencePlaceholder": "경험 기간을 입력하세요",
+    "workUnitPlaceholder": "작업 단위 입력",
+    "confirm": "확인"
   }
 }

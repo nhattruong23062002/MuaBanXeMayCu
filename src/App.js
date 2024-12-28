@@ -33,6 +33,7 @@ import SnowEffect from "./components/SnowEffect";
 import Report from "./pages/User-Page/report";
 import FavoriteStores from "./pages/User-Page/favoriteStore";
 import FavoriteProducts from "./pages/User-Page/favoriteProduct";
+import RegisterExpert from "./pages/User-Page/registerExpert";
 
 const App = () => {
   return (
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="report" element={<Report />} />
           <Route path="favorite-store" element={<FavoriteStores />} />
           <Route path="favorite-products" element={<FavoriteProducts />} />
+          <Route path="register-expert" element={<RegisterExpert />} />
 
           <Route
             path="/admin/manage-appointments"

@@ -9,7 +9,8 @@
     "language": "Ngôn ngữ",
     "logout": "Đăng xuất",
     "favorite_product": "Sản phẩm yêu thích",
-    "favorite_store": "Cửa hàng yêu thích"
+    "favorite_store": "Cửa hàng yêu thích",
+    "register_expert": "Đăng ký tài khoản chuyên gia"
   },
   "detailMoto": {
     "title": "Honda SH 125i",
@@ -503,8 +504,8 @@
       "experience": "Kinh nghiệm:",
       "experiencePlaceholder": "Nhập kinh nghiệm",
       "certificate": "Giấy tờ chứng chỉ:",
-      "price": "Mức giá:",
-      "pricePlaceholder": "Nhập mức giá",
+      "services": "Dịch vụ cung cấp:",
+      "servicesPlaceholder": "Nhập dịch vụ cung cấp",
       "timeSlots": "Giờ trống lịch:"
     },
     "preview": {
@@ -621,7 +622,6 @@
       "inactive": "Người dùng không hoạt động"
     }
   },
-
   "handleComplaints": {
     "title": "Danh sách khiếu nại",
     "status": {
@@ -728,5 +728,19 @@
   },
   "favoriteProduct": {
     "title": "Sản phẩm yêu thích"
+  },
+  "registerExpert": {
+    "title": "Đăng ký tài khoản chuyên gia",
+    "fullName": "Họ và tên",
+    "address": "Địa chỉ",
+    "dob": "Ngày sinh",
+    "experience": "Số năm kinh nghiệm",
+    "workUnit": "Đơn vị công tác",
+    "id": "Giấy tờ chứng chỉ",
+    "fullNamePlaceholder": "Nhập họ và tên",
+    "addressPlaceholder": "Nhập địa chỉ",
+    "experiencePlaceholder": "Nhập số năm kinh nghiệm",
+    "workUnitPlaceholder": "Nhập đơn vị công tác",
+    "confirm": "Xác nhận"
   }
 }

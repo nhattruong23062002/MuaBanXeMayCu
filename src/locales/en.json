@@ -9,7 +9,8 @@
     "language": "Language",
     "logout": "Logout",
     "favorite_product": "Favorite product",
-    "favorite_store": "Favorite store"
+    "favorite_store": "Favorite store",
+    "register_expert": "Register for an expert account"
   },
   "detailMoto": {
     "title": "Honda SH 125i",
@@ -498,7 +499,7 @@
       "experience": "Experience:",
       "experiencePlaceholder": "Enter experience",
       "certificate": "Certificate documents:",
-      "price": "Price:",
+      "services": "Services provided",
       "pricePlaceholder": "Enter price",
       "timeSlots": "Available time slots:"
     },
@@ -616,7 +617,6 @@
       "inactive": "Inactive Users"
     }
   },
-
   "handleComplaints": {
     "title": "Complaint List",
     "status": {
@@ -649,7 +649,6 @@
       "user": "User"
     }
   },
-
   "manageExperts": {
     "title": "Manage Experts",
     "header": "Experts",
@@ -724,5 +723,19 @@
   },
   "favoriteProduct": {
     "title": "Favorite products"
+  },
+  "registerExpert": {
+    "title": "Register for an expert account",
+    "fullName": "Full name",
+    "address": "Address",
+    "dob": "Date of birth",
+    "experience": "Years of experience",
+    "workUnit": "Work unit",
+    "id": "Certificate",
+    "fullNamePlaceholder": "Enter full name",
+    "addressPlaceholder": "Enter address",
+    "experiencePlaceholder": "Enter years of experience",
+    "workUnitPlaceholder": "Enter work unit",
+    "confirm": "Confirm"
   }
 }

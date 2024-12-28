@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { FaRegMessage } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { FaRegHeart } from "react-icons/fa";
+import { GrUserExpert } from "react-icons/gr";
 
 const auth = JSON.parse(localStorage.getItem("auth"));
 
@@ -118,6 +119,16 @@ function AccountPage() {
               <FaRegHeart className="text-2xl text-[#00a0e9]" />
               <span className="text-lg font-medium">
                 {t("favorite_product")}
+              </span>
+            </li>
+
+            <li
+              className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]"
+              onClick={() => navigate(`/register-expert`)}
+            >
+              <GrUserExpert className="ml-[3px] text-2xl text-[#00a0e9]" />
+              <span className="text-lg font-medium">
+                {t("register_expert")}
               </span>
             </li>
 
