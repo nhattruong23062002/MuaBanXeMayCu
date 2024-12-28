@@ -29,13 +29,14 @@ import SellPage from "./pages/User-Page/ManagerSell";
 import PostDetail from "./pages/User-Page/postDetail";
 import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
-import SnowEffect from "./components/SnowEffect";
 import Report from "./pages/User-Page/report";
+import RainEffect from "./components/RainEffect";
+
 
 const App = () => {
   return (
     <>
-      <SnowEffect />
+      <RainEffect />
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
