@@ -739,5 +739,21 @@
     "experiencePlaceholder": "경험 기간을 입력하세요",
     "workUnitPlaceholder": "작업 단위 입력",
     "confirm": "확인"
+  },
+  "dashboard": {
+    "totalUser": "총 사용자",
+    "totalStore": "총 매장",
+    "totalExpert": "총 전문가",
+    "totalMoto": "총 오토바이",
+    "totalRevenue": "총 거래 금액",
+    "topSellingCars": "가장 많이 팔린 차량 3대",
+    "weeklyTransaction": "주간 거래 금액",
+    "topStore": "매출이 가장 높은 매장",
+    "nameStore": "매장 이름",
+    "revenueStore": "수익",
+    "topExpert": "주요 전문가",
+    "nameExpert": "전문가 이름",
+    "expertise": "전문 분야",
+    "numberBooking": "예약 수"
   }
 }

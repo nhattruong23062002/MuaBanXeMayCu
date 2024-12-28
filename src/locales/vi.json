@@ -742,5 +742,21 @@
     "experiencePlaceholder": "Nhập số năm kinh nghiệm",
     "workUnitPlaceholder": "Nhập đơn vị công tác",
     "confirm": "Xác nhận"
+  },
+  "dashboard": {
+    "totalUser": "Tổng số người dùng",
+    "totalStore": "Tổng số cửa hàng",
+    "totalExpert": "Tổng số chuyên gia",
+    "totalMoto": "Tổng số xe máy",
+    "totalRevenue": "Tổng số tiền đã giao dịch",
+    "topSellingCars": "Top 3 Loại Xe Bán Chạy Nhất",
+    "weeklyTransaction": " Số Tiền Giao Dịch Trong Tuần",
+    "topStore": " Cửa Hàng Có Doanh Thu Cao Nhất",
+    "nameStore": "Tên Cửa Hàng",
+    "revenueStore":"Doanh thu",
+    "topExpert": "Top Những Chuyên Gia Nổi Bật",
+    "nameExpert": "Tên chuyên gia",
+    "expertise" : "Chuyên môn",
+    "numberBooking": "Số lần đã đặt hẹn"
   }
 }

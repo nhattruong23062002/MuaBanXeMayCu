@@ -737,5 +737,21 @@
     "experiencePlaceholder": "Enter years of experience",
     "workUnitPlaceholder": "Enter work unit",
     "confirm": "Confirm"
+  },
+  "dashboard": {
+    "totalUser": "Total Users",
+    "totalStore": "Total Stores",
+    "totalExpert": "Total Experts",
+    "totalMoto": "Total Motorcycles",
+    "totalRevenue": "Total Transaction Amount",
+    "topSellingCars": "Top 3 Best-Selling Vehicles",
+    "weeklyTransaction": "Amount of Transactions in the Week",
+    "topStore": "Stores with Highest Revenue",
+    "nameStore": "Store Name",
+    "revenueStore": "Revenue",
+    "topExpert": "Top Outstanding Experts",
+    "nameExpert": "Expert Name",
+    "expertise": "Expertise",
+    "numberBooking": "Number of Appointments"
   }
 }

@@ -18,8 +18,11 @@ import {
   FaMoneyBillWave,
   FaUserTie,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
+  const { t } = useTranslation("dashboard");
+
   const topSellingData = [
     { name: "Jan", SH: 30, Winner: 20, Ware: 15 },
     { name: "Feb", SH: 32, Winner: 16, Ware: 20 },
@@ -56,7 +59,7 @@ const Dashboard = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2">
               <FaUsers className="text-blue-600 text-2xl mr-2" />
-              <h2 className="text-lg font-medium">Tổng số người dùng</h2>
+              <h2 className="text-lg font-medium">{t("totalUser")}</h2>
             </div>
             <p className="text-3xl font-bold text-blue-600">1500</p>
           </div>
@@ -66,7 +69,7 @@ const Dashboard = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2">
               <FaStore className="text-green-600 text-2xl mr-2" />
-              <h2 className="text-lg font-medium">Tổng số cửa hàng</h2>
+              <h2 className="text-lg font-medium">{t("totalStore")}</h2>
             </div>
             <p className="text-3xl font-bold text-green-600">120</p>
           </div>
@@ -76,7 +79,7 @@ const Dashboard = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2">
               <FaUserTie className="text-red-600 text-2xl" />
-              <h2 className="text-lg font-medium">Tổng số chuyên gia</h2>
+              <h2 className="text-lg font-medium">{t("totalExpert")}</h2>
             </div>
             <p className="text-3xl font-bold text-red-600">45</p>
           </div>
@@ -85,7 +88,7 @@ const Dashboard = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2">
               <FaMotorcycle className="text-purple-600 text-3xl" />
-              <h2 className="text-lg font-medium">Tổng số xe máy</h2>
+              <h2 className="text-lg font-medium">{t("totalMoto")}</h2>
             </div>
             <p className="text-3xl font-bold text-purple-600">320</p>
           </div>
@@ -94,7 +97,7 @@ const Dashboard = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2">
               <FaMoneyBillWave className="text-yellow-600 text-2xl" />
-              <h2 className="text-lg font-medium">Tổng số tiền đã giao dịch</h2>
+              <h2 className="text-lg font-medium">{t("totalRevenue")}</h2>
             </div>
             <p className="text-3xl font-bold text-yellow-600">2,3 tỷ VNĐ</p>
           </div>
@@ -104,7 +107,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white shadow rounded-lg p-4">
           <h2 className="text-xl font-bold mb-4">
-            Top 3 Loại Xe Bán Chạy Nhất
+          {t("topSellingCars")}
           </h2>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart
@@ -143,7 +146,7 @@ const Dashboard = () => {
 
         <div className="bg-white shadow rounded-lg p-4">
           <h2 className="text-xl font-bold mb-4">
-            Số Tiền Giao Dịch Trong Tuần
+           {t("weeklyTransaction")}
           </h2>
           <ResponsiveContainer width="98%" height={300}>
             <BarChart
@@ -164,13 +167,13 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
         <div className="bg-white shadow rounded-lg p-4">
           <h2 className="text-xl font-bold mb-4">
-            Cửa Hàng Có Doanh Thu Cao Nhất
+          {t("topStore")}
           </h2>
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
-                <th className="border-b p-2 font-medium">Tên Cửa Hàng</th>
-                <th className="border-b p-2 font-medium">Doanh Thu</th>
+                <th className="border-b p-2 font-medium">{t("nameStore")}</th>
+                <th className="border-b p-2 font-medium">{t("revenueStore")}</th>
               </tr>
             </thead>
             <tbody>
@@ -188,14 +191,14 @@ const Dashboard = () => {
 
         <div className="bg-white shadow rounded-lg p-4">
           <h2 className="text-xl font-bold mb-4">
-            Top Những Chuyên Gia Nổi Bật
+          {t("topExpert")}
           </h2>
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
-                <th className="border-b p-2 font-medium">Tên Chuyên Gia</th>
-                <th className="border-b p-2 font-medium">Chuyên Môn</th>
-                <th className="border-b p-2 font-medium">Số lượt book</th>
+                <th className="border-b p-2 font-medium">{t("nameExpert")}</th>
+                <th className="border-b p-2 font-medium">{t("expertise")}</th>
+                <th className="border-b p-2 font-medium">{t("numberBooking")}</th>
               </tr>
             </thead>
             <tbody>
