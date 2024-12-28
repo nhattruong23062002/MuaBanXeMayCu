@@ -588,7 +588,12 @@
       "export": "Xuất dữ liệu",
       "filter": "Bộ lọc",
       "searchPlaceholder": "Tìm kiếm người dùng",
-      "edit": "Chỉnh sửa"
+      "edit": "Chỉnh sửa",
+      "examine": "Duyệt"
+    },
+    "roles": {
+      "user": "Người dùng",
+      "expert": "Chuyên gia"
     },
     "tableHeaders": {
       "name": "Tên",
@@ -620,6 +625,11 @@
       "active": "Người dùng hoạt động",
       "newUsers": "Người dùng mới",
       "inactive": "Người dùng không hoạt động"
+    },
+    "role": {
+      "title": "Vai trò",
+      "user": "Người dùng",
+      "expert": "Chuyên gia"
     }
   },
   "handleComplaints": {
@@ -634,7 +644,8 @@
       "export": "Xuất dữ liệu",
       "filter": "Bộ lọc",
       "approve": "Phê duyệt",
-      "reject": "Từ chối"
+      "reject": "Từ chối",
+      "examine": "Duyệt"
     },
     "tableHeaders": {
       "name": "Tên",
@@ -674,7 +685,8 @@
       "delete": "Xóa",
       "export": "Xuất dữ liệu",
       "filter": "Lọc",
-      "edit": "Chỉnh sửa"
+      "edit": "Chỉnh sửa",
+      "examine": "Duyệt"
     },
     "tableHeaders": {
       "name": "Tên",

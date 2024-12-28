@@ -585,6 +585,10 @@
       "searchPlaceholder": "Search Users",
       "edit": "Edit"
     },
+    "roles": {
+      "user": "User",
+      "expert": "Expert"
+    },
     "tableHeaders": {
       "name": "Name",
       "email": "Email",
@@ -669,7 +673,8 @@
       "delete": "Delete",
       "export": "Export",
       "filter": "Filter",
-      "edit": "Edit"
+      "edit": "Edit",
+      "examine": "Examine"
     },
     "tableHeaders": {
       "name": "Name",

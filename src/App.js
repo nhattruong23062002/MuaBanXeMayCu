@@ -29,8 +29,8 @@ import SellPage from "./pages/User-Page/ManagerSell";
 import PostDetail from "./pages/User-Page/postDetail";
 import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
-import SnowEffect from "./components/SnowEffect";
 import Report from "./pages/User-Page/report";
+import RainEffect from "./components/RainEffect";
 import FavoriteStores from "./pages/User-Page/favoriteStore";
 import FavoriteProducts from "./pages/User-Page/favoriteProduct";
 import RegisterExpert from "./pages/User-Page/registerExpert";
@@ -39,13 +39,13 @@ import Dashboard from "./pages/Admin-Page/Dashboard";
 const App = () => {
   return (
     <>
-      <SnowEffect />
+      <RainEffect />
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/detailMoto" element={<DetailMoto />} /> 
+          <Route path="/detailMoto" element={<DetailMoto />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/purchased" element={<PurchasedPage />} />
           <Route path="/selling" element={<SellPage />} />

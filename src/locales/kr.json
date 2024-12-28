@@ -582,6 +582,10 @@
       "newUsers": "새로운 사용자",
       "inactive": "비활성화"
     },
+    "roles": {
+      "user": "사용자",
+      "expert": "전문가"
+    },
     "actions": {
       "addUser": "사용자 추가",
       "delete": "삭제",
@@ -674,7 +678,8 @@
       "delete": "삭제",
       "export": "내보내기",
       "filter": "필터",
-      "edit": "수정"
+      "edit": "수정",
+      "examine": "검사하다"
     },
     "tableHeaders": {
       "name": "이름",

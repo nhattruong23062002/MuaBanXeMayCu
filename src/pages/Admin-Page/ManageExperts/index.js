@@ -86,95 +86,28 @@ const ManageExperts = () => {
       <h1>{t("title")}</h1>
       {/* Header */}
       <div className="manage-experts-header">
-        <h2>{t("header")}</h2>
-        <button className="manage-experts-add-user-btn">
-          <FaPlus /> {t("actions.addUser")}
-        </button>
       </div>
 
-      {/* Summary Cards */}
-      <div className="manage-experts-summary-cards">
-        {[
-          {
-            id: "totalUsers",
-            title: t("summary.totalUsers"),
-            value: 45,
-            percent: "5.0%",
-            isDecrease: false, // Tăng
-          },
-          {
-            id: "active",
-            title: t("summary.active"),
-            value: 15,
-            percent: "5.0%",
-            isDecrease: false, // Tăng
-          },
-          {
-            id: "newUsers",
-            title: t("summary.newUser"),
-            value: 20,
-            percent: "15.0%",
-            isDecrease: false, // Tăng
-          },
-          {
-            id: "inactive",
-            title: t("summary.inactive"),
-            value: 5,
-            percent: "-15.0%",
-            isDecrease: true, // Giảm
-          },
-        ].map((card) => (
-          <div
-            key={card.id}
-            className="card"
-            onClick={() => handleCardClick(card.id)} // Đảm bảo ID được truyền đúng
-          >
-            <p>{card.title}</p>
-            <h3>
-              {card.value} <span>{t("summary.users")}</span>
-            </h3>
-            <small
-              className={`growth-indicator ${
-                card.isDecrease ? "decrease-indicator" : ""
-              }`}
-            >
-              <FaChartLine
-                className={`chart-icon ${
-                  card.isDecrease ? "chart-icon decrease" : ""
-                }`}
-              />
-              {card.percent}
-            </small>
-          </div>
-        ))}
-      </div>
-      {/* Biểu đồ */}
-      {isChartVisible && (
-        <div className="chart-modal">
-          <ChartBarExperts
-            onClose={handleCloseChart}
-            selectedCard={selectedCard}
-          />
-        </div>
-      )}
 
-      {/* Actions */}
-      <div className="manage-experts-actions">
+
+
+      {/* Action Section */}
+      <div className="flex flex-wrap items-center gap-4 mb-6">
         <input
           type="text"
           placeholder={t("actions.searchPlaceholder")}
-          className="manage-experts-search-input"
+          className="flex-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
           value={searchTerm}
           onChange={handleSearch}
         />
-        <button className="manage-experts-delete-btn">
-          <FaTrashAlt className="btn-experts-icon" /> {t("actions.delete")}
+        <button className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700 flex items-center gap-2">
+          <FaTrashAlt /> {t("actions.delete")}
         </button>
-        <button className="manage-experts-export-btn">
-          <FaFileExport className="btn-experts-icon" /> {t("actions.export")}
+        <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 flex items-center gap-2">
+          <FaFileExport /> {t("actions.export")}
         </button>
-        <button className="manage-experts-filter-btn">
-          <FaFilter className="btn-experts-icon" /> {t("actions.filter")}
+        <button className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 flex items-center gap-2">
+          <FaFilter /> {t("actions.filter")}
         </button>
       </div>
 
@@ -188,7 +121,6 @@ const ManageExperts = () => {
             <th>{t("tableHeaders.name")}</th>
             <th>{t("tableHeaders.email")}</th>
             <th>{t("tableHeaders.city")}</th>
-            <th>{t("tableHeaders.status")}</th>
             <th>{t("tableHeaders.experience")}</th>
             <th>{t("tableHeaders.reputation")}</th>
             <th>{t("tableHeaders.actions")}</th>
@@ -204,26 +136,19 @@ const ManageExperts = () => {
               <td>{expert.email}</td>
               <td>{expert.city}</td>
               <td>
-                <span
-                  className={
-                    expert.status === t("statuses.active")
-                      ? "manage-experts-status-active"
-                      : "manage-experts-status-inactive"
-                  }
-                >
-                  ●
-                </span>
-                {expert.status}
-              </td>
-              <td>
                 {expert.experience} {t("yearexp.experience")}
               </td>
               <td>{expert.reputation}</td>
-              <td>
-                <button className="manage-experts-edit-btn">
-                  <FaEdit /> {t("actions.edit")}
+              <td className="flex space-x-4">
+                <button className="flex items-center px-4 py-2 manage-experts-edit-btn">
+                  <FaEdit /> {t("actions.examine")}
+                </button>
+                <button className="flex items-center px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600">
+                  <FaTrashAlt className="mr-2" />
+                  {t("actions.delete")}
                 </button>
               </td>
+
             </tr>
           ))}
         </tbody>

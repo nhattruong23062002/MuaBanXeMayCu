@@ -23,6 +23,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 15,
       transactions: 5,
+      role: "Người dùng"
     },
     {
       name: "Tạ Văn B",
@@ -31,6 +32,7 @@ const ManageUsers = () => {
       status: t("status.inactive"),
       posts: 5,
       transactions: 2,
+      role: "Người dùng"
     },
     {
       name: "Lê Hùng",
@@ -39,6 +41,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 0,
       transactions: 0,
+      role: "Chuyên gia"
     },
     {
       name: "Trần Đô",
@@ -47,6 +50,16 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 4,
       transactions: 2,
+      role: "Người dùng"
+    },
+    {
+      name: "Văn Nga",
+      email: "Nga12@gmail.com",
+      city: t("cities.daNang"),
+      status: t("status.active"),
+      posts: 0,
+      transactions: 0,
+      role: "Chuyên gia"
     },
   ];
 
@@ -134,14 +147,12 @@ const ManageUsers = () => {
               {card.value} <span>{t("units.users")}</span>
             </h3>
             <small
-              className={`growth-indicator ${
-                card.isDecrease ? "decrease-indicator" : ""
-              }`}
+              className={`growth-indicator ${card.isDecrease ? "decrease-indicator" : ""
+                }`}
             >
               <FaChartLine
-                className={`chart-icon ${
-                  card.isDecrease ? "chart-icon decrease" : ""
-                }`}
+                className={`chart-icon ${card.isDecrease ? "chart-icon decrease" : ""
+                  }`}
               />
               {card.percent}
             </small>
@@ -183,6 +194,7 @@ const ManageUsers = () => {
             <th>{t("tableHeaders.email")}</th>
             <th>{t("tableHeaders.city")}</th>
             <th>{t("tableHeaders.status")}</th>
+            <th>{t("role.title")}</th>
             <th>{t("tableHeaders.posts")}</th>
             <th>{t("tableHeaders.transactions")}</th>
             <th>{t("tableHeaders.actions")}</th>
@@ -205,6 +217,10 @@ const ManageUsers = () => {
                 )}
                 {user.status}
               </td>
+              <td>
+                {t(`${user.role}`)}
+              </td>
+
               <td>
                 {user.posts} {t("units.posts")}
               </td>
