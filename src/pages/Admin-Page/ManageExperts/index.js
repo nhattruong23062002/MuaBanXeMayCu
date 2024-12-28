@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ManageExperts.css";
+import ChartBarExperts from "./RechartExperts";
 import {
   FaPlus,
   FaTrashAlt,
@@ -19,7 +20,7 @@ const ManageExperts = () => {
       email: "A@gmail.com",
       city: "Đà Nẵng",
       status: t("statuses.active"),
-      experience: "5 năm",
+      experience: "5",
       reputation: "85%",
     },
     {
@@ -27,7 +28,7 @@ const ManageExperts = () => {
       email: "B@gmail.com",
       city: "Hà Nội",
       status: t("statuses.inactive"),
-      experience: "5 năm",
+      experience: "5",
       reputation: "95%",
     },
     {
@@ -35,7 +36,7 @@ const ManageExperts = () => {
       email: "Hung@gmail.com",
       city: "Huế",
       status: t("statuses.active"),
-      experience: "2 năm",
+      experience: "2",
       reputation: "99%",
     },
     {
@@ -43,13 +44,16 @@ const ManageExperts = () => {
       email: "Do12@gmail.com",
       city: "Kontum",
       status: t("statuses.active"),
-      experience: "4 năm",
+      experience: "4",
       reputation: "97%",
     },
   ];
 
   const [searchTerm, setSearchTerm] = useState(""); // Lưu từ khóa tìm kiếm
   const [filteredData, setFilteredData] = useState(experts); // Lưu dữ liệu được lọc
+  // State quản lý biểu đồ
+  const [selectedCard, setSelectedCard] = useState(null); // Quản lý card được chọn
+  const [isChartVisible, setChartVisible] = useState(false); // Trạng thái hiển thị biểu đồ
 
   // Xử lý tìm kiếm
   const handleSearch = (e) => {
@@ -66,79 +70,44 @@ const ManageExperts = () => {
 
     setFilteredData(filtered || []); // Cập nhật dữ liệu đã lọc
   };
+  // Xử lý khi bấm vào card
+  const handleCardClick = (cardId) => {
+    setSelectedCard(cardId);
+    setChartVisible(true); // Hiển thị biểu đồ
+  };
+
+  // Xử lý khi đóng biểu đồ
+  const handleCloseChart = () => {
+    setChartVisible(false); // Ẩn biểu đồ
+  };
 
   return (
     <div className="manage-experts-container">
       <h1>{t("title")}</h1>
       {/* Header */}
       <div className="manage-experts-header">
-        <h2>{t("header")}</h2>
-        <button className="manage-experts-add-user-btn">
-          <FaPlus /> {t("actions.addUser")}
-        </button>
       </div>
 
-      {/* Summary Cards */}
-      <div className="manage-experts-summary-cards">
-        <div className="manage-experts-card">
-          <p>{t("summary.totalUsers")}</p>
-          <h3>
-            45 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="growth-indicator">
-            <FaChartLine className="chart-icon" />
-            5.0%
-          </small>
-        </div>
-        <div className="manage-experts-card">
-          <p>{t("summary.active")}</p>
-          <h3>
-            15 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="growth-indicator">
-            <FaChartLine className="chart-icon" />
-            5.0%
-          </small>
-        </div>
-        <div className="manage-experts-card">
-          <p>{t("summary.newUser")}</p>
-          <h3>
-            20 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="growth-indicator">
-            <FaChartLine className="chart-icon" />
-            15.0%
-          </small>
-        </div>
-        <div className="manage-experts-card">
-          <p>{t("summary.inactive")}</p>
-          <h3>
-            5 <span>{t("summary.users")}</span>
-          </h3>
-          <small className="decrease-indicator">
-            <FaChartLine className="chart-icon decrease" />
-            15%
-          </small>
-        </div>
-      </div>
 
-      {/* Actions */}
-      <div className="manage-experts-actions">
+
+
+      {/* Action Section */}
+      <div className="flex flex-wrap items-center gap-4 mb-6">
         <input
           type="text"
           placeholder={t("actions.searchPlaceholder")}
-          className="manage-experts-search-input"
+          className="flex-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
           value={searchTerm}
           onChange={handleSearch}
         />
-        <button className="manage-experts-delete-btn">
-          <FaTrashAlt className="btn-experts-icon" /> {t("actions.delete")}
+        <button className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700 flex items-center gap-2">
+          <FaTrashAlt /> {t("actions.delete")}
         </button>
-        <button className="manage-experts-export-btn">
-          <FaFileExport className="btn-experts-icon" /> {t("actions.export")}
+        <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 flex items-center gap-2">
+          <FaFileExport /> {t("actions.export")}
         </button>
-        <button className="manage-experts-filter-btn">
-          <FaFilter className="btn-experts-icon" /> {t("actions.filter")}
+        <button className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 flex items-center gap-2">
+          <FaFilter /> {t("actions.filter")}
         </button>
       </div>
 
@@ -152,7 +121,6 @@ const ManageExperts = () => {
             <th>{t("tableHeaders.name")}</th>
             <th>{t("tableHeaders.email")}</th>
             <th>{t("tableHeaders.city")}</th>
-            <th>{t("tableHeaders.status")}</th>
             <th>{t("tableHeaders.experience")}</th>
             <th>{t("tableHeaders.reputation")}</th>
             <th>{t("tableHeaders.actions")}</th>
@@ -168,24 +136,19 @@ const ManageExperts = () => {
               <td>{expert.email}</td>
               <td>{expert.city}</td>
               <td>
-                <span
-                  className={
-                    expert.status === t("statuses.active")
-                      ? "manage-experts-status-active"
-                      : "manage-experts-status-inactive"
-                  }
-                >
-                  ●
-                </span>
-                {expert.status}
+                {expert.experience} {t("yearexp.experience")}
               </td>
-              <td>{expert.experience}</td>
               <td>{expert.reputation}</td>
-              <td>
-                <button className="manage-experts-edit-btn">
-                  <FaEdit /> {t("actions.edit")}
+              <td className="flex space-x-4">
+                <button className="flex items-center px-4 py-2 manage-experts-edit-btn">
+                  <FaEdit /> {t("actions.examine")}
+                </button>
+                <button className="flex items-center px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600">
+                  <FaTrashAlt className="mr-2" />
+                  {t("actions.delete")}
                 </button>
               </td>
+
             </tr>
           ))}
         </tbody>

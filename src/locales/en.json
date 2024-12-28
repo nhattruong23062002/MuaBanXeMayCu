@@ -7,7 +7,10 @@
     "messages": "Messages",
     "account_verification": "Account Verification",
     "language": "Language",
-    "logout": "Logout"
+    "logout": "Logout",
+    "favorite_product": "Favorite product",
+    "favorite_store": "Favorite store",
+    "register_expert": "Register for an expert account"
   },
   "detailMoto": {
     "title": "Honda SH 125i",
@@ -159,7 +162,6 @@
     },
     "bikeListTitle": "Bike List",
     "contactButton": "Contact information"
-
   },
   "login": {
     "title": "Login",
@@ -270,11 +272,11 @@
   },
   "hidePost": {
     "title": "Hide post {{name}}",
-    "description": "When you've sold the product or no longer want it displayed on Vipxe, select 'Hide Post'.",
+    "description": "When you've sold the product or no longer want it displayed on K-bro Motobike, select 'Hide Post'.",
     "reasonPrompt": "Please select a reason to hide the post:",
     "reasons": [
       "No longer want to sell",
-      "Sold through Vipxe",
+      "Sold",
       "Sold through other channels",
       "Annoyed by brokers/posting services",
       "Other"
@@ -315,7 +317,7 @@
       {
         "name": "Thanh Tung Motorbikes",
         "message": "Hi, what documents do I need to buy a bike from you?",
-        "avatar":"https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
+        "avatar": "https://png.pngtree.com/png-clipart/20200720/original/pngtree-wing-and-motorbike-logo-png-image_4358051.jpg",
         "date": "12/10/2024",
         "time": "1:54 PM"
       }
@@ -444,12 +446,8 @@
     "save": "Save Changes"
   },
   "navbar": {
-    "home": "Home",
-    "expert": "Experts",
-    "post": "Post",
-    "store": "Store",
-    "logout": "Logout",
-    "search": "Search..."
+    "adminPageTitle": "Admin Management Page",
+    "logout": "Logout"
   },
   "sidebar": {
     "title": "Admin Management",
@@ -501,7 +499,7 @@
       "experience": "Experience:",
       "experiencePlaceholder": "Enter experience",
       "certificate": "Certificate documents:",
-      "price": "Price:",
+      "services": "Services provided",
       "pricePlaceholder": "Enter price",
       "timeSlots": "Available time slots:"
     },
@@ -520,6 +518,7 @@
   "managePosts": {
     "title": "Manage Posts",
     "searchPlaceholder": "Enter title or ID",
+    "choosecity": "Select city location",
     "categories": {
       "default": "Select category",
       "bike": "Motorbike",
@@ -556,7 +555,7 @@
       {
         "title": "Sell used Wave motorbike",
         "type": "Motorbike",
-"location": "Hai Phong"
+        "location": "Hai Phong"
       },
       {
         "title": "Sell used Airblack motorbike",
@@ -586,6 +585,10 @@
       "searchPlaceholder": "Search Users",
       "edit": "Edit"
     },
+    "roles": {
+      "user": "User",
+      "expert": "Expert"
+    },
     "tableHeaders": {
       "name": "Name",
       "email": "Email",
@@ -609,6 +612,13 @@
       "haNoi": "Ha Noi",
       "hue": "Hue",
       "kontum": "Kontum"
+    },
+    "map": {
+      "maptile": "Chart: {{card}}",
+      "totalUsers": "Total Users",
+      "active": "Active Users",
+      "newUsers": "New Users",
+      "inactive": "Inactive Users"
     }
   },
   "handleComplaints": {
@@ -643,7 +653,6 @@
       "user": "User"
     }
   },
-
   "manageExperts": {
     "title": "Manage Experts",
     "header": "Experts",
@@ -664,7 +673,8 @@
       "delete": "Delete",
       "export": "Export",
       "filter": "Filter",
-      "edit": "Edit"
+      "edit": "Edit",
+      "examine": "Examine"
     },
     "tableHeaders": {
       "name": "Name",
@@ -674,6 +684,16 @@
       "experience": "Experience",
       "reputation": "Reputation",
       "actions": "Actions"
+    },
+    "yearexp": {
+      "experience": "Years"
+    },
+    "map": {
+      "maptile": "Chart: {{card}}",
+      "totalUsers": "Total Users",
+      "active": "Active Users",
+      "newUsers": "New Users",
+      "inactive": "Inactive Users"
     }
   },
   "contactModal": {
@@ -693,11 +713,34 @@
     "close": "Close"
   },
   "reportPage": {
-    "title": "Please provide the information so that K-Sparta Motobike can contact you when necessary!",
+    "title": "Please provide the information so that K-Bro Motobike can contact you when necessary!",
     "username": "Your Name",
     "phoneNumber": "Phone Number",
     "email": "Your Email (Optional)",
     "description": "Detailed Description (Required)",
     "submit": "Submit Report"
-  }  
+  },
+  "favoriteStore": {
+    "title": "Favorite Store",
+    "sales": "Sales",
+    "favourite": "Favourite",
+    "trustedPartner": "Trusted Partner"
+  },
+  "favoriteProduct": {
+    "title": "Favorite products"
+  },
+  "registerExpert": {
+    "title": "Register for an expert account",
+    "fullName": "Full name",
+    "address": "Address",
+    "dob": "Date of birth",
+    "experience": "Years of experience",
+    "workUnit": "Work unit",
+    "id": "Certificate",
+    "fullNamePlaceholder": "Enter full name",
+    "addressPlaceholder": "Enter address",
+    "experiencePlaceholder": "Enter years of experience",
+    "workUnitPlaceholder": "Enter work unit",
+    "confirm": "Confirm"
+  }
 }

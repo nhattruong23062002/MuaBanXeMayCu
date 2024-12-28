@@ -1,7 +1,10 @@
 html,
 body {
   background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
+
 .App {
   text-align: center;
   font-family: sans-serif;
@@ -27,12 +30,12 @@ body {
 
 .main-container {
   display: flex;
+  flex-wrap: wrap; /* Cho phép nội dung xuống dòng khi không đủ chỗ */
 }
 
 .content {
-  margin-left: 250px; /* Đảm bảo phần nội dung không bị che khuất bởi Sidebar */
   padding: 20px;
-  width: 100%;
+  width: 100%; /* Đảm bảo nội dung chiếm toàn bộ chiều rộng */
 }
 
 /* Đảm bảo Navbar luôn ở trên */
@@ -60,4 +63,53 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Responsive Styles */
+
+/* Màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 10px;
+  }
+
+  .main-container {
+    flex-direction: column; /* Chuyển sang layout cột */
+    align-items: center;
+  }
+
+  .content {
+    padding: 10px; /* Giảm padding để tiết kiệm không gian */
+  }
+
+  .Navbar {
+    height: 50px;
+    background-color: #333; /* Màu nền navbar */
+  }
+}
+
+/* Màn hình nhỏ hơn 480px */
+@media (max-width: 480px) {
+  .App-logo {
+    height: 30vmin; /* Giảm kích thước logo */
+  }
+
+  .Navbar {
+    font-size: 14px; /* Giảm kích thước font chữ trong Navbar */
+  }
+
+  .content {
+    padding: 5px; /* Giảm padding hơn nữa */
+  }
+
+  .loader {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.select-dropdown {
+  white-space: nowrap;      /* Không cho phép xuống dòng */
+  overflow: hidden;         /* Ẩn nội dung vượt quá kích thước */
+  text-overflow: ellipsis;  /* Thêm dấu "..." khi nội dung bị cắt */
 }

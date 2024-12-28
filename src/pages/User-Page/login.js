@@ -13,6 +13,7 @@ function LoginForm() {
   const fakeUsers = [
     { email: "user@gmail.com", password: "user123", role: "user" },
     { email: "admin@gmail.com", password: "admin123", role: "admin" },
+    { email: "expert@gmail.com", password: "expert123", role: "expert" },
   ];
 
   const handleLogin = () => {
@@ -21,15 +22,16 @@ function LoginForm() {
     );
 
     if (user) {
-      localStorage.setItem(
+      localStorage.setItem( 
         "auth",
         JSON.stringify({ email: user.email, role: user.role })
       );
 
-      // Điều hướng với reload
       if (user.role === "user") {
         window.location.href = "/";
       } else if (user.role === "admin") {
+        window.location.href = "/admin/manage-posts";
+      } else if (user.role === "expert") {
         window.location.href = "/admin/manage-appointments";
       }
     } else {

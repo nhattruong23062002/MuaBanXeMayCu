@@ -7,7 +7,10 @@
     "messages": "Tin nhắn",
     "account_verification": "Định danh tài khoản",
     "language": "Ngôn ngữ",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "favorite_product": "Sản phẩm yêu thích",
+    "favorite_store": "Cửa hàng yêu thích",
+    "register_expert": "Đăng ký tài khoản chuyên gia"
   },
   "detailMoto": {
     "title": "Honda SH 125i",
@@ -269,11 +272,11 @@
   },
   "hidePost": {
     "title": "Ẩn tin {{name}}",
-    "description": "Khi bạn đã bán được hàng, hoặc không muốn tin xuất hiện trên Vipxe, hãy chọn 'Ẩn tin'.",
+    "description": "Khi bạn đã bán được hàng, hoặc không muốn tin xuất hiện trên K-Bro Motobike, hãy chọn 'Ẩn tin'.",
     "reasonPrompt": "Vui lòng chọn lý do ẩn tin:",
     "reasons": [
       "Không muốn bán nữa",
-      "Đã bán qua trang Vipxe",
+      "Đã bán",
       "Đã bán qua các kênh khác",
       "Tôi bị làm phiền vì môi giới/dịch vụ đăng tin",
       "Khác"
@@ -443,12 +446,8 @@
     "save": "Lưu thay đổi"
   },
   "navbar": {
-    "home": "Trang chủ",
-    "expert": "Chuyên gia",
-    "post": "Đăng tin",
-    "store": "Cửa hàng",
-    "logout": "Đăng xuất",
-    "search": "Tìm kiếm..."
+    "adminPageTitle": "Trang quản lý Admin",
+    "logout": "Đăng xuất"
   },
   "sidebar": {
     "title": "Quản lý của admin",
@@ -505,8 +504,8 @@
       "experience": "Kinh nghiệm:",
       "experiencePlaceholder": "Nhập kinh nghiệm",
       "certificate": "Giấy tờ chứng chỉ:",
-      "price": "Mức giá:",
-      "pricePlaceholder": "Nhập mức giá",
+      "services": "Dịch vụ cung cấp:",
+      "servicesPlaceholder": "Nhập dịch vụ cung cấp",
       "timeSlots": "Giờ trống lịch:"
     },
     "preview": {
@@ -524,6 +523,7 @@
   "managePosts": {
     "title": "Quản lý bài đăng",
     "searchPlaceholder": "nhập tiêu đề hoặc ID",
+    "choosecity": "Chọn địa điểm thành phố",
     "categories": {
       "default": "Chọn danh mục",
       "bike": "Xe Máy số",
@@ -577,7 +577,7 @@
   "manageUsers": {
     "title": "Quản lý người dùng",
     "summaryCards": {
-      "totalUsers": "Tổng số người dùng",
+      "totalUsers": "Tổng số Users",
       "active": "Hoạt động",
       "newUsers": "Người dùng mới",
       "inactive": "Không hoạt động"
@@ -588,7 +588,12 @@
       "export": "Xuất dữ liệu",
       "filter": "Bộ lọc",
       "searchPlaceholder": "Tìm kiếm người dùng",
-      "edit": "Chỉnh sửa"
+      "edit": "Chỉnh sửa",
+      "examine": "Duyệt"
+    },
+    "roles": {
+      "user": "Người dùng",
+      "expert": "Chuyên gia"
     },
     "tableHeaders": {
       "name": "Tên",
@@ -613,9 +618,20 @@
       "haNoi": "Hà Nội",
       "hue": "Huế",
       "kontum": "Kontum"
+    },
+    "map": {
+      "maptile": "Biểu đồ: {{card}}",
+      "totalUsers": "Tổng số người dùng",
+      "active": "Người dùng hoạt động",
+      "newUsers": "Người dùng mới",
+      "inactive": "Người dùng không hoạt động"
+    },
+    "role": {
+      "title": "Vai trò",
+      "user": "Người dùng",
+      "expert": "Chuyên gia"
     }
   },
-
   "handleComplaints": {
     "title": "Danh sách khiếu nại",
     "status": {
@@ -628,7 +644,8 @@
       "export": "Xuất dữ liệu",
       "filter": "Bộ lọc",
       "approve": "Phê duyệt",
-      "reject": "Từ chối"
+      "reject": "Từ chối",
+      "examine": "Duyệt"
     },
     "tableHeaders": {
       "name": "Tên",
@@ -668,7 +685,8 @@
       "delete": "Xóa",
       "export": "Xuất dữ liệu",
       "filter": "Lọc",
-      "edit": "Chỉnh sửa"
+      "edit": "Chỉnh sửa",
+      "examine": "Duyệt"
     },
     "tableHeaders": {
       "name": "Tên",
@@ -678,6 +696,16 @@
       "experience": "Kinh nghiệm",
       "reputation": "Độ uy tín",
       "actions": "Hành động"
+    },
+    "yearexp": {
+      "experience": "Năm"
+    },
+    "map": {
+      "maptile": "Biểu đồ: {{card}}",
+      "totalUsers": "Tổng số người dùng",
+      "active": "Người dùng hoạt động",
+      "newUsers": "Người dùng mới",
+      "inactive": "Người dùng không hoạt động"
     }
   },
   "contactModal": {
@@ -696,12 +724,35 @@
     "copy": "Sao chép",
     "close": "Đóng"
   },
-  "reportPage":{
-    "title": "Vui lòng để lại thông tin để K-Sparta Motobike có thể liên lạc với bạn khi cần thiết!",
+  "reportPage": {
+    "title": "Vui lòng để lại thông tin để K-Bro Motobike có thể liên lạc với bạn khi cần thiết!",
     "username": "Tên của bạn",
     "phoneNumber": "Số điện thoại",
     "email": "Email của bạn (không bắt buộc)",
     "description": "Mô tả chi tiết (bắt buộc nhập)",
     "submit": "Gửi Báo Cáo"
-  }  
+  },
+  "favoriteStore": {
+    "title": "Cửa hàng yêu thích",
+    "sales": "Đã bán",
+    "favourite": "Yêu thích",
+    "trustedPartner": "Đối tác uy tín"
+  },
+  "favoriteProduct": {
+    "title": "Sản phẩm yêu thích"
+  },
+  "registerExpert": {
+    "title": "Đăng ký tài khoản chuyên gia",
+    "fullName": "Họ và tên",
+    "address": "Địa chỉ",
+    "dob": "Ngày sinh",
+    "experience": "Số năm kinh nghiệm",
+    "workUnit": "Đơn vị công tác",
+    "id": "Giấy tờ chứng chỉ",
+    "fullNamePlaceholder": "Nhập họ và tên",
+    "addressPlaceholder": "Nhập địa chỉ",
+    "experiencePlaceholder": "Nhập số năm kinh nghiệm",
+    "workUnitPlaceholder": "Nhập đơn vị công tác",
+    "confirm": "Xác nhận"
+  }
 }

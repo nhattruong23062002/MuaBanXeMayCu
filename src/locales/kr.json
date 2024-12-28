@@ -7,7 +7,10 @@
     "messages": "메시지",
     "account_verification": "계정 확인",
     "language": "언어",
-    "logout": "로그아웃"
+    "logout": "로그아웃",
+    "favorite_product": "좋아하는 제품",
+    "favorite_store": "좋아하는 매장",
+    "register_expert": "전문가 계정 등록"
   },
   "detailMoto": {
     "title": "혼다 SH 125i",
@@ -159,7 +162,6 @@
     },
     "bikeListTitle": "오토바이 목록",
     "contactButton": "연락처 정보"
-
   },
   "login": {
     "title": "로그인",
@@ -173,7 +175,7 @@
     "registerLink": "지금 등록하세요"
   },
   "register": {
-    "title": "가입",
+    "title": "회원가입",
     "name": "성명",
     "email": "이메일",
     "phone": "전화번호",
@@ -184,7 +186,7 @@
     "phonePlaceholder": "전화번호를 입력하세요",
     "passwordPlaceholder": "비밀번호를 입력하세요",
     "confirmPasswordPlaceholder": "비밀번호를 확인하세요",
-    "registerButton": "가입",
+    "registerButton": "회원가입",
     "loginPrompt": "이미 계정이 있으신가요?",
     "loginLink": "지금 로그인하세요"
   },
@@ -270,11 +272,11 @@
   },
   "hidePost": {
     "title": "게시물 숨기기 {{name}}",
-    "description": "제품을 판매했거나 더 이상 Vipxe에 표시하고 싶지 않을 경우 '게시물 숨기기'를 선택하세요.",
+    "description": "제품을 판매했거나 더 이상 K-bro Motobike에 표시하고 싶지 않을 경우 '게시물 숨기기'를 선택하세요.",
     "reasonPrompt": "게시물을 숨길 이유를 선택하세요:",
     "reasons": [
       "더 이상 판매를 원하지 않음",
-      "Vipxe를 통해 판매 완료",
+      "판매된",
       "다른 채널을 통해 판매 완료",
       "중개인/게시 서비스로 인해 불편함",
       "기타"
@@ -444,12 +446,8 @@
     "save": "변경 사항 저장"
   },
   "navbar": {
-    "home": "홈",
-    "expert": "전문가",
-    "post": "게시물",
-    "store": "상점",
-    "logout": "로그아웃",
-    "search": "검색..."
+    "adminPageTitle": "관리자 관리 페이지",
+    "logout": "로그아웃"
   },
   "sidebar": {
     "title": "관리자 관리",
@@ -506,7 +504,7 @@
       "experience": "경험:",
       "experiencePlaceholder": "경험을 입력하세요",
       "certificate": "증명서 문서:",
-      "price": "가격:",
+      "services": "제공되는 서비스",
       "pricePlaceholder": "가격을 입력하세요",
       "timeSlots": "가능한 시간:"
     },
@@ -525,6 +523,7 @@
   "managePosts": {
     "title": "게시물 관리",
     "searchPlaceholder": "제목 또는 ID를 입력하세요",
+    "choosecity": "위치를 선택하세요",
     "categories": {
       "default": "카테고리 선택",
       "bike": "모터바이크",
@@ -583,6 +582,10 @@
       "newUsers": "새로운 사용자",
       "inactive": "비활성화"
     },
+    "roles": {
+      "user": "사용자",
+      "expert": "전문가"
+    },
     "actions": {
       "addUser": "사용자 추가",
       "delete": "삭제",
@@ -614,6 +617,13 @@
       "haNoi": "하노이",
       "hue": "후에",
       "kontum": "꽁뚬"
+    },
+    "map": {
+      "maptile": "차트: {{card}}",
+      "totalUsers": "총 사용자",
+      "active": "활성 사용자",
+      "newUsers": "새 사용자",
+      "inactive": "비활성 사용자"
     }
   },
   "handleComplaints": {
@@ -668,7 +678,8 @@
       "delete": "삭제",
       "export": "내보내기",
       "filter": "필터",
-      "edit": "수정"
+      "edit": "수정",
+      "examine": "검사하다"
     },
     "tableHeaders": {
       "name": "이름",
@@ -678,13 +689,20 @@
       "experience": "경험",
       "reputation": "신뢰도",
       "actions": "작업"
+    },
+    "map": {
+      "maptile": "차트: {{card}}",
+      "totalUsers": "총 사용자",
+      "active": "활성 사용자",
+      "newUsers": "새 사용자",
+      "inactive": "비활성 사용자"
     }
   },
   "contactModal": {
     "contactInfoTitle": "연락처 정보",
-   "call": "부르다",
-   "viewAddress": "주소",
-   "chat": "문자"
+    "call": "부르다",
+    "viewAddress": "주소",
+    "chat": "문자"
   },
   "mapModal": {
     "location": "위치",
@@ -697,11 +715,34 @@
     "close": "닫다"
   },
   "reportPage": {
-    "title": "K-Sparta Motobike와 연락할 수 있도록 정보를 남겨주세요.",
+    "title": "K-Bro Motobike와 연락할 수 있도록 정보를 남겨주세요.",
     "username": "당신의 이름",
     "phoneNumber": "전화번호",
     "email": "당신의 이메일 (선택 사항)",
     "description": "상세 설명 (필수 입력)",
     "submit": "보고서 제출"
+  },
+  "favoriteStore": {
+    "title": "좋아하는 가게",
+    "sales": "판매",
+    "favourite": "즐겨찾기",
+    "trustedPartner": "신뢰할 수 있는 파트너"
+  },
+  "favoriteProduct": {
+    "title": "좋아하는 제품"
+  },
+  "registerExpert": {
+    "title": "전문가 계정 등록",
+    "fullName": "전체 이름",
+    "address": "주소",
+    "dob": "생년월일",
+    "experience": "경험 연수",
+    "workUnit": "작업 단위",
+    "id": "증명서 문서",
+    "fullNamePlaceholder": "성명을 입력하세요",
+    "addressPlaceholder": "주소를 입력하세요",
+    "experiencePlaceholder": "경험 기간을 입력하세요",
+    "workUnitPlaceholder": "작업 단위 입력",
+    "confirm": "확인"
   }
 }

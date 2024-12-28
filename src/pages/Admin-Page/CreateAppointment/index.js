@@ -21,7 +21,7 @@ const CreateAppointment = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 bg-[#f8f8ff] p-6 border border-gray-300 rounded-lg">
+    <div className="max-w-[800px] mx-auto mt-10 bg-[#f8f8ff] p-8 border border-gray-300 rounded-lg">
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
         {t("title")}
       </h2>
@@ -113,11 +113,10 @@ const CreateAppointment = () => {
 
         <div className="flex flex-col">
           <label className="font-semibold text-gray-700">
-            {t("form.price")}
+            {t("form.services")}
           </label>
-          <input
+          <textarea
             type="text"
-            placeholder={t("form.pricePlaceholder")}
             className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>

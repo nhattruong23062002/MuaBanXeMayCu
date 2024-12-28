@@ -31,7 +31,9 @@ import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
 import Report from "./pages/User-Page/report";
 import RainEffect from "./components/RainEffect";
-
+import FavoriteStores from "./pages/User-Page/favoriteStore";
+import FavoriteProducts from "./pages/User-Page/favoriteProduct";
+import RegisterExpert from "./pages/User-Page/registerExpert";
 
 const App = () => {
   return (
@@ -59,6 +61,9 @@ const App = () => {
           <Route path="/editPost/:id" element={<EditPost />} />
           <Route path="/listSender" element={<MessageList />} />
           <Route path="report" element={<Report />} />
+          <Route path="favorite-store" element={<FavoriteStores />} />
+          <Route path="favorite-products" element={<FavoriteProducts />} />
+          <Route path="register-expert" element={<RegisterExpert />} />
 
           <Route
             path="/admin/manage-appointments"
