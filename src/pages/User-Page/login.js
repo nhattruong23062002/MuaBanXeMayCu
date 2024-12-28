@@ -30,7 +30,7 @@ function LoginForm() {
       if (user.role === "user") {
         window.location.href = "/";
       } else if (user.role === "admin") {
-        window.location.href = "/admin/manage-posts";
+        window.location.href = "/admin/dashboard";
       } else if (user.role === "expert") {
         window.location.href = "/admin/manage-appointments";
       }
