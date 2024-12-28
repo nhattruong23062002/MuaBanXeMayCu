@@ -103,9 +103,8 @@ function DetailMoto() {
                   src={image}
                   alt={`Thumbnail ${index + 1}`}
                   onClick={() => setActiveImage(image)}
-                  className={`w-32 h-24 object-cover rounded-md cursor-pointer hover:ring-2 ring-[#d59648] ${
-                    activeImage === image ? "ring-2 ring-[#d59648]" : ""
-                  }`}
+                  className={`w-32 h-24 object-cover rounded-md cursor-pointer hover:ring-2 ring-[#d59648] ${activeImage === image ? "ring-2 ring-[#d59648]" : ""
+                    }`}
                 />
               ))}
             </div>
