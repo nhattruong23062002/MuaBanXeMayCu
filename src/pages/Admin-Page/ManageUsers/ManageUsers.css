@@ -1,18 +1,24 @@
 /* Container chính */
 .manage-users-container {
-  display: grid;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 20px;
   background-color: #f8f8ff;
-  border-radius: 8px; /* Bo góc nếu cần */
-  margin-right: 200px;
+  border-radius: 8px; /* Bo góc */
+  margin: 0 auto; /* Căn giữa container */
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng shadow nhẹ */
 }
+
+/* Tiêu đề */
 .manage-users-container h1 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
+  color: #333;
 }
 
 /* Header */
@@ -20,6 +26,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Đảm bảo các phần tử xuống dòng */
+  gap: 10px;
   font-weight: bold;
 }
 
@@ -32,7 +40,9 @@
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 .add-user-btn:hover {
   background-color: #3498db;
 }
@@ -45,11 +55,13 @@
 .summary-cards {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Đảm bảo các card xuống dòng trên màn hình nhỏ */
+  gap: 15px;
   margin: 20px 0;
 }
 
 .card {
-  width: 23%;
+  width: 23%; /* Tỷ lệ phần trăm chiều rộng */
   background-color: #ebe0e0;
   padding: 15px;
   border: 1px solid #ddd;
@@ -66,49 +78,47 @@
 
 .card h3 {
   margin: 10px 0;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
 }
+
 .card span {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
 }
 
 .decrease-indicator,
 .growth-indicator {
-  display: inline-flex; /* Đảm bảo icon và chữ nằm trên cùng một hàng */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  gap: 5px; /* Khoảng cách giữa icon và chữ */
-  color: #ffffff; /* Màu chữ trắng */
-  padding: 4px 8px; /* Khoảng cách giữa nội dung và viền */
-  border-radius: 4px; /* Bo tròn góc */
-  font-size: 12px; /* Cỡ chữ nhỏ */
-  font-weight: bold; /* Chữ in đậm */
-  width: fit-content; /* Chiều rộng vừa đủ với nội dung */
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  width: fit-content;
 }
 
-/* Tùy chỉnh icon FaChartLine */
-.chart-icon {
-  font-size: 14px; /* Kích thước icon */
-  color: #ffffff; /* Màu trắng để phù hợp với nền */
-}
 .growth-indicator {
   background-color: #00bfff;
 }
+
 .decrease-indicator {
-  background-color: #ff4d4d; /* Màu nền đỏ */
+  background-color: #ff4d4d;
 }
 
-.chart-icon.decrease {
-  font-size: 14px; /* Kích thước icon */
-  transform: rotate(180deg); /* Quay icon ngược xuống để biểu thị giảm */
-  color: #ffffff; /* Màu trắng */
+.chart-icon {
+  font-size: 14px;
+  color: #ffffff;
 }
+
 /* Actions */
 .actions-users {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Đảm bảo xuống dòng trên màn hình nhỏ */
 }
 
 .actions-users input {
@@ -116,6 +126,8 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   flex-grow: 1;
+  width: calc(100% - 120px); /* Căn chỉnh khoảng cách trên màn hình nhỏ */
+  max-width: 300px;
 }
 
 .actions-users button {
@@ -127,12 +139,14 @@
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .delete-btn-users {
   background-color: #e74c3c;
   color: white;
 }
+
 .delete-btn-users:hover {
   background-color: #8a2317;
 }
@@ -141,6 +155,7 @@
   background-color: #2ecc71;
   color: white;
 }
+
 .export-btn-users:hover {
   background-color: #048138;
 }
@@ -149,6 +164,7 @@
   background-color: #f39c12;
   color: white;
 }
+
 .filter-btn-users:hover {
   background-color: #a56e14;
 }
@@ -157,6 +173,7 @@
 .users-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .users-table th,
@@ -164,16 +181,17 @@
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
+  font-size: 14px;
 }
 
 .users-table th {
   background-color: #f4f4f4;
+  font-size: 14px;
 }
 
 .users-table input[type="checkbox"] {
   transform: scale(1.2);
 }
-
 /* Status */
 .status-active {
   color: green;
@@ -184,7 +202,6 @@
   color: gray;
   margin-right: 5px;
 }
-
 /* Edit Button */
 .edit-btn-users {
   display: flex;
@@ -203,10 +220,31 @@
   background-color: #2980b9;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .summary-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+
+  .actions-users {
+    flex-wrap: wrap;
+  }
+
+  .actions-users input {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .manage-users-container {
     margin-right: 0;
-    padding: 10px;
+    padding: 15px;
   }
 
   .summary-cards {
@@ -221,11 +259,56 @@
 
   .actions-users {
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
   }
 
   .users-table th,
   .users-table td {
-    padding: 5px;
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .users-table,
+  .users-table tbody,
+  .users-table tr,
+  .users-table td,
+  .users-table th {
+    display: block;
+  }
+
+  .users-table tr {
+    margin-bottom: 10px;
+  }
+
+  .users-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .users-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+  }
+
+  .users-table th {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .actions-users {
+    flex-direction: column;
+    gap: 15px;
   }
 }

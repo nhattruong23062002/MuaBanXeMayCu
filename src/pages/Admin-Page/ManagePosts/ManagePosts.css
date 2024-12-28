@@ -1,14 +1,15 @@
 /* Container chính */
 .manage-posts-container {
-  display: grid;
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   padding: 20px;
   background-color: #f8f8ff;
-  border-radius: 8px; /* Bo góc nếu cần */
-  margin-right: 200px;
+  border-radius: 8px;
+  margin: 0 auto; /* Căn giữa toàn bộ container */
+  max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Thêm shadow nhẹ */
 }
+
 /* Responsive điều chỉnh */
 @media (max-width: 768px) {
   .manage-posts-container {
@@ -21,55 +22,67 @@
     padding: 10px;
   }
 }
+
+/* Tiêu đề */
 .manage-posts-container h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center; /* Căn giữa tiêu đề */
+  color: #333;
 }
 
 /* Thanh tìm kiếm và bộ lọc */
 .filter-section {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap; /* Đảm bảo xuống dòng trên màn hình nhỏ */
+  gap: 15px;
   margin: 15px 0;
-  flex-wrap: wrap; /* Giúp các phần tử xuống dòng khi không đủ chỗ */
+  justify-content: space-between; /* Cách đều các phần tử */
 }
 
 .filter-section input,
 .filter-section select {
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 14px; /* Kích thước chữ nhỏ hơn cho màn hình nhỏ */
-  width: 100%; /* Đảm bảo input chiếm đủ chiều rộng trên màn hình nhỏ */
-  max-width: 300px; /* Giới hạn tối đa chiều rộng */
+  font-size: 14px;
+  width: calc(33.33% - 10px); /* Chia đều 3 phần */
+  min-width: 200px; /* Đảm bảo không quá nhỏ */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .filter-section input,
+  .filter-section select {
+    width: 100%; /* Chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+  }
 }
 
 .ok-btn,
 .delete-btn-post {
-  padding: 8px 12px;
+  padding: 10px 15px;
   font-size: 14px;
   border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .ok-btn {
   background-color: #00bfff;
   color: white;
   border: none;
-  cursor: pointer;
-  font-weight: bold;
 }
 
 .ok-btn:hover {
-  background-color: #366f81;
+  background-color: #0078d7;
 }
 
 .delete-btn-post {
   background-color: #e74c3c;
   color: white;
   border: none;
-  cursor: pointer;
-  font-weight: bold;
 }
 
 .delete-btn-post:hover {
@@ -80,6 +93,7 @@
 .posts-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .posts-table th,
@@ -93,6 +107,7 @@
 .posts-table th {
   background-color: #f2f2f2;
   font-size: 14px;
+  color: #555;
 }
 
 .posts-table img {
@@ -109,8 +124,9 @@
   border: none;
   padding: 8px 12px;
   cursor: pointer;
-  margin-right: 5px;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin: 10px;
 }
 
 .approve-btn-post:hover {
@@ -130,76 +146,12 @@
   text-decoration: underline;
 }
 
-.filter-category-select {
-  width: 200px; /* Chiều rộng dropdown */
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .filter-section {
-    flex-wrap: wrap; /* Các thành phần xuống dòng */
-    justify-content: center;
-  }
-
+/* Responsive bảng */
+@media (max-width: 768px) {
   .posts-table th,
   .posts-table td {
     font-size: 13px;
-  }
-
-  .ok-btn,
-  .delete-btn-post {
-    font-size: 12px;
-    padding: 5px 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .manage-posts-container {
-    margin-right: 0;
-    padding: 15px;
-    text-align: left;
-  }
-
-  .filter-section {
-    flex-direction: column;
-    gap: 15px; /* Khoảng cách lớn hơn giữa các phần tử */
-  }
-
-  .filter-section input,
-  .filter-section select {
-    width: 100%; /* Chiếm toàn bộ chiều rộng */
-  }
-
-  .posts-table {
-    font-size: 12px;
-  }
-
-  .posts-table th,
-  .posts-table td {
-    padding: 8px; /* Giảm padding để tiết kiệm không gian */
-  }
-}
-
-@media (max-width: 480px) {
-  .manage-posts-container {
-    margin: 0 auto;
-    padding: 10px;
-  }
-
-  .filter-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .filter-section input,
-  .filter-section select {
-    width: 100%; /* Đảm bảo các phần tử xuống dòng đầy đủ */
+    padding: 8px;
   }
 
   .posts-table img {
@@ -210,12 +162,61 @@
   .ok-btn,
   .delete-btn-post {
     font-size: 12px;
-    padding: 5px 6px;
+    padding: 6px 8px;
   }
+}
 
+@media (max-width: 480px) {
   .posts-table th,
   .posts-table td {
     font-size: 12px;
     padding: 5px;
+  }
+
+  .posts-table img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ok-btn,
+  .delete-btn-post {
+    font-size: 12px;
+    padding: 5px 7px;
+  }
+}
+
+/* Hiển thị bảng dọc trên màn hình nhỏ */
+@media (max-width: 480px) {
+  .posts-table,
+  .posts-table tbody,
+  .posts-table tr,
+  .posts-table td,
+  .posts-table th {
+    display: block;
+  }
+
+  .posts-table tr {
+    margin-bottom: 10px;
+  }
+
+  .posts-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .posts-table td::before {
+    content: attr(data-label); /* Lấy nhãn từ th */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+  }
+
+  .posts-table th {
+    display: none; /* Ẩn tiêu đề bảng trên màn hình nhỏ */
   }
 }
