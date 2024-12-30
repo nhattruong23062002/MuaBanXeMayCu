@@ -601,7 +601,8 @@
       "status": "상태",
       "posts": "게시물 수",
       "transactions": "거래 수",
-      "actions": "작업"
+      "actions": "작업",
+      "role": "역할"
     },
     "status": {
       "active": "활성화",
@@ -624,6 +625,36 @@
       "active": "활성 사용자",
       "newUsers": "새 사용자",
       "inactive": "비활성 사용자"
+    }
+  },
+  "editUser": {
+    "title": "사용자 정보 수정",
+    "fields": {
+      "name": "이름",
+      "email": "이메일",
+      "city": "도시",
+      "status": "상태",
+      "posts": "게시물 수",
+      "transactions": "거래 수",
+      "role": "역할"
+    },
+    "choosecity": "위치를 선택하세요",
+    "status": {
+      "active": "활성",
+      "inactive": "비활성"
+    },
+    "roles": {
+      "user": "사용자",
+      "admin": "관리자",
+      "expert": "추이"
+    },
+    "buttons": {
+      "save": "저장",
+      "cancel": "취소"
+    },
+    "messages": {
+      "saved": "정보가 저장되었습니다!",
+      "cancelled": "변경 사항이 취소되었습니다!"
     }
   },
   "handleComplaints": {
@@ -759,6 +790,12 @@
     "topExpert": "주요 전문가",
     "nameExpert": "전문가 이름",
     "expertise": "전문 분야",
-    "numberBooking": "예약 수"
+    "numberBooking": "예약 수",
+    "money": "억 원",
+    "privateName": "매장",
+    "expert": "전문가",
+    "expertise1": "평가",
+    "expertise2": "기술 점검",
+    "expertise3": "감정"
   }
 }

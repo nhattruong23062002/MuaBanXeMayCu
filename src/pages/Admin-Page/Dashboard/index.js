@@ -40,15 +40,15 @@ const Dashboard = () => {
   ];
 
   const topStores = [
-    { name: "Cửa Hàng A", revenue: 50000000 },
-    { name: "Cửa Hàng B", revenue: 40000000 },
-    { name: "Cửa Hàng C", revenue: 30000000 },
+    { name: "A", revenue: 50000000 },
+    { name: "B", revenue: 40000000 },
+    { name: "C", revenue: 30000000 },
   ];
 
   const topExperts = [
-    { name: "Chuyên Gia A", expertise: "Định giá", cases: 120 },
-    { name: "Chuyên Gia B", expertise: "Kiểm tra kỹ thuật", cases: 90 },
-    { name: "Chuyên Gia C", expertise: "Thẩm định pháp lý", cases: 80 },
+    { name: "A", expertise: t("expertise1"), cases: 120 },
+    { name: "B", expertise: t("expertise2"), cases: 90 },
+    { name: "C", expertise: t("expertise3"), cases: 80 },
   ];
 
   return (
@@ -74,7 +74,7 @@ const Dashboard = () => {
             <p className="text-3xl font-bold text-green-600">120</p>
           </div>
         </div>
-       
+
         <div className="bg-white shadow rounded-lg p-4 flex items-center justify-center">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2">
@@ -99,16 +99,16 @@ const Dashboard = () => {
               <FaMoneyBillWave className="text-yellow-600 text-2xl" />
               <h2 className="text-lg font-medium">{t("totalRevenue")}</h2>
             </div>
-            <p className="text-3xl font-bold text-yellow-600">2,3 tỷ VNĐ</p>
+            <p className="text-3xl font-bold text-yellow-600">
+              2,3{t("money")}
+            </p>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-xl font-bold mb-4">
-          {t("topSellingCars")}
-          </h2>
+          <h2 className="text-xl font-bold mb-4">{t("topSellingCars")}</h2>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart
               data={topSellingData}
@@ -145,9 +145,7 @@ const Dashboard = () => {
         </div>
 
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-xl font-bold mb-4">
-           {t("weeklyTransaction")}
-          </h2>
+          <h2 className="text-xl font-bold mb-4">{t("weeklyTransaction")}</h2>
           <ResponsiveContainer width="98%" height={300}>
             <BarChart
               data={weeklyTransactionData}
@@ -166,22 +164,24 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-xl font-bold mb-4">
-          {t("topStore")}
-          </h2>
+          <h2 className="text-xl font-bold mb-4">{t("topStore")}</h2>
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
                 <th className="border-b p-2 font-medium">{t("nameStore")}</th>
-                <th className="border-b p-2 font-medium">{t("revenueStore")}</th>
+                <th className="border-b p-2 font-medium">
+                  {t("revenueStore")}
+                </th>
               </tr>
             </thead>
             <tbody>
               {topStores.map((store, index) => (
                 <tr key={index}>
-                  <td className="border-b p-2">{store.name}</td>
                   <td className="border-b p-2">
-                    {store.revenue.toLocaleString()} VNĐ
+                    {t("privateName")} {store.name}
+                  </td>
+                  <td className="border-b p-2">
+                    {store.revenue.toLocaleString()} VND
                   </td>
                 </tr>
               ))}
@@ -190,21 +190,23 @@ const Dashboard = () => {
         </div>
 
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-xl font-bold mb-4">
-          {t("topExpert")}
-          </h2>
+          <h2 className="text-xl font-bold mb-4">{t("topExpert")}</h2>
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
                 <th className="border-b p-2 font-medium">{t("nameExpert")}</th>
                 <th className="border-b p-2 font-medium">{t("expertise")}</th>
-                <th className="border-b p-2 font-medium">{t("numberBooking")}</th>
+                <th className="border-b p-2 font-medium">
+                  {t("numberBooking")}
+                </th>
               </tr>
             </thead>
             <tbody>
               {topExperts.map((expert, index) => (
                 <tr key={index}>
-                  <td className="border-b p-2">{expert.name}</td>
+                  <td className="border-b p-2">
+                    {t("Expert")} {expert.name}
+                  </td>
                   <td className="border-b p-2">{expert.expertise}</td>
                   <td className="border-b p-2">{expert.cases}</td>
                 </tr>

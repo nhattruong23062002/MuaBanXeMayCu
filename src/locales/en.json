@@ -596,7 +596,8 @@
       "status": "Status",
       "posts": "Posts",
       "transactions": "Transactions",
-      "actions": "Actions"
+      "actions": "Actions",
+      "role": "Role"
     },
     "status": {
       "active": "Active",
@@ -619,6 +620,36 @@
       "active": "Active Users",
       "newUsers": "New Users",
       "inactive": "Inactive Users"
+    }
+  },
+  "editUser": {
+    "title": "Edit User Information",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "city": "City",
+      "status": "Status",
+      "posts": "Number of Posts",
+      "transactions": "Transactions",
+      "role": "Role"
+    },
+    "choosecity": "Select city location",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "roles": {
+      "user": "User",
+      "admin": "Admin",
+      "expert": "Expert"
+    },
+    "buttons": {
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "messages": {
+      "saved": "Information has been saved!",
+      "cancelled": "Changes have been cancelled!"
     }
   },
   "handleComplaints": {
@@ -757,6 +788,12 @@
     "topExpert": "Top Outstanding Experts",
     "nameExpert": "Expert Name",
     "expertise": "Expertise",
-    "numberBooking": "Number of Appointments"
+    "numberBooking": "Number of Appointments",
+    "money": "billions VND",
+    "privateName": "Store",
+    "expert": "Expert",
+    "expertise1": "valuation",
+    "expertise2": "Technical Check",
+    "expertise3": "Appraisal"
   }
 }

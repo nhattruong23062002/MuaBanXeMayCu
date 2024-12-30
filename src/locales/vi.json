@@ -602,7 +602,8 @@
       "status": "Trạng thái",
       "posts": "Số bài viết",
       "transactions": "Số giao dịch",
-      "actions": "Hành động"
+      "actions": "Hành động",
+      "role": "Vai trò"
     },
     "status": {
       "active": "Hoạt động",
@@ -625,11 +626,36 @@
       "active": "Người dùng hoạt động",
       "newUsers": "Người dùng mới",
       "inactive": "Người dùng không hoạt động"
+    }
+  },
+  "editUser": {
+    "title": "Chỉnh sửa thông tin người dùng",
+    "fields": {
+      "name": "Họ và tên",
+      "email": "Email",
+      "city": "Thành phố",
+      "status": "Trạng thái",
+      "posts": "Số bài đăng",
+      "transactions": "Số giao dịch",
+      "role": "Vai trò"
     },
-    "role": {
-      "title": "Vai trò",
+    "choosecity": "Chọn địa điểm thành phố",
+    "status": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "roles": {
       "user": "Người dùng",
+      "admin": "Quản trị viên",
       "expert": "Chuyên gia"
+    },
+    "buttons": {
+      "save": "Lưu",
+      "cancel": "Hủy"
+    },
+    "messages": {
+      "saved": "Thông tin đã được lưu!",
+      "cancelled": "Thay đổi đã bị hủy!"
     }
   },
   "handleComplaints": {
@@ -765,10 +791,16 @@
     "weeklyTransaction": " Số Tiền Giao Dịch Trong Tuần",
     "topStore": " Cửa Hàng Có Doanh Thu Cao Nhất",
     "nameStore": "Tên Cửa Hàng",
-    "revenueStore":"Doanh thu",
+    "revenueStore": "Doanh thu",
     "topExpert": "Top Những Chuyên Gia Nổi Bật",
     "nameExpert": "Tên chuyên gia",
-    "expertise" : "Chuyên môn",
-    "numberBooking": "Số lần đã đặt hẹn"
+    "expertise": "Chuyên môn",
+    "numberBooking": "Số lần đã đặt hẹn",
+    "money": "tỷ VNĐ",
+    "privateName": "Cửa hàng",
+    "expert": "Chuyên gia",
+    "expertise1": "Định giá",
+    "expertise2": "Kiểm tra kỹ thuật",
+    "expertise3": "Thẩm định"
   }
 }
