@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const CreateAppointment = () => {
-  const { t } = useTranslation("createAppointment"); // Sử dụng namespace i18n
-  const [certificateImages, setCertificateImages] = useState([]); // State lưu trữ danh sách ảnh
+const ProfileExpert = () => {
+  const { t } = useTranslation("profileExpert");
+  const [certificateImages, setCertificateImages] = useState([]);
+  const [formData, setFormData] = useState({
+    name: "Nguyễn Văn A",
+    phone: "0942348382",
+    address: "Sơn Trà, Đà Nẵng",
+    date: "23/03/1994",
+    experience: "4",
+    services: "Kiểm tra dấu hiệu xe tai nạn, xe lên đời & xe trộm cắp, Ước tính số km thực tế của xe, Phát hiện lỗi phun xăng, cảm biến bằng thiết bị chính xác, Đánh giá tổng quát và định giá xe kiểm tra",
+  });
 
-  // Xử lý khi chọn ảnh
-  const handleImageUpload = (event) => {
-    const files = Array.from(event.target.files); // Lấy danh sách file được chọn
-    const newImages = files.map((file) => URL.createObjectURL(file)); // Tạo URL cho từng ảnh
-    setCertificateImages([...certificateImages, ...newImages]); // Cập nhật danh sách ảnh
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  // Xử lý khi xóa ảnh
+  const handleImageUpload = (event) => {
+    const files = Array.from(event.target.files);
+    const newImages = files.map((file) => URL.createObjectURL(file));
+    setCertificateImages([...certificateImages, ...newImages]);
+  };
+
   const handleImageRemove = (indexToRemove) => {
     const updatedImages = certificateImages.filter(
       (_, index) => index !== indexToRemove
     );
-    setCertificateImages(updatedImages); // Cập nhật danh sách ảnh sau khi xóa
+    setCertificateImages(updatedImages);
   };
 
   return (
@@ -32,6 +43,9 @@ const CreateAppointment = () => {
           </label>
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder={t("form.namePlaceholder")}
             className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
@@ -42,7 +56,22 @@ const CreateAppointment = () => {
           </label>
           <input
             type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
             placeholder={t("form.phonePlaceholder")}
+            className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="font-semibold text-gray-700">
+            {t("form.date")}
+          </label>
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
             className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
@@ -52,6 +81,9 @@ const CreateAppointment = () => {
           </label>
           <input
             type="text"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
             placeholder={t("form.addressPlaceholder")}
             className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
@@ -62,12 +94,14 @@ const CreateAppointment = () => {
           </label>
           <input
             type="text"
+            name="experience"
+            value={formData.experience}
+            onChange={handleChange}
             placeholder={t("form.experiencePlaceholder")}
             className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
-        {/* Upload nhiều ảnh */}
         <div className="flex flex-col">
           <label className="font-semibold text-gray-700">
             {t("form.certificate")}
@@ -81,7 +115,6 @@ const CreateAppointment = () => {
           />
         </div>
 
-        {/* Hiển thị ảnh xem trước */}
         {certificateImages.length > 0 && (
           <div className="mt-4">
             <p className="font-semibold text-gray-700 mb-2">
@@ -117,30 +150,12 @@ const CreateAppointment = () => {
           </label>
           <textarea
             type="text"
+            name="services"
+            value={formData.services}
+            onChange={handleChange}
             className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
-
-        <div className="flex flex-col">
-          <label className="font-semibold text-gray-700">
-            {t("form.timeSlots")}
-          </label>
-          <div className="flex flex-wrap gap-4 mt-2">
-            <span className="p-2 bg-gray-100 border rounded cursor-pointer hover:bg-gray-200">
-              {t("timeOptions.slot1")}
-            </span>
-            <span className="p-2 bg-gray-100 border rounded cursor-pointer hover:bg-gray-200">
-              {t("timeOptions.slot2")}
-            </span>
-            <span className="p-2 bg-gray-100 border rounded cursor-pointer hover:bg-gray-200">
-              {t("timeOptions.slot3")}
-            </span>
-            <span className="p-2 bg-gray-100 border rounded cursor-pointer hover:bg-gray-200">
-              {t("timeOptions.slot4")}
-            </span>
-          </div>
-        </div>
-
         <button
           type="submit"
           className="w-full p-3 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -152,4 +167,4 @@ const CreateAppointment = () => {
   );
 };
 
-export default CreateAppointment;
+export default ProfileExpert;

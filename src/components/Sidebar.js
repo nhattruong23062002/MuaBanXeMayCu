@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAlignJustify, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next"; // Import hook
+import { MdOutlineDashboard } from "react-icons/md";
+import { BsFilePost  } from "react-icons/bs";
+import { FaUserGroup } from "react-icons/fa6";
+import { HiDocumentReport } from "react-icons/hi";
+import { FaUserSecret } from "react-icons/fa6";
+import { FaRegUserCircle } from "react-icons/fa";
+import { RiCalendarScheduleFill  } from "react-icons/ri";
+import { MdCreateNewFolder } from "react-icons/md";   
 
 const Sidebar = () => {
   const { t } = useTranslation("sidebar"); // Sử dụng namespace "sidebar"
@@ -41,17 +49,28 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/manage-appointments"
-                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
+                  <RiCalendarScheduleFill  />
                   {t("manageAppointments")}
                 </Link>
               </li>
               <li>
                 <Link
                   to="/admin/create-appointment"
-                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
+                  <MdCreateNewFolder />
                   {t("createAppointment")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/admin/profile-expert"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                >
+                  <FaRegUserCircle />
+                  {t("profileExpert")}
                 </Link>
               </li>
             </>
@@ -61,8 +80,9 @@ const Sidebar = () => {
              <li>
                 <Link
                   to="/admin/dashboard"
-                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
+                   <MdOutlineDashboard />
                   {t("Dashboard")}
                 </Link>
               </li>
@@ -70,32 +90,36 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/manage-posts"
-                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
+                  <BsFilePost />
                   {t("managePosts")}
                 </Link>
               </li>
               <li>
                 <Link
                   to="/admin/manage-users"
-                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
+                  <FaUserGroup />
                   {t("manageUsers")}
                 </Link>
               </li>
               <li>
                 <Link
                   to="/admin/handle-complaints"
-                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
+                  <HiDocumentReport />
                   {t("handleComplaints")}
                 </Link>
               </li>
               <li>
                 <Link
                   to="/admin/manage-experts"
-                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
+                  <FaUserSecret />
                   {t("manageExperts")}
                 </Link>
               </li>

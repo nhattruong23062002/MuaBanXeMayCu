@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./../src/styles/App.css";
 
 import ManageAppointments from "./pages/Admin-Page/ManageAppointments";
-import CreateAppointment from "./pages/Admin-Page/CreateAppointment";
 import ManagePosts from "./pages/Admin-Page/ManagePosts";
 import ManageUsers from "./pages/Admin-Page/ManageUsers";
 import HandleComplaints from "./pages/Admin-Page/HandleComplaints";
@@ -35,6 +34,8 @@ import FavoriteStores from "./pages/User-Page/favoriteStore";
 import FavoriteProducts from "./pages/User-Page/favoriteProduct";
 import RegisterExpert from "./pages/User-Page/registerExpert";
 import Dashboard from "./pages/Admin-Page/Dashboard";
+import ProfileExpert from "./pages/Admin-Page/ProfileExpert";
+import CreateAppointment from "./pages/Admin-Page/CreateAppointments";
 
 const App = () => {
   return (
@@ -83,11 +84,21 @@ const App = () => {
               </AdminLayout>
             }
           />
+
           <Route
             path="/admin/create-appointment"
             element={
               <AdminLayout>
                 <CreateAppointment />
+              </AdminLayout>
+            }
+          />
+
+          <Route
+            path="/admin/profile-expert"
+            element={
+              <AdminLayout>
+                <ProfileExpert />
               </AdminLayout>
             }
           />

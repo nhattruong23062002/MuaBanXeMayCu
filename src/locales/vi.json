@@ -150,7 +150,17 @@
     "appointmentTime": "Giờ hẹn",
     "cancel": "Hủy",
     "confirm": "Xác nhận đặt lịch",
-    "successMessage": "Đặt lịch thành công!"
+    "successMessage": "Đặt lịch thành công!",
+    "errors": {
+      "nameRequired": "Vui lòng nhập họ tên",
+      "phoneRequired": "Vui lòng nhập số điện thoại",
+      "phoneInvalid": "Số điện thoại không đúng định dạng",
+      "addressRequired": "Vui lòng nhập địa chỉ",
+      "carTypeRequired": "Vui lòng nhập loại xe",
+      "purposeRequired": "Vui lòng nhập mục đích kiểm tra xe",
+      "dateRequired": "Vui lòng nhập ngày muốn đặt lịch",
+      "timeSlotRequired": "Vui lòng chọn giờ hẹn"
+    }
   },
   "storeDetail": {
     "pageTitle": "Thông tin cửa hàng",
@@ -453,6 +463,7 @@
     "title": "Quản lý của admin",
     "manageAppointments": "Quản lý lịch hẹn",
     "createAppointment": "Tạo lịch hẹn",
+    "profileExpert": "Quản lý hồ sơ",
     "managePosts": "Quản lý bài đăng",
     "manageUsers": "Quản lý người dùng",
     "handleComplaints": "Xử lý khiếu nại",
@@ -492,10 +503,22 @@
       "viewMore": "Xem thêm lịch hẹn"
     }
   },
-  "createAppointment": {
-    "title": "Tạo Lịch trình chuyên gia kiểm tra xe",
+  "createAppointments": {
+    "title": "Tạo lịch hẹn mới",
+    "date": "Chọn ngày",
+    "hour": "Chọn khung giờ",
+    "save": "Lưu lại",
+    "appointmentList": "Danh sách lịch hẹn",
+    "dateList": "Ngày",
+    "hourList": "Khung giờ",
+    "numberBook": "Số người đã đặt lịch",
+    "noAppointments": "Chưa có lịch hẹn nào được tạo."
+  },
+  "profileExpert": {
+    "title": "Quản lý hồ sơ",
     "form": {
       "name": "Họ và tên:",
+      "date" : "Ngày sinh",
       "namePlaceholder": "Nhập họ và tên",
       "phone": "SĐT:",
       "phonePlaceholder": "Nhập số điện thoại",
@@ -518,7 +541,7 @@
       "slot3": "13:00-14:00",
       "slot4": "15:00-16:00"
     },
-    "submitButton": "Xác nhận tạo lịch"
+    "submitButton": "Lưu thay đổi"
   },
   "managePosts": {
     "title": "Quản lý bài đăng",
@@ -682,7 +705,7 @@
     "actions": {
       "addUser": "Thêm người dùng",
       "searchPlaceholder": "Tìm kiếm người dùng",
-      "delete": "Xóa",
+      "delete": "Từ chối",
       "export": "Xuất dữ liệu",
       "filter": "Lọc",
       "edit": "Chỉnh sửa",

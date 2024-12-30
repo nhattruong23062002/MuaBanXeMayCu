@@ -150,7 +150,17 @@
     "appointmentTime": "Appointment Time",
     "cancel": "Cancel",
     "confirm": "Confirm Booking",
-    "successMessage": "Booking successful!"
+    "successMessage": "Booking successful!",
+    "errors": {
+      "nameRequired": "Please enter your full name",
+      "phoneRequired": "Please enter your phone number",
+      "phoneInvalid": "Phone number is not in the correct format",
+      "addressRequired": "Please enter your address",
+      "carTypeRequired": "Please enter your car type",
+      "purposeRequired": "Please enter the purpose of the car inspection",
+      "dateRequired": "Please enter the date you want to schedule an appointment",
+      "timeSlotRequired": "Please select an appointment time"
+    }
   },
   "storeDetail": {
     "pageTitle": "Store Information",
@@ -453,6 +463,7 @@
     "title": "Admin Management",
     "manageAppointments": "Manage Appointments",
     "createAppointment": "Create Appointment",
+    "profileExpert": "Profile Management",
     "managePosts": "Manage Posts",
     "manageUsers": "Manage Users",
     "handleComplaints": "Handle Complaints",
@@ -487,10 +498,11 @@
       "viewMore": "View more appointments"
     }
   },
-  "createAppointment": {
-    "title": "Create Appointment Schedule for Expert",
+  "profileExpert": {
+    "title": "Profile Management",
     "form": {
       "name": "Full Name:",
+      "date": "Date of birth",
       "namePlaceholder": "Enter full name",
       "phone": "Phone:",
       "phonePlaceholder": "Enter phone number",
@@ -513,7 +525,18 @@
       "slot3": "13:00-14:00",
       "slot4": "15:00-16:00"
     },
-    "submitButton": "Confirm Appointment"
+    "submitButton": "Save changes"
+  },
+  "createAppointments": {
+    "title": "Create new appointment",
+    "date": "Select date",
+    "hour": "Select time slot",
+    "save": "Save",
+    "appointmentList": "Appointment List",
+    "dateList": "Date",
+    "hourList": "Time slot",
+    "numberBook": "Number of people booked",
+    "noAppointments": "No appointments have been created yet."
   },
   "managePosts": {
     "title": "Manage Posts",

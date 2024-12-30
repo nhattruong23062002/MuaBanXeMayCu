@@ -13,6 +13,8 @@ function BookingModal({ isOpen, onClose }) {
     timeSlot: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const timeSlots = ["7:00-8:00", "9:00-10:00", "13:00-14:00", "15:00-16:00"];
 
   const handleChange = (e) => {
@@ -20,10 +22,30 @@ function BookingModal({ isOpen, onClose }) {
     setFormData({ ...formData, [name]: value });
   };
 
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = t("errors.nameRequired");
+    if (!formData.phone.trim()) {
+      newErrors.phone = t("errors.phoneRequired");
+    } else if (!/^\d{10,11}$/.test(formData.phone)) {
+      newErrors.phone = t("errors.phoneInvalid");
+    }
+    if (!formData.address.trim()) newErrors.address = t("errors.addressRequired");
+    if (!formData.carType.trim()) newErrors.carType = t("errors.carTypeRequired");
+    if (!formData.purpose.trim()) newErrors.purpose = t("errors.purposeRequired");
+    if (!formData.date) newErrors.date = t("errors.dateRequired");
+    if (!formData.timeSlot) newErrors.timeSlot = t("errors.timeSlotRequired");
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = () => {
-    console.log(t("successMessage"), formData);
-    alert(t("successMessage"));
-    onClose();
+    if (validate()) {
+      console.log(t("successMessage"), formData);
+      alert(t("successMessage"));
+      onClose();
+    }
   };
 
   if (!isOpen) return null;
@@ -31,72 +53,109 @@ function BookingModal({ isOpen, onClose }) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg w-[500px]">
-        <h2 className="text-2xl font-bold mb-4 text-center">
-          {t("title")}
-        </h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">{t("title")}</h2>
         <div className="space-y-3">
+          {/* Name */}
           <div className="flex items-center">
             <label className="w-40 font-medium">{t("name")}:</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="w-full">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm">{errors.name}</p>
+              )}
+            </div>
           </div>
+          {/* Phone */}
           <div className="flex items-center">
             <label className="w-40 font-medium">{t("phone")}:</label>
-            <input
-              type="text"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="w-full">
+              <input
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-sm">{errors.phone}</p>
+              )}
+            </div>
           </div>
+          {/* Address */}
           <div className="flex items-center">
             <label className="w-40 font-medium">{t("address")}:</label>
-            <input
-              type="text"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="w-full">
+              <input
+                type="text"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
+              />
+              {errors.address && (
+                <p className="text-red-500 text-sm">{errors.address}</p>
+              )}
+            </div>
           </div>
+          {/* Car Type */}
           <div className="flex items-center">
             <label className="w-40 font-medium">{t("carType")}:</label>
-            <input
-              type="text"
-              name="carType"
-              value={formData.carType}
-              onChange={handleChange}
-              className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="w-full">
+              <input
+                type="text"
+                name="carType"
+                value={formData.carType}
+                onChange={handleChange}
+                className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
+              />
+              {errors.carType && (
+                <p className="text-red-500 text-sm">{errors.carType}</p>
+              )}
+            </div>
           </div>
+          {/* Purpose */}
           <div className="flex items-center">
             <label className="w-40 font-medium">{t("purpose")}:</label>
-            <input
-              type="text"
-              name="purpose"
-              value={formData.purpose}
-              onChange={handleChange}
-              className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="w-full">
+              <input
+                type="text"
+                name="purpose"
+                value={formData.purpose}
+                onChange={handleChange}
+                className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
+              />
+              {errors.purpose && (
+                <p className="text-red-500 text-sm">{errors.purpose}</p>
+              )}
+            </div>
           </div>
+          {/* Date */}
           <div className="flex items-center">
             <label className="w-40 font-medium">{t("appointmentDate")}:</label>
-            <input
-              type="date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-              className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="w-full">
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                className="w-full border rounded-md px-2 py-1 focus:ring-2 focus:ring-blue-400"
+              />
+              {errors.date && (
+                <p className="text-red-500 text-sm">{errors.date}</p>
+              )}
+            </div>
           </div>
+          {/* Time Slot */}
           <div>
-            <label className="font-medium mb-2 block">{t("appointmentTime")}:</label>
+            <label className="font-medium mb-2 block">
+              {t("appointmentTime")}:
+            </label>
             <div className="grid grid-cols-2 gap-2">
               {timeSlots.map((slot, index) => (
                 <button
@@ -115,6 +174,9 @@ function BookingModal({ isOpen, onClose }) {
                 </button>
               ))}
             </div>
+            {errors.timeSlot && (
+              <p className="text-red-500 text-sm mt-1">{errors.timeSlot}</p>
+            )}
           </div>
         </div>
         <div className="flex justify-end mt-6">

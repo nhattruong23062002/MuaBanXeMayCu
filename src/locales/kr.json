@@ -150,7 +150,17 @@
     "appointmentTime": "예약 시간",
     "cancel": "취소",
     "confirm": "예약 확인",
-    "successMessage": "예약이 성공적으로 완료되었습니다!"
+    "successMessage": "예약이 성공적으로 완료되었습니다!",
+    "errors": {
+      "nameRequired": "성명을 입력하세요",
+      "phoneRequired": "전화번호를 입력하세요",
+      "phoneInvalid": "전화번호 형식이 올바르지 않습니다.",
+      "addressRequired": "주소를 입력하세요",
+      "carTypeRequired": "자동차 유형을 입력하세요",
+      "purposeRequired": "차량 검사 목적을 입력해주세요",
+      "dateRequired": "예약하려는 날짜를 입력하세요",
+      "timeSlotRequired": "약속 시간을 선택하세요"
+    }
   },
   "storeDetail": {
     "pageTitle": "매장 정보",
@@ -453,6 +463,7 @@
     "title": "관리자 관리",
     "manageAppointments": "약속 관리",
     "createAppointment": "약속 생성",
+    "profileExpert": "프로필 관리",
     "managePosts": "게시물 관리",
     "manageUsers": "사용자 관리",
     "handleComplaints": "불만 처리",
@@ -492,10 +503,11 @@
       "viewMore": "약속 더 보기"
     }
   },
-  "createAppointment": {
-    "title": "전문가 차량 점검 예약 생성",
+  "profileExpert": {
+    "title": "프로필 관리",
     "form": {
       "name": "이름:",
+      "date": "생년월일",
       "namePlaceholder": "이름을 입력하세요",
       "phone": "전화번호:",
       "phonePlaceholder": "전화번호를 입력하세요",
@@ -518,7 +530,18 @@
       "slot3": "13:00-14:00",
       "slot4": "15:00-16:00"
     },
-    "submitButton": "예약 확인"
+    "submitButton": "변경 사항 저장"
+  },
+  "createAppointments": {
+    "title": "새 약속 만들기",
+    "date": "날짜를 선택하세요",
+    "hour": "시간 범위를 선택하세요",
+    "save": "저장",
+    "appointmentList": "약속 목록",
+    "dateList": "날짜",
+    "hourList": "시간 범위",
+    "numberBook": "예약된 인원수",
+    "noAppointments": "아직 약속이 생성되지 않았습니다."
   },
   "managePosts": {
     "title": "게시물 관리",
