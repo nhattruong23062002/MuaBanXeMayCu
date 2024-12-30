@@ -35,7 +35,8 @@ import FavoriteStores from "./pages/User-Page/favoriteStore";
 import FavoriteProducts from "./pages/User-Page/favoriteProduct";
 import RegisterExpert from "./pages/User-Page/registerExpert";
 import Dashboard from "./pages/Admin-Page/Dashboard";
-
+import Profile from "./pages/Admin-Page/Profile/Profile";
+import Settings from "./pages/Admin-Page/Setting/Settings";
 const App = () => {
   return (
     <>
@@ -65,7 +66,6 @@ const App = () => {
           <Route path="favorite-store" element={<FavoriteStores />} />
           <Route path="favorite-products" element={<FavoriteProducts />} />
           <Route path="register-expert" element={<RegisterExpert />} />
-
           <Route
             path="/admin/dashboard"
             element={
@@ -120,6 +120,22 @@ const App = () => {
             element={
               <AdminLayout>
                 <ManageExperts />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/profile"
+            element={
+              <AdminLayout>
+                <Profile />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/setting"
+            element={
+              <AdminLayout>
+                <Settings />
               </AdminLayout>
             }
           />

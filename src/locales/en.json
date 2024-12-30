@@ -447,7 +447,9 @@
   },
   "navbar": {
     "adminPageTitle": "Admin Management Page",
-    "logout": "Logout"
+    "logout": "Logout",
+    "profile": "Profile",
+    "setting": "Settings"
   },
   "sidebar": {
     "title": "Admin Management",
@@ -795,5 +797,50 @@
     "expertise1": "valuation",
     "expertise2": "Technical Check",
     "expertise3": "Appraisal"
+  },
+  "profile": {
+    "profileTitle": "Profile",
+    "profileSubtitle": "The information can be edited",
+    "firstName": "First name *",
+    "lastName": "Last name *",
+    "emailAddress": "Email address *",
+    "phoneNumber": "Phone number",
+    "city": "City",
+    "nation": "Nation",
+    "uploadPicture": "Upload picture",
+    "saveDetails": "Save details",
+    "successMessage": "Profile details saved successfully!",
+    "location": "Seoul, Korea",
+    "timeZone": "GTM-9"
+  },
+  "settings": {
+    "title": "Settings",
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Manage the notifications",
+      "email": "Email",
+      "phone": "Phone",
+      "productUpdates": "Product updates",
+      "securityUpdates": "Security updates"
+    },
+    "password": {
+      "title": "Password",
+      "subtitle": "Update password",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "placeholders": {
+        "password": "Enter new password",
+        "confirmPassword": "Confirm password"
+      }
+    },
+    "buttons": {
+      "saveChanges": "Save changes",
+      "update": "Update"
+    },
+    "messages": {
+      "saved": "Settings saved successfully!",
+      "passwordUpdated": "Password updated successfully!",
+      "passwordMismatch": "Passwords do not match!"
+    }
   }
 }

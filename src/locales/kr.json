@@ -447,7 +447,9 @@
   },
   "navbar": {
     "adminPageTitle": "관리자 관리 페이지",
-    "logout": "로그아웃"
+    "logout": "로그아웃",
+    "profile": "윤곽",
+    "setting": "설정"
   },
   "sidebar": {
     "title": "관리자 관리",
@@ -797,5 +799,50 @@
     "expertise1": "평가",
     "expertise2": "기술 점검",
     "expertise3": "감정"
+  },
+  "profile": {
+    "profileTitle": "프로필",
+    "profileSubtitle": "정보를 편집할 수 있습니다",
+    "firstName": "이름 *",
+    "lastName": "성 *",
+    "emailAddress": "이메일 주소 *",
+    "phoneNumber": "전화번호",
+    "city": "도시",
+    "nation": "국가",
+    "uploadPicture": "사진 업로드",
+    "saveDetails": "세부 정보 저장",
+    "successMessage": "프로필 세부 정보가 성공적으로 저장되었습니다!",
+    "location": "서울, 한국",
+    "timeZone": "GTM-9"
+  },
+  "settings": {
+    "title": "설정",
+    "notifications": {
+      "title": "알림",
+      "subtitle": "알림 관리",
+      "email": "이메일",
+      "phone": "전화번호",
+      "productUpdates": "제품 업데이트",
+      "securityUpdates": "보안 업데이트"
+    },
+    "password": {
+      "title": "비밀번호",
+      "subtitle": "비밀번호 업데이트",
+      "password": "비밀번호",
+      "confirmPassword": "비밀번호 확인",
+      "placeholders": {
+        "password": "새 비밀번호 입력",
+        "confirmPassword": "비밀번호 확인"
+      }
+    },
+    "buttons": {
+      "saveChanges": "변경 사항 저장",
+      "update": "업데이트"
+    },
+    "messages": {
+      "saved": "설정이 성공적으로 저장되었습니다!",
+      "passwordUpdated": "비밀번호가 성공적으로 업데이트되었습니다!",
+      "passwordMismatch": "비밀번호가 일치하지 않습니다!"
+    }
   }
 }

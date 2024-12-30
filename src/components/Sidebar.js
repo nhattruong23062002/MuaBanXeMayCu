@@ -58,7 +58,7 @@ const Sidebar = () => {
           )}
           {auth.role === "admin" && (
             <>
-             <li>
+              <li>
                 <Link
                   to="/admin/dashboard"
                   className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
@@ -97,6 +97,22 @@ const Sidebar = () => {
                   className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
                 >
                   {t("manageExperts")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/admin/profile"
+                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                >
+                  {t("Profile")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/admin/setting"
+                  className="block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                >
+                  {t("setting")}
                 </Link>
               </li>
             </>

@@ -447,7 +447,9 @@
   },
   "navbar": {
     "adminPageTitle": "Trang quản lý Admin",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "profile": "Hồ sơ",
+    "setting": "Cài đặt"
   },
   "sidebar": {
     "title": "Quản lý của admin",
@@ -802,5 +804,50 @@
     "expertise1": "Định giá",
     "expertise2": "Kiểm tra kỹ thuật",
     "expertise3": "Thẩm định"
+  },
+  "profile": {
+    "profileTitle": "Hồ sơ cá nhân",
+    "profileSubtitle": "Thông tin có thể chỉnh sửa",
+    "firstName": "Tên *",
+    "lastName": "Họ *",
+    "emailAddress": "Địa chỉ email *",
+    "phoneNumber": "Số điện thoại",
+    "city": "Thành phố",
+    "nation": "Quốc gia",
+    "uploadPicture": "Tải ảnh lên",
+    "saveDetails": "Lưu thông tin",
+    "successMessage": "Thông tin hồ sơ đã được lưu thành công!",
+    "location": "Seoul, Hàn Quốc",
+    "timeZone": "GTM-9"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "notifications": {
+      "title": "Thông báo",
+      "subtitle": "Quản lý thông báo",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "productUpdates": "Cập nhật sản phẩm",
+      "securityUpdates": "Cập nhật bảo mật"
+    },
+    "password": {
+      "title": "Mật khẩu",
+      "subtitle": "Cập nhật mật khẩu",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "placeholders": {
+        "password": "Nhập mật khẩu mới",
+        "confirmPassword": "Xác nhận mật khẩu"
+      }
+    },
+    "buttons": {
+      "saveChanges": "Lưu thay đổi",
+      "update": "Cập nhật"
+    },
+    "messages": {
+      "saved": "Cài đặt đã được lưu thành công!",
+      "passwordUpdated": "Mật khẩu đã được cập nhật thành công!",
+      "passwordMismatch": "Mật khẩu không khớp!"
+    }
   }
 }
