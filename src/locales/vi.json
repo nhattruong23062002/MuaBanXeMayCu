@@ -458,7 +458,9 @@
     "managePosts": "Quản lý bài đăng",
     "manageUsers": "Quản lý người dùng",
     "handleComplaints": "Xử lý khiếu nại",
-    "manageExperts": "Quản lý chuyên gia"
+    "manageExperts": "Quản lý chuyên gia",
+    "profile": "Hồ sơ",
+    "setting": "Cài đặt"
   },
   "manageAppointments": {
     "title": "Quản lý lịch hẹn kiểm tra xe",
@@ -813,7 +815,8 @@
     "emailAddress": "Địa chỉ email *",
     "phoneNumber": "Số điện thoại",
     "city": "Thành phố",
-    "nation": "Quốc gia",
+    "country": "Quốc gia",
+    "nation": "Hàn Quốc",
     "uploadPicture": "Tải ảnh lên",
     "saveDetails": "Lưu thông tin",
     "successMessage": "Thông tin hồ sơ đã được lưu thành công!",

@@ -458,7 +458,9 @@
     "managePosts": "게시물 관리",
     "manageUsers": "사용자 관리",
     "handleComplaints": "불만 처리",
-    "manageExperts": "전문가 관리"
+    "manageExperts": "전문가 관리",
+    "profile": "윤곽",
+    "setting": "설정"
   },
   "manageAppointments": {
     "title": "예약 일정 관리",
@@ -808,7 +810,8 @@
     "emailAddress": "이메일 주소 *",
     "phoneNumber": "전화번호",
     "city": "도시",
-    "nation": "국가",
+    "country": "국가",
+    "nation": "한국",
     "uploadPicture": "사진 업로드",
     "saveDetails": "세부 정보 저장",
     "successMessage": "프로필 세부 정보가 성공적으로 저장되었습니다!",

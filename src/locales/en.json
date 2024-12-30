@@ -458,7 +458,9 @@
     "managePosts": "Manage Posts",
     "manageUsers": "Manage Users",
     "handleComplaints": "Handle Complaints",
-    "manageExperts": "Manage Experts"
+    "manageExperts": "Manage Experts",
+    "profile": "Profile",
+    "setting": "Setting"
   },
   "manageAppointments": {
     "title": "Manage Appointment Schedules",
@@ -806,7 +808,8 @@
     "emailAddress": "Email address *",
     "phoneNumber": "Phone number",
     "city": "City",
-    "nation": "Nation",
+    "country": "Nation",
+    "nation": "Korea",
     "uploadPicture": "Upload picture",
     "saveDetails": "Save details",
     "successMessage": "Profile details saved successfully!",
