@@ -457,7 +457,9 @@
   },
   "navbar": {
     "adminPageTitle": "Trang quản lý Admin",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "profile": "Hồ sơ",
+    "setting": "Cài đặt"
   },
   "sidebar": {
     "title": "Quản lý của admin",
@@ -467,7 +469,9 @@
     "managePosts": "Quản lý bài đăng",
     "manageUsers": "Quản lý người dùng",
     "handleComplaints": "Xử lý khiếu nại",
-    "manageExperts": "Quản lý chuyên gia"
+    "manageExperts": "Quản lý chuyên gia",
+    "profile": "Hồ sơ",
+    "setting": "Cài đặt"
   },
   "manageAppointments": {
     "title": "Quản lý lịch hẹn kiểm tra xe",
@@ -625,7 +629,8 @@
       "status": "Trạng thái",
       "posts": "Số bài viết",
       "transactions": "Số giao dịch",
-      "actions": "Hành động"
+      "actions": "Hành động",
+      "role": "Vai trò"
     },
     "status": {
       "active": "Hoạt động",
@@ -648,11 +653,36 @@
       "active": "Người dùng hoạt động",
       "newUsers": "Người dùng mới",
       "inactive": "Người dùng không hoạt động"
+    }
+  },
+  "editUser": {
+    "title": "Chỉnh sửa thông tin người dùng",
+    "fields": {
+      "name": "Họ và tên",
+      "email": "Email",
+      "city": "Thành phố",
+      "status": "Trạng thái",
+      "posts": "Số bài đăng",
+      "transactions": "Số giao dịch",
+      "role": "Vai trò"
     },
-    "role": {
-      "title": "Vai trò",
+    "choosecity": "Chọn địa điểm thành phố",
+    "status": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "roles": {
       "user": "Người dùng",
+      "admin": "Quản trị viên",
       "expert": "Chuyên gia"
+    },
+    "buttons": {
+      "save": "Lưu",
+      "cancel": "Hủy"
+    },
+    "messages": {
+      "saved": "Thông tin đã được lưu!",
+      "cancelled": "Thay đổi đã bị hủy!"
     }
   },
   "handleComplaints": {
@@ -788,10 +818,62 @@
     "weeklyTransaction": " Số Tiền Giao Dịch Trong Tuần",
     "topStore": " Cửa Hàng Có Doanh Thu Cao Nhất",
     "nameStore": "Tên Cửa Hàng",
-    "revenueStore":"Doanh thu",
+    "revenueStore": "Doanh thu",
     "topExpert": "Top Những Chuyên Gia Nổi Bật",
     "nameExpert": "Tên chuyên gia",
-    "expertise" : "Chuyên môn",
-    "numberBooking": "Số lần đã đặt hẹn"
+    "expertise": "Chuyên môn",
+    "numberBooking": "Số lần đã đặt hẹn",
+    "money": "tỷ VNĐ",
+    "privateName": "Cửa hàng",
+    "expert": "Chuyên gia",
+    "expertise1": "Định giá",
+    "expertise2": "Kiểm tra kỹ thuật",
+    "expertise3": "Thẩm định"
+  },
+  "profile": {
+    "profileTitle": "Hồ sơ cá nhân",
+    "profileSubtitle": "Thông tin có thể chỉnh sửa",
+    "firstName": "Tên *",
+    "lastName": "Họ *",
+    "emailAddress": "Địa chỉ email *",
+    "phoneNumber": "Số điện thoại",
+    "city": "Thành phố",
+    "country": "Quốc gia",
+    "nation": "Hàn Quốc",
+    "uploadPicture": "Tải ảnh lên",
+    "saveDetails": "Lưu thông tin",
+    "successMessage": "Thông tin hồ sơ đã được lưu thành công!",
+    "location": "Seoul, Hàn Quốc",
+    "timeZone": "GTM-9"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "notifications": {
+      "title": "Thông báo",
+      "subtitle": "Quản lý thông báo",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "productUpdates": "Cập nhật sản phẩm",
+      "securityUpdates": "Cập nhật bảo mật"
+    },
+    "password": {
+      "title": "Mật khẩu",
+      "subtitle": "Cập nhật mật khẩu",
+      "password": "Mật khẩu",
+      "confirmPassword": "Xác nhận mật khẩu",
+      "placeholders": {
+        "password": "Nhập mật khẩu mới",
+        "confirmPassword": "Xác nhận mật khẩu"
+      }
+    },
+    "buttons": {
+      "saveChanges": "Lưu thay đổi",
+      "update": "Cập nhật"
+    },
+    "messages": {
+      "saved": "Cài đặt đã được lưu thành công!",
+      "passwordUpdated": "Mật khẩu đã được cập nhật thành công!",
+      "passwordMismatch": "Mật khẩu không khớp!"
+    }
   }
 }

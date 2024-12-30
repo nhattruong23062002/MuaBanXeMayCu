@@ -9,6 +9,7 @@ import {
 import { IoPersonAddOutline } from "react-icons/io5";
 import { FaPenToSquare } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import EditUser from "./EditUser";
 
 const ManageUsers = () => {
   const { t } = useTranslation("manageUsers");
@@ -21,7 +22,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 15,
       transactions: 5,
-      role: "Người dùng",
+      role: t("roles.user"),
     },
     {
       name: "Tạ Văn B",
@@ -30,7 +31,7 @@ const ManageUsers = () => {
       status: t("status.inactive"),
       posts: 5,
       transactions: 2,
-      role: "Người dùng",
+      role: t("roles.user"),
     },
     {
       name: "Lê Hùng",
@@ -39,7 +40,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 0,
       transactions: 0,
-      role: "Chuyên gia",
+      role: t("roles.expert"),
     },
     {
       name: "Trần Đô",
@@ -48,7 +49,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 4,
       transactions: 2,
-      role: "Người dùng",
+      role: t("roles.user"),
     },
     {
       name: "Văn Nga",
@@ -57,7 +58,7 @@ const ManageUsers = () => {
       status: t("status.active"),
       posts: 0,
       transactions: 0,
-      role: "Chuyên gia",
+      role: t("roles.expert"),
     },
   ];
 
@@ -89,7 +90,15 @@ const ManageUsers = () => {
   const handleCloseChart = () => {
     setChartVisible(false);
   };
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
@@ -143,8 +152,9 @@ const ManageUsers = () => {
               {card.value} <span>{t("units.users")}</span>
             </h3>
             <small
-              className={`block mt-1 ${card.isDecrease ? "text-red-500" : "text-green-500"
-                }`}
+              className={`block mt-1 ${
+                card.isDecrease ? "text-red-500" : "text-green-500"
+              }`}
             >
               <FaChartLine className="inline mr-1" />
               {card.percent}
@@ -163,7 +173,7 @@ const ManageUsers = () => {
             >
               ✕
             </button>
-            <ChartBar selectedCard={selectedCard} onClose={handleCloseChart}/>
+            <ChartBar selectedCard={selectedCard} onClose={handleCloseChart} />
           </div>
         </div>
       )}
@@ -200,10 +210,14 @@ const ManageUsers = () => {
               <th className="px-4 py-2 border-b">{t("tableHeaders.email")}</th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.city")}</th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.status")}</th>
-              <th className="px-4 py-2 border-b">{t("role.title")}</th>
+              <th className="px-4 py-2 border-b">{t("tableHeaders.role")}</th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.posts")}</th>
-              <th className="px-4 py-2 border-b">{t("tableHeaders.transactions")}</th>
-              <th className="px-4 py-2 border-b">{t("tableHeaders.actions")}</th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.transactions")}
+              </th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.actions")}
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -224,14 +238,34 @@ const ManageUsers = () => {
                   {user.status}
                 </td>
                 <td className="px-4 py-2 border-b">{t(`${user.role}`)}</td>
-                <td className="px-4 py-2 border-b">{user.posts} {t("units.posts")}</td>
+                <td className="px-4 py-2 border-b">
+                  {user.posts} {t("units.posts")}
+                </td>
                 <td className="px-4 py-2 border-b">
                   {user.transactions} {t("units.transactions")}
                 </td>
                 <td className="px-4 py-2 border-b">
-                  <button className="flex items-center px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600">
+                  <button
+                    onClick={openPopup}
+                    className="flex items-center px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600"
+                  >
                     <FaPenToSquare className="mr-2" /> {t("actions.edit")}
                   </button>
+
+                  {/* Popup */}
+                  {isPopupOpen && (
+                    <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+                      <div className="bg-white p-6 rounded-lg shadow-lg relative w-full max-w-md">
+                        <button
+                          onClick={closePopup}
+                          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                        >
+                          ✖
+                        </button>
+                        <EditUser />
+                      </div>
+                    </div>
+                  )}
                 </td>
               </tr>
             ))}

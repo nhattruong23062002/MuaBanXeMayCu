@@ -37,6 +37,8 @@ import Dashboard from "./pages/Admin-Page/Dashboard";
 import ProfileExpert from "./pages/Admin-Page/ProfileExpert";
 import CreateAppointment from "./pages/Admin-Page/CreateAppointments";
 
+import Profile from "./pages/Admin-Page/Profile/Profile";
+import Settings from "./pages/Admin-Page/Setting/Settings";
 const App = () => {
   return (
     <>
@@ -66,7 +68,6 @@ const App = () => {
           <Route path="favorite-store" element={<FavoriteStores />} />
           <Route path="favorite-products" element={<FavoriteProducts />} />
           <Route path="register-expert" element={<RegisterExpert />} />
-
           <Route
             path="/admin/dashboard"
             element={
@@ -131,6 +132,22 @@ const App = () => {
             element={
               <AdminLayout>
                 <ManageExperts />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/profile"
+            element={
+              <AdminLayout>
+                <Profile />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/setting"
+            element={
+              <AdminLayout>
+                <Settings />
               </AdminLayout>
             }
           />

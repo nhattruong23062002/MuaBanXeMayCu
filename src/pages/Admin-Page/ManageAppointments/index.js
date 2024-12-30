@@ -66,7 +66,7 @@ const ManageAppointments = () => {
     },
     {
       id: "11233",
-      name: "Giang Mai",
+      name: "Hà Giang",
       phone: "0935647894",
       status: t("context.status.consulted"),
       time: "10/8/2024",

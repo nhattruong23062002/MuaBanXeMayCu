@@ -457,7 +457,9 @@
   },
   "navbar": {
     "adminPageTitle": "Admin Management Page",
-    "logout": "Logout"
+    "logout": "Logout",
+    "profile": "Profile",
+    "setting": "Settings"
   },
   "sidebar": {
     "title": "Admin Management",
@@ -467,7 +469,9 @@
     "managePosts": "Manage Posts",
     "manageUsers": "Manage Users",
     "handleComplaints": "Handle Complaints",
-    "manageExperts": "Manage Experts"
+    "manageExperts": "Manage Experts",
+    "profile": "Profile",
+    "setting": "Setting"
   },
   "manageAppointments": {
     "title": "Manage Appointment Schedules",
@@ -619,7 +623,8 @@
       "status": "Status",
       "posts": "Posts",
       "transactions": "Transactions",
-      "actions": "Actions"
+      "actions": "Actions",
+      "role": "Role"
     },
     "status": {
       "active": "Active",
@@ -642,6 +647,36 @@
       "active": "Active Users",
       "newUsers": "New Users",
       "inactive": "Inactive Users"
+    }
+  },
+  "editUser": {
+    "title": "Edit User Information",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "city": "City",
+      "status": "Status",
+      "posts": "Number of Posts",
+      "transactions": "Transactions",
+      "role": "Role"
+    },
+    "choosecity": "Select city location",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "roles": {
+      "user": "User",
+      "admin": "Admin",
+      "expert": "Expert"
+    },
+    "buttons": {
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "messages": {
+      "saved": "Information has been saved!",
+      "cancelled": "Changes have been cancelled!"
     }
   },
   "handleComplaints": {
@@ -780,6 +815,58 @@
     "topExpert": "Top Outstanding Experts",
     "nameExpert": "Expert Name",
     "expertise": "Expertise",
-    "numberBooking": "Number of Appointments"
+    "numberBooking": "Number of Appointments",
+    "money": "billions VND",
+    "privateName": "Store",
+    "expert": "Expert",
+    "expertise1": "valuation",
+    "expertise2": "Technical Check",
+    "expertise3": "Appraisal"
+  },
+  "profile": {
+    "profileTitle": "Profile",
+    "profileSubtitle": "The information can be edited",
+    "firstName": "First name *",
+    "lastName": "Last name *",
+    "emailAddress": "Email address *",
+    "phoneNumber": "Phone number",
+    "city": "City",
+    "country": "Nation",
+    "nation": "Korea",
+    "uploadPicture": "Upload picture",
+    "saveDetails": "Save details",
+    "successMessage": "Profile details saved successfully!",
+    "location": "Seoul, Korea",
+    "timeZone": "GTM-9"
+  },
+  "settings": {
+    "title": "Settings",
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Manage the notifications",
+      "email": "Email",
+      "phone": "Phone",
+      "productUpdates": "Product updates",
+      "securityUpdates": "Security updates"
+    },
+    "password": {
+      "title": "Password",
+      "subtitle": "Update password",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "placeholders": {
+        "password": "Enter new password",
+        "confirmPassword": "Confirm password"
+      }
+    },
+    "buttons": {
+      "saveChanges": "Save changes",
+      "update": "Update"
+    },
+    "messages": {
+      "saved": "Settings saved successfully!",
+      "passwordUpdated": "Password updated successfully!",
+      "passwordMismatch": "Passwords do not match!"
+    }
   }
 }

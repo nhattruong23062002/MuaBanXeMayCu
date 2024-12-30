@@ -7,9 +7,11 @@ import { BsFilePost  } from "react-icons/bs";
 import { FaUserGroup } from "react-icons/fa6";
 import { HiDocumentReport } from "react-icons/hi";
 import { FaUserSecret } from "react-icons/fa6";
-import { FaRegUserCircle } from "react-icons/fa";
+import { FaRegUserCircle, FaFile } from "react-icons/fa";
 import { RiCalendarScheduleFill  } from "react-icons/ri";
-import { MdCreateNewFolder } from "react-icons/md";   
+import { MdCreateNewFolder } from "react-icons/md";  
+import { IoSettingsSharp } from "react-icons/io5"; 
+
 
 const Sidebar = () => {
   const { t } = useTranslation("sidebar"); // Sử dụng namespace "sidebar"
@@ -77,7 +79,7 @@ const Sidebar = () => {
           )}
           {auth.role === "admin" && (
             <>
-             <li>
+              <li>
                 <Link
                   to="/admin/dashboard"
                   className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
@@ -121,6 +123,24 @@ const Sidebar = () => {
                 >
                   <FaUserSecret />
                   {t("manageExperts")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/admin/profile"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                >
+                  <FaFile />
+                  {t("profile")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/admin/setting"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                >
+                  <IoSettingsSharp />
+                  {t("setting")}
                 </Link>
               </li>
             </>
