@@ -43,8 +43,8 @@ const Settings = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
+    <div className="p-6 bg-gray-50 min-h-screen dark:bg-gray-900 text-gray-900 dark:text-gray-900">
+      <h1 className="text-2xl font-bold mb-4 dark:text-white ">{t("title")}</h1>
 
       {/* Notifications Section */}
       <div className="bg-white shadow-md rounded-lg p-6 mb-8">

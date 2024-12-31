@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  FaTrashAlt,
-  FaFilter,
-  FaFileExport,
-  FaEdit,
-} from "react-icons/fa";
+import { FaTrashAlt, FaFilter, FaFileExport, FaEdit } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 const ManageExperts = () => {
@@ -63,8 +58,8 @@ const ManageExperts = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6">{t("title")}</h1>
+    <div className="p-6 bg-gray-100 min-h-screen dark:bg-gray-900 text-gray-900 dark:text-gray-900">
+      <h1 className="text-2xl font-bold mb-6 dark:text-white">{t("title")}</h1>
 
       {/* Action Section */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -103,7 +98,9 @@ const ManageExperts = () => {
               <th className="px-4 py-2 border-b">
                 {t("tableHeaders.reputation")}
               </th>
-              <th className="px-4 py-2 border-b">{t("tableHeaders.actions")}</th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.actions")}
+              </th>
             </tr>
           </thead>
           <tbody>

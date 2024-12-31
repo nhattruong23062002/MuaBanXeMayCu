@@ -65,10 +65,8 @@ const HandleComplaints = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6 bg-gray-100 min-h-screen mx-auto rounded-lg">
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">
-        {t("title")}
-      </h2>
+    <div className="p-4 sm:p-6 bg-gray-100 min-h-screen mx-auto rounded-lg dark:bg-gray-900 text-gray-900 dark:text-gray-900">
+      <h2 className="text-2xl font-bold mb-4 dark:text-white">{t("title")}</h2>
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
@@ -129,7 +127,9 @@ const HandleComplaints = () => {
               <th className="px-4 py-2 border-b">{t("tableHeaders.reason")}</th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.role")}</th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.link")}</th>
-              <th className="px-4 py-2 border-b">{t("tableHeaders.actions")}</th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.actions")}
+              </th>
             </tr>
           </thead>
           <tbody>

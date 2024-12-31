@@ -52,8 +52,8 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+    <div className="min-h-screen bg-gray-100 p-6 dark:bg-gray-900 text-gray-900 dark:text-gray-900">
+      <h1 className="text-2xl font-bold mb-4 dark:text-white">Dashboard</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
         <div className="bg-white shadow rounded-lg p-4 flex items-center justify-center">
           <div className="text-center">

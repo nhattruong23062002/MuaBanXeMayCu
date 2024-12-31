@@ -1,58 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaSun, FaMoon, FaAdjust } from "react-icons/fa";
+import { useTheme } from "./ThemeContext";
 
 const ThemeSelector = () => {
-  const [theme, setTheme] = useState("auto"); // State cho theme
-  const [isOpen, setIsOpen] = useState(false); // State để quản lý hiển thị dropdown
-
-  // Thay đổi theme khi state theme thay đổi
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    } else if (theme === "light") {
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
-    } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      if (prefersDark) {
-        document.documentElement.classList.add("dark");
-        document.documentElement.classList.remove("light");
-      } else {
-        document.documentElement.classList.add("light");
-        document.documentElement.classList.remove("dark");
-      }
-    }
-  }, [theme]);
-
-  // Toggle dropdown menu
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen); // Đổi trạng thái mở/đóng
-  };
+  const { theme, toggleTheme } = useTheme(); // Lấy theme và hàm toggle từ context
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null); // Để quản lý sự kiện click ra ngoài
 
   // Đóng dropdown khi click ra ngoài
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!event.target.closest(".theme-dropdown")) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
-    document.addEventListener("click", handleClickOutside);
+
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
-    <div className="relative theme-dropdown">
-      {/* Nút để bật/tắt menu */}
+    <div className="relative theme-dropdown" ref={dropdownRef}>
+      {/* Nút để mở dropdown */}
       <button
-        onClick={toggleDropdown}
+        onClick={() => setIsOpen((prev) => !prev)}
         className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
       >
-        <FaSun className="text-gray-500 dark:text-gray-300" />
+        {theme === "light" && (
+          <FaSun className="text-gray-500 dark:text-gray-300" />
+        )}
+        {theme === "dark" && (
+          <FaMoon className="text-gray-500 dark:text-gray-300" />
+        )}
+        {theme === "auto" && (
+          <FaAdjust className="text-gray-500 dark:text-gray-300" />
+        )}
       </button>
 
       {/* Dropdown menu */}
@@ -61,39 +45,33 @@ const ThemeSelector = () => {
           <ul>
             <li
               className={`flex items-center px-4 py-2 cursor-pointer hover:bg-gray-400 dark:hover:bg-gray-700 ${
-                theme === "light"
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-700 dark:text-gray-300"
+                theme === "light" ? "bg-blue-500 text-black" : "text-black"
               }`}
               onClick={() => {
-                setTheme("light");
-                setIsOpen(false); // Đóng dropdown sau khi chọn
+                toggleTheme("light");
+                setIsOpen(false);
               }}
             >
               <FaSun className="mr-2" /> Light
             </li>
             <li
               className={`flex items-center px-4 py-2 cursor-pointer hover:bg-gray-400 dark:hover:bg-gray-700 ${
-                theme === "dark"
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-700 dark:text-gray-300"
+                theme === "dark" ? "bg-blue-500 text-black" : "text-black"
               }`}
               onClick={() => {
-                setTheme("dark");
-                setIsOpen(false); // Đóng dropdown sau khi chọn
+                toggleTheme("dark");
+                setIsOpen(false);
               }}
             >
               <FaMoon className="mr-2" /> Dark
             </li>
             <li
               className={`flex items-center px-4 py-2 cursor-pointer hover:bg-gray-400 dark:hover:bg-gray-700 ${
-                theme === "auto"
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-700 dark:text-gray-300"
+                theme === "auto" ? "bg-blue-500 text-black" : "text-black"
               }`}
               onClick={() => {
-                setTheme("auto");
-                setIsOpen(false); // Đóng dropdown sau khi chọn
+                toggleTheme("auto");
+                setIsOpen(false);
               }}
             >
               <FaAdjust className="mr-2" /> Auto

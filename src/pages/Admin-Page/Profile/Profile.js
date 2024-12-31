@@ -24,14 +24,14 @@ const Profile = () => {
   };
 
   return (
-    <div className="flex justify-center items-center p-6 min-h-screen bg-gray-50">
+    <div className="flex justify-center items-center p-6 min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-900">
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white p-6 rounded-lg shadow-lg">
         {/* Left Panel */}
-        <div className="flex flex-col items-center text-center border-r border-gray-200 pr-6 object-cover">
+        <div className="flex flex-col items-center text-center border-r border-gray-200 pr-6">
           <img
             src="https://kenh14cdn.com/203336854389633024/2024/12/10/img6508jpg-1591784578-15917845-6209-7466-15917848032-1733854484177-17338544927331380039156.jpg"
             alt="Profile"
-            className="w-32 h-32 rounded-full mb-4"
+            className="w-32 h-32 rounded-full mb-4 object-cover"
           />
           <h2 className="text-2xl font-bold">{`${profileData.firstName} ${profileData.lastName}`}</h2>
           <p className="text-gray-500">{t("location")}</p>

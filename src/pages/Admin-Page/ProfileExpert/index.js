@@ -10,7 +10,8 @@ const ProfileExpert = () => {
     address: "Sơn Trà, Đà Nẵng",
     date: "23/03/1994",
     experience: "4",
-    services: "Kiểm tra dấu hiệu xe tai nạn, xe lên đời & xe trộm cắp, Ước tính số km thực tế của xe, Phát hiện lỗi phun xăng, cảm biến bằng thiết bị chính xác, Đánh giá tổng quát và định giá xe kiểm tra",
+    services:
+      "Kiểm tra dấu hiệu xe tai nạn, xe lên đời & xe trộm cắp, Ước tính số km thực tế của xe, Phát hiện lỗi phun xăng, cảm biến bằng thiết bị chính xác, Đánh giá tổng quát và định giá xe kiểm tra",
   });
 
   const handleChange = (e) => {
@@ -32,7 +33,7 @@ const ProfileExpert = () => {
   };
 
   return (
-    <div className="max-w-[800px] mx-auto mt-10 bg-[#f8f8ff] p-8 border border-gray-300 rounded-lg">
+    <div className="max-w-[800px] mx-auto mt-10 bg-[#f8f8ff] p-8 border border-gray-300 rounded-lg ">
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-6">
         {t("title")}
       </h2>

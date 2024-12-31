@@ -36,7 +36,7 @@ import RegisterExpert from "./pages/User-Page/registerExpert";
 import Dashboard from "./pages/Admin-Page/Dashboard";
 import ProfileExpert from "./pages/Admin-Page/ProfileExpert";
 import CreateAppointment from "./pages/Admin-Page/CreateAppointments";
-
+import { ThemeProvider } from "./components/ThemeContext";
 import Profile from "./pages/Admin-Page/Profile/Profile";
 import Settings from "./pages/Admin-Page/Setting/Settings";
 const App = () => {
@@ -44,6 +44,7 @@ const App = () => {
     <>
       <RainEffect />
       <Router>
+        {/* <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white"> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginForm />} />
@@ -68,87 +69,35 @@ const App = () => {
           <Route path="favorite-store" element={<FavoriteStores />} />
           <Route path="favorite-products" element={<FavoriteProducts />} />
           <Route path="register-expert" element={<RegisterExpert />} />
+          {/* Admin Routes with ThemeProvider */}
           <Route
-            path="/admin/dashboard"
+            path="/admin/*"
             element={
-              <AdminLayout>
-                <Dashboard />
-              </AdminLayout>
-            }
-          />
-
-          <Route
-            path="/admin/manage-appointments"
-            element={
-              <AdminLayout>
-                <ManageAppointments />
-              </AdminLayout>
-            }
-          />
-
-          <Route
-            path="/admin/create-appointment"
-            element={
-              <AdminLayout>
-                <CreateAppointment />
-              </AdminLayout>
-            }
-          />
-
-          <Route
-            path="/admin/profile-expert"
-            element={
-              <AdminLayout>
-                <ProfileExpert />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/admin/manage-posts"
-            element={
-              <AdminLayout>
-                <ManagePosts />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/admin/manage-users"
-            element={
-              <AdminLayout>
-                <ManageUsers />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/admin/handle-complaints"
-            element={
-              <AdminLayout>
-                <HandleComplaints />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/admin/manage-experts"
-            element={
-              <AdminLayout>
-                <ManageExperts />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/admin/profile"
-            element={
-              <AdminLayout>
-                <Profile />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/admin/setting"
-            element={
-              <AdminLayout>
-                <Settings />
-              </AdminLayout>
+              <ThemeProvider>
+                <AdminLayout>
+                  <Routes>
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route
+                      path="manage-appointments"
+                      element={<ManageAppointments />}
+                    />
+                    <Route
+                      path="create-appointment"
+                      element={<CreateAppointment />}
+                    />
+                    <Route path="profile-expert" element={<ProfileExpert />} />
+                    <Route path="manage-posts" element={<ManagePosts />} />
+                    <Route path="manage-users" element={<ManageUsers />} />
+                    <Route
+                      path="handle-complaints"
+                      element={<HandleComplaints />}
+                    />
+                    <Route path="manage-experts" element={<ManageExperts />} />
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="setting" element={<Settings />} />
+                  </Routes>
+                </AdminLayout>
+              </ThemeProvider>
             }
           />
         </Routes>

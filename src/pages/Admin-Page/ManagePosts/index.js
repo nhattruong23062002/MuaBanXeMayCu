@@ -106,8 +106,8 @@ const ManagePosts = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h2 className="text-2xl font-bold mb-6">{t("title")}</h2>
+    <div className="p-6 bg-gray-100 min-h-screen dark:bg-gray-900 text-gray-900 dark:text-gray-900">
+      <h2 className="text-2xl font-bold mb-6 dark:text-white">{t("title")}</h2>
 
       {/* Thanh tìm kiếm và bộ lọc */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
@@ -121,9 +121,7 @@ const ManagePosts = () => {
         />
 
         {/* Ô chọn danh mục */}
-        <select
-          className="p-2 border border-gray-300 rounded-md bg-white w-40 sm:w-48 focus:ring focus:ring-blue-300"
-        >
+        <select className="p-2 border border-gray-300 rounded-md bg-white w-40 sm:w-48 focus:ring focus:ring-blue-300">
           <option value="">{t("categories.default")}</option>
           <option value="xe-may">{t("categories.bike")}</option>
           <option value="xe-tay-ga">{t("categories.scooter")}</option>
@@ -168,9 +166,13 @@ const ManagePosts = () => {
               </th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.type")}</th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.price")}</th>
-              <th className="px-4 py-2 border-b">{t("tableHeaders.location")}</th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.location")}
+              </th>
               <th className="px-4 py-2 border-b">{t("tableHeaders.image")}</th>
-              <th className="px-4 py-2 border-b">{t("tableHeaders.actions")}</th>
+              <th className="px-4 py-2 border-b">
+                {t("tableHeaders.actions")}
+              </th>
             </tr>
           </thead>
           <tbody>

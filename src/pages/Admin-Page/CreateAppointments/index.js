@@ -35,17 +35,17 @@ const CreateAppointment = () => {
       const newAppointments = selectedSlots.map((slot) => ({
         date: selectedDate,
         time: slot,
-        slot: 0
+        slot: 0,
       }));
       setAppointments([...appointments, ...newAppointments]);
-      setSelectedSlots([]); 
+      setSelectedSlots([]);
     } else {
       alert("Please select a date and at least one time slot.");
     }
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-gray-100 min-h-screen dark:bg-gray-900 text-gray-900 dark:text-white">
       <h2 className="text-2xl font-bold mb-4">{t("title")}</h2>
 
       <div className="mb-6">
@@ -54,7 +54,7 @@ const CreateAppointment = () => {
           type="date"
           value={selectedDate}
           onChange={handleDateChange}
-          className="p-2 border border-gray-300 rounded-md w-full sm:w-auto"
+          className="p-2 border border-gray-300 rounded-md w-full sm:w-auto text-black"
         />
       </div>
 
@@ -92,7 +92,7 @@ const CreateAppointment = () => {
               <thead>
                 <tr className="bg-gray-200 text-gray-700">
                   <th className="px-4 py-2 border">{t("dateList")}</th>
-                  <th className="px-4 py-2 border">{t("hourList")}</th>  
+                  <th className="px-4 py-2 border">{t("hourList")}</th>
                   <th className="px-4 py-2 border">{t("numberBook")}</th>
                 </tr>
               </thead>
