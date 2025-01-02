@@ -47,7 +47,7 @@ const UserIdentificationForm = () => {
     };
 
     const onBackToAccount = (event) => {
-        navigate("/account")
+        navigate(-1)
     }
 
     return (
