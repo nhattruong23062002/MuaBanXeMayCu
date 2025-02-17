@@ -18,7 +18,6 @@ import AdminLayout from "./layout/layoutAdmin";
 import ListExpert from "./pages/User-Page/ListExpert";
 import UserIdentificationForm from "./pages/User-Page/Identification";
 import PaymentForm from "./pages/User-Page/Payment";
-import Upload from "./pages/User-Page/Upload";
 import ChatMessage from "./components/ChatMessage";
 import ExpertDetailPage from "./pages/User-Page/expertDetail";
 import ListStore from "./pages/User-Page/ListStore";
@@ -29,7 +28,6 @@ import PostDetail from "./pages/User-Page/postDetail";
 import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
 import Report from "./pages/User-Page/report";
-import RainEffect from "./components/RainEffect";
 import FavoriteStores from "./pages/User-Page/favoriteStore";
 import FavoriteProducts from "./pages/User-Page/favoriteProduct";
 import RegisterExpert from "./pages/User-Page/registerExpert";
@@ -39,12 +37,12 @@ import CreateAppointment from "./pages/Admin-Page/CreateAppointments";
 import { ThemeProvider } from "./components/ThemeContext";
 import Profile from "./pages/Admin-Page/Profile/Profile";
 import Settings from "./pages/Admin-Page/Setting/Settings";
+import AddCar from "./pages/User-Page/addCar";
+
 const App = () => {
   return (
     <>
-      <RainEffect />
       <Router>
-        {/* <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white"> */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginForm />} />
@@ -58,7 +56,7 @@ const App = () => {
           <Route path="/chat" element={<ChatMessage />} />
           <Route path="/identification" element={<UserIdentificationForm />} />
           <Route path="/payment" element={<PaymentForm />} />
-          <Route path="/upload" element={<Upload />} />
+          <Route path="/upload" element={<AddCar />} />
           <Route path="/expertDetail" element={<ExpertDetailPage />} />
           <Route path="/storeDetail" element={<StoreDetailPage />} />
           <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
@@ -69,7 +67,6 @@ const App = () => {
           <Route path="favorite-store" element={<FavoriteStores />} />
           <Route path="favorite-products" element={<FavoriteProducts />} />
           <Route path="register-expert" element={<RegisterExpert />} />
-          {/* Admin Routes with ThemeProvider */}
           <Route
             path="/admin/*"
             element={

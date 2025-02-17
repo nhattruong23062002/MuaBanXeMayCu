@@ -10,13 +10,15 @@ import { FaRegMessage } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { FaRegHeart } from "react-icons/fa";
 import { GrUserExpert } from "react-icons/gr";
+import { decodeToken, getToken, removeToken } from "../../utils/authUtils";
 
-const auth = JSON.parse(localStorage.getItem("auth"));
+const auth = getToken();
 
 function AccountPage() {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation("account");
   const [showLanguageOptions, setShowLanguageOptions] = useState(false);
+  const user = decodeToken();
 
   const languages = [
     { code: "vi", name: "Tiếng Việt", flag: "https://flagcdn.com/w40/vn.png" },
@@ -29,11 +31,11 @@ function AccountPage() {
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang.code);
     setShowLanguageOptions(false);
-    localStorage.setItem("i18nextLng", lang.code); 
+    localStorage.setItem("i18nextLng", lang.code);
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("auth");
+    removeToken();
     window.location.href = "/login";
   };
 
@@ -49,11 +51,11 @@ function AccountPage() {
               className="text-white text-2xl font-bold ml-4 cursor-pointer"
               onClick={() => navigate(`/login`)}
             >
-              {t("login")} 
+              {t("login")}
             </h2>
           ) : (
             <h2 className="text-white text-2xl font-bold ml-4">
-              {t("user_name", { name: "User 1" })}
+              {user?.userName}
             </h2>
           )}
         </div>

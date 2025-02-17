@@ -1,115 +1,142 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import LayoutUser from "../../layout/layoutUser";
+import { Layout } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Form, Input, Button, notification } from "antd";
+import { addUser } from "../../services/userService";
+import { toast, ToastContainer } from "react-toastify";
+import LayoutUser from "../../layout/layoutUser";
+
+const { Content } = Layout;
 
 function RegisterForm() {
-  const [showPassword, setShowPassword] = useState(false);
   const { t } = useTranslation("register");
   const navigate = useNavigate();
 
-  const handleShowLogin = () => {
-    navigate(`/login`);
+  const handleRegister = async (values) => {
+    if (values.password !== values.confirmPassword) {
+      toast.error(t("passwordMismatch"), { autoClose: 1500 });
+      return;
+    }
+    try {
+      const data = {
+        userName: values.userName,
+        email: values.email,
+        phoneNumber: values.phoneNumber,
+        password: values.password,
+        role: "user",
+      };
+      const response = await addUser(data);
+
+      if (response) {
+        toast.success(t("registerSuccess"), { autoClose: 1500 });
+        setTimeout(() => {
+          navigate("/login");
+        }, 1500);
+      }
+    } catch (err) {
+      toast.error(err.response ? t("registerFailed") : t("genericError"), { autoClose: 1500 });
+    }
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  const handleShowLogin = () => {
+    navigate("/login");
   };
 
   return (
     <LayoutUser>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <Content style={{ minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center", padding: "8px" }}>
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md mt-[-150px]">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            {t("title")}
-          </h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{t("title")}</h2>
 
-          <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-1">
-              {t("name")} *
-            </label>
-            <input
-              type="text"
-              placeholder={t("namePlaceholder")}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-1">
-              {t("email")} *
-            </label>
-            <input
-              type="text"
-              placeholder={t("emailPlaceholder")}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block text-gray-700 font-medium mb-1">
-              {t("phone")} *
-            </label>
-            <input
-              type="text"
-              placeholder={t("phonePlaceholder")}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
-            />
-          </div>
-
-          <div className="mb-4 relative">
-            <label className="block text-gray-700 font-medium mb-1">
-              {t("password")} *
-            </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder={t("passwordPlaceholder")}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
-            />
-            <button
-              type="button"
-              className="absolute top-9 right-3 text-gray-500 hover:text-gray-700"
-              onClick={togglePasswordVisibility}
+          <Form
+            name="registerForm"
+            initialValues={{ remember: true }}
+            onFinish={handleRegister}
+            layout="vertical"
+            requiredMark="optional"
+          >
+            <Form.Item
+              label={t("name")}
+              name="userName"
+              rules={[{ required: true, message: t("nameRequired") }]}
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </button>
-          </div>
+              <Input placeholder={t("namePlaceholder")} />
+            </Form.Item>
 
-          <div className="mb-4 relative">
-            <label className="block text-gray-700 font-medium mb-1">
-              {t("confirmPassword")} *
-            </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder={t("confirmPasswordPlaceholder")}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-400"
-            />
-            <button
-              type="button"
-              className="absolute top-9 right-3 text-gray-500 hover:text-gray-700"
-              onClick={togglePasswordVisibility}
+            <Form.Item
+              label={t("email")}
+              name="email"
+              rules={[
+                { required: true, message: t("emailRequired") },
+                { type: "email", message: t("invalidEmail") },
+              ]}
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </button>
-          </div>
+              <Input placeholder={t("emailPlaceholder")} />
+            </Form.Item>
 
-          <button className="w-full bg-[#d59648] hover:bg-[#b27939] text-white font-medium py-2 rounded-md">
-            {t("registerButton")}
-          </button>
-
-          <p className="text-center text-gray-600 text-sm mt-4">
-            {t("loginPrompt")}{" "}
-            <a
-              href="#"
-              className="text-[#d59648] hover:underline font-medium"
-              onClick={handleShowLogin}
+            <Form.Item
+              label={t("phone")}
+              name="phoneNumber"
+              rules={[
+                { required: true, message: t("phoneRequired") },
+                { pattern: /^[0-9]{10,12}$/, message: t("invalidPhone") },
+              ]}
             >
-              {t("loginLink")}
-            </a>
-          </p>
+              <Input placeholder={t("phonePlaceholder")} />
+            </Form.Item>
+
+            <Form.Item
+              label={t("password")}
+              name="password"
+              rules={[
+                { required: true, message: t("passwordRequired") },
+                { min: 6, message: t("passwordMinLength") },
+              ]}
+            >
+              <Input.Password
+                placeholder={t("passwordPlaceholder")}
+                iconRender={(visible) => (visible ? <FaEyeSlash /> : <FaEye />)}
+                visibilityToggle={false}
+              />
+            </Form.Item>
+
+            <Form.Item
+              label={t("confirmPassword")}
+              name="confirmPassword"
+              rules={[
+                { required: true, message: t("confirmPasswordRequired") },
+                { min: 6, message: t("passwordMinLength") },
+              ]}
+            >
+              <Input.Password
+                placeholder={t("confirmPasswordPlaceholder")}
+                iconRender={(visible) => (visible ? <FaEyeSlash /> : <FaEye />)}
+                visibilityToggle={false}
+              />
+            </Form.Item>
+
+            <Form.Item>
+              <Button type="primary" htmlType="submit" block>
+                {t("registerButton")}
+              </Button>
+            </Form.Item>
+
+            <p className="text-center text-gray-600 text-sm mt-4">
+              {t("loginPrompt")}{" "}
+              <a
+                href="#"
+                className="text-[#1677ff] hover:underline font-medium"
+                onClick={handleShowLogin}
+              >
+                {t("loginLink")}
+              </a>
+            </p>
+          </Form>
         </div>
-      </div>
+      </Content>
+      <ToastContainer />
     </LayoutUser>
   );
 }
