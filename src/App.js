@@ -18,7 +18,6 @@ import AdminLayout from "./layout/layoutAdmin";
 import ListExpert from "./pages/User-Page/ListExpert";
 import UserIdentificationForm from "./pages/User-Page/Identification";
 import PaymentForm from "./pages/User-Page/Payment";
-import Upload from "./pages/User-Page/Upload";
 import ChatMessage from "./components/ChatMessage";
 import ExpertDetailPage from "./pages/User-Page/expertDetail";
 import ListStore from "./pages/User-Page/ListStore";
@@ -29,7 +28,6 @@ import PostDetail from "./pages/User-Page/postDetail";
 import MessageList from "./pages/User-Page/ListSender";
 import EditPost from "./pages/User-Page/EditPost";
 import Report from "./pages/User-Page/report";
-import RainEffect from "./components/RainEffect";
 import FavoriteStores from "./pages/User-Page/favoriteStore";
 import FavoriteProducts from "./pages/User-Page/favoriteProduct";
 import RegisterExpert from "./pages/User-Page/registerExpert";
@@ -39,71 +37,106 @@ import CreateAppointment from "./pages/Admin-Page/CreateAppointments";
 import { ThemeProvider } from "./components/ThemeContext";
 import Profile from "./pages/Admin-Page/Profile/Profile";
 import Settings from "./pages/Admin-Page/Setting/Settings";
+import AddCar from "./pages/User-Page/addCar";
+
 const App = () => {
-  return (
-    <>
-      <RainEffect />
-      <Router>
-        {/* <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white"> */}
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/detailMoto" element={<DetailMoto />} />
-          <Route path="/account" element={<AccountPage />} />
-          <Route path="/purchased" element={<PurchasedPage />} />
-          <Route path="/selling" element={<SellPage />} />
-          <Route path="/listexp" element={<ListExpert />} />
-          <Route path="/listStore" element={<ListStore />} />
-          <Route path="/chat" element={<ChatMessage />} />
-          <Route path="/identification" element={<UserIdentificationForm />} />
-          <Route path="/payment" element={<PaymentForm />} />
-          <Route path="/upload" element={<Upload />} />
-          <Route path="/expertDetail" element={<ExpertDetailPage />} />
-          <Route path="/storeDetail" element={<StoreDetailPage />} />
-          <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
-          <Route path="/postDetail" element={<PostDetail />} />
-          <Route path="/editPost/:id" element={<EditPost />} />
-          <Route path="/listSender" element={<MessageList />} />
-          <Route path="report" element={<Report />} />
-          <Route path="favorite-store" element={<FavoriteStores />} />
-          <Route path="favorite-products" element={<FavoriteProducts />} />
-          <Route path="register-expert" element={<RegisterExpert />} />
-          {/* Admin Routes with ThemeProvider */}
-          <Route
-            path="/admin/*"
-            element={
-              <ThemeProvider>
-                <AdminLayout>
-                  <Routes>
-                    <Route path="dashboard" element={<Dashboard />} />
+    return (
+        <>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/login" element={<LoginForm />} />
+                    <Route path="/register" element={<RegisterForm />} />
+                    <Route path="/detailcar/:id" element={<DetailMoto />} />
+                    <Route path="/account" element={<AccountPage />} />
+                    <Route path="/purchased" element={<PurchasedPage />} />
+                    <Route path="/selling" element={<SellPage />} />
+                    <Route path="/listexp" element={<ListExpert />} />
+                    <Route path="/listStore" element={<ListStore />} />
+                    <Route path="/chat" element={<ChatMessage />} />
                     <Route
-                      path="manage-appointments"
-                      element={<ManageAppointments />}
+                        path="/identification"
+                        element={<UserIdentificationForm />}
+                    />
+                    <Route path="/payment" element={<PaymentForm />} />
+                    <Route path="/upload" element={<AddCar />} />
+                    <Route
+                        path="/expertDetail"
+                        element={<ExpertDetailPage />}
+                    />
+                    <Route path="/storeDetail" element={<StoreDetailPage />} />
+                    <Route
+                        path="/purchaseDetail"
+                        element={<PurchaseDetailPage />}
+                    />
+                    <Route path="/postDetail" element={<PostDetail />} />
+                    <Route path="/editPost/:id" element={<EditPost />} />
+                    <Route path="/listSender" element={<MessageList />} />
+                    <Route path="report" element={<Report />} />
+                    <Route path="favorite-store" element={<FavoriteStores />} />
+                    <Route
+                        path="favorite-products"
+                        element={<FavoriteProducts />}
                     />
                     <Route
-                      path="create-appointment"
-                      element={<CreateAppointment />}
+                        path="register-expert"
+                        element={<RegisterExpert />}
                     />
-                    <Route path="profile-expert" element={<ProfileExpert />} />
-                    <Route path="manage-posts" element={<ManagePosts />} />
-                    <Route path="manage-users" element={<ManageUsers />} />
                     <Route
-                      path="handle-complaints"
-                      element={<HandleComplaints />}
+                        path="/admin/*"
+                        element={
+                            <ThemeProvider>
+                                <AdminLayout>
+                                    <Routes>
+                                        <Route
+                                            path="dashboard"
+                                            element={<Dashboard />}
+                                        />
+                                        <Route
+                                            path="manage-appointments"
+                                            element={<ManageAppointments />}
+                                        />
+                                        <Route
+                                            path="create-appointment"
+                                            element={<CreateAppointment />}
+                                        />
+                                        <Route
+                                            path="profile-expert"
+                                            element={<ProfileExpert />}
+                                        />
+                                        <Route
+                                            path="manage-posts"
+                                            element={<ManagePosts />}
+                                        />
+                                        <Route
+                                            path="manage-users"
+                                            element={<ManageUsers />}
+                                        />
+                                        <Route
+                                            path="handle-complaints"
+                                            element={<HandleComplaints />}
+                                        />
+                                        <Route
+                                            path="manage-experts"
+                                            element={<ManageExperts />}
+                                        />
+                                        <Route
+                                            path="profile"
+                                            element={<Profile />}
+                                        />
+                                        <Route
+                                            path="setting"
+                                            element={<Settings />}
+                                        />
+                                    </Routes>
+                                </AdminLayout>
+                            </ThemeProvider>
+                        }
                     />
-                    <Route path="manage-experts" element={<ManageExperts />} />
-                    <Route path="profile" element={<Profile />} />
-                    <Route path="setting" element={<Settings />} />
-                  </Routes>
-                </AdminLayout>
-              </ThemeProvider>
-            }
-          />
-        </Routes>
-      </Router>
-    </>
-  );
+                </Routes>
+            </Router>
+        </>
+    );
 };
 
 export default App;
