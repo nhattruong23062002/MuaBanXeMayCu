@@ -109,11 +109,18 @@ body {
 }
 
 .select-dropdown {
-    white-space: nowrap; /* Không cho phép xuống dòng */
-    overflow: hidden; /* Ẩn nội dung vượt quá kích thước */
-    text-overflow: ellipsis; /* Thêm dấu "..." khi nội dung bị cắt */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .input-add-car {
     margin-top: 8px !important;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
 }

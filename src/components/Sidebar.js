@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAlignJustify, FaTimes } from "react-icons/fa";
-import { useTranslation } from "react-i18next"; // Import hook
+import { useTranslation } from "react-i18next";
 import { MdOutlineDashboard } from "react-icons/md";
 import { BsFilePost } from "react-icons/bs";
-import { FaUserGroup } from "react-icons/fa6";
+import { FaCarSide, FaUserGroup } from "react-icons/fa6";
 import { HiDocumentReport } from "react-icons/hi";
 import { FaUserSecret } from "react-icons/fa6";
 import { FaRegUserCircle, FaFile } from "react-icons/fa";
@@ -17,8 +17,12 @@ import { decodeToken } from "../utils/authUtils";
 const Sidebar = () => {
   const { t } = useTranslation("sidebar"); // Sử dụng namespace "sidebar"
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State quản lý sidebar
+  const [activeLink, setActiveLink] = useState(null);
   const user = decodeToken();
 
+  const handleActiveLink = (link) => {
+    setActiveLink(link);
+  };
   return (
     <>
       <button
@@ -82,7 +86,9 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/dashboard"
-                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className={`flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors ${activeLink === "dashboard" ? "bg-gray-600" : ""
+                    }`}
+                  onClick={() => handleActiveLink("dashboard")}
                 >
                   <MdOutlineDashboard />
                   {t("Dashboard")}
@@ -92,7 +98,9 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/manage-posts"
-                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className={`flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors ${activeLink === "managePosts" ? "bg-gray-600" : ""
+                    }`}
+                  onClick={() => handleActiveLink("managePosts")}
                 >
                   <BsFilePost />
                   {t("managePosts")}
@@ -101,7 +109,9 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/manage-users"
-                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className={`flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors ${activeLink === "manageUsers" ? "bg-gray-600" : ""
+                    }`}
+                  onClick={() => handleActiveLink("manageUsers")}
                 >
                   <FaUserGroup />
                   {t("manageUsers")}
@@ -109,8 +119,21 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
+                  to="/admin/manage-cars"
+                  className={`flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors ${activeLink === "manageCars" ? "bg-gray-600" : ""
+                    }`}
+                  onClick={() => handleActiveLink("manageCars")}
+                >
+                  <FaCarSide />
+                  {t("manageCars")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/admin/handle-complaints"
-                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className={`flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors ${activeLink === "handleComplaints" ? "bg-gray-600" : ""
+                    }`}
+                  onClick={() => handleActiveLink("handleComplaints")}
                 >
                   <HiDocumentReport />
                   {t("handleComplaints")}
@@ -119,7 +142,7 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/manage-experts"
-                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors"
                 >
                   <FaUserSecret />
                   {t("manageExperts")}
@@ -128,7 +151,9 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/profile"
-                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className={`flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors ${activeLink === "profile" ? "bg-gray-600" : ""
+                    }`}
+                  onClick={() => handleActiveLink("profile")}
                 >
                   <FaFile />
                   {t("profile")}
@@ -137,7 +162,7 @@ const Sidebar = () => {
               <li>
                 <Link
                   to="/admin/setting"
-                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 rounded-lg transition-colors"
+                  className="flex items-center gap-1 block px-6 py-2 hover:bg-gray-700 transition-colors"
                 >
                   <IoSettingsSharp />
                   {t("setting")}

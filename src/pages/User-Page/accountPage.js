@@ -68,6 +68,16 @@ function AccountPage() {
           <ul className="space-y-8">
             <li
               className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]"
+              onClick={() => navigate(`/my-store`)}
+            >
+              <FaStore className="text-2xl text-[#00a0e9]" />
+              <span className="text-lg font-medium">
+                {t("my_store")}
+              </span>
+            </li>
+
+            <li
+              className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]"
               onClick={() => navigate(`/selling`)}
             >
               <FaCarSide className="text-2xl text-[#00a0e9]" />
@@ -94,7 +104,7 @@ function AccountPage() {
               <span className="text-lg font-medium">{t("messages")}</span>
             </li>
 
-            <li
+            {/* <li
               className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]"
               onClick={() => navigate(`/identification`)}
             >
@@ -102,13 +112,12 @@ function AccountPage() {
               <span className="text-lg font-medium">
                 {t("account_verification")}
               </span>
-            </li>
-
+            </li> */}
             <li
               className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]"
               onClick={() => navigate(`/favorite-store`)}
             >
-              <FaStore className="text-2xl text-[#00a0e9]" />
+              <GrUserExpert className="ml-[3px] text-2xl text-[#00a0e9]" />
               <span className="text-lg font-medium">
                 {t("favorite_store")}
               </span>
@@ -121,16 +130,6 @@ function AccountPage() {
               <FaRegHeart className="text-2xl text-[#00a0e9]" />
               <span className="text-lg font-medium">
                 {t("favorite_product")}
-              </span>
-            </li>
-
-            <li
-              className="flex items-center space-x-4 text-gray-700 cursor-pointer hover:text-[#00a0e9]"
-              onClick={() => navigate(`/register-expert`)}
-            >
-              <GrUserExpert className="ml-[3px] text-2xl text-[#00a0e9]" />
-              <span className="text-lg font-medium">
-                {t("register_expert")}
               </span>
             </li>
 

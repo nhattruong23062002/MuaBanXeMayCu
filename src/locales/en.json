@@ -10,7 +10,8 @@
         "logout": "Logout",
         "favorite_product": "Favorite product",
         "favorite_store": "Favorite store",
-        "register_expert": "Register for an expert account"
+        "register_expert": "Register for an expert account",
+        "my_store": "My store"
     },
     "detailMoto": {
         "title": "Honda SH 125i",
@@ -502,7 +503,8 @@
         "handleComplaints": "Handle Complaints",
         "manageExperts": "Manage Experts",
         "profile": "Profile",
-        "setting": "Setting"
+        "setting": "Setting",
+        "manageCars": "Manage Cars"
     },
     "manageAppointments": {
         "title": "Manage Appointment Schedules",
@@ -574,58 +576,43 @@
         "noAppointments": "No appointments have been created yet."
     },
     "managePosts": {
-        "title": "Manage Posts",
-        "searchPlaceholder": "Enter title or ID",
-        "choosecity": "Select city location",
-        "categories": {
-            "default": "Select category",
-            "bike": "Motorbike",
-            "scooter": "Scooter",
-            "manualBike": "Manual Bike",
-            "largeBike": "Large Bike"
-        },
-        "buttons": {
-            "ok": "OK",
-            "delete": "Delete",
-            "approve": "Approve"
-        },
-        "tableHeaders": {
-            "id": "ID",
-            "title": "Title",
-            "productCode": "Product Code",
-            "type": "Type",
-            "price": "Price",
-            "location": "Location",
-            "image": "Image",
-            "actions": "Actions"
-        },
-        "posts": [
-            {
-                "title": "Sell used Sirius motorbike",
-                "type": "Motorbike",
-                "location": "Da Nang"
-            },
-            {
-                "title": "Sell used SH motorbike",
-                "type": "Motorbike",
-                "location": "Hanoi"
-            },
-            {
-                "title": "Sell used Wave motorbike",
-                "type": "Motorbike",
-                "location": "Hai Phong"
-            },
-            {
-                "title": "Sell used Airblack motorbike",
-                "type": "Motorbike",
-                "location": "Quang Nam"
-            },
-            {
-                "title": "Sell used R15 motorbike",
-                "type": "Motorbike",
-                "location": "Ho Chi Minh City"
-            }
-        ]
+        "managePostsTitle": "Manage Posts",
+        "manageCarsTitle": "Manage Cars",
+        "stt": "No.",
+        "seller": "Seller",
+        "model": "Model",
+        "make": "Make",
+        "licensePlate": "License Plate",
+        "color": "Color",
+        "year": "Year",
+        "mileage": "Mileage",
+        "price": "Price",
+        "status": "Status",
+        "action": "Action",
+        "accept": "Accept",
+        "reject": "Reject",
+        "confirmReject": "Are you sure you want to reject this post?",
+        "acceptSuccess": "The post has been accepted!",
+        "rejectSuccess": "The post has been rejected!",
+        "loading": "Loading...",
+        "yes": "Yes",
+        "no": "No",
+        "viewDetails": "View detail"
+    },
+    "carDetailModal": {
+        "carDetailsTitle": "Car Information",
+        "model": "Model",
+        "make": "Make",
+        "licensePlate": "License Plate",
+        "color": "Color",
+        "year": "Year",
+        "mileage": "Mileage",
+        "price": "Price",
+        "status": "Status",
+        "description": "Description",
+        "accept": "Accept",
+        "reject": "Reject",
+        "carImages": "Car Images"
     },
     "manageUsers": {
         "userManagement": "User Management",
@@ -694,6 +681,30 @@
             "saved": "Information has been saved!",
             "cancelled": "Changes have been cancelled!"
         }
+    },
+    "editCar": {
+        "model": "Model",
+        "make": "Make",
+        "license_plate": "License Plate",
+        "color": "Color",
+        "year": "Year",
+        "mileage": "Mileage",
+        "price": "Price",
+        "description": "Description",
+        "upload_images": "Upload Car Images",
+        "submit": "Submit",
+        "editCar": "Edit Car",
+        "modelRequired": "Please input the car model!",
+        "makeRequired": "Please input the car make!",
+        "licensePlateRequired": "Please input the license plate!",
+        "colorRequired": "Please input the car color!",
+        "yearRequired": "Please input the car year!",
+        "mileageRequired": "Please input the mileage!",
+        "priceRequired": "Please input the price!",
+        "updateSuccess": "Update successful",
+        "updateFailed": "Update failed",
+        "genericError": "An error occurred",
+        "loading": "Loading..."
     },
     "handleComplaints": {
         "title": "Complaint List",

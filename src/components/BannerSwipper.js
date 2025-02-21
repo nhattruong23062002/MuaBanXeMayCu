@@ -16,21 +16,21 @@ function BannerSwiper() {
     >
       <SwiperSlide>
         <img
-          src="https://hoahonda.com.vn/wp-content/uploads/2022/08/cacloaixemayphuhopvoinhanvienvanphong.jpg.webp"
+          src="https://xe.muabannhanh.com/upload/thumbnails/700/2021/04/28/lai-xe-jpg.jpg"
           alt="Banner 2"
           className="w-full h-[430px] object-cover rounded-b-lg"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          src="https://maudon.net/wp-content/uploads/2024/07/tai-giay-mua-ban-xe-may-2.jpg"
+          src="https://static.danhgiaxe.com/data/201525/although-the-scirocco-is-sold-around-the-world-it-is-doesnt-look-like-the-stylish-coupe-will-be-coming-to-america-anytime-soon_779.jpg"
           alt="Banner 3"
           className="w-full h-[430px] object-cover rounded-b-lg"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          src="https://hoahonda.com.vn/wp-content/uploads/2022/05/Peach-Brown-Abstract-International-Self-Day-Care-Twitter-Post-1920-%C3%97-1080-px-1920-%C3%97-1080-px.png"
+          src="https://otohoangkim-storage.sgp1.cdn.digitaloceanspaces.com/Bentley-Continental-GT-Azure-2024-1.webp"
           alt="Banner 1"
           className="w-full h-[430px] object-cover rounded-b-lg"
         />

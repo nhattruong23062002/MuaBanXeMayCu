@@ -38,6 +38,9 @@ import { ThemeProvider } from "./components/ThemeContext";
 import Profile from "./pages/Admin-Page/Profile/Profile";
 import Settings from "./pages/Admin-Page/Setting/Settings";
 import AddCar from "./pages/User-Page/addCar";
+import ManageCars from "./pages/Admin-Page/ManageCars";
+import EditCar from "./pages/Admin-Page/ManageCars/editCar";
+import MyStore from "./pages/User-Page/myStore";
 
 const App = () => {
   return (
@@ -59,6 +62,7 @@ const App = () => {
           <Route path="/upload" element={<AddCar />} />
           <Route path="/expertDetail" element={<ExpertDetailPage />} />
           <Route path="/storeDetail" element={<StoreDetailPage />} />
+          <Route path="/my-store" element={<MyStore />} />
           <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
           <Route path="/postDetail" element={<PostDetail />} />
           <Route path="/editPost/:id" element={<EditPost />} />
@@ -84,7 +88,9 @@ const App = () => {
                     />
                     <Route path="profile-expert" element={<ProfileExpert />} />
                     <Route path="manage-posts" element={<ManagePosts />} />
+                    <Route path="edit-car/:id" element={<EditCar />} />
                     <Route path="manage-users" element={<ManageUsers />} />
+                    <Route path="manage-cars" element={<ManageCars />} />
                     <Route
                       path="handle-complaints"
                       element={<HandleComplaints />}

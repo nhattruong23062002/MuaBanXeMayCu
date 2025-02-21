@@ -10,7 +10,8 @@
         "logout": "Đăng xuất",
         "favorite_product": "Sản phẩm yêu thích",
         "favorite_store": "Cửa hàng yêu thích",
-        "register_expert": "Đăng ký tài khoản chuyên gia"
+        "register_expert": "Đăng ký tài khoản chuyên gia",
+        "my_store": "Cửa hàng của tôi"
     },
     "detailMoto": {
         "title": "Honda SH 125i",
@@ -502,7 +503,8 @@
         "handleComplaints": "Xử lý khiếu nại",
         "manageExperts": "Quản lý chuyên gia",
         "profile": "Hồ sơ",
-        "setting": "Cài đặt"
+        "setting": "Cài đặt",
+        "manageCars": "Quản lý xe"
     },
     "manageAppointments": {
         "title": "Quản lý lịch hẹn kiểm tra xe",
@@ -579,58 +581,43 @@
         "submitButton": "Lưu thay đổi"
     },
     "managePosts": {
-        "title": "Quản lý bài đăng",
-        "searchPlaceholder": "nhập tiêu đề hoặc ID",
-        "choosecity": "Chọn địa điểm thành phố",
-        "categories": {
-            "default": "Chọn danh mục",
-            "bike": "Xe Máy số",
-            "scooter": "Xe tay ga",
-            "manualBike": "Xe tay côn",
-            "largeBike": "Xe phân khối lớn"
-        },
-        "buttons": {
-            "ok": "OK",
-            "delete": "xóa",
-            "approve": "Phê duyệt"
-        },
-        "tableHeaders": {
-            "id": "ID",
-            "title": "Tiêu đề",
-            "productCode": "Mã Sản phẩm",
-            "type": "Loại xe",
-            "price": "Giá bán",
-            "location": "Địa điểm",
-            "image": "Hình ảnh",
-            "actions": "Chức Năng"
-        },
-        "posts": [
-            {
-                "title": "Bán xe máy cũ sirius",
-                "type": "Xe máy",
-                "location": "Đà Nẵng"
-            },
-            {
-                "title": "Bán xe máy cũ SH",
-                "type": "Xe máy",
-                "location": "Hà Nội"
-            },
-            {
-                "title": "Bán xe máy cũ wave",
-                "type": "Xe máy",
-                "location": "Hải Phòng"
-            },
-            {
-                "title": "Bán xe máy cũ Airblack",
-                "type": "Xe máy",
-                "location": "Quảng Nam"
-            },
-            {
-                "title": "Bán xe máy cũ R15",
-                "type": "Xe máy",
-                "location": "Hồ Chí Minh"
-            }
-        ]
+        "managePostsTitle": "Quản lý bài đăng",
+        "manageCarsTitle": "Quản lý xe",
+        "stt": "STT",
+        "seller": "Người bán",
+        "model": "Mẫu xe",
+        "make": "Hãng xe",
+        "licensePlate": "Biển số xe",
+        "color": "Màu sắc",
+        "year": "Năm sản xuất",
+        "mileage": "Số km đã đi",
+        "price": "Giá",
+        "status": "Trạng thái",
+        "action": "Hành động",
+        "accept": "Chấp nhận",
+        "reject": "Từ chối",
+        "confirmReject": "Bạn có chắc chắn muốn từ chối bài đăng này?",
+        "acceptSuccess": "Bài đăng đã được chấp nhận!",
+        "rejectSuccess": "Bài đăng đã bị từ chối!",
+        "loading": "Đang tải...",
+        "yes": "Có",
+        "no": "Không",
+        "viewDetails": "Xem chi tiết"
+    },
+    "carDetailModal": {
+        "carDetailsTitle": "Thông tin xe",
+        "model": "Mẫu xe",
+        "make": "Hãng xe",
+        "licensePlate": "Biển số",
+        "color": "Màu sắc",
+        "year": "Năm sản xuất",
+        "mileage": "Số km đã đi",
+        "price": "Giá",
+        "status": "Trạng thái",
+        "description": "Mô tả",
+        "accept": "Chấp nhận",
+        "reject": "Từ chối",
+        "carImages": "Ảnh xe"
     },
     "manageUsers": {
         "userManagement": "Quản lý người dùng",
@@ -699,6 +686,30 @@
             "saved": "Thông tin đã được lưu!",
             "cancelled": "Thay đổi đã bị hủy!"
         }
+    },
+    "editCar": {
+        "model": "Mẫu xe",
+        "make": "Hãng xe",
+        "license_plate": "Biển số",
+        "color": "Màu sắc",
+        "year": "Năm",
+        "mileage": "Số km",
+        "price": "Giá",
+        "description": "Mô tả",
+        "upload_images": "Tải lên hình ảnh xe",
+        "submit": "Gửi",
+        "editCar": "Chỉnh sửa xe",
+        "modelRequired": "Vui lòng nhập mẫu xe!",
+        "makeRequired": "Vui lòng nhập hãng xe!",
+        "licensePlateRequired": "Vui lòng nhập biển số!",
+        "colorRequired": "Vui lòng nhập màu sắc xe!",
+        "yearRequired": "Vui lòng nhập năm sản xuất!",
+        "mileageRequired": "Vui lòng nhập số km!",
+        "priceRequired": "Vui lòng nhập giá!",
+        "updateSuccess": "Cập nhật thành công",
+        "updateFailed": "Cập nhật thất bại",
+        "genericError": "Đã xảy ra lỗi",
+        "loading": "Đang tải..."
     },
     "handleComplaints": {
         "title": "Danh sách khiếu nại",

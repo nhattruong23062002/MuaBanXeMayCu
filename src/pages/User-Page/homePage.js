@@ -22,7 +22,7 @@ function HomePage() {
   useEffect(() => {
     const getCars = async () => {
       try {
-        const response = await getAllCars();
+        const response = await getAllCars({ status: "" });
         setCars(response);
       } catch (error) {
         console.error("Error fetching property types:", error);
@@ -37,13 +37,12 @@ function HomePage() {
 
   const formatPrice = (price) => {
     const priceStr = price.toString();
-    const firstDigit = priceStr.charAt(0); // Lấy chữ số đầu tiên
-    const remainingDigits = 'x'.repeat(priceStr.length - 1); // Thay thế các chữ số còn lại bằng 'x'
+    const firstDigit = priceStr.charAt(0);
+    const remainingDigits = 'x'.repeat(priceStr.length - 1);
 
-    // Kết hợp giá với chữ số đầu và 'x'
     const formattedPrice = firstDigit + remainingDigits;
 
-    return formattedPrice + "đ"; // Thêm "đ" vào cuối giá
+    return formattedPrice + "đ";
   };
 
   return (

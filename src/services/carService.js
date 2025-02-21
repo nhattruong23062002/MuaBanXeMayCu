@@ -2,8 +2,13 @@ import axios from "axios";
 import { API_URL } from "../config/apiUrls";
 import { getToken } from "../utils/authUtils";
 
-const getAllCars = async () => {
-    const response = await axios.get(`${API_URL}/cars`)
+const getAllCars = async ({ status }) => {
+    const response = await axios.get(`${API_URL}/cars?status=${status}`)
+    return response.data.payload;
+};
+
+const getDetailCar = async (id) => {
+    const response = await axios.get(`${API_URL}/cars/${id}`);
     return response.data.payload;
 };
 
@@ -37,4 +42,4 @@ const deleteCar = async (carId) => {
     });
 };
 
-export { getAllCars, addCar, updateCar, deleteCar };
+export { getAllCars, addCar, updateCar, deleteCar, getDetailCar };

@@ -48,7 +48,7 @@ const ContactModal = ({ onClose }) => {
               <p className="text-[#d59600] font-bold">{phoneNumber}</p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <button
               className="flex flex-col items-center justify-center p-3 border rounded-lg hover:bg-gray-100"
               onClick={handleCall}
@@ -63,13 +63,13 @@ const ContactModal = ({ onClose }) => {
               <FaMapMarkerAlt size={24} className="text-blue-500" />
               <span className="mt-2 text-sm font-medium">{t("viewAddress")}</span>
             </button>
-            <button
+            {/* <button
               className="flex flex-col items-center justify-center p-3 border rounded-lg hover:bg-gray-100"
               onClick={handleChat}
             >
               <IoChatboxEllipsesOutline size={24} className="text-blue-500" />
               <span className="mt-2 text-sm font-medium">{t("chat")}</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

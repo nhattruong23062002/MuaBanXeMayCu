@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Upload, Button, message, Input, Divider, Image, Form } from "antd";
 import { UploadOutlined, CarOutlined, TagOutlined, CalendarOutlined, DashboardOutlined, DollarOutlined, BgColorsOutlined, NumberOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import LayoutUser from "../../layout/layoutUser";
 import { addCar } from "../../services/carService";
-import { decodeToken } from "../../utils/authUtils";
+import { decodeToken, getToken } from "../../utils/authUtils";
 import { toast, ToastContainer } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const MAX_FILES = 12;
 const MIN_FILES = 3;
@@ -26,10 +27,18 @@ const AddCar = () => {
     const [previewOpen, setPreviewOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [form] = Form.useForm();
+    const isLogin = getToken();
+    const navigate = useNavigate();
 
     const handleChange = ({ fileList }) => {
         setFileList(fileList);
     };
+
+    useEffect(() => {
+        if (!isLogin) {
+            navigate("/login");
+        }
+    }, [isLogin, navigate]);
 
     const beforeUpload = (file) => {
         const isImage = file.type.startsWith("image/");

@@ -10,7 +10,8 @@
         "logout": "로그아웃",
         "favorite_product": "좋아하는 제품",
         "favorite_store": "좋아하는 매장",
-        "register_expert": "전문가 계정 등록"
+        "register_expert": "전문가 계정 등록",
+        "my_store": "내 가게"
     },
     "detailMoto": {
         "title": "혼다 SH 125i",
@@ -502,7 +503,8 @@
         "handleComplaints": "불만 처리",
         "manageExperts": "전문가 관리",
         "profile": "윤곽",
-        "setting": "설정"
+        "setting": "설정",
+        "manageCars": "차량 관리"
     },
     "manageAppointments": {
         "title": "예약 일정 관리",
@@ -579,58 +581,43 @@
         "noAppointments": "아직 약속이 생성되지 않았습니다."
     },
     "managePosts": {
-        "title": "게시물 관리",
-        "searchPlaceholder": "제목 또는 ID를 입력하세요",
-        "choosecity": "위치를 선택하세요",
-        "categories": {
-            "default": "카테고리 선택",
-            "bike": "모터바이크",
-            "scooter": "스쿠터",
-            "manualBike": "수동 오토바이",
-            "largeBike": "대형 오토바이"
-        },
-        "buttons": {
-            "ok": "확인",
-            "delete": "삭제",
-            "approve": "승인"
-        },
-        "tableHeaders": {
-            "id": "ID",
-            "title": "제목",
-            "productCode": "상품 코드",
-            "type": "종류",
-            "price": "가격",
-            "location": "위치",
-            "image": "이미지",
-            "actions": "작업"
-        },
-        "posts": [
-            {
-                "title": "중고 시리우스 오토바이 판매",
-                "type": "모터바이크",
-                "location": "다낭"
-            },
-            {
-                "title": "중고 SH 오토바이 판매",
-                "type": "모터바이크",
-                "location": "하노이"
-            },
-            {
-                "title": "중고 웨이브 오토바이 판매",
-                "type": "모터바이크",
-                "location": "하이퐁"
-            },
-            {
-                "title": "중고 에어블랙 오토바이 판매",
-                "type": "모터바이크",
-                "location": "꽝남"
-            },
-            {
-                "title": "중고 R15 오토바이 판매",
-                "type": "모터바이크",
-                "location": "호치민시"
-            }
-        ]
+        "managePostsTitle": "게시물 관리",
+        "manageCarsTitle": "차량 관리",
+        "stt": "순번",
+        "seller": "판매자",
+        "model": "모델",
+        "make": "브랜드",
+        "licensePlate": "차량 번호",
+        "color": "색상",
+        "year": "생산 연도",
+        "mileage": "주행 거리",
+        "price": "가격",
+        "status": "상태",
+        "action": "행동",
+        "accept": "수락",
+        "reject": "거부",
+        "confirmReject": "이 게시물을 거부하시겠습니까?",
+        "acceptSuccess": "게시물이 수락되었습니다!",
+        "rejectSuccess": "게시물이 거부되었습니다!",
+        "loading": "로딩 중...",
+        "yes": "예",
+        "no": "아니요",
+        "viewDetails": "자세히 보기"
+    },
+    "carDetailModal": {
+        "carDetailsTitle": "차량 정보",
+        "model": "모델",
+        "make": "제조사",
+        "licensePlate": "차량 번호",
+        "color": "색상",
+        "year": "제조연도",
+        "mileage": "주행 거리",
+        "price": "가격",
+        "status": "상태",
+        "description": "설명",
+        "accept": "수락",
+        "reject": "거부",
+        "carImages": "차량 이미지"
     },
     "manageUsers": {
         "userManagement": "사용자 관리",
@@ -699,6 +686,29 @@
             "saved": "정보가 저장되었습니다!",
             "cancelled": "변경 사항이 취소되었습니다!"
         }
+    },
+    "editCar": {
+        "model": "모델",
+        "make": "제조사",
+        "license_plate": "번호판",
+        "color": "색상",
+        "year": "년도",
+        "mileage": "주행 거리",
+        "price": "가격",
+        "description": "설명",
+        "upload_images": "이미지 업로드",
+        "submit": "제출",
+        "modelRequired": "차량 모델을 입력해 주세요!",
+        "makeRequired": "제조사를 입력해 주세요!",
+        "licensePlateRequired": "번호판을 입력해 주세요!",
+        "colorRequired": "차량 색상을 입력해 주세요!",
+        "yearRequired": "차량 년도를 입력해 주세요!",
+        "mileageRequired": "주행 거리를 입력해 주세요!",
+        "priceRequired": "가격을 입력해 주세요!",
+        "descriptionRequired": "설명을 입력해 주세요!",
+        "updateSuccess": "성공적으로 업데이트 되었습니다!",
+        "updateFail": "업데이트 실패!",
+        "errorOccurred": "오류가 발생했습니다."
     },
     "handleComplaints": {
         "title": "불만 목록",
