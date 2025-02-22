@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { decodeToken, getToken } from "../../utils/authUtils";
 import { useNavigate } from "react-router-dom";
 import { getAllCars } from "../../services/carService";
+import { getAllDealer } from "../../services/dealerSevice";
 
 function MyStore() {
     const { t } = useTranslation("storeDetail");
@@ -64,6 +65,7 @@ function MyStore() {
         const fetchCars = async () => {
             try {
                 const response = await getAllCars({ status: "auction,available,sold" });
+                const dataDealer = await getAllDealer({ sellerId: seller.id });
                 const result = response.filter((car) => car.sellerId == seller.id);
                 const auctionCars = result.filter(car => car.status === "auction").length;
                 const availableCars = result.filter(car => car.status === "available").length;
@@ -79,9 +81,6 @@ function MyStore() {
         };
         fetchCars();
     }, []);
-
-    console.log("cars", cars);
-
 
     return (
         <LayoutUser>
@@ -224,6 +223,7 @@ function MyStore() {
                     visible={editModalVisible}
                     onCancel={() => setEditModalVisible(false)}
                     onOk={handleUpdateStoreInfo}
+                    width={800}
                 >
                     <div>
                         <Input

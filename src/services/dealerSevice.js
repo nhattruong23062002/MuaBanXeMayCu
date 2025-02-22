@@ -2,13 +2,8 @@ import axios from "axios";
 import { API_URL } from "../config/apiUrls";
 import { getToken } from "../utils/authUtils";
 
-const getDealers = async () => {
-    const token = getToken();
-    const response = await axios.get(`${API_URL}/dealers`, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    });
+const getAllDealer = async (query) => {
+    const response = await axios.get(`${API_URL}/dealers?query=${query}`)
     return response.data.payload;
 };
 
@@ -16,7 +11,6 @@ const getDetailDealer = async (dealerId) => {
     const response = await axios.get(`${API_URL}/dealers/${dealerId}`);
     return response.data.payload;
 };
-
 
 const addDealer = async (dealerData) => {
     const response = await axios.post(`${API_URL}/dealers`, dealerData);
@@ -34,4 +28,4 @@ const updateDealer = async (dealerId, dealerData) => {
 };
 
 
-export { getDealers, getDetailDealer, addDealer, updateDealer };
+export { getAllDealer, getDetailDealer, addDealer, updateDealer };
