@@ -23,7 +23,7 @@ function HomePage() {
     useEffect(() => {
         const getCars = async () => {
             try {
-                const response = await getAllCars();
+                const response = await getAllCars({ status: "" });
                 setCars(response);
             } catch (error) {
                 console.error("Error fetching property types:", error);
