@@ -33,6 +33,7 @@
         "manufacture_year": "Năm sản xuất",
         "status": "Tình trạng",
         "like_new": "Gần như mới",
+        "bid_live": "Đấu giá trực tiếp",
         "warranty_items": [
             "Bảo hành 12 tháng với 10 hạng mục",
             "Cam kết pháp lý đầy đủ",
@@ -72,7 +73,7 @@
         "hanoi": "Hà Nội",
         "hcm": "TP.HCM",
         "danang": "Đà Nẵng",
-        "search_placeholder": "Tìm kiếm xe...",
+        "search_placeholder": "Tìm kiếm biển số xe...",
         "quality_bikes": "Xe chất lượng",
         "no_bikes_found": "Không tìm thấy xe phù hợp.",
         "scanning_image": "Đang quét"
@@ -901,5 +902,39 @@
             "passwordUpdated": "Mật khẩu đã được cập nhật thành công!",
             "passwordMismatch": "Mật khẩu không khớp!"
         }
+    },
+    "auction": {
+        "time_left": "Thời gian còn lại:",
+        "current_bidding": "Đang đấu giá",
+        "immediate_bid": "Nhận giá thầu ngay lập tức",
+        "cancel": "Hủy bỏ",
+        "confirm_bid": "Vâng, tôi sẽ chấp nhận giá thầu",
+        "suggest_price": "Đưa ra mức giá đề nghị",
+        "price_suggestion": "Đề xuất giá",
+        "bid_history": "Lịch sử giá cao nhất",
+        "auctionPrompt": "Bạn có muốn thắng ngay cuộc đấu giá trị giá 1,13 triệu won không?",
+        "instantAuctionGuide": "Hướng dẫn đấu giá ngay lập tức",
+        "auctionDetails": "Chiếc xe đã được đấu giá ngay lập tức. Đã xác nhận mua hàng mà không cần xác nhận lại báo giá. Có, điều đó hoàn toàn có thể. Hãy trả giá cẩn thận.",
+        "price_accepted": "Mức giá càng gần với mức giá mong muốn của khách hàng là ",
+        "accepted": "thì khả năng được chấp nhận càng cao. Khi lời đề nghị của bạn được chấp nhận, giao dịch sẽ được hoàn tất ngay lập tức.",
+        "placeholder": "mười ngàn won",
+        "starting_price": "Chúng tôi có thể cung cấp cho bạn mức giá khởi điểm từ 680.000 won.",
+        "detail": "chi tiết",
+        "buy_price": "giá mua",
+        "Retail_price": "giá bán lẻ",
+        "history_bid": "Lịch sử đấu giá",
+        "direct_bidding": "Đấu thầu trực tiếp",
+        "bidding_easy": "Đấu giá dễ dàng và nhanh chóng theo mức giá khách hàng mong muốn ⚡",
+        "transaction_confirmed": "Giao dịch mua được xác nhận ngay sau khi đấu giá 🎉",
+
+        "no_commission": "Tương tự như không có hoa hồng",
+        "agent_bears_shipping": "Đại lý chịu chi phí giao hàng",
+        "strict_measures": "Các biện pháp nghiêm ngặt đối với lỗi báo giá",
+        "no_export_bidding": "Không đấu thầu xuất khẩu",
+        "important_diagnosis_error": "Lỗi chẩn đoán quan trọng có thể khiếu nại:",
+        "exclusion_cases": "Các trường hợp loại trừ khỏi chẩn đoán: cỗ tấm sơn...",
+        "out_of_scope_diagnosis": "Chẩn đoán ngoài hành: Đánh giá dựa trên các tiêu chuẩn...",
+        "diagnosis_risks": "Chẩn đoán có rủi ro: Đưa ra một khuyến nghị...",
+        "transaction_process": "ⓘ Qui trình giao dịch"
     }
 }

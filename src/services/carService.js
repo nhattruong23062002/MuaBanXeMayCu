@@ -14,12 +14,11 @@ const getDetailCar = async (id) => {
 
 const addCar = async (userData) => {
     const token = getToken();
-    const response = await axios.post(`${API_URL}/cars`, userData,
-        {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        });
+    const response = await axios.post(`${API_URL}/cars`, userData, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
     return response.data.payload;
 };
 
