@@ -180,13 +180,13 @@
     "storeDetail": {
         "pageTitle": "Thông tin cửa hàng",
         "storeName": "Xe máy Út Tịch",
-        "stats": {
-            "selling": "Đang bán",
-            "sold": "Đã bán",
-            "favorites": "Yêu thích"
-        },
+        "auction": "Đang đấu giá",
+        "available": "Đang bán",
+        "sold": "Đã bán",
+        "favorite": "Yêu thích",
         "bikeListTitle": "Danh sách xe",
-        "contactButton": "Thông tin liên lạc"
+        "contactButton": "Thông tin liên lạc",
+        "loadMore": "Xem thêm"
     },
     "login": {
         "loginSuccess": "Đăng nhập thành công!",
@@ -936,5 +936,28 @@
         "out_of_scope_diagnosis": "Chẩn đoán ngoài hành: Đánh giá dựa trên các tiêu chuẩn...",
         "diagnosis_risks": "Chẩn đoán có rủi ro: Đưa ra một khuyến nghị...",
         "transaction_process": "ⓘ Qui trình giao dịch"
+    },
+    "myStore": {
+        "storeTitle": "Cửa hàng của tôi",
+        "backButton": "Quay lại",
+        "chooseImage": "Chọn ảnh",
+        "auction": "Đang đấu giá",
+        "available": "Đang bán",
+        "sold": "Đã bán",
+        "favorite": "Yêu thích",
+        "dealerInfo": "Thông tin đại lý",
+        "editButton": "Sửa",
+        "dealerName": "Tên đại lý",
+        "address": "Địa chỉ",
+        "phoneNumber": "Số điện thoại",
+        "description": "Mô tả",
+        "carList": "Danh sách xe",
+        "loadMore": "Xem thêm",
+        "contactButton": "Thông tin liên hệ",
+        "editStoreTitle": "Sửa thông tin đại lý",
+        "dealerNamePlaceholder": "Tên đại lý",
+        "addressPlaceholder": "Địa chỉ đại lý",
+        "phoneNumberPlaceholder": "Địa chỉ đại lý",
+        "descriptionPlaceholder": "Mô tả"
     }
 }

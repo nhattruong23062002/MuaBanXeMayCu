@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom"; // Import useHistory
 import { useTranslation } from "react-i18next";
 import LayoutUser from "../../layout/layoutUser";
 import BannerSwiper from "../../components/BannerSwipper";
-import FilterBar from "../../components/FilterBar";
 import MotoCard from "../../components/MotoCard";
 import AdBanner from "../../components/AdBanner";
 import { getAllCars } from "../../services/carService";
+import { IoShieldCheckmark } from "react-icons/io5";
 
 function HomePage() {
     const { t } = useTranslation("homepage");
@@ -23,7 +23,7 @@ function HomePage() {
     useEffect(() => {
         const getCars = async () => {
             try {
-                const response = await getAllCars({ status: "" });
+                const response = await getAllCars({ status: "available,auction" });
                 setCars(response);
             } catch (error) {
                 console.error("Error fetching property types:", error);
@@ -31,29 +31,18 @@ function HomePage() {
         };
         getCars();
     }, []);
-    // Hàm tìm kiếm xe theo biển số
+
     const handleSearch = () => {
         const car = cars.find((car) => car.license_plate === searchTerm);
         if (car) {
-            // Nếu tìm thấy xe, chuyển hướng đến trang chi tiết xe
             navigate(`/detailcar/${car.id}`);
         } else {
             alert("Xe không tìm thấy!");
         }
     };
+
     const handleFilter = (newFilters) => {
         setFilters(newFilters);
-    };
-
-    const formatPrice = (price) => {
-        const priceStr = price.toString();
-        const firstDigit = priceStr.charAt(0); // Lấy chữ số đầu tiên
-        const remainingDigits = "x".repeat(priceStr.length - 1); // Thay thế các chữ số còn lại bằng 'x'
-
-        // Kết hợp giá với chữ số đầu và 'x'
-        const formattedPrice = firstDigit + remainingDigits;
-
-        return formattedPrice + "đ"; // Thêm "đ" vào cuối giá
     };
 
     return (
@@ -62,35 +51,37 @@ function HomePage() {
             <div className="max-w-[800px] mx-auto relative bg-white">
                 <div className="mb-8 relative">
                     <BannerSwiper />
-                    <FilterBar onFilter={handleFilter} />
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 sm:w-1/2 z-10">
+                    <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full sm:w-full z-10 px-4">
                         <div className="relative">
                             <input
                                 type="text"
                                 placeholder={t("search_placeholder")}
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full py-3 pl-4 pr-12 text-gray-700 border rounded-full focus:outline-none focus:ring-2 focus:ring-[#0e0f2b]"
+                                className="w-full py-2 pl-4 pr-12 text-gray-700 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0e0f2b]"
                             />
                             <FaSearch
                                 className="absolute right-4 top-1/2 transform -translate-y-1/2 text-xl text-gray-600 transition-colors cursor-pointer hover:text-blue-600"
                                 onClick={handleSearch}
                             />{" "}
-                            {/* Add FaSearch icon */}
                         </div>
                     </div>
                 </div>
             </div>
 
             <div
-                className="max-w-[800px] mx-auto px-4 py-14 bg-white rounded-md"
-                style={{ marginTop: "4rem" }}
+                className="max-w-[800px] mx-auto px-4 py-8 bg-white rounded-2xl relative z-20"
+                style={{ marginTop: "-50px" }}
             >
-                <h2 className="text-2xl font-bold mb-4">
-                    {t("quality_bikes")}
-                </h2>
+                <div className="flex items-center gap-2">
+                    <h2 className="text-2xl font-bold">
+                        {t("quality_bikes")}
+                    </h2>
+                    <IoShieldCheckmark className="text-blue-600 text-xl mt-2" />
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 mt-4">
                     {cars.map((car) => (
                         <MotoCard
                             key={car.id}
@@ -99,7 +90,8 @@ function HomePage() {
                             name={car.model}
                             year={car.year}
                             mileage={car.mileage}
-                            price={formatPrice(car.price)}
+                            price={car.price}
+                            status={car.status}
                         />
                     ))}
                 </div>

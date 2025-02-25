@@ -180,13 +180,13 @@
     "storeDetail": {
         "pageTitle": "매장 정보",
         "storeName": "Xe máy Út Tịch",
-        "stats": {
-            "selling": "판매 중",
-            "sold": "판매 완료",
-            "favorites": "즐겨찾기"
-        },
+        "auction": "경매 중",
+        "available": "판매 중",
+        "sold": "판매 완료",
+        "favorite": "즐겨찾기",
         "bikeListTitle": "오토바이 목록",
-        "contactButton": "연락처 정보"
+        "contactButton": "연락처 정보",
+        "loadMore": "더보기"
     },
     "login": {
         "loginSuccess": "로그인 성공!",
@@ -930,5 +930,28 @@
         "out_of_scope_diagnosis": "범위 밖 진단: 표준을 기반으로 평가...",
         "diagnosis_risks": "위험이 있는 진단: 권고 사항을 제시...",
         "transaction_process": "ⓘ 거래 절차"
+    },
+    "myStore": {
+        "storeTitle": "내 가게",
+        "backButton": "뒤로",
+        "chooseImage": "이미지 선택",
+        "auction": "경매 중",
+        "available": "판매 중",
+        "sold": "판매 완료",
+        "favorite": "즐겨찾기",
+        "dealerInfo": "딜러 정보",
+        "editButton": "수정",
+        "dealerName": "딜러 이름",
+        "address": "주소",
+        "phoneNumber": "전화번호",
+        "description": "설명",
+        "carList": "차량 목록",
+        "loadMore": "더보기",
+        "contactButton": "연락처 정보",
+        "editStoreTitle": "딜러 정보 수정",
+        "dealerNamePlaceholder": "딜러 이름",
+        "addressPlaceholder": "딜러 주소",
+        "phoneNumberPlaceholder": "딜러 전화번호",
+        "descriptionPlaceholder": "설명"
     }
 }

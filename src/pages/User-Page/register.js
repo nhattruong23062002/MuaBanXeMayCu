@@ -7,6 +7,7 @@ import { Form, Input, Button, notification } from "antd";
 import { addUser } from "../../services/userService";
 import { toast, ToastContainer } from "react-toastify";
 import LayoutUser from "../../layout/layoutUser";
+import { addDealer } from "../../services/dealerSevice";
 
 const { Content } = Layout;
 
@@ -28,6 +29,7 @@ function RegisterForm() {
         role: "user",
       };
       const response = await addUser(data);
+      const createDealer = await addDealer({ userId: response.id })
 
       if (response) {
         toast.success(t("registerSuccess"), { autoClose: 1500 });

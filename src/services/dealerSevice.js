@@ -2,8 +2,9 @@ import axios from "axios";
 import { API_URL } from "../config/apiUrls";
 import { getToken } from "../utils/authUtils";
 
-const getAllDealer = async (query) => {
-    const response = await axios.get(`${API_URL}/dealers?query=${query}`)
+const getAllDealer = async (params) => {
+    const queryParams = new URLSearchParams(params).toString();
+    const response = await axios.get(`${API_URL}/dealers?${queryParams}`);
     return response.data.payload;
 };
 

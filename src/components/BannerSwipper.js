@@ -10,29 +10,36 @@ function BannerSwiper() {
     <Swiper
       modules={[Autoplay, Pagination]}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
-      pagination={{ clickable: true }}
+      pagination={false}
       loop={true}
       className="rounded-b-lg shadow-lg"
     >
       <SwiperSlide>
         <img
-          src="https://xe.muabannhanh.com/upload/thumbnails/700/2021/04/28/lai-xe-jpg.jpg"
+          src="Banner4.png"
           alt="Banner 2"
-          className="w-full h-[430px] object-cover rounded-b-lg"
+          className="w-full h-[350px] sm:h-[430px] object-cover rounded-b-lg"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          src="https://static.danhgiaxe.com/data/201525/although-the-scirocco-is-sold-around-the-world-it-is-doesnt-look-like-the-stylish-coupe-will-be-coming-to-america-anytime-soon_779.jpg"
+          src="Banner3.png"
           alt="Banner 3"
-          className="w-full h-[430px] object-cover rounded-b-lg"
+          className="w-full h-[350px] sm:h-[430px]  object-cover rounded-b-lg"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
           src="https://otohoangkim-storage.sgp1.cdn.digitaloceanspaces.com/Bentley-Continental-GT-Azure-2024-1.webp"
           alt="Banner 1"
-          className="w-full h-[430px] object-cover rounded-b-lg"
+          className="w-full h-[350px] sm:h-[430px]  object-cover rounded-b-lg"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="Banner2.png"
+          alt="Banner 3"
+          className="w-full h-[350px] sm:h-[430px] object-cover rounded-b-lg"
         />
       </SwiperSlide>
     </Swiper>

@@ -82,9 +82,9 @@ const Auction = () => {
     return (
         <div className="flex flex-col space-y-6">
             {/* Phần đấu giá trực tiếp */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-white p-4 rounded-lg shadow-md">
                 {/* time */}
-                <div className="text-3xl text-[#d59648]">
+                <div className="text-xl text-[#d59648]">
                     <div className="font-bold">{t("time_left")}</div>
                     {formatTime(timeLeft)}
                 </div>
@@ -92,11 +92,11 @@ const Auction = () => {
                 {/* Thông tin đấu giá */}
                 <div className="space-y-4">
                     {/* Thời gian và giá đấu giá */}
-                    <div className="bg-white p-4 rounded-lg shadow-md">
-                        <h3 className="text-lg font-semibold">
+                    <div className="bg-white p-3 rounded-lg shadow-md">
+                        <h3 className="text-md font-semibold">
                             {t("current_bidding")}
                         </h3>
-                        <div className="text-xl font-bold text-[#d59648]">
+                        <div className="text-lg font-bold text-[#d59648]">
                             3.930 triệu won
                         </div>
                     </div>
@@ -111,7 +111,7 @@ const Auction = () => {
                     </button>
                     <Modal
                         isOpen={modalIsOpen} // Kiểm tra xem modal có đang mở hay không
-                        onRequestClose={() => {}} // Đóng modal khi nhấn ngoài modal
+                        onRequestClose={() => { }} // Đóng modal khi nhấn ngoài modal
                         contentLabel={t("immediate_bid")}
                         className="bg-white p-6 rounded-lg shadow-md w-full sm:w-96 mx-auto"
                         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
@@ -148,7 +148,7 @@ const Auction = () => {
                     </button>
                     <Modal
                         isOpen={modalIsOpen1} // Kiểm tra xem modal có đang mở hay không
-                        onRequestClose={() => {}} // Đóng modal khi nhấn ngoài modal
+                        onRequestClose={() => { }} // Đóng modal khi nhấn ngoài modal
                         contentLabel={t("price_suggestion")}
                         className="bg-white p-6 rounded-lg shadow-md w-full sm:w-96 mx-auto"
                         overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
@@ -190,7 +190,7 @@ const Auction = () => {
                 <hr className="my-4 bg-gray-700" />
 
                 {/* Thông tin thêm về giá mua và bán */}
-                <div className="flex space-x-4 mt-6">
+                {/* <div className="flex space-x-4 mt-6">
                     <button
                         className="flex items-center justify-center text-gray-600 text-xl hover:text-red-500 p-2 border border-gray-300 rounded-md w-full sm:w-auto"
                         onClick={toggleFavorite}
@@ -208,7 +208,7 @@ const Auction = () => {
                         <FaShareFromSquare className="mr-2" />
                         {t("Retail_price")}
                     </button>
-                </div>
+                </div> */}
             </div>
 
             {/* Lịch sử giá */}

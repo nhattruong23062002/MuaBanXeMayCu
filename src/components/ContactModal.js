@@ -7,19 +7,18 @@ import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import MapModal from "./MapModal";
 
-const ContactModal = ({ onClose }) => {
+const ContactModal = ({ dealer, user, phoneUser, onClose }) => {
   const { t } = useTranslation("contactModal");
   const navigate = useNavigate();
 
-  const phoneNumber = "0964888744";
   const [isMapModalOpen, setMapModalOpen] = useState(false);
 
   const handleCall = () => {
-    window.location.href = `tel:${phoneNumber}`;
+    window.location.href = `tel:${phoneUser}`;
   };
 
   const handleChat = () => {
-    navigate("/chat", { state: { phoneNumber } });
+    navigate("/chat", { state: { phoneUser } });
   };
 
   const handleViewAddress = () => {
@@ -38,14 +37,14 @@ const ContactModal = ({ onClose }) => {
         <div className="p-4">
           <div className="flex items-center mb-4">
             <img
-              src="https://aloinan.com/wp-content/uploads/2018/01/logo-xe-may-3.jpg"
+              src={dealer?.avatarImage || "https://1nedrop.com/wp-content/uploads/2024/10/avatar-mac-dinh-30xJKPDu.jpg"}
               alt="Store Logo"
-              className="w-16 h-16 rounded-full mr-4 border"
+              className="w-16 h-16 rounded-full mr-4 border object-cover"
             />
             <div>
-              <h3 className="font-bold text-lg">Trạm OKXE Út Tịch</h3>
-              <p className="text-gray-500">Sơn Trà, Đà nẵng</p>
-              <p className="text-[#d59600] font-bold">{phoneNumber}</p>
+              <h3 className="font-bold text-lg">{user?.userName}</h3>
+              <p className="text-gray-500">{user?.address}</p>
+              <p className="text-[#d59600] font-bold">{user.phoneNumber}</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -74,7 +73,7 @@ const ContactModal = ({ onClose }) => {
         </div>
       </div>
 
-      {isMapModalOpen && <MapModal onClose={() => setMapModalOpen(false)} />}
+      {isMapModalOpen && <MapModal address={user?.address} onClose={() => setMapModalOpen(false)} />}
     </div>
   );
 };

@@ -29,8 +29,6 @@ function LoginForm() {
       const decodedToken = jwtDecode(token);
       const role = decodedToken?.role;
       setToken(token);
-      toast.success(t("loginSuccess"), { autoClose: 1500 });
-
       if (role === "user") {
         window.location.href = "/";
       } else if (role === "admin") {

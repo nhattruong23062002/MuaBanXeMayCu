@@ -82,7 +82,7 @@
         "listExpertTitle": "List of Experts",
         "listShopTitle": "List of Dealerships",
         "searchPlaceholder": "Search for an expert...",
-        "searchPlaceholderShop": "Find a store...",
+        "searchPlaceStore": "Find a store...",
         "contactButton": "Contact",
         "showDetailsButton": "Show Details",
         "fullname": "Full Name",
@@ -180,13 +180,13 @@
     "storeDetail": {
         "pageTitle": "Store Information",
         "storeName": "Xe máy Út Tịch",
-        "stats": {
-            "selling": "Selling",
-            "sold": "Sold",
-            "favorites": "Favorites"
-        },
+        "auction": "Auction",
+        "available": "Available",
+        "sold": "Sold",
+        "favorite": "Favorite",
         "bikeListTitle": "Bike List",
-        "contactButton": "Contact information"
+        "contactButton": "Contact information",
+        "loadMore": "Load More"
     },
     "login": {
         "loginSuccess": "Login successful!",
@@ -929,5 +929,28 @@
         "out_of_scope_diagnosis": "Out of scope diagnosis: Evaluation based on standards...",
         "diagnosis_risks": "Diagnosis with risks: Make recommendations...",
         "transaction_process": "ⓘ Transaction process"
+    },
+    "myStore": {
+        "storeTitle": "My Store",
+        "backButton": "Back",
+        "chooseImage": "Choose Image",
+        "auction": "Auction",
+        "available": "Available",
+        "sold": "Sold",
+        "favorite": "Favorite",
+        "dealerInfo": "Dealer Information",
+        "editButton": "Edit",
+        "dealerName": "Dealer Name",
+        "address": "Address",
+        "phoneNumber": "Phone Number",
+        "description": "Description",
+        "carList": "Car List",
+        "loadMore": "Load More",
+        "contactButton": "Contact Info",
+        "editStoreTitle": "Edit Dealer Information",
+        "dealerNamePlaceholder": "Dealer Name",
+        "addressPlaceholder": "Dealer Address",
+        "phoneNumberPlaceholder": "Dealer phone number",
+        "descriptionPlaceholder": "Description"
     }
 }

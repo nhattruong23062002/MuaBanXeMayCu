@@ -11,7 +11,6 @@ import ManageExperts from "./pages/Admin-Page/ManageExperts";
 import LoginForm from "./pages/User-Page/login";
 import RegisterForm from "./pages/User-Page/register";
 import HomePage from "./pages/User-Page/homePage";
-import DetailMoto from "./pages/User-Page/detailMoto";
 import AccountPage from "./pages/User-Page/accountPage";
 import PurchasedPage from "./pages/User-Page/ManagerPurchased";
 import AdminLayout from "./layout/layoutAdmin";
@@ -41,6 +40,7 @@ import AddCar from "./pages/User-Page/addCar";
 import ManageCars from "./pages/Admin-Page/ManageCars";
 import EditCar from "./pages/Admin-Page/ManageCars/editCar";
 import MyStore from "./pages/User-Page/myStore";
+import DetailCar from "./pages/User-Page/detailCar";
 
 const App = () => {
     return (
@@ -50,7 +50,7 @@ const App = () => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginForm />} />
                     <Route path="/register" element={<RegisterForm />} />
-                    <Route path="/detailCar/:id" element={<DetailMoto />} />
+                    <Route path="/detailCar/:id" element={<DetailCar />} />
                     <Route path="/account" element={<AccountPage />} />
                     <Route path="/purchased" element={<PurchasedPage />} />
                     <Route path="/selling" element={<SellPage />} />
@@ -61,7 +61,7 @@ const App = () => {
                     <Route path="/payment" element={<PaymentForm />} />
                     <Route path="/upload" element={<AddCar />} />
                     <Route path="/expertDetail" element={<ExpertDetailPage />} />
-                    <Route path="/storeDetail" element={<StoreDetailPage />} />
+                    <Route path="/storeDetail/:id" element={<StoreDetailPage />} />
                     <Route path="/my-store" element={<MyStore />} />
                     <Route path="/purchaseDetail" element={<PurchaseDetailPage />} />
                     <Route path="/postDetail" element={<PostDetail />} />

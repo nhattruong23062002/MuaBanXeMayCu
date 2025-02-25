@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import "leaflet-routing-machine";
 import { useTranslation } from "react-i18next";
 
 const redIcon = new L.Icon({
@@ -14,81 +13,31 @@ const redIcon = new L.Icon({
   popupAnchor: [0, -30],
 });
 
-const blueIcon = new L.Icon({
-  iconUrl:
-    "https://png.pngtree.com/png-vector/20230213/ourmid/pngtree-devil-face-circle-icon-png-image_6594511.png",
-  iconSize: [30, 30],
-  iconAnchor: [15, 30],
-  popupAnchor: [0, -30],
-});
-
-const Routing = ({ currentPosition, destination }) => {
-  const map = useMap();
-  const routingControlRef = useRef(null);
-
-  useEffect(() => {
-    if (!currentPosition || !destination || !map) return;
-
-    if (!routingControlRef.current) {
-      routingControlRef.current = L.Routing.control({
-        waypoints: [
-          L.latLng(currentPosition.lat, currentPosition.lng),
-          L.latLng(destination),
-        ],
-        routeWhileDragging: true,
-        showAlternatives: false,
-        addWaypoints: false,
-        createMarker: () => null,
-        lineOptions: {
-          styles: [{ color: "#6FA1EC", weight: 4 }],
-        },
-        show: false,
-        collapsible: true, 
-        show: false
-      }).addTo(map);
-    } else {
-      routingControlRef.current.setWaypoints([
-        L.latLng(currentPosition.lat, currentPosition.lng),
-        L.latLng(destination),
-      ]);
-    }
-
-  }, [map, currentPosition, destination]);
-
-  return null;
-};
-
-const MapModal = ({ onClose }) => {
-  const [currentPosition, setCurrentPosition] = useState(null);
-  const [showRoute, setShowRoute] = useState(false);
-  const destination = [16.06207715478747, 108.23763466897346]; 
+const MapModal = ({ address, onClose }) => {
+  const [dealerPosition, setDealerPosition] = useState(null);
   const { t } = useTranslation("mapModal");
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setCurrentPosition({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
-        },
-        (error) => {
-          console.error("Lỗi khi lấy vị trí hiện tại:", error);
-        }
-      );
-    } else {
-      console.error("Trình duyệt không hỗ trợ Geolocation.");
-    }
-  }, []);
+  const HERE_API_KEY = "0UdWrbQZeilk9AJOCvqP7AlJAE1HKPW6bO8fD9GxK1w";
 
-  const handleShowRoute = () => {
-    if (currentPosition) {
-      setShowRoute(true);
-    } else {
-      alert("Không thể lấy vị trí hiện tại của bạn. Vui lòng thử lại.");
+  useEffect(() => {
+    if (address) {
+      fetch(`https://geocode.search.hereapi.com/v1/geocode?q=${address}&apiKey=${HERE_API_KEY}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.items && data.items[0]) {
+            setDealerPosition({
+              lat: data.items[0].position.lat,
+              lng: data.items[0].position.lng,
+            });
+          } else {
+            console.error("Không tìm thấy vị trí của dealer.");
+          }
+        })
+        .catch((error) => {
+          console.error("Lỗi khi lấy tọa độ từ địa chỉ:", error);
+        });
     }
-  };
+  }, [address]);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -102,7 +51,7 @@ const MapModal = ({ onClose }) => {
         <div className="p-4">
           <div className="h-96 w-full">
             <MapContainer
-              center={destination}
+              center={dealerPosition || [16.06207715478747, 108.23763466897346]}
               zoom={13}
               style={{ height: "100%", width: "100%" }}
             >
@@ -110,34 +59,12 @@ const MapModal = ({ onClose }) => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="&copy; OpenStreetMap contributors"
               />
-              {currentPosition && (
-                <Marker
-                  position={[currentPosition.lat, currentPosition.lng]}
-                  icon={blueIcon}
-                >
-                  <Popup>{t("myLocation")}</Popup>
+              {dealerPosition && (
+                <Marker position={dealerPosition} icon={redIcon}>
+                  <Popup>{t("dealerLocation")}</Popup>
                 </Marker>
               )}
-              <Marker position={destination} icon={redIcon}>
-                <Popup>Xe máy Út Tịch</Popup>
-              </Marker>
-              {showRoute && currentPosition && (
-                <Routing
-                  currentPosition={currentPosition}
-                  destination={destination}
-                />
-              )}
             </MapContainer>
-          </div>
-          <div className="flex justify-end mt-4">
-            {!showRoute && (
-              <button
-                onClick={handleShowRoute}
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-              >
-                {t("directions")}
-              </button>
-            )}
           </div>
         </div>
       </div>
