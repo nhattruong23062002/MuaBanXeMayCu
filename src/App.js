@@ -15,7 +15,7 @@ import DetailMoto from "./pages/User-Page/detailMoto";
 import AccountPage from "./pages/User-Page/accountPage";
 import PurchasedPage from "./pages/User-Page/ManagerPurchased";
 import AdminLayout from "./layout/layoutAdmin";
-import ListExpert from "./pages/User-Page/ListExpert";
+import CarAuction from "./pages/User-Page/CarAuction";
 import UserIdentificationForm from "./pages/User-Page/Identification";
 import PaymentForm from "./pages/User-Page/Payment";
 import ChatMessage from "./components/ChatMessage";
@@ -38,6 +38,9 @@ import { ThemeProvider } from "./components/ThemeContext";
 import Profile from "./pages/Admin-Page/Profile/Profile";
 import Settings from "./pages/Admin-Page/Setting/Settings";
 import AddCar from "./pages/User-Page/addCar";
+import ManageCars from "./pages/Admin-Page/ManageCars";
+import EditCar from "./pages/Admin-Page/ManageCars/editCar";
+import MyStore from "./pages/User-Page/myStore";
 
 const App = () => {
     return (
@@ -47,11 +50,11 @@ const App = () => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/login" element={<LoginForm />} />
                     <Route path="/register" element={<RegisterForm />} />
-                    <Route path="/detailcar/:id" element={<DetailMoto />} />
+                    <Route path="/detailCar/:id" element={<DetailMoto />} />
                     <Route path="/account" element={<AccountPage />} />
                     <Route path="/purchased" element={<PurchasedPage />} />
                     <Route path="/selling" element={<SellPage />} />
-                    <Route path="/listexp" element={<ListExpert />} />
+                    <Route path="/listexp" element={<CarAuction />} />
                     <Route path="/listStore" element={<ListStore />} />
                     <Route path="/chat" element={<ChatMessage />} />
                     <Route
@@ -65,6 +68,7 @@ const App = () => {
                         element={<ExpertDetailPage />}
                     />
                     <Route path="/storeDetail" element={<StoreDetailPage />} />
+                    <Route path="/my-store" element={<MyStore />} />
                     <Route
                         path="/purchaseDetail"
                         element={<PurchaseDetailPage />}
@@ -109,8 +113,16 @@ const App = () => {
                                             element={<ManagePosts />}
                                         />
                                         <Route
+                                            path="edit-car/:id"
+                                            element={<EditCar />}
+                                        />
+                                        <Route
                                             path="manage-users"
                                             element={<ManageUsers />}
+                                        />
+                                        <Route
+                                            path="manage-cars"
+                                            element={<ManageCars />}
                                         />
                                         <Route
                                             path="handle-complaints"

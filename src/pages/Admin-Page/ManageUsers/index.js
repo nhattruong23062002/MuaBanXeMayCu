@@ -180,8 +180,8 @@ function UserManagement() {
   const columns = [
     {
       title: t("stt"),
-      dataIndex: "id",
-      key: "id",
+      key: "stt",
+      render: (_, record, index) => index + 1,
     },
     {
       title: t("name"),
@@ -245,7 +245,7 @@ function UserManagement() {
         <IoIosAddCircleOutline className="text-lg" />
         {t("addUser")}
       </Button>
-      <Table columns={columns} dataSource={users} />
+      <Table columns={columns} dataSource={users} rowKey={"id"} />
       <AddEditUserModal
         visible={isModalVisible}
         initialData={editingUser}

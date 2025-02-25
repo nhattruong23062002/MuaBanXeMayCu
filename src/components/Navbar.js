@@ -9,6 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ThemeSelector from "./ThemeSelector";
+import { removeToken } from "../utils/authUtils";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Navbar = () => {
   const [notifications] = useState(5);
 
   const handleLogout = () => {
-    localStorage.removeItem("auth");
+    removeToken();
     window.location.href = "/login";
   };
 

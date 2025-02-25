@@ -12,6 +12,12 @@ const getUsers = async () => {
     return response.data.payload;
 };
 
+const getDetailUser = async (userId) => {
+    const response = await axios.get(`${API_URL}/users/${userId}`);
+    return response.data.payload;
+};
+
+
 const addUser = async (userData) => {
     const response = await axios.post(`${API_URL}/users`, userData);
     return response.data.payload;
@@ -36,4 +42,4 @@ const deleteUser = async (userId) => {
     });
 };
 
-export { getUsers, addUser, updateUser, deleteUser };
+export { getUsers, getDetailUser, addUser, updateUser, deleteUser };
